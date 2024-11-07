@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>20241107_blender_tips</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px Verdana}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px Verdana; background-color: #21ff06}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; min-height: 17.0px}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #0000fe}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #fb0207; min-height: 17.0px}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #fb0207}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; background-color: #21ff06}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #0b0c0c; min-height: 17.0px}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #0b0c0c}
+    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #0000ff}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #0000ff; min-height: 17.0px}
+    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; background-color: #ffff0a}
+    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; background-color: #ffff0a; min-height: 17.0px}
+    span.s1 {text-decoration: underline}
+    span.s2 {background-color: #21ff06}
+    span.s3 {font: 14.0px Menlo}
+    span.s4 {color: #000000}
+    span.s5 {font: 15.0px 'Helvetica Neue'; color: #0b0c0c}
+    span.s6 {text-decoration: underline ; color: #0000fe}
+    span.s7 {color: #fb0207}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><b>------------------------</b></p>
+<p class="p2"><b>TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">                   </span></b></p>
+<p class="p1"><b>------------------------</b></p>
+<p class="p3"><br></p>
+<p class="p4"><b>Upgrade Blender without losing anything:</b></p>
+<p class="p5"><span class="s1"><a href="https://www.tripo3d.ai/blog/collect/how-to-update-blender-without-losing-settings-and-add-ons-t1d5nijtdx4">How to Update Blender Without Losing Settings and Add-Ons</a></span></p>
+<p class="p4">1. Open the previous file one last time. File &gt; Defaults &gt; Save Startup File</p>
+<p class="p4">2. Install new version and (ATTENTION) in the presentation image click on “Load 4.x settings” (the previous version, if this appears)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p4"><span class="s2"><b>GENERAL - MISC TIPS<span class="Apple-tab-span">	</span></b></span></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://docs.blender.org/manual/en/4.2/interface/window_system/regions.html#ui-region-header">Regions - Blender 4.2 Manual</a></span></p>
+<p class="p5"><span class="s1"><a href="https://docs.blender.org/manual/en/4.2/interface/tool_system.html">Tool System - Blender 4.2 Manual</a></span></p>
+<p class="p5"><span class="s1"><a href="https://docs.blender.org/manual/en/4.2/interface/operators.html">Operators - Blender 4.2 Manual</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://cgcookie.com/community/14898-question-about-quick-favorites?page=1#answer-61367">You can still move the old Preferences to your new Version by hand</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4">The <b>workspaces</b> are saved in the blend-file. When you open a file, enabling Load UI in the File Browser indicates that Blender should use the file’s screen layout rather than the current one.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Splitting &amp; Joining Viewport Areas</b></p>
+<p class="p4">Dragging from an area corner <b>inward</b> will split the area. You define the split direction by dragging either horizontally or vertically.</p>
+<p class="p4">Dragging from an area corner <b>outward</b> will join two areas. The area that will be closed shows a dark overlay. You can select which area will be closed by moving the mouse over it. Release the LMB to complete the join. If you press Esc or RMB before releasing the mouse, the operation will be canceled.</p>
+<p class="p6"><b></b><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p6"><b></b><br></p>
+<p class="p7"><b>FAKE USER - CAUTION!!!</b></p>
+<p class="p4">Summary: caution with all those Materials, Node Groups, etc which was created but NOT assigned to any Object. If that is the case, the Material, NodeGroup, etc, could be deleted on your next save</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://devtalk.blender.org/t/blender-deleted-my-un-assigned-materials-how-is-that-a-feature-fake-user/22715">Blender Deleted My Un-assigned Materials - How is That A Feature? - Fake User - Archive / User Feedback - Developer Forum</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blender.stackexchange.com/questions/2448/what-does-users-means-in-term-of-datablocks">What does "users" means in term of datablocks? - Blender Stack Exchange</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://brandon3d.com/blender-data/">Data Blocks, Fake Users &amp; External Files Explained | Brandon 3D</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blendermarket.com/products/automatic-fake-user">Automatic Fake User - Blender Market</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p5"><span class="s1"><a href="https://www.rendereverything.com/blender-groups-confusion-about-collections/">Groups in Blender and confusion with Collections</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=Y_DRWnWq2fI">How To Install or Reset Blender (The Right Way) - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=1_G9AYh4v0g">Blender crashes at startup? Delete the default startup.blend file! - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>MODELING TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>TO REMOVE A (SDS) MODIFIER FROM MULTIPLE OBJECTS IN BLENDER</b></p>
+<p class="p9"><br></p>
+<p class="p10">Various methods:</p>
+<p class="p9"><br></p>
+<p class="p10"><b>1. NEW: Use my own addon etr_remove_subdivision_modifiers, in N-Panel &gt; Tools</b></p>
+<p class="p9"><br></p>
+<p class="p10">2. Or instead of removing modifier you can disable its effect via e.g. <span class="s3"><b>m.show_render = False</b></span></p>
+<p class="p3"><br></p>
+<p class="p4">3. Another approach, without script:</p>
+<p class="p5"><span class="s1"><a href="https://blender.stackexchange.com/questions/147314/how-to-remove-modifiers-from-multiple-objects-at-once">How to add/remove modifiers from multiple objects at once - Blender Stack Exchange</a></span></p>
+<p class="p4">You can select the objects you wish to add/remove all modifiers from, then select an object with no modifiers, hit <b>Cmd+L</b>, and <b>Copy the Modifiers</b>. This will get rid of all of them on all of the objects.</p>
+<p class="p3"><br></p>
+<p class="p4">4. Also, a simpler/better/clean option: select all objects with a SDS Modifier, press Alt and Delete a SDS Modifier (it will delete all SDS Modifiers in all objects)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>CLEAN DELTAS WITHOUT “APPLY” </b>(to avoid breaking instance dependencies)</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s4">Source: <a href="https://blender.community/c/rightclickselect/lRv6/?sorting=hot"><span class="s1">Deltas to transform ⁠— Right-Click Select</span></a></span></p>
+<p class="p3"><br></p>
+<p class="p4"><b>NEW: use my own addon etr_transforms_deltas</b><span class="s5"><b>, in N-Panel &gt; Tools</b></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4">To change the ACTIVE ISLAND (between several “islands” of elements, meshes or curves) when in EDIT mode:</p>
+<p class="p4">Deselect all.</p>
+<p class="p4">Select an ELEMENT of the ISLAND that you want to make active.</p>
+<p class="p4">Press TAB twice, to convert to Object Mode and then to Edit Mode.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Manual linear (array) copy of mesh islands with snap to vertices</b></p>
+<p class="p3"><br></p>
+<p class="p4">It seems that the <b>Quick Snap Tool</b> addon does not work in combination with Shift-R (repeat last action). So to move with copy and snape to mesh islands vertices we can do:</p>
+<p class="p3"><br></p>
+<p class="p4">Adjust 3D cursor to the vertex that serves as anchor.</p>
+<p class="p4">Transform Pivot Point: 3D Cursor</p>
+<p class="p4">Snap Base Center / Snap Vertex</p>
+<p class="p4">Duplicate island with Shift-D and move the copy while snapping.</p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Set the origin of an object to the center of it´s bounding box</b></p>
+<p class="p4">1. Change the transform pivot point to Bounding Box Center</p>
+<p class="p4">2. Object &gt; Set Origin &gt; Origin to Geometry</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=SDkkQvWzg7Y&amp;t=36s">How to use instances the right way</a></span><span class="s4"> (downloaded)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.instagram.com/reel/C-Vc_MqPGNS">Snap Face Project + Align Rotation to Target will “sit” our selected object in the surface of other, rotating accordingly and all interactive</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=DwpajQ0oQPI">5 minutes of N-Gons to Quads tips</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.instagram.com/reel/C9H1PEhMbUD">Deform an object to follow the surface of another, using Shrink Wrap, but avoid flattening using a Lattice</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=idcFMhoSdIc">All 54 Modifiers in Blender Explained in 10 Minutes - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=Eu9abP0LIb8">Connect two objects using the Data Transfer modifier</a></span><span class="s4"> by Christopher 3D</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/cmzw_/status/1830545955491553774">Draw curves on surfaces</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=ZdNEqv6M7p8">The Easy Way to Fix Ugly Shading in Blender</a></span><span class="s4"> (specially with high dense n-gons)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/shorts/s9l68RY5vLM">Surface patch from Curves</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=1zNfh_g8jXM&amp;t=59s">Basics of Nurbs modeling</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=oFg367w5Cpo"><b>10 ways to make Holes in Blender</b></a></span><span class="s4"><b> - </b><a href="file:///Volumes/Almacen/Materiales/GOODIES_BLENDER/TUTORIALS/Blender%20Secrets%20Book%20Feb%2027th%202024/Vid%20401-500/Blender%20Secrets%20435%20-%2010%20ways%20to%20make%20Holes%20in%20Blender.mp4"><span class="s1"><b>Local file link</b></span></a></span></p>
+<p class="p3"><br></p>
+<p class="p4"><b>1. Cut with a polygon or closed line in front of it.</b></p>
+<p class="p4">We have a cube.</p>
+<p class="p4">Add a circle in front of it (curve, hollow polygon or fill, it doesn't matter) - It could also be a non-closed surface, like a hemisphere.</p>
+<p class="p4">Select only the cube &gt; EDIT MODE</p>
+<p class="p4">CTRL + LMB to select also the circle (in 3DVP or in the Outliner)</p>
+<p class="p4">Front view (or from the angle of projection that we want)</p>
+<p class="p4">Mesh &gt; Knife Project (we can activate “Cut Through”)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p7"><b>Orient ortho views to selected geo &amp; create an oriented Empty (similar to Modo Orient View to Selected Object)</b></p>
+<p class="p4">— Select an edge to mark Y orientation</p>
+<p class="p4">— Shift-7 to view from RELATIVE TOP view</p>
+<p class="p4">— Shift-D, 2 (Cursor to Selected)</p>
+<p class="p4">— Go Object mode</p>
+<p class="p4">— Add an Empty, change Align to View. Rename and Store</p>
+<p class="p3"><br></p>
+<p class="p7"><b>Work in a given orientation (defined by an object):</b></p>
+<p class="p4">— Select your Object/Empty</p>
+<p class="p4">— Go to Transforms Orientation and press "+" (this will create a New Transform Orientation) -&gt; GREAT TIP!!!</p>
+<p class="p6"><b></b><br></p>
+<p class="p7"><b>Also, orient 3D Cursor as Selected Object/Empty</b></p>
+<p class="p4">— Select temporarily the 3D Cursor Tool (to see Tool options for active 3D Cursor Tool)</p>
+<p class="p4">— Change Orientation to Transform and click anywhere (the 3D Cursor will be correctly oriented)</p>
+<p class="p4">— Return to Select Tool</p>
+<p class="p4">— Select your Object/Empty, Shift-S, 2 (cursor to Selected)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Flat Ribbons</b></p>
+<p class="p4">To convert a curve seen in Front (XZ plane) into a flat ribbon we have to draw a line along the Y axis.</p>
+<p class="p4">And then, to visualize and edit everything better, rotate it 90º in X</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Fix Near Clip on Small Models</b></p>
+<p class="p3"><br></p>
+<p class="p4">N (Side Panel) &gt; View &gt; View &gt; Clip Start / Clip End (adjust both)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>To know the coordinates of a selected vertex (of a mesh or a curve): N &gt; Element &gt; Transform</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>Tip for a Grease Pencil stroke:</b> set the 3D cursor to your vertex by selecting it and then using Shift+S and then Cursor -&gt; Selection and then read the 3D cursor position in the View panel, View Properties.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4">There is not <b>Workplanes</b> in Blender. Use <b>Empties-Arrows</b>, instead and saved them as Custom <b>Transform Orientations</b></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://docs.blender.org/manual/en/latest/modeling/meshes/tools/spin.html">Spin face around an axis</a></span><span class="s4"> (<a href="https://www.instagram.com/reel/C-Kl0OrKXiA"><span class="s1">example</span></a>)</span></p>
+<p class="p4">— Select top of cube</p>
+<p class="p4">— Front view</p>
+<p class="p4">— Shift-RMB to move 3D Cursor to the center of rotation</p>
+<p class="p4">— N &gt; Tool Options</p>
+<p class="p4">— Spin tool (change Axis in N if necessary)</p>
+<p class="p4">— Control extrude-rotation and steps (caution: if using bottom options, then no more direct edit is possible…)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blender.stackexchange.com/questions/47849/how-to-randomise-vertex-position-along-an-axis">Randomise vertices position along an axis</a></span><span class="s4"> - Tip using Proportional Editing</span></p>
+<p class="p3"><br></p>
+<p class="p4">Select the vertices you want affected, press Ctrl + I, to invert the selection, and then H to hide those vertices. Now, select a vertex of the ones left, press O, to turn Proportional Editing on, and, in the 3D view header, set the falloff to random:</p>
+<p class="p3"><br></p>
+<p class="p4">Then, press G, to move, followed by one of X, Y or Z, either once or twice, to limit to the axis you want. Now, use the scroll wheel to enlarge the affected area so that all the vertices are affected and move the mouse until you get the results you want. Then, press Alt + H to show all hidden vertices again.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Extend and align randomised verts on a tilted plane-mesh border - TWO METHODS</b></p>
+<p class="p3"><br></p>
+<p class="p4"><b>Method 1</b></p>
+<p class="p4">Pivot Point &gt; Active Element</p>
+<p class="p11">Transform Orientations &gt; View</p>
+<p class="p11">Select Directional Edge &gt; Shift-7 to align Top View orthogonal to Edge Selection</p>
+<p class="p4">Select randomised border as verts, deselect and select desired active vert</p>
+<p class="p4">S-Y-0</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Method 2</b></p>
+<p class="p4">Pivot Point &gt; Active Element</p>
+<p class="p11">Select Directional Edge &gt; Transform Orientations &gt; <b>+</b> (Create Orientation - Edge)</p>
+<p class="p11">And also Shift-7 to align Top View orthogonal to Edge Selection</p>
+<p class="p4">Select randomised border as verts, deselect and select desired active vert</p>
+<p class="p4">S-Y-0</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>COLLECTIONS, HIERARCHY &amp; OUTLINER TIPS</b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4">Supongamos esta situación:</p>
+<p class="p3"><br></p>
+<p class="p11"><b>COLLECTION A</b></p>
+<p class="p11"><i><span class="Apple-tab-span">	</span>EMPTY 1</i></p>
+<p class="p11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Cube</p>
+<p class="p11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Cylinder</p>
+<p class="p12"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></p>
+<p class="p11"><b>COLLECTION B</b></p>
+<p class="p11"><i><span class="Apple-tab-span">	</span>EMPTY 2</i></p>
+<p class="p11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Sphere</p>
+<p class="p11"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><b>Thorus</b></p>
+<p class="p3"><br></p>
+<p class="p4">If we want to move the Thorus from Empty 2 (in Collection B) to Empty 1 in Collection A, we can NOT do it directly. It would be a (sort of) copy.</p>
+<p class="p3"><br></p>
+<p class="p4">It must be done in THREE steps:</p>
+<p class="p3"><br></p>
+<p class="p4">1. You have to remove the Thorus from the Empty to make it a direct child of Collection B, using Shift or Unparent (Alt-P) &gt; Clear &amp; Keep Transform.</p>
+<p class="p4">2. Then we pass it to the other Collection (as a direct child of this one, do not try to nest it in empties or objects).</p>
+<p class="p4">3. Finally make child of the Empty or Object that we want, with Parent (Cmd-P) or using Shift.</p>
+<p class="p3"><br></p>
+<p class="p4">Yes: it is completely absurd. To investigate more deeply all this topic of the Collections.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>To move a complete hierarchy from one Collection to another:</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">Select parent / RMB &gt; Select Hierarchy / Move.</p>
+<p class="p3"><br></p>
+<p class="p4">We can also select the parent, Shift-G, and then in the popup select “Extend”.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=cL2680MYc0M">Hide in Viewport, a crappy Blender default. How to fix it. - YouTube</a></span></p>
+<p class="p4"><span class="Apple-tab-span">	</span>Difference between Hide in Viewport and Disable in Viewport</p>
+<p class="p4"><span class="Apple-tab-span">	</span>An awesome little addon called Edit Instanced Collection.<span class="Apple-converted-space"> </span></p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>WEIGHT TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>How do I reset all weights in Blender?</b></p>
+<p class="p4">Go into edit mode. Select all vertices. Hit Ctrl-G to bring up vertex group specials and select “remove from all”</p>
+<p class="p3"><b></b><br></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>UV TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>Flip or adjust the mesh in general while keeping the image texture static</b></p>
+<p class="p3"><br></p>
+<p class="p4">While in 'Edit' mode, click on 'Options' just below the 'Viewport Shading' modes on the top right corner, then click on 'Correct Face Attributes'. Now when you scale the mesh on the X-axis by -1, it will flip the mesh while keeping the image texture in place.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://blender.stackexchange.com/questions/231662/how-to-convert-uv-to-mesh-in-blender"><b>How to convert UV to mesh in blender</b></a></span><b> - See Update for Blender 3.2 and up</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>Para “rectificar” unas UVs</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">Select a polygon that is already “almost” perfectly orthogonal. If necessary, rotate the entire UV island so that it is close to being orthogonal.</p>
+<p class="p4">Make sure that this polygon is the ACTIVE polygon, so that it has been selected last also in 3D (it is not enough to select it only in UVs).</p>
+<p class="p4">Use RMB with its 4 edges to align them horizontally and vertically.</p>
+<p class="p4">Move to faces, select all (A), RMB &gt; Follow Active Quads</p>
+<p class="p3"><br></p>
+<p class="p4">In addition to that, rarely rectify uvs:</p>
+<p class="p5"><span class="s1"><a href="https://twitter.com/kasperarnklit/status/1788543991668949285">"Using pin and relax is a great way to straighten a lot of UV layouts in #Blender without plugins." / X</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>To center the selected UVs in the middle (or in other places we need)</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">Enable built-in Add-on Magic UV. Now, there is an easy option to align the Cursor to the center of UV space:</p>
+<p class="p4">1. In the menu bar go to UV, at the bottom section of the dropdown menu choose "Align UV cursor", then choose "Center".</p>
+<p class="p4">2. Select the UV island you want to center and press Shift + S to display the cursor wheel menu and choose "Selected to Cursor (Offset)".</p>
+<p class="p3"><br></p>
+<p class="p4">You can also use the UV Position (UV Vertex XY) in the N menu.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Pack Islands Tip</b></p>
+<p class="p4">It’s important to have enough space (Margin) between UV Islands to avoid visual artefacts connected with texture filtering in game engine renders. Here are suggested Margin values to use for different size textures:</p>
+<p class="p3"><br></p>
+<p class="p4">256 - 2px</p>
+<p class="p4">512 - 4px</p>
+<p class="p4">1024 - 8px</p>
+<p class="p4">2048 - 16px</p>
+<p class="p4">4096 - 32px</p>
+<p class="p4">8192 - 64px</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=_Zp1mLsV_ao">Zen UV for Blender - 10 Tips to Transform UVs like a Pro - YouTube</a></span><span class="s4"> </span><span class="s7"><b>— !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! (VERY GOOD)</b></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>CURVES TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://www.youtube.com/watch?v=z4PxYAKVG9Q">Bezier Curves in Blender 3.x - YouTube</a></span> - Fantastic video about drawing with beziers!!!</p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=f53GvpTIO2w">The BEST bezier curve tutorial for new Blender users. - YouTube</a></span><span class="s4"> - <b>Updated version</b> (bajado)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=jO40hu7ELfA&amp;t=0s">NURBS CURVES! Why the heck should I use them?. - YouTube</a></span><span class="s4"> (bajado)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=vJb_UioIelA&amp;t=0s">Part 1, Sardines Can Packaging, tab modeling - YouTube</a></span><span class="s4"> (bajado)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=9xNdPA65dJo">Curves &amp; Curve Modifier in Blender - Beginner Tutorial - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4">For <b>precise curve creation</b> first place your 3D Cursor (Shift-RMB), then Create Point in Object Mode, then Extend using E and XYZ. Use Grid Absolute Snapping and Rotate using R + CTRL</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Hand drawn curves that are CURVES and not Meshes, for use with GN:</b></p>
+<p class="p4">After drawing them make sure that in Spline Data &gt; Shape &gt; Fill Mode is set to “None” (if not, it considers it Mesh).</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>SCULPTING TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=j-GQDMypLDI">Improve Sculpting Performance Instantly | Blender Secrets - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=WB2JYYpFwW8">Perfect displacement with Low Poly meshes</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>NODES TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>Multi-line text on Frames:</b> When you need to display more comprehensive text, frame nodes can display the contents of a <b>text data-block</b>. This is read-only, so you will need to use the Text Editor (Shift-F11) to modify the contents.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p13"><b>From Erindale - It looks VERY useful - WATCH IT AND PUT IT INTO PRACTICE:</b></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=xBM4BPpfbUg">Supercharge Your Geometry Nodes Workflow - Blender Tutorial - YouTube</a></span><span class="s4"> (BAJADO)</span></p>
+<p class="p4">I'm going to show you my special technique that opens the door to infinitely more complex, more integrated procedural workflows in Blender. Super easy to do. Super effective.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/genesis_2303/status/1838629568011198574?s=12">Control and animate growing structures (like opening flowers) using Geometry Nodes by Cartesian Caramel</a></span></p>
+<p class="p5"><span class="s1"><a href="https://x.com/genesis_2303/status/1838859160324022737?s=12">More on the same topic, unbending leaves, using nodes by Higgas and Bradley (see screencaptures)</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://x.com/higgsasxyz/status/1841861413213470896">Distance to edge circle packing </a></span>circle packing. Show setup of nodes. I think it is already implemented in the latest versions.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p13"><b>From Ilir Beqiri - Blender 4.3 required - DO IT WHEN IT COMES OUT:</b></p>
+<p class="p14"><b></b><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilirbeqiri/status/1846887190736863381">Using the newly added For Each Element node I'm instancing a unique text block on each vertex. Drag the points around in edit mode to position the text</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=URoA-cI8vLs">How to Easily Import Node Groups in Blender</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>SHADING &amp; LIGHTING TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>CAUTION:</b></p>
+<p class="p4"><b>Render &gt; Color Management &gt; View Transform</b> defaults to <b>AgX</b>, but in the Blender Studio tutorial they recommend using <b>Filmic</b>. And in fact, pure R, G or B colors look much more realistic using Filmic than AgX (with the latter they become more “pastel”).</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>“Force” and reload all textures</b></p>
+<p class="p4">Press Alt+R with the mouse cursor over the Shader Editor and Blender will re-load all the textures.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.instagram.com/reel/C-GFwfbKkl5/?igsh=OXZhbDI2bWRtOGpk">2 Blender lighting tips</a></span><span class="s4">:</span></p>
+<p class="p3"><br></p>
+<p class="p4">• I think the view transform should be AGX by default, but this is the most realistic I find.</p>
+<p class="p4">• Colour temperature is a great way of creating realistic lighting by using Kelvins - I have a colour temperature tutorial already.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://developer.blender.org/docs/release_notes/4.0/color_management/">Color Management - Blender Developer Documentation</a></span> - The AgX view transform has been added, and replaces Filmic as the default in new files. This view transform provides better color handling in over-exposed areas compared to Filmic.</p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://blender.stackexchange.com/questions/270632/how-can-i-save-a-node-group-for-later-use-without-going-through-a-blend-file">Save a node group for later use<span class="Apple-converted-space"> </span></a></span> (various methods, for all Geometry Nodes, Shading Editor, Compositor)</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=TpDV1DbY434">Shader Control with Geometry Nodes</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=HzFUeOfCJzo">How to create and access custom Node Groups in all your Blender Projects</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blender.stackexchange.com/questions/258449/is-there-an-alternative-to-random-per-island-for-eevee">Is there an alternative to Random per Island for EEVEE?</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blenderartists.org/t/switch-node-for-blender-materials/1487587">Switch Node for Blender Materials - Support / Materials and Textures</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blender.stackexchange.com/questions/161370/is-there-a-way-to-use-logic-operators-in-blender-shader-nodes">A way to use logic operators in Blender Shader nodes?</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://3dmodels.org/blog/displacement-maps-in-blender-tutorial/">Displacement Maps in Blender</a></span></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://www.youtube.com/watch?v=LFFvBn2NaG0">Shampoo Bottle Part 3, UV mapping, texturing, lighting, &amp; rendering - YouTube</a></span> (DOWNLOADED) In the final part he gives very good advice on lighting and shading (changing parameters).</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=LB1_Ls1qkEg">Blender: How to Rotate HDRI / Environment Texture</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=FdjJzOM9DkI">The easiest way to render wireframe</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=38ZC9BnN24U">How to easily make a Wireframe in Blender in 1 Minute</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1836924290119389213?s=12">Bumps are determined by distance, not by strength</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1837224975708631348?s=12">Cleaning the table leaves wipe streaks</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1838264878189924483?s=12">Using voronoi Texture to create a TV screen</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/passivestar_/status/1837877883383025767?s=12">Edging when doing texturing using Ucupaint addon</a></span><span class="s4"> (metal effect on the edges of painted objects)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1839034573537292693?s=12">Edges are crucial for realism</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/quackarooners/status/1838162856019104106">Keep the texture scale consistent when scaling stuff in Object Mode</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1838645096465437126?s=12">Glittering or “brilli-brilli” effect</a></span></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://x.com/jessemiettinen/status/1839391552424247355?s=12">Shader based welding</a></span> (screenshots to recreate it)</p>
+<p class="p5"><span class="s1"><a href="https://blenderesse.gumroad.com/l/weld">Shader based welding</a></span><span class="s4"> (to buy, $1)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1840456560637575178?s=12">The viewport can shine since 4.2</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1840062360683499730?s=12">It's easier when math does the work (great glow or bloom effect)</a></span></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1840179992581263454?s=12">Had never thought of using this technique for RGB</a></span></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://x.com/ilyassel_/status/1840722031823741034?s=12">Those slightly clammy hands left their mark</a></span> (trace left by fingers on a cell phone screen)</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1841121588516630779?s=12">Get realistic lights with IES textures</a></span><span class="s4"> - <a href="https://ieslibrary.com/browse"><span class="s1">IES-Library: Browse</span></a> - <a href="https://www.acuitybrands.com/resources/technical-resources/ies-downloads"><span class="s1">IES Downloads</span></a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1835763374094754242?s=12">Tip for adding clouds and fog using black and white decals</a></span></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://x.com/ilyassel_/status/1810814622787637666?s=12">Mixing Materials</a></span> (terrains) - View entire thread</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/HogneeDZN/status/1810822352172630304">And did you use cycles experimental adaptive subdiv for better displacement here?</a></span><span class="s4"> &gt;&gt;&gt; YES</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1757940287614206030?s=12">Small tip, link textures. They are amazing in Blender</a></span></p>
+<p class="p3"><b></b><br></p>
+<p class="p5"><span class="s1"><a href="https://www.artstation.com/blogs/bjayers/zBNW/how-to-blur-a-texture-in-blender">How to Blur a Texture in Blender</a></span><span class="s4"> (fake &amp; noisy blur, really) - <a href="https://www.youtube.com/watch?v=Ci2FDxsUjyQ"><span class="s1">Another technique, also fake and blur</span></a></span></p>
+<p class="p3"><b></b><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=Sfi5IiV-s6U">8+ Blender Lighting Tips to Improve Your Renders</a></span></p>
+<p class="p3"><b></b><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=WaDkMP5ruh4">Control a Color Ramp Gradient Outside of a Node Group</a></span><span class="s4"> - Another similar tutorial: <a href="https://www.youtube.com/watch?v=IoBOtar9REQ"><span class="s1">FULLY Control a color ramp outside a node group in Blender - YouTube</span></a></span></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>ADD DECALS AND LOGOS</b></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=UBBx-kZcmzI">Adding Decals And Logos To 3D Models (two ways)</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=RTyxITv6Qr4">How To Add Decals Without Shrinkwrap Modifier in Blender</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=LQExGvs_rRQ">How to add DECALS and LOGOS</a></span><span class="s4"> (DOWNLOADED)</span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=rUP8aAG4AQ8">The correct way to make decals in Blender (NO SHRINKWRAP) - YouTube</a></span><span class="s4"> (DOWNLOADED)</span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>CAMERA TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p4"><b>Local Cameras</b></p>
+<p class="p4">The active camera is normally defined on the scene level, so that it’s the same across all 3D Viewports. However, it’s also possible t<b>o make a camera the active one within one Viewport only</b> - <a href="https://docs.blender.org/manual/en/latest/editors/3dview/sidebar.html#bpy-types-spaceview3d-use-local-camera"><span class="s6">LOCAL CAMERA</span></a></p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>Animated Camera Switching</b></p>
+<p class="p4">While a scene contains only one camera by default, it’s possible to have multiple. You can then <b>bind the cameras to specific time points in your animation to create jump cuts showing different viewpoints</b> - <a href="https://docs.blender.org/manual/en/latest/animation/markers.html#bpy-ops-marker-camera-bind"><span class="s6">Animating Cameras</span></a></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>ANIMATION TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://twitter.com/RamenLook/status/1781036280681501052">Map the new ''View in graph editor" to a hotkey to quickly find your curves (tweet with images)</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">1) open up prefs</p>
+<p class="p4">2) go to keymap -&gt; user interface, hit "add new"<span class="Apple-converted-space"> </span></p>
+<p class="p4">3) search graph editor and select</p>
+<p class="p4">4) assign hotkey (i use F) and turn isolate on</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4">Write <b>#frame</b> in any parameter to control that with time. Or, for example, <b>#frame*0.1</b>, or <b>#sin(frame*0.1)</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">(then, open the Drivers Editor to full access)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://x.com/ilyassel_/status/1792710213914763577?s=12">You can use 1 camera per viewport</a></span><span class="s4"> - This is how</span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Using the new PORTAL node (in 4.2)</b></p>
+<p class="p5"><span class="s1"><a href="https://twitter.com/chiu_hans/status/1789287820697506234?s=12">Not just duplicate the scene, ray portal can also make it fractal</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>PREVIEWS &amp; RENDER TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p5"><span class="s1"><a href="https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html">Principled BSDF - Blender 4.2 Manual</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>Custom Noise Reduction Tip</b></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=Dpg0fcqIKhg">3 Tips for better renderings in Blender 3.4 - YouTube</a></span><span class="s4"> (2:20)</span></p>
+<p class="p3"><br></p>
+<p class="p4">WARNING, if you leave the “Use Nodes” checkbox activated in Compositing, you will have to deactivate it if you do not want to use it.</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Fix Pink/Purple Blender Missing Textures Issue</b></p>
+<p class="p4">File &gt; External Data &gt; Find Missing Files &gt; Locate main folder with maps</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
+<p class="p4"><b>Disable background from Camera:</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">EEVEE/CYCLES -<span class="Apple-converted-space">  </span>Render Tab &gt; Film &gt; Enable “Transparent”.</p>
+<p class="p3"><br></p>
+<p class="p4">ALSO, ONLY IN CYCLES - World Tab &gt; Ray Visibility &gt; Disable Camera</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Environment A for reflections &amp; Environment B for the camera background</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p4">Use the Light Path trick:</p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=CUKxtvmY2pk">Blender Eevee - Removing Background in Eevee - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blenderartists.org/t/is-there-a-way-to-have-a-separate-hdri-for-reflections-background-using-eevee/1185932">Is there a way to have a separate HDRI for reflections/background using Eevee? - Support / Lighting and Rendering - Blender Artists Community</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blender.stackexchange.com/questions/178080/can-i-use-an-hdri-for-reflections-only-and-not-have-its-light-affect-the-scene">Cycles - Use an HDRI for reflections only, and not have its light affect the scene</a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=Ti9s4OAe4uc">How to Use Eevee Transparency in Blender 4.2 (Tutorial)</a></span><span class="s4"> - GOOD, considering it's EEVEE</span></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=tHfAxAiT1zs">Realistic Eevee Glass Shader for Blender 4.2 (Tutorial)</a></span><span class="s4"> + LINK to <a href="https://ryankingart.gumroad.com/l/eevee-glass"><span class="s1">Realistic Eevee Glass Shader (Free Download)</span></a></span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://blender.stackexchange.com/questions/308588/burn-into-image-dynamic-note-value">Burn into image: dynamic Note value</a></span><span class="s4"> (using Python)</span></p>
+<p class="p3"><br></p>
+<p class="p4"><span class="s6"><a href="https://blender.stackexchange.com/questions/28740/how-can-i-render-all-render-passes-to-files-in-cycles">Render all render passes to files in Cycles</a></span> (see scene <b>Bose_023_PC.blend</b> &gt; Compositing Tab)</p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Render fast:</b></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=Jv1vk8YWCsQ">The FASTEST Cycles Renders you can get in Blender! - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=4NX2ubz8GW8">5 Tips for FASTER 3D Rendering (Blender Cycles) - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=boMoTlnj9Mw">How to Render Faster In Blender Cycles - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=bjr08a48VK0">Realistic Shading in Blender Explained - YouTube</a></span></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s1"><a href="https://www.youtube.com/watch?v=MzJ-w6Zmpco">Level up your render skills in 10 mins | Advanced Cycles tutorial</a></span><span class="s4"> (VERY GOOD LOOKING, as well as the rest of the channel).</span></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Convert Blender's linear output to logarithmic (Roberto's tip):</b></p>
+<p class="p3"><br></p>
+<p class="p4">Save the EXRs in ACEScg / Linear Rec.709 and then do a simple transformation in Davinci.</p>
+<p class="p4">Transform to ACES (which is the industry standard) and in DaVinci tell it that what goes in is ACES and that you want to see it in sRGB.</p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p8"><b>EXPORTING TIPS<span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></b></p>
+<p class="p4">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p4"><b>Export to Painter</b></p>
+<p class="p4">Use the Collection tab inside the Properties panel, to export only the content of that Collection.</p>
+<p class="p4">Add an FBX and parametrize it. Activate only Geometry and deactivate Animation.</p>
+<p class="p4">Export two versions, LOW and HIGH, after changing the SDS levels for all objects (using ALT).</p>
+<p class="p4">Define the File Path to be saved next to our .blend using:</p>
+<p class="p4">//Bose_020_HIGH.fbx</p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+</body>
+</html>
