@@ -1,1 +1,1 @@
-this is simply my diary including everything I am finding in relation to my Blender learning, as a long time Modo user. Maybe it can be interesting for others who are thinking about starting with this program.
+This is simply my diary including everything I am finding in relation to my Blender learning, as a long time Modo user. Maybe it can be interesting for others who are thinking about starting with this program.
