@@ -18,13 +18,14 @@
     p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #fb0207; min-height: 17.0px}
     p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #0b0c0c; min-height: 17.0px}
     p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px 'Helvetica Neue'; color: #0b0c0c}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #fb0207}
+    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #ffc1a4}
     p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #0000ff}
     p.p14 {margin: 0.0px 0.0px 0.0px 36.0px; text-indent: -36.0px; font: 14.0px Verdana}
     p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #0000fe; min-height: 17.0px}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Verdana}
-    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Verdana; min-height: 19.0px}
-    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #7f7f7f}
+    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Verdana}
+    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Verdana}
+    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px Verdana; min-height: 19.0px}
+    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Verdana; color: #7f7f7f}
     span.s1 {text-decoration: underline ; color: #0000fe}
     span.s2 {font: 12.0px Verdana; color: #000000}
     span.s3 {text-decoration: underline}
@@ -39,7 +40,7 @@
 </head>
 <body>
 <p class="p1"><b></b><br></p>
-<p class="p2"><i>Compiled by </i><a href="https://etereaestudios.com/"><span class="s1"><i>Cristóbal Vila</i></span></a><i> - Latest update: March 19, 2025</i></p>
+<p class="p2"><i>Compiled by </i><a href="https://etereaestudios.com/resources/blender-resources/"><span class="s1"><i>Cristóbal Vila</i></span></a><i> - Latest update: April 24, 2025</i></p>
 <p class="p3"><b><i></i></b><br></p>
 <p class="p4"><b>BLENDER </b><a name="TOP"></a><b>TIPS</b></p>
 <p class="p3"><br></p>
@@ -97,7 +98,9 @@
 /Users/cristobal/Library/Application Support/Blender/4.3</p>
 <p class="p3"><br></p>
 <p class="p2"><b>Windows:</b></p>
-<p class="p2">cristobal › AppData › Roaming Blender Foundation › Blender › 4.3</p>
+<p class="p2">cristobal › AppData* › Roaming Blender Foundation › Blender › 4.3</p>
+<p class="p3"><br></p>
+<p class="p2">(*) To locate this in Windows go to Search field (bottom-left), write “<b>Execute</b>” (Ejecutar) and then write “<b>%appdata%</b>”</p>
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
@@ -136,7 +139,44 @@
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
+<p class="p2"><b>ABOUT ASSETS (Link / Append / Append Reuse Data)</b></p>
+<p class="p5"><span class="s3"><a href="https://discord.com/channels/314131871376080906/734779545454116918/1349676093442887710">Discussion from Discord Erindale.xyz</a></span></p>
 <p class="p3"><br></p>
+<p class="p2"><i>I have an GN Asset Group, that I have imported in the Scene, and modified, and renamed.<br>
+When I try to add the original Asset, Blender adds the one I have modified. Is there any way to prevent this? I want to add the original version.<br>
+If I drag it to Scene, it doesn't add the original, from the Asset Browser, but the one I have in the scene, which I have edited.<br>
+If I add it to empty scene, it works as expected.</i></p>
+<p class="p3"><br></p>
+<p class="p2">Top of the asset menu changes how the assets are linked / append: if you change it to <b>Append</b> it should append a whole new datablock rather than re-using. Otherwise you could also mark the modified group no longer as an asset</p>
+<p class="p2">(that's why I always suggest to use link. append and reuse is so evil)</p>
+<p class="p3"><br></p>
+<p class="p2"><i>If I use Linked, will the Asset change if I edit it in Library file?</i></p>
+<p class="p2"><i>If so, does it update automatically, or do I have to refresh it somehow?<span class="Apple-converted-space"> </span></i></p>
+<p class="p2"><i>Why they are evil?<span class="Apple-converted-space"> </span></i></p>
+<p class="p2"><i>Asking because that is what I need now. Is there something that I should be aweare of?</i></p>
+<p class="p3"><br></p>
+<p class="p2">Blender assets currently is hard-coded "append and reuse" (AAR), such as the hair node groups.</p>
+<p class="p2">There was a mistake in the hair node group. BF fixrd it. However because it's using AAR, even if you update your blender, the original broken node group will be used.</p>
+<p class="p2">And because it's AAR preventing a second duplicate copy, the group node you pull from the asset library will remain broken too</p>
+<p class="p2">This means: the bug fixed in the node group blender side can't be transferred to your file.</p>
+<p class="p2">You have to manually import the asset somehow to create a duplicate besides the broken one (<a href="https://projects.blender.org/blender/blender/issues/111354#issuecomment-1012992"><span class="s1">LINK</span></a>)</p>
+<p class="p3"><br></p>
+<p class="p2"><i>From where I can find this preference setting?</i></p>
+<p class="p3"><br></p>
+<p class="p2">Where you set the asset library folder.</p>
+<p class="p2">you can decide whether to use either method for each folder</p>
+<p class="p2">Note: the benefit of "link":</p>
+<p class="p2">It saves blender size, because data is from another blender file.</p>
+<p class="p2">You can choose to localize it if you want.</p>
+<p class="p2">Bug fix/improvements in the original file can be updated through link.</p>
+<p class="p3"><br></p>
+<p class="p2">The downside:</p>
+<p class="p2">becaude asset is not local inside the blender file, if you use render farm, you will have to localize them first. It's an easy process in the outliner though<span class="Apple-converted-space"> </span></p>
+<p class="p2">BF is currently designing "embedding" which is a midpoint between link and append to solve previously mentioned issue</p>
+<p class="p3"><br></p>
+<p class="p2">You can also decide when you drag it in or per session at the top of the asset browser.</p>
+<p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
 <p class="p3"><br></p>
 <p class="p3"><br></p>
@@ -166,10 +206,31 @@
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
-<p class="p2">To change the ACTIVE ISLAND (between several “islands” of elements, meshes or curves) when in EDIT mode:</p>
+<p class="p2"><b>Quickly Switch Between Different Objects in Edit, Sculpt, Weight or Draw Mode</b></p>
+<p class="p3"><br></p>
+<p class="p2">Just place you mouse over the other object and press <b>Alt-Q</b></p>
+<p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p2"><b>To change the ACTIVE ISLAND when in EDIT mode: </b>(between several “islands” of elements, meshes or curves)</p>
 <p class="p2">Deselect all.</p>
 <p class="p2">Select an ELEMENT of the ISLAND that you want to make active.</p>
 <p class="p2">Press TAB twice, to convert to Object Mode and then to Edit Mode.</p>
+<p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p2"><b>How to directly draw a handmade Curve onto a mesh with the Draw tool</b></p>
+<p class="p2">Add Curve object, switch to Edit mode, Delete curve, take Draw tool (free-hand pen), under Tool properties (N) switch to Surface, draw a shape over your model</p>
+<p class="p2">Be sure Curve object is set to 3D type</p>
+<p class="p3"><br></p>
+<p class="p2"><b>Also, to project a premade curve (any kind) to a surface</b></p>
+<p class="p2">Select all points on the path,</p>
+<p class="p2">Navigate to a POV where you’re looking past the curve to the object,</p>
+<p class="p2">Turn on Snap,</p>
+<p class="p2">Enable Face Project</p>
+<p class="p2">Press G and Enter</p>
+<p class="p3"><br></p>
+<p class="p2"><b>Also, consider using Shrinkwrap Modifier, for a live projection</b></p>
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
@@ -184,12 +245,22 @@
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
-<p class="p2">Some <a href="https://discord.com/channels/267112699517861888/1276613499878903808/1311976887228043284"><span class="s1">tips from a Blender veteran</span></a> about <b>changing units and scale</b> (to take in consideration, just in case, since it really seems that Blender is not good working with small units):</p>
+<p class="p2">Some <a href="https://discord.com/channels/267112699517861888/1276613499878903808/1311976887228043284"><span class="s1">tips from a Blender veteran</span></a> (Discord) about <b>changing units and scale</b> to take in consideration, just in case, since it really seems that Blender is not good working with small units:</p>
 <p class="p3"><br></p>
-<p class="p2"><b><i>Don't change units</i></b><i> at all, and </i><b><i>don't change scale</i></b><i> - you will run into problems.</i></p>
+<p class="p2"><b><i>(NOW I DOUBT ABOUT THIS ADVICE - TO STUDY) Don't change units</i></b><i> at all, and </i><b><i>don't change scale</i></b><i> - you will run into problems.<span class="Apple-converted-space"> </span></i></p>
 <p class="p2"><i>In fact, it's probably best to avoid metric system and </i><b><i>just use pure units</i></b><i>. The reason for that is that then you can easily copy-paste values without worrying about units.</i></p>
 <p class="p2"><i>For exporting and compatibility with other projects assume base metric units (this means kg for weight, otherwise the units without prefixes)</i></p>
+<p class="p2"><i>And if you really want a fine-tuned sliding, use a "multiply 0.001" node or something to similar effect</i></p>
 <p class="p3"><br></p>
+<p class="p2">In any case, take a look to this other tutorial, if working in mm is mandatory: <a href="https://www.youtube.com/watch?v=kep-Fl_XcrI"><span class="s1">Blender 3.0, Working in Millimeters for modeling small items - YouTube</span></a></p>
+<p class="p2"><span class="Apple-tab-span">	</span>Scene / Units / Length / <b>Millimeters</b></p>
+<p class="p2"><span class="Apple-tab-span">	</span>Scene / Units / Unit Scale / <b>0.001</b></p>
+<p class="p2"><span class="Apple-tab-span">	</span>3D Viewport Overlays / Scale / <b>0.01</b></p>
+<p class="p2"><span class="Apple-tab-span">	</span>N Panel / View / Clip Start / <b>0.001 mm</b></p>
+<p class="p2"><span class="Apple-tab-span">	</span>N Panel / View / Clip End / <b>10000 mm</b></p>
+<p class="p2"><span class="Apple-tab-span">	</span>Camera Data / Lens / Clip End / <b>10000 mm</b></p>
+<p class="p3"><br></p>
+<p class="p2"><b>UPDATE:</b> doing those steps described in previous tutorial, it seems that all is working fine (to further study)</p>
 <p class="p12">TO-DO: reunite all those glitches that occurs here and there by using Millimeters instead of Meters as units, to send as a well documented <b>bug report</b>. Because all this is a PITA.</p>
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
@@ -221,15 +292,19 @@
 <p class="p5"><span class="s3"><a href="https://www.instagram.com/reel/C9H1PEhMbUD">Deform an object to follow the surface of another, using Shrink Wrap, but avoid flattening using a Lattice</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/cmzw_/status/1830545955491553774">Draw curves on surfaces</a></span></p>
 <p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=KGgYQH5A2eQ">Fix crappy surface shading with Data Transfer</a></span> - by Christopher 3D - <b>FANTASTIC!!!</b> - Use the Data Transfer modifier to fix surface shading irregularities that can arise from difficult modeling scenarios</p>
+<p class="p5"><span class="s3"><a href="https://www.instagram.com/reel/DIRG6l-PnV-">Flower Modeling Hack – Cloth Simulation + Sphere Method ⁣- A quick Blender cloth physics tutorial</a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=SDkkQvWzg7Y&amp;t=36s">How to use instances the right way</a></span><span class="s6"> (downloaded)</span></p>
+<p class="p2"><span class="s1"><a href="https://www.artstation.com/artwork/0n93EV">How to use Ngons</a></span> - I made this guide with the goal of de-mystifying and de-stigmatizing the usage of Ngons within the 3d industry</p>
 <p class="p5"><span class="s3"><a href="https://blender.stackexchange.com/questions/302797/is-there-a-way-to-increase-the-thickness-of-an-empty">Is there a way to Increase the "Thickness" of an Empty?</a></span><span class="s6"> (answer is NO) - Alternatives</span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=goJ4LVHXkC4">Loop tools Curve Tool : Panel Beating</a></span><span class="s6"> - <b>REALLY GREAT TIPS HERE!!!</b></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=Xw2ELWEk27M">My Sacred Vector Displacement Tip</a></span></p>
 <p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=w3FkHDPvp4o">Render Equations and Code Blocks in Blender</a></span> - Tutorial, including link to download free add-on to import Typst files</p>
-<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=SlKYTVnOoOA">Setting the Scale to Millimeters for 3d modeling Small Object Modeling</a></span><span class="s6"> - Setting up Blender to work in millimeters for jewelry design</span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=kep-Fl_XcrI">Blender 3.0, Working in Millimeters for modeling small items - YouTube</a></span><span class="s6"> - Setting up Blender to work in millimeters for jewelry design</span></p>
+<p class="p2"><span class="Apple-tab-span">	</span><a href="https://www.youtube.com/@watchesandjewelry/videos"><span class="s1">The Jewelry and Watch Bench</span></a> - Interesting channel for really small models design (jewelry, swatches, etc)</p>
 <p class="p5"><span class="s3"><a href="https://www.instagram.com/reel/C-Vc_MqPGNS">Snap Face Project + Align Rotation to Target will “sit” our selected object in the surface of other, rotating accordingly and all interactive</a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/shorts/s9l68RY5vLM">Surface patch from Curves</a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=ZdNEqv6M7p8">The Easy Way to Fix Ugly Shading in Blender</a></span><span class="s6"> - Specially with high dense n-gons</span></p>
+<p class="p2"><span class="s1"><a href="https://x.com/FR3NKD/status/1902371952494338215">Boolean modeling and SDS without ngons</a></span> - Useful for non extremely complex shapes</p>
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
@@ -271,7 +346,7 @@
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
-<p class="p2"><b>Fix Near Clip on Small Models</b></p>
+<p class="p2"><b>Fix Near Clip on extremely small or large models</b></p>
 <p class="p3"><br></p>
 <p class="p2">N (Side Panel) &gt; View &gt; View &gt; Clip Start / Clip End (adjust both)</p>
 <p class="p3"><br></p>
@@ -464,9 +539,102 @@
 <p class="p3"><br></p>
 <p class="p6"><span class="s4"><a name="RIGGING"></a></span><b>RIGGING [ </b><a href="#TOP"><span class="s1"><b>TOP</b></span></a><b> ]</b></p>
 <p class="p3"><br></p>
-<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=vZaNZhAoMts&amp;t=0s">Setting Up an IK Arm Rig - YouTube</a></span></p>
 <p class="p3"><br></p>
 <p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p16"><b>BASIC RIGGING PROCEDURE AND TIPS</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p5"><span class="s6"><b>All learned from this great tutorial:</b><br>
+<a href="https://www.youtube.com/watch?v=iZBLtooU2Cs"><span class="s3">Let's Learn Blender!: Character Rigging 101 (Armatures, Bones, &amp; IK)</span></a></span></p>
+<p class="p3"><br></p>
+<p class="p2">Add a first Bone using Add &gt; Armature</p>
+<p class="p2">Modify this and further Bones in Armature <b>EDIT</b> Mode</p>
+<p class="p2">For Bones is a good thing to use the Move Gizmo (to select and move both the Start/Root/<b>Head</b> &amp; End/Tip/<b>Tail</b> Joints and the Bone <b>Body</b> itself)</p>
+<p class="p3"><br></p>
+<p class="p2">Activating the Armature &gt; Viewport Display &gt; <b>Axes</b> checkbox will show local axes for each bone’s tip.</p>
+<p class="p2">The <b>Y axis</b> is always aligned <b>along the bone</b>, oriented from root to tip, this is the “roll” axis of the bones.</p>
+<p class="p2">Also, showing the <b>Names</b> for bones is a good thing. And enable the <b>In Front</b> option.</p>
+<p class="p3"><br></p>
+<p class="p2">Select the Bone Tip, press E to extrude and creating a new child bone</p>
+<p class="p2">Selecting the Body you can RMB &gt; Subdivide the bone in two ones (parent and child)</p>
+<p class="p3"><br></p>
+<p class="p2">Being in EDIT mode you can replace any Root, Body or Tip, freely.</p>
+<p class="p3"><br></p>
+<p class="p2">Press F2 to rename bones. As “spine1” or “legUp.R”</p>
+<p class="p2">Better to use lowerCase.L and lowerCase.R structure for naming.</p>
+<p class="p3"><br></p>
+<p class="p2">Use <b>.L </b>and <b>.R</b> suffixes to naming <b>Left</b> and <b>Right</b> bones (this allows automatic recognition for symmetrize)</p>
+<p class="p3"><br></p>
+<p class="p2">Use <b>Cmd/Ctrl-R</b> to manually Roll a bone. Look at N panel &gt; Item for more details (with a bone selected)</p>
+<p class="p3"><br></p>
+<p class="p2">While in Armature <b>EDIT</b> we can see the Head &amp; Tail coordinates for each bone.</p>
+<p class="p2">Both in Armature <b>OBJECT</b> or <b>POSE</b> mode all standard coordinates will be zeroed.</p>
+<p class="p2">While in <b>POSE</b> mode we can change (and animate) the BONE coordinates. Caution: do not change the <b>OBJECT</b> coordinates.</p>
+<p class="p3"><br></p>
+<p class="p2">No matter how change the Pose, you can return to default by Pose &gt; Clear Transform &gt; All (added to Quick Favorites)</p>
+<p class="p3"><br></p>
+<p class="p2"><b>To add or replace Parent for a given Bone:</b> go back to <b>EDIT</b> mode, select bone to be child, then Shift select the one to be parent, and <b>Cmd/Ctrl-P</b> and choose <b>Keep Offset</b></p>
+<p class="p3"><br></p>
+<p class="p2"><b>TO CREATE IK CONTROLLERS</b></p>
+<p class="p3"><br></p>
+<p class="p2">First DUPLICATE a given bone in place (in <b>EDIT</b> mode), make it LONGER (N panel, Item), and UNPARENT going to Bone &gt; Relations &gt; Parent (click that small “X”)</p>
+<p class="p2">Also, disable the Deform checkbox, below. Call it something like <b>hand_IK.L</b></p>
+<p class="p3"><br></p>
+<p class="p2">Then go to <b>POSE</b> mode, select the PREVIOUS bone, Bone Constraints &gt; Add Bone Constraint &gt; Inverse Kinematic</p>
+<p class="p2">Choose for Target &gt; <b>Armature</b></p>
+<p class="p2">Then choose for Bone &gt; <b>hand_IK.L</b> (or whatever was your chosen name) It will become soft-yellow</p>
+<p class="p2">Change Chain <b>Length</b> to something appropriate (like 2, 3 or whatever numbers of bones must be considered for the IK operation)</p>
+<p class="p3"><br></p>
+<p class="p2">Also: while in <b>POSE</b> mode select the original hand.L go to Bone Constraints &gt; Add Bone Constraint &gt; Copy Rotation</p>
+<p class="p2">Choose for Target &gt; <b>Armature</b></p>
+<p class="p2">Then choose for Bone &gt; <b>hand_IK.L</b> (or whatever was your chosen name) It will become soft-green</p>
+<p class="p3"><br></p>
+<p class="p2"><b>TO CREATE A POLE VECTOR FOR AN IK CHAIN</b></p>
+<p class="p3"><br></p>
+<p class="p2">Being in <b>EDIT</b> mode, select a Tail for the Bone for the Elbow, press E to extrude along convenient direction (back, for an arm). Then select this new bone and UNPARENT going to Bone &gt; Relations &gt; Parent (click that small “X”)</p>
+<p class="p3"><br></p>
+<p class="p2">Then you can move away this special bone (to be used as Pole Vector). Name it <b>arm_PV.L</b> (or whatever you find convenient)</p>
+<p class="p3"><br></p>
+<p class="p2">Then change to <b>POSE</b> mode, go back to the bone where you added the IK Constraint (will be soft yellow)</p>
+<p class="p2">Just below the Target and Bone for IK, you will see a “Pole Target” field. Choose Armature. A new Bone empty field will appear, choose the <b>arm_PV.L</b> special Pole Vector bone.</p>
+<p class="p3"><br></p>
+<p class="p2">Your armature will rotate in an strange way: change the <b>Pole Angle</b> to a convenient angle (change the pose to create a more evident flexion, if necessary).</p>
+<p class="p3"><br></p>
+<p class="p2">Remember to disable “Deform” for both PoleVectors and IK special bones</p>
+<p class="p3"><b></b><br></p>
+<p class="p2"><b>SPECIAL COLLECTIONS FOR BONES</b></p>
+<p class="p3"><br></p>
+<p class="p2">Go to Armature &gt; Bone Collections to create new Collections to assign your bones. For example “VisibleBones”, “HiddenBones”, “PoleVectors”, etc…</p>
+<p class="p2">Then, you can use <b>M</b> key to move bones between Collections. And Hide or Solo those Collections.</p>
+<p class="p3"><br></p>
+<p class="p2">Don’t forget to create a general “<b>Controller</b>” bone (at bottom) to make all unparented bones children of it (like PVs, IKs and top hierarchy bones) - Disable Deform on this special bone</p>
+<p class="p3"><br></p>
+<p class="p2"><b>SYMMETRIZE:</b> Being in EDIT mode, select ALL your bones (both the marked with .L but also the central ones) and choose Symmetrize from RMB or Armature menu</p>
+<p class="p3"><br></p>
+<p class="p2"><b>TO BIND YOUR ARMATURE TO YOUR MESH</b></p>
+<p class="p3"><br></p>
+<p class="p2">Important: be sure to temporarily disable Edit &gt; <b>Lock Object Modes</b>. Also disable X-Ray mode (if it was enabled)</p>
+<p class="p2">Then, make sure that the latest time you selected your armature was in <b>POSE</b> mode.</p>
+<p class="p2">Enable <b>OBJECT</b> mode, select your mesh &gt; Then press <b>SHIFT</b> and select your armature (it should change automatically to <b>POSE</b> mode) &gt; Also, Select any bone, it doesn’t matter.</p>
+<p class="p2">Finally press <b>Cmd/Ctrl-P</b> (like to Parent) but mark <b>“With Automatic Weights”</b></p>
+<p class="p3"><br></p>
+<p class="p2">In case that you want a Bone to control (rigidly) a mesh part, make the same steps but chose<b> “Bone”</b> after parent command.</p>
+<p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p2"><span class="s1"><a href="https://docs.blender.org/manual/en/latest/addons/rigging/rigify/index.html">Rigify - Blender 4.4 Manual</a></span> (for the moment I prefer to have it <b>disabled</b>)</p>
+<p class="p3"><br></p>
+<p class="p2">Rigify helps automate the creation of character rigs. It is based around a building-block approach, where you build complete rigs out of smaller rig parts (e.g. arms, legs, spines, fingers…)</p>
+<p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=vZaNZhAoMts&amp;t=0s">Setting Up an IK Arm Rig</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=_5H-vXYotUU">The Secret to Preserve Volume in Blender</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=kmFt4-SkKIo">Simple IK Solver - Tutorial for Articulating Single Plane Mechanics with Geometry Nodes</a></span></p>
+<p class="p5"><span class="s3"><a href="https://docs.blender.org/manual/en/latest/animation/constraints/tracking/spline_ik.html">Spline IK Constraint - Blender 4.4 Manual</a></span></p>
+<p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
 <p class="p3"><br></p>
 <p class="p6"><span class="s4"><a name="UVs"></a></span><b>UVs [ </b><a href="#TOP"><span class="s1"><b>TOP</b></span></a><b> ]</b></p>
@@ -533,6 +701,13 @@
 <p class="p3"><br></p>
 <p class="p3"><br></p>
 <p class="p3"><br></p>
+<p class="p6"><span class="s4"><a name="PAINTING"></a></span><b>PAINTING [ </b><a href="#TOP"><span class="s1"><b>TOP</b></span></a><b> ]</b></p>
+<p class="p3"><br></p>
+<p class="p5"><span class="s3"><a href="https://x.com/mvjagaimo/status/1910379677832872196?s=12">You can fix this annoying issue with one click and save yourself many hours of retexturing</a></span><span class="s6"> - Fix issue painting at border of an object</span></p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
+<p class="p3"><br></p>
 <p class="p6"><span class="s4"><a name="NODES"></a></span><b>NODES [ </b><a href="#TOP"><span class="s1"><b>TOP</b></span></a><b> ]</b></p>
 <p class="p3"><b></b><br></p>
 <p class="p2"><span class="s1"><a href="https://docs.blender.org/manual/en/latest/interface/controls/nodes/parts.html"><b>Node Parts - Blender Manual</b></a></span><b> - Sockets Colors - Valid Conversions</b></p>
@@ -545,6 +720,16 @@
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
 <p class="p2">Way to <b>retype “-inf” and “inf”</b> once we have clicked on these fields: write <b>-4e44</b> and <b>4e44</b></p>
+<p class="p3"><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><br></p>
+<p class="p2"><b>Tips by Kimmo on Random Value &amp; Repeat Zone</b></p>
+<p class="p3"><br></p>
+<p class="p2">Random Value outputs a <b>Field</b> by default. If we need <b>single value</b>:<span class="Apple-converted-space"> </span></p>
+<p class="p2">Link a Integer node to ID input, so it will be single Random value, not a field.</p>
+<p class="p3"><br></p>
+<p class="p2">If you want to have own random value for each iteration, use the Iteration output from the random node as a Group. And remove that link that goes in the Repeat node.</p>
+<p class="p2">You can also remove the link if you want to use single Random value for all iterations, there are no need to wire that through Repeat node. You can plug the random value straight to the Math Multiply node</p>
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
@@ -634,10 +819,12 @@
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=75NVQzmbZ9w">Alternative to Instancing in Blender</a></span> - By Redjam9 - Use the For Each Element Zone in geometry nodes <b>to get a unique object for each copy</b></p>
 <p class="p2"><span class="s1"><a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html">Attributes - Blender 4.3 Manual</a></span> - Important to understand <b>Attribute Domains</b> and <b>Boolean Domain Interpolation</b></p>
 <p class="p5"><span class="s3"><a href="https://x.com/genesis_2303/status/1838629568011198574?s=12">Control and animate growing structures (like opening flowers) using Geometry Nodes by Cartesian Caramel</a></span></p>
 <p class="p2"><span class="s1"><a href="https://x.com/quackarooners/status/1889651336595030283">Cumulative Trim Curve</a></span> by Quackers - Instead of trimming curves simultaneously, it trims them one after another. Useful for "drawing" text or svgs.</p>
 <p class="p2"><span class="s1"><a href="https://blender.stackexchange.com/questions/258246/curve-to-mesh-with-uvs-in-blender-3-x/323324#323324">Curve to Mesh with UVs in Blender</a></span> - Interesting topic with lots of tips and info</p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=HyW54cI8Qdo">Delaunay Triangulation using GN</a></span> - Tutorial and link to scene, by Seanterelle</p>
 <p class="p2"><span class="s1"><a href="https://x.com/higgsasxyz/status/1841861413213470896">Distance to edge circle packing </a></span>circle packing. Show setup of nodes. I think it is already implemented in the latest versions.</p>
 <p class="p2"><span class="s1"><a href="https://discord.com/channels/314131871376080906/1233474640723185684">Edge Loops / Face Loops in Geometry Nodes</a></span> - (Discord link) - An interesting threat started by Shmuel The Noder in erindale.xyz Discord</p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=t1WDulM7wBU">Fix UVmap on profile curve in Geometry nodes</a></span><span class="s6"> - <b>Not</b> the typical trim along sweep method</span></p>
@@ -649,13 +836,21 @@
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=URoA-cI8vLs">How to Easily Import Node Groups in Blender</a></span></p>
 <p class="p2"><span class="s1"><a href="https://blender.stackexchange.com/questions/327708/fill-mesh-polys-in-geometry-nodes">How to fill mesh polys in Geometry Nodes</a></span> - Answer with screen-captured nodes also includes the .blend file</p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=0awxRsDK2uc">Implementing shape keys in Geometry Nodes</a></span><span class="s6"> - Shape Keys = Morph States</span></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=z11px5n6hc0">Inflated Text</a></span> - Tutorial and link to scene, by Seanterelle</p>
 <p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=TTgtrqO1llw&amp;t=692s">Loft Curves Properly - Geometry Nodes in Blender 3.6</a></span> - By Erindale - Link goes directly to <b>Flipping Indices</b> (if running right to left, to reorder them to run bottom to top... 0,1,2,3, then 4,5,6,7 etc)</p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=549UXbGAw-k">Making UV Maps in Geometry Nodes</a></span></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=9qOKu5BW9NE">Matrix Nodes in Blender 4.2</a></span> - The basics behind matrices and how they are used to make transformations in Blender</p>
 <p class="p5"><span class="s3"><a href="https://x.com/genesis_2303/status/1838859160324022737?s=12">More on the same topic, unbending leaves, using nodes by Higgas and Bradley (see screencaptures)</a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=zQTTJv0zF8w">New FOR EACH in Blender 4.3 Explanied</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=eBNolzjnHtE">Particle Flow Animation Loop in Blender</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=xAlagQT5k04">Procedural shrinkwrap modifier for curves</a></span><span class="s6"> - Also: Discussion on Discord Erindale.XYZ on <a href="https://discord.com/channels/314131871376080906/734779545454116918/1349725514499100682"><span class="s3">how I can control the tilt of the curve based on the normal of the mesh</span></a></span></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=16dpUQ57Xv8">Progress on a new Bevel Geometry Node</a></span> - Work has begun on a remake of Bevel as a Geometry Node. As well as rewriting in C++ for better future maintainability…</p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=enzcwSTX5YU">Rig with Geometry Nodes? Using a node tree to drive an armature in Blender</a></span></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=6Dbb-pOz3us&amp;t=548s"><b>Road generator with GN and SDS solving T intersections</b></a></span><b> - To study and check if this can be useful for non-ribbon modeling (something like tree branches)</b></p>
+<p class="p2"><span class="s1"><a href="https://blender.stackexchange.com/questions/253173/selectively-join-points-using-geometry-nodes/293797#293797">Selectively join points using geometry nodes</a></span> - Find the nearest point (BTW, there's a special node coming to find nearest element not counting self), but also multiple nearest points</p>
 <p class="p2"><span class="s1"><a href="https://x.com/khellstr3d/status/1888878408983081432">Simple setup to grow Face selection by Khellstr</a></span> - See response by Quackers explaining WHY this occurs.</p>
 <p class="p2"><span class="s1"><a href="https://x.com/higgsasxyz/status/1865421595482689621?s=12">Snow Crystal Growth Simulation</a></span> - Video + Screen captures for setup</p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=v-X02qFTF0Y">Sorting Vertices Tips and Tricks</a></span> - How to sort elements to control how the geometry is processed, how to reorder with your own logic, and how to specify multiple sort criteria</p>
 <p class="p2"><span class="s1"><a href="https://curiousblends.blogspot.com/2023/11/the-evil-domain-node.html">The "Evil" Domain Node | Curious Blends</a></span> - <b>Evaluate on Domain</b> - Some other interesting topics on Geometry Nodes here…</p>
 <p class="p5"><span class="s6"><span class="Apple-tab-span">	</span><a href="https://curiousblends.blogspot.com/2023/11/the-evil-domain-node-continued.html"><span class="s3">The "Evil" Domain Node (continued) | Curious Blends</span></a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/khellstr3d/status/1864443182903124366?s=12">Using Repeat Zone to "automatically" select 4 curves for patches (patch group is from the Higgas Nodes)</a></span><span class="s6"> - By Kimmo</span></p>
@@ -694,6 +889,10 @@
 <p class="p3"><br></p>
 <p class="p6"><span class="s4"><a name="SHADING%20&amp;%20LIGHTING"></a></span><b>SHADING &amp; LIGHTING [ </b><a href="#TOP"><span class="s1"><b>TOP</b></span></a><b> ]</b></p>
 <p class="p3"><b></b><br></p>
+<p class="p2"><span class="s1"><a href="https://docs.blender.org/manual/en/latest/render/materials/assignment.html"><b>Materials assignment - Blender Manual</b></a></span><b> (specially important the LINK section)</b></p>
+<p class="p3"><b></b><br></p>
+<p class="p2">---------------------------------------------------------------------------------------------------------</p>
+<p class="p3"><b></b><br></p>
 <p class="p2"><b>IMPORTANT: </b>for <b>Normal Maps</b> change the Color Space from sRGB (or whatever) to <b>Non-Color</b></p>
 <p class="p3"><b></b><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
@@ -723,27 +922,34 @@
 <p class="p5"><span class="s3"><a href="https://blender.stackexchange.com/questions/161370/is-there-a-way-to-use-logic-operators-in-blender-shader-nodes">A way to use logic operators in Blender Shader nodes?</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/HogneeDZN/status/1810822352172630304">And did you use cycles experimental adaptive subdiv for better displacement here?</a></span><span class="s6"> &gt;&gt;&gt; YES</span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=7HeDHWsotkk">Anisotropy in Blender 4.3 - YouTube</a></span><span class="s6"> by Christopher 3D</span></p>
+<p class="p5"><span class="s3"><a href="https://x.com/pitiwazou/status/1912802347505377501">Bevel Shader TIP onCycles</a></span></p>
+<p class="p5"><span class="s3"><a href="https://x.com/pitiwazou/status/1912905826211156183?s=12">Bevel Shader - Another way is to use Geometry Nodes. It's much simpler and works with one shader per object</a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=LB1_Ls1qkEg">Blender: How to Rotate HDRI / Environment Texture</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1836924290119389213?s=12">Bumps are determined by distance, not by strength</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1837224975708631348?s=12">Cleaning the table leaves wipe streaks</a></span></p>
 <p class="p2"><span class="s1"><a href="https://developer.blender.org/docs/release_notes/4.0/color_management/">Color Management - Blender Developer Documentation</a></span> - The AgX view transform has been added, and replaces Filmic as the default in new files. This view transform provides better color handling in over-exposed areas compared to Filmic.</p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=WaDkMP5ruh4">Control a Color Ramp Gradient Outside of a Node Group</a></span><span class="s6"> - Another similar tutorial: <a href="https://www.youtube.com/watch?v=IoBOtar9REQ"><span class="s3">FULLY Control a color ramp outside a node group in Blender - YouTube</span></a></span></p>
 <p class="p5"><span class="s3"><a href="https://3dmodels.org/blog/displacement-maps-in-blender-tutorial/">Displacement Maps in Blender</a></span></p>
+<p class="p2"><span class="s1"><a href="https://x.com/ilyassel_/status/1904689949598773376">Displacement in real time (for Blender 4.5)</a></span> - Test by Ilyasse - See node tree on same thread</p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1839034573537292693?s=12">Edges are crucial for realism</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/passivestar_/status/1837877883383025767?s=12">Edging when doing texturing using Ucupaint addon</a></span><span class="s6"> (metal effect on the edges of painted objects)</span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1841121588516630779?s=12">Get realistic lights with IES textures</a></span><span class="s6"> - <a href="https://ieslibrary.com/browse"><span class="s3">IES-Library: Browse</span></a> - <a href="https://www.acuitybrands.com/resources/technical-resources/ies-downloads"><span class="s3">IES Downloads</span></a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1838645096465437126?s=12">Glittering or “brilli-brilli” effect</a></span></p>
 <p class="p2"><span class="s1"><a href="https://x.com/cmzw_/status/1855479571468222495">Hacked procedure to get blur using Shading Nodes</a></span> (see second post doing it horizontally first then vertical) - <b>Needed Blender 4.4</b></p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1840179992581263454?s=12">Had never thought of using this technique for RGB</a></span></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=0r-cGjVKvGw">How to Bake Perfect Normals in Blender</a></span> - Blender tutorial showing you how to bake a normal map from a high poly model, to a low poly mode (includes starter file)</p>
 <p class="p5"><span class="s3"><a href="https://www.artstation.com/blogs/bjayers/zBNW/how-to-blur-a-texture-in-blender">How to Blur a Texture in Blender</a></span><span class="s6"> (fake &amp; noisy blur, really) - <a href="https://www.youtube.com/watch?v=Ci2FDxsUjyQ"><span class="s3">Another technique, also fake and blur</span></a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=HzFUeOfCJzo">How to create and access custom Node Groups in all your Blender Projects</a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=38ZC9BnN24U">How to easily make a Wireframe in Blender in 1 Minute</a></span></p>
-<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=v8LdfvwDKVY">How to make beautiful water shaders in blender - YouTube</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=v8LdfvwDKVY">How to make beautiful water shaders in blender</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=Op73b27ng5g">How to Use Light Groups in Blender</a></span></p>
 <p class="p5"><span class="s3"><a href="https://blender.stackexchange.com/questions/258449/is-there-an-alternative-to-random-per-island-for-eevee">Is there an alternative to Random per Island for EEVEE?</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1840062360683499730?s=12">It's easier when math does the work (great glow or bloom effect)</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/quackarooners/status/1838162856019104106">Keep the texture scale consistent when scaling stuff in Object Mode</a></span></p>
 <p class="p2"><span class="s1"><a href="https://www.instagram.com/p/DEVEBzxu6EG/">Keyframe DESIGNER exposed parameters using the Substance add-on in your DCC of choice</a></span> - Here Wes McDermott uses Cinema4D add-on, but this should be also possible with Blender add-on -&gt; TO TEST</p>
 <p class="p2"><span class="s1"><a href="https://x.com/ilyassel_/status/1810814622787637666?s=12">Mixing Materials</a></span> (terrains) - View entire thread</p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=JVWi-ji-C1Q">Realistic Gaussian beams in Blender - Part 1 (Creating the shader)<span class="s6"> - This video will show how to build a volumetric shader that plots the intensity distribution equation for Gaussian beams.<span class="Apple-converted-space"> </span></span></a></span></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=15NtAyWRybE">Realistic Gaussian beams in Blender - Part 2 (Asset overview)</a></span> - How to get started using the procedural Gaussian beam shader, which you can download from my Gumroad for free.</p>
 <p class="p2"><span class="s1"><a href="https://blender.stackexchange.com/questions/270632/how-can-i-save-a-node-group-for-later-use-without-going-through-a-blend-file">Save a node group for later use<span class="Apple-converted-space"> </span></a></span> (various methods, for all Geometry Nodes, Shading Editor, Compositor)</p>
 <p class="p2"><span class="s1"><a href="https://x.com/jessemiettinen/status/1839391552424247355?s=12">Shader based welding</a></span> (screenshots to recreate it)</p>
 <p class="p5"><span class="s3"><a href="https://blenderesse.gumroad.com/l/weld">Shader based welding</a></span><span class="s6"> (to buy, $1)</span></p>
@@ -752,6 +958,7 @@
 <p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=pB0dBXNcnXg">Should You Micro-fillet? (Plasticity 3d)</a></span> - Go to the part about how to use the Bevel Shade in Blender</p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1757940287614206030?s=12">Small tip, link textures. They are amazing in Blender</a></span></p>
 <p class="p5"><span class="s3"><a href="https://blenderartists.org/t/switch-node-for-blender-materials/1487587">Switch Node for Blender Materials - Support / Materials and Textures</a></span></p>
+<p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=b-scwnmZ79o&amp;t=249s">Textures Don’t Work on Curves—How to Fix It</a></span> - If you need to add procedural textures to curves in Blender and want said textures to conform to the form of the curve even while animated</p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=FdjJzOM9DkI">The easiest way to render wireframe</a></span></p>
 <p class="p5"><span class="s3"><a href="https://x.com/ilyassel_/status/1840456560637575178?s=12">The viewport can shine since 4.2</a></span></p>
 <p class="p2"><span class="s1"><a href="https://x.com/ilyassel_/status/1840722031823741034?s=12">Those slightly clammy hands left their mark</a></span> (trace left by fingers on a cell phone screen)</p>
@@ -784,38 +991,38 @@
 <p class="p3"><br></p>
 <p class="p2"><b>LENS-SIM ADD-ON - </b><a href="https://www.youtube.com/watch?v=1eDwnidoAME"><span class="s1"><b>Lens-Sim - Main tutorial</b></span></a><b> - Overview of first part:</b></p>
 <p class="p3"><br></p>
-<p class="p16">Once we convert a Default Camera to a Lens Sim one, the add-on try to inherit main parameters from it:</p>
-<p class="p16"><span class="Apple-tab-span">	</span>Focus Distance</p>
-<p class="p16"><span class="Apple-tab-span">	</span>Focus Object</p>
-<p class="p16"><span class="Apple-tab-span">	</span>Minimum Clipping Distance</p>
-<p class="p16"><span class="Apple-tab-span">	</span>F-Stop</p>
-<p class="p17"><br></p>
-<p class="p16">The Ray Portal Plane is where we shot rays over this plane. And it's simulating the camera (the sensor?)</p>
-<p class="p17"><br></p>
-<p class="p16">We can Scale Camera (and Ray Portal Plane) to see smaller. The camera scale does not interfere with the render image. But it's important not scale down to a very small value (like 0.001), because we could get floating point issues. 0.2 or 0.1 is perfectly fine, in any case.</p>
-<p class="p17"><br></p>
-<p class="p16">The most important thing is to <b>consider this as a real camera</b>. Lenses are in real world size.</p>
-<p class="p17"><br></p>
-<p class="p16">We shoot rays from the camera (at back) to the portal plane (in front). That means that every object, or any other Lens Sim Camera, that is in the middle will interfere with the rays!</p>
-<p class="p17"><br></p>
-<p class="p16">Another important thing: this is an Orthographic Camera that only works (showing Perspective) in Cycles. This means that if we change to Solid View or Eevee, the Field of View will totally change. On those cases, simple press Disable Lenses to return back to regular (perspective) camera view for Wireframe, Solid of Eevee shading.</p>
-<p class="p17"><br></p>
-<p class="p16">However, for those case where we have a fish-eye or very distorted lenses, we will find greater differences on Enabling/Disabling Lenses.</p>
-<p class="p16">Even if we Disable Lenses, once we press F12 for rendering, the lenses will be enabled automatically.</p>
-<p class="p16">We can have multiple Lens Sim Cameras, just caution not to overlap the area between camera and portal plane, between 2 cameras.</p>
-<p class="p16">We can Pin the Lens Sim Camera to not loose it when selecting any other object in scene.</p>
-<p class="p16">With the small Heart we can mark as favorite any Lens</p>
-<p class="p17"><br></p>
-<p class="p16"><b>“Best Fit”</b> drop menu sets the camera sensor size. Read the tips on-tool!</p>
-<p class="p17"><br></p>
-<p class="p16"><span class="Apple-tab-span">	</span>• “Best Fit” will fill the largest usable image area with an aspect ratio of 1.777</p>
-<p class="p16"><span class="Apple-tab-span">	</span>• “Focal Length” will mimic Blenders focal length. Benefit of this is that we can change our lenses and will maintain the same focal length<span class="Apple-converted-space"> </span></p>
-<p class="p16"><span class="Apple-tab-span">	</span>• “Sensor Width” allows a manual resizing of sensor.</p>
-<p class="p17"><br></p>
-<p class="p16">Button at right allows to rotate camera 90º (convenient for vertical formats, to maintain coherence on settings)</p>
-<p class="p16">Play with <b>Focal Length</b> when using really anamorphic aspect ratios, to avoid black vignetting.</p>
-<p class="p16"><b>Distance</b>: take in consideration that not all lenses work for all distances. For this reason, if you choose some extreme distance (or non appropriate for selected lens) the image will “break” into total noise</p>
-<p class="p16">Enabling “Render Schematics” we can see the real relation between lenses and focal distance, as a kind of helper</p>
+<p class="p17">Once we convert a Default Camera to a Lens Sim one, the add-on try to inherit main parameters from it:</p>
+<p class="p17"><span class="Apple-tab-span">	</span>Focus Distance</p>
+<p class="p17"><span class="Apple-tab-span">	</span>Focus Object</p>
+<p class="p17"><span class="Apple-tab-span">	</span>Minimum Clipping Distance</p>
+<p class="p17"><span class="Apple-tab-span">	</span>F-Stop</p>
+<p class="p18"><br></p>
+<p class="p17">The Ray Portal Plane is where we shot rays over this plane. And it's simulating the camera (the sensor?)</p>
+<p class="p18"><br></p>
+<p class="p17">We can Scale Camera (and Ray Portal Plane) to see smaller. The camera scale does not interfere with the render image. But it's important not scale down to a very small value (like 0.001), because we could get floating point issues. 0.2 or 0.1 is perfectly fine, in any case.</p>
+<p class="p18"><br></p>
+<p class="p17">The most important thing is to <b>consider this as a real camera</b>. Lenses are in real world size.</p>
+<p class="p18"><br></p>
+<p class="p17">We shoot rays from the camera (at back) to the portal plane (in front). That means that every object, or any other Lens Sim Camera, that is in the middle will interfere with the rays!</p>
+<p class="p18"><br></p>
+<p class="p17">Another important thing: this is an Orthographic Camera that only works (showing Perspective) in Cycles. This means that if we change to Solid View or Eevee, the Field of View will totally change. On those cases, simple press Disable Lenses to return back to regular (perspective) camera view for Wireframe, Solid of Eevee shading.</p>
+<p class="p18"><br></p>
+<p class="p17">However, for those case where we have a fish-eye or very distorted lenses, we will find greater differences on Enabling/Disabling Lenses.</p>
+<p class="p17">Even if we Disable Lenses, once we press F12 for rendering, the lenses will be enabled automatically.</p>
+<p class="p17">We can have multiple Lens Sim Cameras, just caution not to overlap the area between camera and portal plane, between 2 cameras.</p>
+<p class="p17">We can Pin the Lens Sim Camera to not loose it when selecting any other object in scene.</p>
+<p class="p17">With the small Heart we can mark as favorite any Lens</p>
+<p class="p18"><br></p>
+<p class="p17"><b>“Best Fit”</b> drop menu sets the camera sensor size. Read the tips on-tool!</p>
+<p class="p18"><br></p>
+<p class="p17"><span class="Apple-tab-span">	</span>• “Best Fit” will fill the largest usable image area with an aspect ratio of 1.777</p>
+<p class="p17"><span class="Apple-tab-span">	</span>• “Focal Length” will mimic Blenders focal length. Benefit of this is that we can change our lenses and will maintain the same focal length<span class="Apple-converted-space"> </span></p>
+<p class="p17"><span class="Apple-tab-span">	</span>• “Sensor Width” allows a manual resizing of sensor.</p>
+<p class="p18"><br></p>
+<p class="p17">Button at right allows to rotate camera 90º (convenient for vertical formats, to maintain coherence on settings)</p>
+<p class="p17">Play with <b>Focal Length</b> when using really anamorphic aspect ratios, to avoid black vignetting.</p>
+<p class="p17"><b>Distance</b>: take in consideration that not all lenses work for all distances. For this reason, if you choose some extreme distance (or non appropriate for selected lens) the image will “break” into total noise</p>
+<p class="p17">Enabling “Render Schematics” we can see the real relation between lenses and focal distance, as a kind of helper</p>
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
@@ -862,8 +1069,9 @@
 <p class="p15"><span class="s3"></span><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
-<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=zx-xcJlw5Ss">Blender Quick Tip 013 - Find Lost Keyframes In Blender - YouTube</a></span></p>
-<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=ul6dDAOc7zY">Blender: The 'Child Of' Constraint Demystified</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=MX90CkWzRtA">Animate Algebra formulas and equations with multiple steps</a></span><span class="s6"> - Using the Typst importer extension <a href="https://extensions.blender.org/add-ons/typst-importer/"><span class="s3">https://extensions.blender.org/add-on</span></a>,<span class="Apple-converted-space">  </span>here's how to animate algebra in Blender.</span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=zx-xcJlw5Ss">Find Lost Keyframes In Blender - YouTube</a></span></p>
+<p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=ul6dDAOc7zY">The 'Child Of' Constraint Demystified</a></span></p>
 <p class="p2"><span class="s1"><a href="https://www.youtube.com/watch?v=9cX9GKry9ns">Driver Expressions for Animations in Blender</a></span> - by Passivestar - How driver expressions can be used for quickly animating stuff</p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=6BALmm_uN-c">Every Rigid Body Constraint Exampled in 10 Minutes</a></span></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=1DHL3nCoIhk">Film emulation in the viewport compositor</a></span></p>
@@ -905,7 +1113,7 @@
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><br></p>
-<p class="p18"><span class="s6">Render Specific Frames &gt; <b>Ctrl-Shift-F12</b></span> (using <a href="https://github.com/p2or/blender-loom"><span class="s3">Loom Add-on</span></a>) &gt;&gt;&gt; Look add-on preferences</p>
+<p class="p19"><span class="s6">Render Specific Frames &gt; <b>Ctrl-Shift-F12</b></span> (using <a href="https://github.com/p2or/blender-loom"><span class="s3">Loom Add-on</span></a>) &gt;&gt;&gt; Look add-on preferences</p>
 <p class="p3"><br></p>
 <p class="p2">---------------------------------------------------------------------------------------------------------</p>
 <p class="p3"><b></b><br></p>
@@ -1028,6 +1236,8 @@
 <p class="p3"><br></p>
 <p class="p5"><span class="s3"><a href="https://www.youtube.com/watch?v=Qyy_6N3JV3k">Create a Custom Blender Panel with less than 50 lines of Python code</a></span></p>
 <p class="p5"><span class="s6"><span class="Apple-tab-span">	</span>• <a href="https://github.com/CGArtPython/blender_plus_python/blob/main/add-ons/simple_custom_panel/simple_custom_panel.py"><span class="s3">Final Code at GitHub</span></a></span></p>
+<p class="p2"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>More interesting add-ons by same author, Victor Stepanov: <a href="https://github.com/CGArtPython/blender_plus_python/tree/main/add-ons"><span class="s1">add-ons at main · CGArtPython</span></a></p>
+<p class="p2"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>And also, more interesting YouTube video tutorials on scripting: <a href="https://www.youtube.com/@CGPython"><span class="s1">CG Python - YouTube</span></a></p>
 <p class="p3"><br></p>
 <p class="p2"><span class="s1"><a href="https://paulbourke.net/geometry/pointlineplane/"><b>Point, Line, Plane</b></a></span><b> - Various notes and algorithms dealing with points, lines, and planes by </b><a href="https://paulbourke.net/"><span class="s1"><b>Paul Burke</b></span></a></p>
 <p class="p2"><span class="Apple-tab-span">	</span>Minimum Distance between a Point and a Line</p>
