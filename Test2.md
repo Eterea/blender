@@ -1,5 +1,3 @@
----
-
 - [ ] *NOTE: disabled task list means that this add-on must be installed or updated in my Windows machine. Enabled means it's installed and updated there.*
 
 ---
