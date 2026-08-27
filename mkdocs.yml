@@ -1,0 +1,46 @@
+site_name: Blender Resources — ETÉREA
+site_description: Personal Blender reference notes by Cristóbal Vila
+site_author: Cristóbal Vila
+site_url: https://eterea.github.io/blender/
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: black
+    accent: deep orange
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      title: On this page
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_style: monokai
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - md_in_html
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Add-ons: addons.md
+  - Keymaps: keymaps.md
+  - Links: links.md
+  - Tips: tips.md
