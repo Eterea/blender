@@ -2,25 +2,23 @@ Compiled by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resou
 
 # BLENDER TIPS
 
+> **NOTE:** This is by far the most extensive and complex content resource. I’m currently working on organizing and cleaning it up, as it’s a bit chaotic at the moment. In the meantime, *use the Search field* — it’s very fast!
+
 ## GENERAL - MISC
 
-️
+### Misc General Tips
 
-[Regions - Blender 4.2 Manual](https://docs.blender.org/manual/en/4.2/interface/window_system/regions.html#ui-region-header)
+[Tool System - Blender Manual](https://docs.blender.org/manual/en/latest/interface/tool_system.html)
 
-[Tool System - Blender 4.2 Manual](https://docs.blender.org/manual/en/4.2/interface/tool_system.html)
-
-[Operators - Blender 4.2 Manual](https://docs.blender.org/manual/en/4.2/interface/operators.html)
-
----
+[Operators - Blender Manual](https://docs.blender.org/manual/en/latest/interface/operators.html)
 
 [Blender crashes at startup? Delete the default startup.blend file! - YouTube](https://www.youtube.com/watch?v=1_G9AYh4v0g)
 
 [Groups in Blender and confusion with Collections](https://www.rendereverything.com/blender-groups-confusion-about-collections/)
 
-[How Blender Keymap Presets Works](https://discord.com/channels/267112699517861888/1276613499878903808/1312076163463643221) (Saved on disk - Discord link, by Xen Wildman)
+[How Blender Keymap Presets Works](https://discord.com/channels/267112699517861888/1276613499878903808/1312076163463643221) - *Discord link*, by Xen Wildman - Saved on disk
 
-[How To Install or Reset Blender (The Right Way) - YouTube](https://www.youtube.com/watch?v=Y_DRWnWq2fI)
+[How To Install or Reset Blender (The Right Way)](https://www.youtube.com/watch?v=Y_DRWnWq2fI)
 
 [Make And Change Hotkeys In Blender](https://www.youtube.com/watch?v=bwwKQLDoOyg)
 
@@ -32,13 +30,13 @@ Compiled by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resou
 
 [Zenplates - New File Templates Made Easy](https://www.patreon.com/posts/zenplates-new-100172069?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link)
 
-[Application Templates - Blender 4.3 Manual](https://docs.blender.org/manual/en/4.3/advanced/app_templates.html)
+[Application Templates - Blender Manual](https://docs.blender.org/manual/en/latest/advanced/app_templates.html)
 
 [Link, Append, Pack & Library Overrides Explained](https://www.youtube.com/watch?v=Ieb_VGl8MTI)
 
 ---
 
-**Upgrade Blender without losing anything:**
+### Upgrade Blender without losing anything:
 
 [How to Update Blender Without Losing Settings and Add-Ons](https://www.tripo3d.ai/blog/collect/how-to-update-blender-without-losing-settings-and-add-ons-t1d5nijtdx4)
 
@@ -46,22 +44,20 @@ Compiled by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resou
 
 2. Install new version and (ATTENTION) in the presentation image click on “Import Blender 4.x Preferences” (the previous version, if this appears)
 
----
-
-**Routes for** config, datafiles, extensions, nodes & scripts
+### Routes for config, datafiles, extensions, nodes & scripts
 
 **Mac:**
-/Users/cristobal/Library/Application Support/Blender/4.3
+`/Users/cristobal/Library/Application Support/Blender/[version]`
 
 **Windows:**
 
-cristobal › AppData* › Roaming Blender Foundation › Blender › 4.3
+`cristobal › AppData[#] › Roaming Blender Foundation › Blender › [version]`
 
-(*) To locate this in Windows go to Search field (bottom-left), write “**Execute**” (Ejecutar) and then write “**%appdata%**”
+[#] To locate this in Windows go to Search field (bottom-left), write `execute` (`ejecutar`) and then write `%appdata%`
 
----
+### To open a second instance of Blender in Mac
 
-**To open a second instance of Blender in Mac** (for example to copy-paste objects from Scene A to Scene B):
+For example to copy-paste objects from Scene A to Scene B:
 
 Open Terminal and Enter the following command:
 
@@ -77,9 +73,9 @@ In “File Format” choose Application. Give it a name, for example: Blender Se
 
 You can now open this app like any other program, and it will launch another instance of Blender.
 
----
+### To test something with Temporal Factory Settings
 
-**To test something with TEMPORAL Factory Settings (disable add-ons, etc):**
+And also to disable add-ons, and more:
 
 Open Blender
 
@@ -89,19 +85,15 @@ Open your file and see if it's there.
 
 IMPORTANT: When you next open Blender, all your add-ons and personal settings will be reloaded and if the issue is related to a addon, then the issue will return.
 
----
+### About the Workspaces
 
 The **workspaces** are saved in the blend-file. When you open a file, enabling Load UI in the File Browser (small gear top-right) indicates that Blender should use the file’s screen layout rather than the current one.
 
----
-
-**Splitting & Joining Viewport Areas**
+### Splitting & Joining Viewport Areas
 
 Dragging from an area corner **inward** will split the area. You define the split direction by dragging either horizontally or vertically.
 
 Dragging from an area corner **outward** will join two areas. The area that will be closed shows a dark overlay. You can select which area will be closed by moving the mouse over it. Release the LMB to complete the join. If you press Esc or RMB before releasing the mouse, the operation will be canceled.
-
----
 
 ### Differences between 'hide in viewport' vs 'disable in viewport'
 
@@ -112,8 +104,9 @@ Now "Hide in Viewport" will disable visibility in all 3D viewports that do not h
 If you disable something, the animation, collision, etc. wont work affect anything. With hiding, it can still be a collider
 
 It's essentially the difference between "object is invisible" and "object no longer exists."
+#### Hide in Viewport (Eye icon)
 
-**Hide in Viewport (Eye icon)** Outliner → Eye icon 👁️
+**Outliner → Eye icon** 👁️
 
 Temporarily hides the object from view in the 3D viewport.
 
@@ -128,8 +121,9 @@ Be evaluated by the dependency graph.
 Still visible in renders (unless also hidden from render).
 
 Use case: When you just want to hide something visually for clarity.
+#### Disable in Viewport (Monitor icon)
 
-**Disable in Viewport (Monitor icon)** Outliner → Monitor icon 🖥️ (you may need to enable it from the filter options)
+**Outliner → Monitor icon** 🖥️ (you may need to enable it from the filter options)
 
 Disables the object entirely in the viewport.
 
@@ -145,15 +139,11 @@ Still rendered unless you also disable it for rendering.
 
 Use case: For performance optimization or to prevent interference with other objects (e.g., when debugging simulations or modifiers).
 
----
-
-**Report and Missing Files**
+### Report and Missing Files
 
 *File > External Data >* **Report** *Missing Files*, will report all missing files, but it only show a single line at bottom of interface. To see ALL missing ones, open an **Info** viewport (clean it deleting all, first of all)
 
 Then, with *File > External Data >* **Find** *Missing Files*, you can catch all those directories where your missing data is stored
-
----
 
 ### Fake user - caution!!!
 
@@ -167,64 +157,54 @@ Summary: caution with all those Materials, Node Groups, etc which was created bu
 
 [What does "users" means in term of datablocks? - Blender Stack Exchange](https://blender.stackexchange.com/questions/2448/what-does-users-means-in-term-of-datablocks)
 
----
-
-### ABOUT ASSETS (Link / Append / Append Reuse Data)
+### About assets (Link / Append / Append Reuse Data)
 
 [Discussion from Discord Erindale.xyz](https://discord.com/channels/314131871376080906/734779545454116918/1349676093442887710)
+Question:
 
-*I have an GN Asset Group, that I have imported in the Scene, and modified, and renamed.
-When I try to add the original Asset, Blender adds the one I have modified. Is there any way to prevent this? I want to add the original version.
-If I drag it to Scene, it doesn't add the original, from the Asset Browser, but the one I have in the scene, which I have edited.
-If I add it to empty scene, it works as expected.*
+> I have an GN Asset Group, that I have imported in the Scene, and modified, and renamed.
+> When I try to add the original Asset, Blender adds the one I have modified. Is there any way to prevent this? I want to add the original version. If I drag it to Scene, it doesn't add the original, from the Asset Browser, but the one I have in the scene, which I have edited.
+> If I add it to empty scene, it works as expected.
 
-Top of the asset menu changes how the assets are linked / append: if you change it to **Append** it should append a whole new datablock rather than re-using. Otherwise you could also mark the modified group no longer as an asset
+Answer:
 
-(that's why I always suggest to use link. append and reuse is so evil)
+> Top of the asset menu changes how the assets are linked / append: if you change it to **Append** it should append a whole new datablock rather than re-using. Otherwise you could also mark the modified group no longer as an asset (that's why I always suggest to use link. append and reuse is so evil)
 
-*If I use Linked, will the Asset change if I edit it in Library file?*
+Question:
 
-*If so, does it update automatically, or do I have to refresh it somehow?*
+> If I use Linked, will the Asset change if I edit it in Library file? If so, does it update automatically, or do I have to refresh it somehow? Why they are evil?
 
-*Why they are evil?*
+> Asking because that is what I need now. Is there something that I should be aweare of?
 
-*Asking because that is what I need now. Is there something that I should be aweare of?*
+Answer:
 
-Blender assets currently is hard-coded "append and reuse" (AAR), such as the hair node groups.
+> Blender assets currently is hard-coded "append and reuse" (AAR), such as the hair node groups.
 
-There was a mistake in the hair node group. BF fixrd it. However because it's using AAR, even if you update your blender, the original broken node group will be used.
+> There was a mistake in the hair node group. BF fixrd it. However because it's using AAR, even if you update your blender, the original broken node group will be used.
 
-And because it's AAR preventing a second duplicate copy, the group node you pull from the asset library will remain broken too
+> And because it's AAR preventing a second duplicate copy, the group node you pull from the asset library will remain broken too
 
-This means: the bug fixed in the node group blender side can't be transferred to your file.
+> This means: the bug fixed in the node group blender side can't be transferred to your file.
 
-You have to manually import the asset somehow to create a duplicate besides the broken one ([LINK](https://projects.blender.org/blender/blender/issues/111354#issuecomment-1012992))
+> You have to manually import the asset somehow to create a duplicate besides the broken one ([LINK](https://projects.blender.org/blender/blender/issues/111354#issuecomment-1012992))
 
-*From where I can find this preference setting?*
+Question
 
-Where you set the asset library folder.
+> From where I can find this preference setting?
 
-you can decide whether to use either method for each folder
+Answer:
 
-Note: the benefit of "link":
+> Where you set the asset library folder. You can decide whether to use either method for each folder
 
-It saves blender size, because data is from another blender file.
+> **Note: the benefit of "link":** It saves blender size, because data is from another blender file. You can choose to localize it if you want. Bug fix/improvements in the original file can be updated through link.
 
-You can choose to localize it if you want.
+> **The downside:** Because asset is not local inside the blender file, if you use render farm, you will have to localize them first. It's an easy process in the outliner though
 
-Bug fix/improvements in the original file can be updated through link.
-
-The downside:
-
-becaude asset is not local inside the blender file, if you use render farm, you will have to localize them first. It's an easy process in the outliner though
-
-BF is currently designing "embedding" which is a midpoint between link and append to solve previously mentioned issue
-
-You can also decide when you drag it in or per session at the top of the asset browser.
+> BF is currently designing "embedding" which is a midpoint between link and append to solve previously mentioned issue. You can also decide when you drag it in or per session at the top of the asset browser.
 
 ---
 
-[Link & Append - Blender 4.4 Manual](https://docs.blender.org/manual/en/latest/files/linked_libraries/link_append.html)
+[Link & Append - Blender Manual](https://docs.blender.org/manual/en/latest/files/linked_libraries/link_append.html)
 
 These functions help you reuse objects, materials and other data-blocks from another blend-file. You can build libraries of common content and share them across multiple referencing files.
 
@@ -232,15 +212,13 @@ These functions help you reuse objects, materials and other data-blocks from ano
 
 [Best way/workflow to link between scenes - Support / Technical Support - Blender Artists Community](https://blenderartists.org/t/best-way-workflow-to-link-between-scenes/1332293/4)
 
----
-
 ## CLEANING
 
-Operations to do after importing geometry (specially for FBX from Modo)
+### Cleanup to do after importing geometry
 
----
+Specially, and tested, with FBX coming from Modo:
 
-### Rename UVs of all selected objects to the standard *uvmap*
+#### Rename UVs of all selected objects to the standard “uvmap”
 
 ```python
 import bpy
@@ -253,9 +231,7 @@ for obj in bpy.context.selected_objects:
         continue
 ```
 
----
-
-### Clear *custom_normal* attributes on all selected objects
+#### Clear “custom_normal” attributes on all selected objects
 
 ```python
 import bpy
@@ -267,9 +243,7 @@ for o in selection:
     bpy.ops.mesh.customdata_custom_splitnormals_clear()
 ```
 
----
-
-### Clear *sharp_edge* attributes on all selected objects
+#### Clear “sharp_edge” attributes on all selected objects
 
 ```python
 import bpy
@@ -290,41 +264,35 @@ for obj in selection:
         bm.free()
 ```
 
----
-
 ## MODELING
 
-### To remove a (sds) modifier from multiple objects in blender
+### Remove a (sds) modifier from multiple objects
 
 Various methods:
 
-**1. NEW: Use my own addon etr_remove_subdivision_modifiers, in N-Panel > Tools**
+1. BEST: Use my own addon etr_remove_subdivision_modifiers, in N-Panel > Tools
 
 2. Or instead of removing modifier you can disable its effect via e.g. `m.show_render = False`
 
 3. Another approach, without script:
 
-[How to add/remove modifiers from multiple objects at once - Blender Stack Exchange](https://blender.stackexchange.com/questions/147314/how-to-remove-modifiers-from-multiple-objects-at-once)
+> [How to add/remove modifiers from multiple objects at once - Blender Stack Exchange](https://blender.stackexchange.com/questions/147314/how-to-remove-modifiers-from-multiple-objects-at-once)
 
-You can select the objects you wish to add/remove all modifiers from, then select an object with no modifiers, hit **Cmd+L**, and **Copy the Modifiers**. This will get rid of all of them on all of the objects.
+> You can select the objects you wish to add/remove all modifiers from, then select an object with no modifiers, hit **Cmd+L**, and **Copy the Modifiers**. This will get rid of all of them on all of the objects.
 
 4. Also, a simpler/better/clean option: select all objects with a SDS Modifier, press Alt and Delete a SDS Modifier (it will delete all SDS Modifiers in all objects)
 
----
+### Clean deltas without “apply”
 
-**CLEAN DELTAS WITHOUT “APPLY”** (to avoid breaking instance dependencies)
+To avoid breaking instance dependencies
 
-Source: [Deltas to transform ⁠— Right-Click Select](https://blender.community/c/rightclickselect/lRv6/?sorting=hot)
+1. Best: use my own addon etr_transforms_deltas, in N-Panel > Tools
 
-**NEW: use my own addon etr_transforms_deltas, in N-Panel > Tools**
+2. Source: [Deltas to transform ⁠— Right-Click Select](https://blender.community/c/rightclickselect/lRv6/?sorting=hot)
 
----
+### Select adjacent edge loops up to a certain point
 
-[Symmetrize](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/symmetrize.html) (in QuickMenu) vs [Mirror](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/mirror.html) (Ctrl-M)
-
----
-
-**Select adjacent edge loops up to a certain point** ([Select Multiple Edge Loops Instantly in Blender - YouTube](https://www.youtube.com/shorts/aouPOvImP50))
+[Select Multiple Edge Loops Instantly in Blender - YouTube](https://www.youtube.com/shorts/aouPOvImP50)
 
 LMB-Select an edge, press CTRL-LMB-Select another far away parallel edge (this is: Pick Shortest Path)
 
@@ -332,15 +300,15 @@ In the bottom options enable **Face Stepping**
 
 Menu Select > Select Loops > **Edge Loops** (available on QuickMenu)
 
----
+### Switch Objects in Edit Mode
 
-**Quickly Switch Between Different Objects in Edit, Sculpt, Weight or Draw Mode**
+For quickly Switch Between Different Objects in Edit but also in Sculpt, Weight or Draw Mode:
 
 Just place you mouse over the other object and press **Alt-Q**
 
----
+### Use always Bevel Modifier with Weight Limit Method
 
-**Use always Bevel Modifier with WEIGHT Limit Method, much better than default “Angle”.**
+This is much better than default “Angle”.
 
 Remember to group all edges with same Edge Bevel Value under a common Selection Set, using YT-Tools Selection Sets
 
@@ -358,9 +326,9 @@ If more intermediate steps are needed use MIN, **LOW**, MED, **HIGH** and MAX
 
 And then once we need to Join various object with different Bevel Amount Values we can use my “Join Equalizing Bevels”
 
----
+### Tip for small bevels created with Bevel Modifier
 
-**Tip for small bevels created with Bevel Modifier: remember to enable Harden Normals** to simulate a really soft round (like it was using more steps), but just using 1 segment.
+Remember to enable Harden Normals to simulate a really soft round (like it was using more steps), but just using 1 segment.
 
 Here's a little script that will turn on Harden Normals on all bevel modifiers in your scene ([source](https://x.com/robertrioux/status/2037537539762930075?s=12)):
 
@@ -373,25 +341,21 @@ for obj in bpy.data.objects:
             mod.harden_normals = True
 ```
 
----
+### Shade differently active and inactive
 
-**To shade differently the active and inactive geometry in the viewport**
+To shade differently the active and inactive geometry in the viewport go to 3D Viewport Overlays while in edit mode and look for that Fade Inactive Geometry Checkbox and Opacity Slider
 
-Go to 3D Viewport Overlays while in edit mode and look for that Fade Inactive Geometry Checkbox and Opacity Slider
+- I use a custom keymap **Alt-Ctrl-Z** for the checkbox
 
-- • I use a custom keymap **Alt-Ctrl-Z** for the checkbox
-
----
-
-**Quick cut, slice, boolean, carver objects**
+### Quick cut, slice, boolean, carver objects
 
 Use **Bool Tool** Addon - In object mode > N > Edit > Auto Boolean
 
 - CAUTION: carver tools, inside Tools, seems to freeze the app, at least in Mac…
 
----
+### To change the Active Island when in Edit mode
 
-**To change the ACTIVE ISLAND when in EDIT mode:** (between several “islands” of elements, meshes or curves)
+Between several “islands” of elements, meshes or curves)
 
 Deselect all.
 
@@ -399,15 +363,11 @@ Select an ELEMENT of the ISLAND that you want to make active.
 
 Press TAB twice, to convert to Object Mode and then to Edit Mode.
 
----
-
-**UN-TRIANGULATE / Triangles to Quads**
+### Triangles to Quads
 
 You can un-triangulate the selected portion of a mesh by hitting Alt-J. This is in Menu Faces > Triangles to Quads
 
----
-
-**How to directly draw a handmade Curve onto a mesh with the Draw tool**
+### How to directly draw a handmade Curve onto a mesh with the Draw tool
 
 Add Curve object, switch to Edit mode, Delete curve, take Draw tool (free-hand pen), under Tool properties (N) switch to Surface, draw a shape over your model
 
@@ -427,9 +387,7 @@ Press G and Enter
 
 **Also, consider using Shrinkwrap Modifier, for a live projection**
 
----
-
-**Manual linear (array) copy of mesh islands with snap to vertices**
+### Manual linear (array) copy of mesh islands with snap to vertices
 
 It seems that the **Quick Snap Tool** add-on does not work in combination with Shift-R (repeat last action). So to move with copy and snape to mesh islands vertices we can do:
 
@@ -440,8 +398,6 @@ Transform Pivot Point: 3D Cursor
 Snap Base Center / Snap Vertex
 
 Duplicate island with Shift-D and move the copy while snapping.
-
----
 
 ### How to setup blender 3.0 in millimeters (mm) for precision modeling
 
@@ -455,25 +411,21 @@ Duplicate island with Shift-D and move the copy while snapping.
 
 - 3D Viewport Overlays / Scale / **0.001**
 
-- N Panel / View / Clip Start / **0.1 mm (*)**
+- N Panel / View / Clip Start / **0.1 mm (#)**
 
-- N Panel / View / Clip End / **10000 mm (*)**
+- N Panel / View / Clip End / **10000 mm (#)**
 
-- Camera Data / Lens / Clip End / **10000 mm (*)**
+- Camera Data / Lens / Clip End / **10000 mm (#)**
 
-- *(*) You can play with these amounts depending on scene specifics and maximum/minimum sizes*
+- (#) You can play with these amounts depending on scene specifics and maximum/minimum sizes
 
----
-
-**Set the origin of an object to the center of it´s bounding box**
+### Set the origin of an object to the center of it´s bounding box
 
 1. Change the transform pivot point to Bounding Box Center
 
 2. Object > Set Origin > Origin to Geometry
 
----
-
-**To align our Transform Gizmo (Move, Rotate, Scale) to a given edge loop**
+### To align our Transform Gizmo (Move, Rotate, Scale) to a given edge loop
 
 Change Transform Orientation (comma) to Normal
 
@@ -481,7 +433,7 @@ Change Transform Pivot Point (dot) to Active Element
 
 ---
 
-**To manage custom Attributes for elements (verts, edges, faces…)**
+### To manage custom Attributes for elements (verts, edges, faces…)
 
 1. Go to Attributes panel, press the “+” icon to add a new custom empty Attribute. Choose Name, Domain and Data Type. Typically, Edge/Float, for example)
 
@@ -493,9 +445,9 @@ You can later select again your desired Attribute, select more geometry and Set 
 
 This can be useful for LOTS of areas in the app. For example to modulate a Bevel Modifier. Or to choose that Named Attribute inside Geometry Nodes to work with.
 
----
+### Solving Warning: Multiple objects share the same data
 
-**Solving the issue with “Apply Object Transformations - Warning: Multiple objects share the same data. Make single user and then apply transformations?”**
+Solving the issue with “Apply Object Transformations - Warning: Multiple objects share the same data. Make single user and then apply transformations?”
 
 In theory, the newest versions —since 3.2— lets you apply transform on linked objects and there’s no more warning message. But I received this message… sometimes, not ever…
 
@@ -509,13 +461,11 @@ And, in any case (and I have suffered this in 4.4): some times, even if it works
 
 4. To take it back: Object/Link/Link Object Data (Note that of course scaling of instances was undo in the step before. May be a problem with negative scaling)
 
----
+### Add Image > Reference vs Add Image > Background
 
-Add Image > **Reference** VS Add Image > **Background**
+(I think it doesn’t matter too much what to use, since you can change settings once added to change to “Reference” or “Background”)
 
-*(I think it doesn’t matter too much what to use, since you can change settings once added to change to “Reference” or “Background”)*
-
-**Reference Image**
+#### Reference Image
 
 Purpose: Used as a visual guide for modeling (e.g., blueprints, sketches, anatomy charts).
 
@@ -527,7 +477,7 @@ Can appear in front or behind geometry, depending on its settings.
 
 Useful when you want to model using the image as a visual reference from multiple angles.
 
-**Background Image**
+#### Background Image
 
 Purpose: Used primarily as a background aid for modeling or layout in orthographic views (e.g., front/side view).
 
@@ -543,17 +493,15 @@ Use **Reference** if you want the image to behave like a regular object (move/ro
 
 Use **Background** if you want a static image that doesn’t get in your way while modeling in orthographic views.
 
----
-
-**Select edges with same bevel weight**
+### Select edges with same bevel weight
 
 If you have edges with different bevel weights, e.g. 1.0, 0.5 and 0.25 while some have 0, and you want to select all with some bevel weight, whatever high it may be, you could try to select one with i.e. 0.5 and then use *Select > Select Similar > Bevel*.
 
 To select all edges with a bevel weight > 0, select one which has 0, then *Select > Select Similar > Bevel*. Now all edges with bevel weight = 0 are selected. Then press Ctrl+I to invert the selection. Now all edges with a weight above 0 are selected.
 
----
+### To convert a Blender loop to a circle
 
-**To convert a Blender loop to a circle,** use the Loop Tools add-on's Circle function. Select the edge loop, access the Loop Tools menu (usually through the N-panel or by right-clicking and selecting LoopTools), and choose "Circle". This will transform the selected edge loop into a circular shape.
+Use the Loop Tools add-on's Circle function. Select the edge loop, access the Loop Tools menu (usually through the N-panel or by right-clicking and selecting LoopTools), and choose "Circle". This will transform the selected edge loop into a circular shape.
 
 Steps:
 
@@ -565,11 +513,9 @@ Steps:
 
 4. Adjust if Needed
 
----
+### Easily apply Shape Keys to the Basis
 
-Tip with [ShapeKeySwapper](https://extensions.blender.org/add-ons/shape-key-swapper-extension/) add-on
-
-This makes it possible to easily apply Shape Keys to the Basis:
+This is a tip with [ShapeKeySwapper](https://extensions.blender.org/add-ons/shape-key-swapper-extension/) add-on
 
 Do a custom mix and make sure that all other shape keys that should not apply to the Basis are set to 0.
 
@@ -581,9 +527,9 @@ Delete the old shape keys that contributed
 
 Set the newly created Mix Shape Key back to 0 and delete it.
 
----
+### Shape Keys values to 0
 
-**Little script that will set all the Shape Keys values to 0 for the selected object.**
+Little script that will set all the Shape Keys values to 0 for the selected object:
 
 ```python
 import bpy
@@ -598,9 +544,9 @@ else:
     print("Selected object has no shape keys or is not a mesh")
 ```
 
----
+### Boolean in Edit Mode
 
-[You can easily boolean in edit mode without any modifiers](https://x.com/passivestar_/status/1669986059743051779?s=66) (> video)
+[You can easily boolean in edit mode without any modifiers](https://x.com/passivestar_/status/1669986059743051779?s=66) (video)
 
 1. Select the geometry you want to cut out
 
@@ -612,9 +558,9 @@ else:
 
 Important: Make sure you don't have any coplanar faces when you boolean, always pre-scale things a little bit to make sure the geometry you want to cut out sticks out of geometry you want to cut out FROM. Not even the new "Exact" solver can handle coplanar faces
 
----
+### Make insets with Knife
 
-[You can easily make insets with the 'Intersect Knife' operator](https://x.com/passivestar_/status/1670356677827149826?s=66) (> video)
+[You can easily make insets with the 'Intersect Knife' operator](https://x.com/passivestar_/status/1670356677827149826?s=66) (video)
 
 1. Select the geometry you want to cut out
 
@@ -625,10 +571,11 @@ Important: Make sure you don't have any coplanar faces when you boolean, always 
 4. Press Ctrl+F,F to extrude along normals
 
 Important: when you're extruding faces along normals, be sure to also press S after you press Ctrl+F,F to enable the "Even Thickness" option for a better result! So the full shortcut is Ctrl+F,F,S (yes, really)
+### Misc Modeling Tips
 
----
+[Symmetrize](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/symmetrize.html) (in QuickMenu) vs [Mirror](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/mirror.html) (Ctrl-M)
 
-[100+ Tips to Boost Modeling in Blender](https://www.youtube.com/watch?v=JMBMHSca_j0) - **REALLY GREAT TIPS HERE!!!**
+[100+ Tips to Boost Modeling in Blender](https://www.youtube.com/watch?v=JMBMHSca_j0) - *Really great tips here!!!*
 
 [3 ways to Slice Objects : r/BlenderSecrets](https://www.reddit.com/r/BlenderSecrets/comments/14se2cu/3_ways_to_slice_objects/)
 
@@ -648,15 +595,13 @@ Important: when you're extruding faces along normals, be sure to also press S af
 
 [Draw curves on surfaces](https://x.com/cmzw_/status/1830545955491553774)
 
-[Draw in 3D with Grease Pencil (part 1)](https://www.youtube.com/watch?v=XvkJ9R5lac4) and [(part 2)](https://www.youtube.com/watch?v=PGBs3WgkbRM) - Fantastic tips to create **handmade trees** or any organic branch structure
+[Draw in 3D with Grease Pencil (part 1)](https://www.youtube.com/watch?v=XvkJ9R5lac4) and [(part 2)](https://www.youtube.com/watch?v=PGBs3WgkbRM) - *Fantastic tips to create handmade trees* or any organic branch structure
 
-[Fix crappy surface shading with Data Transfer](https://www.youtube.com/watch?v=KGgYQH5A2eQ) - by Christopher 3D - **FANTASTIC!!!** - Use the Data Transfer modifier to fix surface shading irregularities that can arise from difficult modeling scenarios
+[Fix crappy surface shading with Data Transfer](https://www.youtube.com/watch?v=KGgYQH5A2eQ) - by Christopher 3D - *Fantastic!!!* - Use the Data Transfer modifier to fix surface shading irregularities that can arise from difficult modeling scenarios
 
 [Fixing shading artifacts around holes using Data Transfer](https://x.com/janvandenhemel/status/1986375360695439520?s=12) - By Jan van den Hemel (quick minitutorial, ¿summarized from to the one by Christopher 3D?)
 
-[Advanced Text Retopology - YouTube](https://www.youtube.com/playlist?list=PLoSyNsQF2hFDX8gsIhcnl2j2gvhNkhPZk)
-
-[A great “course” with 8 videos with FANTASTIC modeling and topology techniques, tips and tricks. Even if you are an experienced modeler. And NOT ONLY FOR TEXTS!!!](https://www.youtube.com/watch?v=QCZxSQaGbBg)
+[Advanced Text Retopology](https://www.youtube.com/playlist?list=PLoSyNsQF2hFDX8gsIhcnl2j2gvhNkhPZk) - A great “course” with 8 videos with FANTASTIC modeling and topology techniques, tips and tricks. Even if you are an experienced modeler. And NOT ONLY FOR TEXTS!!!
 
 [Flower Modeling Hack – Cloth Simulation + Sphere Method ⁣- A quick Blender cloth physics tutorial](https://www.instagram.com/reel/DIRG6l-PnV-)
 
@@ -674,7 +619,7 @@ Important: when you're extruding faces along normals, be sure to also press S af
 
 [Is there a way to Increase the "Thickness" of an Empty?](https://blender.stackexchange.com/questions/302797/is-there-a-way-to-increase-the-thickness-of-an-empty) (answer is NO) - Alternatives
 
-[Loop tools Curve Tool : Panel Beating](https://www.youtube.com/watch?v=goJ4LVHXkC4) - **REALLY GREAT TIPS HERE!!!**
+[Loop tools Curve Tool : Panel Beating](https://www.youtube.com/watch?v=goJ4LVHXkC4) - *Really great tips here!!!*
 
 [My Sacred Vector Displacement Tip](https://www.youtube.com/watch?v=Xw2ELWEk27M)
 
@@ -684,7 +629,7 @@ Important: when you're extruding faces along normals, be sure to also press S af
 
 [Working in Millimeters for modeling small items - YouTube](https://www.youtube.com/watch?v=kep-Fl_XcrI) - Setting up Blender to work in millimeters for jewelry design
 
-- [The Jewelry and Watch Bench](https://www.youtube.com/@watchesandjewelry/videos) - Interesting channel for really small models design (jewelry, swatches, etc)
+[The Jewelry and Watch Bench](https://www.youtube.com/@watchesandjewelry/videos) - Interesting channel for really small models design (jewelry, swatches, etc)
 
 [Snap Face Project + Align Rotation to Target will “sit” our selected object in the surface of other, rotating accordingly and all interactive](https://www.instagram.com/reel/C-Vc_MqPGNS)
 
@@ -693,12 +638,16 @@ Important: when you're extruding faces along normals, be sure to also press S af
 [The Easy Way to Fix Ugly Shading in Blender](https://www.youtube.com/watch?v=ZdNEqv6M7p8) - Specially with high dense n-gons
 
 [Topology Quick Tip: A surprising fact about 3-point poles](https://www.youtube.com/watch?v=2WzDWj11TzA) - A quick tip on reflowing topology with 3-point poles
-
 ---
 
-[10 ways to make Holes in Blender](https://www.youtube.com/watch?v=oFg367w5Cpo) - [Local file link](../../../Volumes/Almacen/Materiales/GOODIES_BLENDER/TUTORIALS/Blender%20Secrets%20Book%20Feb%2027th%202024/Vid%20401-500/Blender%20Secrets%20435%20-%2010%20ways%20to%20make%20Holes%20in%20Blender.mp4)
+## WIP - CONTINUE CLEANUP HERE - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-**1. Cut with a polygon or closed line in front of it.**
+---
+[10 ways to make Holes in Blender](https://www.youtube.com/watch?v=oFg367w5Cpo) - Local file:
+
+`.../TUTORIALS_BLENDER/Blender Secrets Book Feb 27th 2024/Vid 401-500/Blender Secrets 435 - 10 ways to make Holes in Blender.mp4`
+
+I like this: cut with a polygon or closed line in front of it.
 
 We have a cube.
 
