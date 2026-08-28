@@ -10,7 +10,7 @@
   --md-primary-fg-color: #221F22;
   --md-primary-bg-color: #FCFCFA;
 
-  --md-accent-fg-color: #FC9867;i
+  --md-accent-fg-color: #FC9867;
 
   --md-typeset-color: #FCFCFA;
   --md-typeset-a-color: #78DCE8;
@@ -30,6 +30,16 @@
 [data-md-color-scheme="slate"] .md-typeset h4 { color: #91DAE6; }
 [data-md-color-scheme="slate"] .md-typeset h5 { color: #A99EEC; }
 [data-md-color-scheme="slate"] .md-typeset h6 { color: #EE9D70; }
+
+/* All heading levels in bold, closer to the Oh My Marktext look */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 700;
+}
 
 /* Blockquotes (the ">" highlight style) get a colored left bar instead of plain grey */
 [data-md-color-scheme="slate"] .md-typeset blockquote {
