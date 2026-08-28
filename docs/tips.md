@@ -431,8 +431,6 @@ Change Transform Orientation (comma) to Normal
 
 Change Transform Pivot Point (dot) to Active Element
 
----
-
 ### To manage custom Attributes for elements (verts, edges, faces…)
 
 1. Go to Attributes panel, press the “+” icon to add a new custom empty Attribute. Choose Name, Domain and Data Type. Typically, Edge/Float, for example)
@@ -639,7 +637,7 @@ Important: when you're extruding faces along normals, be sure to also press S af
 
 [Topology Quick Tip: A surprising fact about 3-point poles](https://www.youtube.com/watch?v=2WzDWj11TzA) - A quick tip on reflowing topology with 3-point poles
 
-## WIP - CONTINUE CLEANUP HERE - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## WIP - CONTINUE MD CLEANUP HERE - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 [10 ways to make Holes in Blender](https://www.youtube.com/watch?v=oFg367w5Cpo) - Local file:
 
