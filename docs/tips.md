@@ -1,4 +1,4 @@
-*Compiled by* [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) *- Latest update: February 1, 2026*
+Compiled by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) - Latest update: August 28, 2026
 
 # BLENDER TIPS
 

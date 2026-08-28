@@ -5,4 +5,15 @@ Personal reference notes on Blender, compiled and maintained by [Cristóbal Vila
 - **[Add-ons](addons.md)** — installed, considered, and discarded add-ons.
 - **[Keymaps](keymaps.md)** — default and custom keyboard shortcuts.
 - **[Links](links.md)** — training resources, tutorials, and references.
-- **[Tips](tips.md)** — workflow tips and tricks.
+- **[Tips](tips.md)** — workflow tips and tricks. The most important area: *TIP use the Search!*
+
+## Go back to Etérea Site?
+
+- [Home](https://etereaestudios.com/)
+- [About](https://etereaestudios.com/about/)
+- [Works](https://etereaestudios.com/works/)
+- [Teaching](https://etereaestudios.com/teaching/)
+- [Resources](https://etereaestudios.com/resources/)
+- [Contact](https://etereaestudios.com/contact/)
+- [FAQ](https://etereaestudios.com/faq/)
+- [Blog](https://etereaestudios.com/blog/)

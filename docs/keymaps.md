@@ -1,13 +1,13 @@
-*Compiled by* [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) *- Latest update: February 1, 2026*
+Compiled by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) - Latest update: August 28, 2026
 
 # PREFS & KEYMAPS
 
 This is a compilation of **Default Keymaps** that I find important or interesting. There are tips also.
+Also, in *ITALIC*, I mark my Custom Keymaps, just for my personal reference.
 
-Also, in *ITALIC*, I mark my *Custom Keymaps*, just for my personal reference.
 > NOTE: I highly recommend you not to change default keymaps in Blender until you are really sure about it. **Believe me: this is a very good tip!!!**
 
-The *[ WIN ]* tag means, pending to *install*, *add*, *change* on my Windows machine, since I usually work on a Mac, using Win just for rendering and turning it on from time to time.
+The *[ WIN ]* tag means, pending to install, add, change on my Windows machine, since I usually work on a Mac, using Win just for rendering and turning it on from time to time.
 
 ---
 

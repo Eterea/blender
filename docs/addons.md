@@ -1,17 +1,22 @@
-*Compiled by* [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) *- Latest update: August 26, 2026*
+Compiled by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) - Latest update: August 28, 2026
 
-# INSTALLED ADD-ONS
-## PENDING TASKS
-*Install Blender 5.2 in Windows*
-*[ WIN ]* means, pending to install/update on my Windows machine, since I usually work on a Mac, using Win just for rendering
+# ADD-ONS
 
-## NATIVE - PREINSTALLED
+## INSTALLED ADD-ONS
+
+### PENDING TASKS
+
+- *Install Blender 5.2.1 on my Windows Computer and update all add-ons and keymaps*
+
+> NOTE that *[ WIN ]* means, pending to install/update on my Windows machine, since I usually work on a Mac, using Win just for rendering
+
+### NATIVE - PREINSTALLED
 
 This is pre-installed in 5.x
 
 [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/node/node_wrangler.html) - Use the panel in Sidebar of the node editor or press **Shift-W** to bring up the quick access menu
 
-## INSTALLED FROM EXT.BLENDER.ORG
+### INSTALLED FROM EXT.BLENDER.ORG
 
 > [BLENDER EXTENSIONS](https://extensions.blender.org/) - Source for all this Blender Extensions - Install from Blender Preferences
 
@@ -114,9 +119,9 @@ This is pre-installed in 5.x
 [World Apply](https://extensions.blender.org/add-ons/world-apply/) - Sync viewport world (environment) settings with scene world settings
 
 [You Are Autosave](https://extensions.blender.org/add-ons/you-are-autosave/) - Show a red warning when you haven't saved in a while
+### THIRD PART - FREE
 
-## THIRD PART - FREE
-### Kushiro - Free
+#### Kushiro - Free
 
 [KUSHIRO](https://kushiro.gumroad.com/) - All his add-ons at Gumroad
 
@@ -172,7 +177,7 @@ This is pre-installed in 5.x
 
 - [Visual Axis](https://kushiro.gumroad.com/l/visualaxis)
 
-### Blender Bob - Free
+#### Blender Bob - Free
 
  *Various of his add-ons are available on extensions.blender.org, but not all…*
 
@@ -185,7 +190,7 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 - [Modeling from an image using fSpy in Blender (or others)](https://www.youtube.com/watch?v=vawPWAB_0-U) - Mini-tutorial by Blender Bob
   [Riouxr/BB-Snap:](https://github.com/riouxr/BB-Snap) A Blender addon so move objects with a specific snap distance - *v1.1 modified by me & Claude.ia*
 
-### Xen Wildman - Free
+#### Xen Wildman - Free
 
 [Set Attribute Button](https://imperfectlink.gumroad.com/l/ilsetattrbutton) - @Pixel Fondue Discord Link - Small add-on that Adds a Set Attribute button to the Attributes panel, by ImperfectLink aka **Xen Wildman**
 [SmartWireframeOverlay](https://discord.com/channels/267112699517861888/1276613499878903808/1502699194585059439) - @Pixel Fondue Discord Link - Small add-on that Excludes objects from global wireframe, by ImperfectLink aka **Xen Wildman**
@@ -193,7 +198,7 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 1. Enable globally in 3D Viewport > Viewport Overlays > Smart Wireframe
 2. Enable Locally per Object in Object Properties > Viewport Display > Exclude Wireframe
 
-### Various creators - Free
+#### Various creators - Free
 
 [Analyze Mesh](https://mark-kingsnorth.gumroad.com/l/analyze-mesh) *(#1)* - Check mesh topology for quads, tris, ngons and edge poles
 
@@ -227,9 +232,9 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 
 > *(#N) Means connected, relative, very similar or even redundant pairs. To simplify…*
 
-## THIRD PART - PAID
+### THIRD PART - PAID
 
-### KeKit
+#### KeKit
 
 [KeKit](https://ke-code.xyz/scripts/kekit.html) - *USD 20* - By Kjell Emanuelsson - [keKit WIKI](https://ke-code.xyz/scripts/wiki.html) *[ WIN UPDATE ]*
 
@@ -241,7 +246,7 @@ To update ([steps](https://ke-code.xyz/scripts/wiki.html)):
 
 NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Extension) **To update, new instructions since 3.5.1 version:** [keKit WIKI](https://ke-code.xyz/scripts/wiki.html)
 
-### Lens Sim
+#### Lens Sim
 
 [Lens Sim](https://blendermarket.com/products/lens-sim/) - By Håvard Dalen - Discont from USD 40 to *USD 28* (BlackFriday Offer) - To simulate camera lenses based on real-world optical data
 
@@ -259,14 +264,14 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 - **NOTE:** Lens Sim **3.2.0** gave an error closing BLENDER - **3.2.1** fixed issue - **Looking for 4.0, with LENS FLARES**
 
-### By Quackers - Paid
+#### By Quackers - Paid
 
 [Node Align | Addon for Organizing Nodetrees](https://quackers.gumroad.com/l/node_align?layout=profile) - *USD 6* - By Quackers - Tools for organizing Blender node trees - Align, Distribute & Evenly Space Nodes
 
 - Align Nodes in Multiple Ways - **After some time, decide if I maintain this or the** [Node Align](https://extensions.blender.org/add-ons/node-align/) **by W\_Cloud**
   [Nodetree Utils | Misc. Node Editor Tools](https://quackers.gumroad.com/l/nodetree_utils) - *USD 5* - By Quackers - Normalize Node Width, Label Reroutes by Links, Set Labels, Set Node Width, Set Color
 
-### NormalMagic
+#### NormalMagic
 
 [normalMagic](https://spaghetmenot.gumroad.com/l/normalmagic) - *USD 12* - Powerful new modeling workflows and advanced control over mesh normals - [Docs](https://spaghetmenot.github.io/normalmagic/latest/) - *JUST INSTALLED: TO STUDY* - *[ WIN UPDATE ]*
 
@@ -275,7 +280,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 - INSTALL: install add-on, then using the own add-on option, install the unzipped assets from any place in your disk. The add-on will place assets in the correct final place for you.
 - UPDATE: update the add-on as always (remove using Blender Prefs, Quit, Open, Install again). Then replace the assets in /Users/cristobal/Documents/Blender/Assets/normalMagic.
 
-### Sanctus Library
+#### Sanctus Library
 
 [Sanctus Library - Procedural Materials and Assets Library for Blender 3D](https://sanctus.gumroad.com/l/SLibrary?layout=profile) - *USD 35* - [Sanctus Library - Documentation](https://sanctusnodes.com/documentation/main/en/topic/sanctus-library/) *UPDATE MAC & WIN - Check Mac Install*
 
@@ -283,7 +288,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [Sanctus Wood Works](https://sanctus.gumroad.com/l/ejemqb?layout=profile) - *USD 17* - Expansion for Sanctus library - **CAUTION**: Unzip the “Wood\_Works\_v1.0.2\_expansion.zip”, put “Wood\_Works\_v1.0.2\_expansion” folder **side by side with Sanctus-Library folder (not inside)** and add expansion from Preferences > Add-ons > Sanctus-Library > Expansions
 
-### UVPackmaster
+#### UVPackmaster
 
 [UVPackmaster 4 – GPU accelerated UV packing engine](https://uvpackmaster.com/) - Discount from USD 44 to *USD 38* - By Glukoz *[ WIN UPDATE ]*
 
@@ -297,7 +302,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 *(#1)* **IMPORTANT**: Leave open Privacy & Security in Mac Preferences to force-allow open and install the separate Engine.
 
-### By Yoshiaki Tazaki
+#### By Yoshiaki Tazaki
 
 [Taz site](https://tazee.github.io/) - Great Japanese developer coming from Modo
 
@@ -305,7 +310,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [Attribute Manager](https://tazaki.gumroad.com/l/wirsjp?layout=profile) - From USD 20 to *USD 15* with launch discount - Spreadsheet-style attribute editing - [Documentation](https://tazee.github.io/AttributeManager/)
 
-### By Sergey Tyapkin
+#### By Sergey Tyapkin
 
 [Zen UV](https://sergeytyapkin.gumroad.com/l/zenuv4) - *USD 34*
 
@@ -315,7 +320,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 - **To update:** just install new Zen Sets version, the old one will be replaced automatically, the settings will maintain.
 
-### By Kushiro - Paid
+#### By Kushiro - Paid
 
 [Simple Bend Ex](https://kushiro.gumroad.com/l/simple-bend-ex) - *USD 10* - To bend the mesh very easily.You just need to select the faces (the bend area), then run the tool using RMB.
 
@@ -327,23 +332,23 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [Round Inset](https://kushiro.gumroad.com/l/hoamb?layout=profile) - *USD 8* - For Inset face with 100% original round corners.
 
-### Various - Paid
+#### Various - Paid
 
 [Annotate Plus - additional annotations tools](https://blendermarket.com/products/annotate-plus) - By Stefano Bianchini - *USD 2.63*
 
 [Shaders Plus - Caustics, Thin Film, Dispersion for Cycles & Eevee (v4)](https://superhivemarket.com/products/shadersplus) - Smouse - Shaders Plus v4 + Modules Bundle = *USD 35* - [Shaders Plus Docs](https://docs-shadersplus.crd.co/#docsmenu) - Allows you to achieve Real Time Caustics, Dispersion, and physically accurate Thin Film Interference Effects!
 [SIMPLE N-PANEL](https://chippwalters.gumroad.com/l/simple-n-panel) - *USD 10* - A new version for the free (and un-installed) [SIMPLE TABS](https://chippwalters.gumroad.com/l/simpletabs)
 [Quad Remesher](https://exoside.com/quadremesher/quadremesher-upgrade/) - By Exoside - *USD 30* > UPDATED “Indie Modo” > “Indie for all softwares”
+### CUSTOM NODES
+#### Paid Custom Nodes
 
-## CUSTOM NODES
-### Paid Custom Nodes
 [Higgsas Blender Geometry Nodes Groups Toolset Pack](https://higgsas.gumroad.com/l/wrusot) - *USD 10* - [Manual 0.1 documentation](https://higgsas-geo-nodes-manual.readthedocs.io/en/latest/) - (Higgsas) Geometry Nodes Groups Blender 3.3/4.4 - Tutorials, Tips and Tricks at [Blender Artists Community.](https://blenderartists.org/t/higgsas-geometry-nodes-groups-blender-3-3-4-4/1351737)
 
 [Geometry Nodes Building Blocks Toolkit](https://shmueldisrl.gumroad.com/l/pxpdx?layout=profile) - *USD 10* - By Shmuel Israel - Functionality you wouldn't get with only the built-in nodes. They will cover most basic node types to create most average node structures one step above the default.
 [PatternMaker](https://blendermarket.com/products/patternmaker/) *USD 10* - “Almost” like having Substance Designer inside Blender - [Docs](https://blendermarket.com/products/patternmaker/docs)
 [Numeric Attribute Visualizer in Geometry Nodes](https://ilirbeqiri.gumroad.com/l/xxjuix) - Ilir Beqiri - *USD 5* - **Purchased (not installed, stored)**
 
-### Free Custom Nodes
+#### Free Custom Nodes
 
 [b3dsdf](https://github.com/williamchange/b3dsdf/releases) - Toolkit of SDFs/vector utility nodes made by Celestialmaze - [GitHub](https://github.com/williamchange/b3dsdf) - [Wiki Examples](https://github.com/williamchange/b3dsdf/wiki/Examples) - Install as any add-on (not using Asset Browser System)
 
@@ -370,7 +375,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 [Parallax Strands](https://mrrolord.gumroad.com/l/parallaxstrand) - Parallax strand shader that helps simulating a dense patch of grass or fur on any surface without the need of any additional geometry *[ Downloaded only ]*
 [geoNodesAO for Blender [FREE]](https://spaghetmenot.gumroad.com/l/geonodesao?layout=profile) - Ray-traced Ambient Occlusion Directly on Geometry. Fully procedural, no need to bake texturesDownloaded - *[ To install properly ]*
 
-### My Custom Nodes Directory
+#### My Custom Nodes Directory
 
 > **My collection of custom nodes.** This is growing fast. Most of them are third part, other are mine. Here is my main Nodes directory folder names, located at: `/Users/cristobal/Library/Application Support/Blender/VERSION/nodes/`
 
@@ -419,42 +424,47 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 - (4.0) Expand Selection
 
 - (4.0) Curve to Mesh UVs
-  **PatternMaker**
 
+**PatternMaker**
 - PatternMakerVer_3.0
   **Misc**
-
 - Procedural_Screw
 - IL_ObjectArray_005
 - Easy Photorealism node
 - Asset Geometry Node String Selection - Drumfish
-  **Higgsas**
+
+**Higgsas**
 
 - Blender 5.0 Higgsas Geo Node Groups v13
-  **Eterea**
+ 
+**Eterea**
 
 - etr_scene_utils
 - etr_nodes
 - etr_mesh_organic
 - etr_mesh_mech
+
 - etr_curve_primitives
 
 **CelestialMaze**
 
 - CelestialMaze
-  **CartesianCaramel**
+ 
+**CartesianCaramel**
 
 - Geometry Node Assets 4.1 v3
-  **Blespace**
+ 
+**Blespace**
 
 - GN Modifiers v1.1
-  **BFA**
+
+**BFA**
 
 - G_Primitives
 - G_Normals_01
 - G_Nodgroups_Library_01
 
-## MY OWN ADD-ONS AND NODES
+### MY OWN ADD-ONS AND NODES
 
 > **Finally! All these add-ons are already unified on a single kit, but:**
 
@@ -494,7 +504,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 > **Interesting resource:** [lunadigital/blender-addon-template: An empty template for Blender add-ons](https://github.com/lunadigital/blender-addon-template) - A boilerplate template to help you organize your Blender add-on code. You can even install and enable the template as-is, even though it doesn't do anything
 
-## DOWNLOADED - NOT INSTALLED
+### DOWNLOADED - NOT INSTALLED
 
 [CR Basic Brushpack for blender texture painting](https://omarfaruqtawsif.gumroad.com/l/zcpfq) - 6 customizable brushes along regular blender Brush
 
@@ -507,9 +517,9 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 [ClothFX - Payhip](https://payhip.com/b/5FPqR) - By AFX LAB - Blender Cloth Effects. Made simple & fast
 **Average Normal Move** - Shared by Rouven Miller in Discord. To move a face along normal and stop vertices at collision
 
-## UNINSTALLED
+### UNINSTALLED
 
-> **Uninstalled add-ons, for different reasons:**
+> **This is all my uninstalled add-ons, for different reasons:**
 
 [Free Viewport Display](https://www.youtube.com/watch?v=LbbgdfHf42w) or “Mesh Display” - By Blender Bob - Substituted by the much better YT Tools by Taz-San
 
@@ -556,13 +566,13 @@ Custom Notes and Frame Tools - [Time Range Notes](https://www.youtube.com/watch?
 
 [Mesh Align Plus](https://extensions.blender.org/add-ons/mesh-mesh-align-plus/) - Move/align mesh parts+objects based on scene geometry/metrics - [mesh\_align\_plus Wiki](https://github.com/egtwobits/mesh_mesh_align_plus/wiki) - Gives an error…
 
-### Unninstalled my own custom add-ons
+#### Unninstalled my own custom add-ons
 
 **etr\_merge\_separate\_group\_inputs** - Replaced by [Group input helper](https://extensions.blender.org/add-ons/group-input-helper/)
 
 **etr\_match\_surface\_viewport** - Replaced by [Sync Material Viewport Color](https://extensions.blender.org/add-ons/sync-material-viewport-color/)
 
-# ADD-ONS TO CONSIDER
+## ADD-ONS TO CONSIDER
 
 [Awesome-Blender: A curated list of awesome Blender addons, tools, tutorials; and 3D resources for everyone](https://github.com/agmmnn/awesome-blender) - Recommended by Javi Polo
 
@@ -586,7 +596,7 @@ Custom Notes and Frame Tools - [Time Range Notes](https://www.youtube.com/watch?
 
 [blendergpt.org](https://www.blendergpt.org/) - Not exactly an add-on, AFAIK. an advanced artificial intelligence program that creates 3D models from text or image prompts in ~20 seconds. It lets you synthesize fully textured meshes, then import directly to Blender with a shortcut or download the source files for use in any compatible software
 
-## TO CONSIDER BY KUSHIRO
+### TO CONSIDER BY KUSHIRO
 
 Several very interesting Add-ons to consider by [Kushiro](https://kushiro.gumroad.com/) 
 
@@ -610,7 +620,7 @@ Lots are *FREE*:
 
 - [Pixel Dot Drawer](https://kushiro.gumroad.com/l/pixel_dot_drawer) - for drawing pixel art in Blender's Texture Editor since Blender does not draw exact 1 x 1 pixel in Texture Editor
 
-## TO CONSIDER - FREE - AT EXT.BLENDER.ORG
+### TO CONSIDER - FREE - AT EXT.BLENDER.ORG
 
 [3D Viewport Pie Menus](https://extensions.blender.org/add-ons/viewport-pie-menus/) - Various pie menus to speed up your workflow
 
@@ -724,11 +734,11 @@ Lots are *FREE*:
 
 [Universal Multi Importer](https://extensions.blender.org/add-ons/universal-multi-importer/) - Import multiple files of different formats from the same import dialog, scan for files to import in a folder hierarchy
 
-### Approval queue
+#### Approval queue
 
 [Mesh Analysis Overlay](https://extensions.blender.org/approval-queue/mesh-analysis-overlay/) - Triangles, quads, n-gons, etc. of different color - Similar to Analyze Mesh and Check Toolbox (already installed). Maybe smarter, simpler & stronger?
 
-## TO CONSIDER - FREE - OTHERS
+### TO CONSIDER - FREE - OTHERS
 
 [ActionRecorder](https://github.com/InamuraJIN/ActionRecorder) - Automatically records your workflow, allowing you to save a sequence of steps as a reusable macro. It automatically assigns the macro to a button for easy access.
 
@@ -832,7 +842,7 @@ Especially interesting by Johny Gizmo:
 
 [Quad\_bridge: Blender addon to connect two edge loop using quads](https://github.com/abd-3d/quad_bridge)
 
-[RetopoFlow 4 alpha](https://mailchi.mp/af6aee254827/merry-christmas-heres-a-powerful-new-build-of-retopoflow-4-alpha) (**free, maybe integrated in the future**) - [Jonathan Lampel en X: "This is huge because not only can it run right alongside all the other Blender tools, but the performance is also amazing. Here is RetopoFlow 4 alpha](https://x.com/JonLampel/status/1759613648262385975)”
+[RetopoFlow 4 alpha](https://mailchi.mp/af6aee254827/merry-christmas-heres-a-powerful-new-build-of-retopoflow-4-alpha) (**free, maybe integrated in the future**) - Jonathan Lampel en X: "This is huge because not only can it run right alongside all the other Blender tools, but the performance is also amazing. Here is RetopoFlow 4 alpha” - [LINK](https://x.com/JonLampel/status/1759613648262385975)
 
 [roosterMAP/rmKit](https://github.com/roosterMAP/rmKit) - Variety of custom tools made by an ex-Modo user - There is a **Falloff Transform** for Move, Rotate and Scale - [rmKit Documetation — rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/)
 
@@ -870,7 +880,7 @@ Especially interesting by Johny Gizmo:
 
 [wiggle-2: Rewrite of blender-wiggle with new features and physics](https://github.com/shteeve3d/blender-wiggle-2) - To manage chains of bones, to easily setups tubes, chains, collisions, etc
 
-## TO CONSIDER - PAID
+### TO CONSIDER - PAID
 
 [3D Tree Growing Software - The Grove](https://www.thegrove3d.com/) *89-149 EUR* - A tree simulator
 
@@ -1022,7 +1032,7 @@ Especially interesting by Johny Gizmo:
 
 [Trees](https://blendermarket.com/products/trees) - *USD 25* - A procedural trees generator system based on Geometry Nodes
 
-[UDON Custom Node Builder [beta]](https://lunarood.gumroad.com/l/udon) - *USD 20* - making your own custom nodes (real nodes) - I don't like this: *“UDON is required both for creating as well as using the custom nodes. Custom nodes only work with UDON enabled”*
+[UDON Custom Node Builder [beta]](https://lunarood.gumroad.com/l/udon) - *USD 20* - making your own custom nodes (real nodes) - I don't like this sentence: **“UDON is required both for creating as well as using the custom nodes. Custom nodes only work with UDON enabled”**
 
 [uvFactory for Blender](https://spaghetmenot.gumroad.com/l/uvfactory) - *USD 12* - to automate, eliminate, or streamline tedious unwrapping tasks. Use it to speed up manual unwrapping or create fully automatic UV pipelines.
 
@@ -1040,7 +1050,7 @@ Especially interesting by Johny Gizmo:
 
 [Zen Cage](https://sergeytyapkin.gumroad.com/l/zencage) - *USD 9* - Intuitive control over object transformations using a bounding box cage with interactive handles. Align, Fit, Distribute, Clamp, Array, Rotate, and Scale
 
-### To Consider by Mark Kingsnorth aka Configurate
+#### To Consider by Mark Kingsnorth aka Configurate
 
 [Conform Object](https://mark-kingsnorth.gumroad.com/l/conform-object) - *USD 12* - To project smaller objects onto a larger object surface in one direction.
 
@@ -1050,7 +1060,7 @@ Especially interesting by Johny Gizmo:
 
 [Curves To Mesh](https://mark-kingsnorth.gumroad.com/l/curves-to-mesh) - *USD 25* - Create and configure mesh surfaces from Bezier curves in Blender - Los GN de Highass tienen una tool para esto…
 
-### To Consider by Gaffer
+#### To Consider by Gaffer
 
 [GitHub - gregzaal/Gaffer: A light-manager add-on for Blender](https://github.com/gregzaal/Gaffer) (trial, free, no limits, to try it out)
 
@@ -1058,9 +1068,9 @@ Especially interesting by Johny Gizmo:
 
 [Gaffer update adds HDRI Favorites | Blender Secrets - YouTube](https://www.youtube.com/watch?v=OUHIBZJw6cI) (to see how it works)
 
-## TO CONSIDER - CUSTOM NODES
+### TO CONSIDER - CUSTOM NODES
 
-### Collections
+#### Collections
 
 [Erindale Toolkit - Advanced Geometry Nodes Groups (UPDATED FOR FIELDS) - Blender Market](https://blendermarket.com/products/erintools) *USD 17* - Seems good
 
@@ -1105,7 +1115,7 @@ Especially interesting by Johny Gizmo:
 [Easy Lens Flares for Blender Compositor](https://chrisfast.gumroad.com/l/easy-lens-flares) - *FREE* - Real time drag-and-drop lens flare solution for Blender using procedural techniques with the GPU
 [Fares 3D](https://knight3d.gumroad.com/) - *FREE*- Various interesting effects: Transform, Disintegration, Avoid Points Intersection, Gradients, Curls and 50 LOOPS.
 
-### Custom tools or scenes
+#### Custom tools or scenes
 
 [Blender Geo Nodes: Platform Generator](https://leonardoambrosini.gumroad.com/l/xlpkw) - FREE demo - *5 eur full* (more to see how it is made, than to see how it is useful...)
 
@@ -1117,7 +1127,7 @@ Especially interesting by Johny Gizmo:
 
 [Alex Martinelli](https://sagado.gumroad.com/) - *FREE* - GREAT Procedural Assets for Blender - Procedural Crystal, L-Systems, Phyllotaxis, Differential Groth, Spiderwebs, Cellular Automata, Camera control & Animation, Recursive Subdivision, Flock Simulation
 
-## OTHER ASSETS & TOOLS
+### OTHER ASSETS & TOOLS
 
 [Awesome-Blender: A curated list of awesome Blender addons, tools, tutorials; and 3D resources for everyone.](https://github.com/agmmnn/awesome-blender)
 
@@ -1125,11 +1135,11 @@ Especially interesting by Johny Gizmo:
 
 [Ultimate Blender Procedural Material Pack](https://ryankingart.gumroad.com/l/ultimate-materials) - *USD 48,75*
 
-### Collections of nodes
+#### Collections of nodes
 
 [Tile Factory - Procedural Tile Generators for Blender](https://just3dthings.gumroad.com/l/Tilefactory/tilesforme) - *USD 45*
 
-### Assets
+#### Assets
 
 [Cleverpoly's Tools & Resources | Textify Callouts And titles Animation](https://cleverpoly.store/) - Procedural Re-usable assets for product animators
 
@@ -1137,7 +1147,7 @@ Especially interesting by Johny Gizmo:
 
 [TFMSTYLE - Blender Project Files](https://tfmstyle.com/blender_projects) - FREE Scenes, Abstract, Geometrical, etc - Very interesting to learn!!!
 
-### Procedural materials
+#### Procedural materials
 
 [Simon Thommes](https://simonthommes.gumroad.com/) - Procedural shaders (Textile, Bricks, Procedural Noises, Scatter, etc)
 
@@ -1154,11 +1164,11 @@ Especially interesting by Johny Gizmo:
 [Carvature - Procedural Wood Texture](https://superhivemarket.com/products/carvature) - *USD 24* - These wood textures look great. Specially useful for block-wood object, where waves and knots should match between sides.
 [Micro Scratches Normal Map](https://thomasmarcoscom.gumroad.com/l/micro-scratches-normal-map?layout=profile) - *5 EUR* - Realistic micro-scratches, perfect for surfaces like car paint and other reflective finishes.
 
-### Matcaps
+#### Matcaps
 
 [Huge library of matcap PNG textures organized by color](https://github.com/nidorx/matcaps/tree/master?tab=readme-ov-file) - **Visual gallery** > [MatCaps / mgherkins's Workspace | Observable](https://observablehq.com/d/2c53c7ee9f619740?ui=classic)
 
-### Brushes for Grease Pencil
+#### Brushes for Grease Pencil
 
 [FREE - Blender Grease Pencil Brush Pack](https://mauritsvalk.gumroad.com/l/edsxpb) - UPDATE Oct 8, 2024: This brush pack is intended for Grease Pencil 2, **not Grease Pencil 3** which was released with Blender 4.3 BETA. Please do not expect these to work in Blender 4.3, I am in the process of learning how to mark them as assets to be able to share them so they behave as intended.
 
@@ -1166,21 +1176,21 @@ Especially interesting by Johny Gizmo:
 
 [Dima Desktop](https://ui.blender.org/icons) - All the Blender icons as svg
 
-### Rigs samples
+#### Rigs samples
 
 [Stuff Man](https://sttuuuufffff.gumroad.com/) - Professional top level rigs - Great to learn techniques, tips and tricks - By Stuff Man - [X](https://x.com/sttuuuufffff) - [YouTube](https://www.youtube.com/@Sttuuuufffff)
 
-### Non-blender tools
+#### Non-blender tools
 
 [Flowframes - Fast Video Interpolation for any GPU](https://nmkd.itch.io/flowframes) - Flowframes is a simple but powerful app that utilizes advanced AI frameworks to interpolate videos in order to increase their framerate in the most natural looking way possible.
 
 [UDIM GLOBE](https://henrikbc.gumroad.com/l/figment_udim_globe) - *FREE* - a toolkit for turning high-res planet textures into UDIM tiles—perfect for 3D animation and VFX.
 
-### Online tools
+#### Online tools
 
 [Easing editor | Anime.js | JavaScript Animation Engine](https://animejs.com/easing-editor/spring/default)
 
-### Cloudgen - cloud generation tool - free
+#### Cloudgen - Cloud Generation Tool - free
 
 [CloudGen - Cloud Generation Tool](https://narciscg.gumroad.com/l/CloudGen)
 
