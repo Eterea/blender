@@ -2,8 +2,6 @@
 
 # BLENDER TIPS
 
-<a id="general-misc"></a>
-
 ## GENERAL - MISC
 
 ️
@@ -236,8 +234,6 @@ These functions help you reuse objects, materials and other data-blocks from ano
 
 ---
 
-<a id="cleaning"></a>
-
 ## CLEANING
 
 Operations to do after importing geometry (specially for FBX from Modo)
@@ -295,8 +291,6 @@ for obj in selection:
 ```
 
 ---
-
-<a id="modeling"></a>
 
 ## MODELING
 
@@ -824,8 +818,6 @@ Select randomised border as verts, deselect and select desired active vert
 
 S-Y-0
 
-<a id="curves"></a>
-
 ## CURVES
 
 [Bezier Curves in Blender 3.x - YouTube](https://www.youtube.com/watch?v=z4PxYAKVG9Q) - Fantastic video about drawing with beziers!!!
@@ -949,8 +941,6 @@ if obj and obj.type == 'CURVE':
 
 ---
 
-<a id="fonts"></a>
-
 ## FONTS
 
 [Text - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/texts/index.html)
@@ -1016,8 +1006,6 @@ For asset management, keep your project fonts in a dedicated folder such as:
 Then load them into Blender so they become embedded in the project file.
 
 ---
-
-<a id="physics"></a>
 
 ## PHYSICS
 
@@ -1178,8 +1166,6 @@ Al these tips are from these tutorials:
 
 ---
 
-<a id="grease-pencil"></a>
-
 ## GREASE PENCIL
 
 **Tip for a Grease Pencil stroke:** set the 3D cursor to your vertex by selecting it and then using Shift+S and then Cursor -> Selection and then read the 3D cursor position in the View panel, View Properties.
@@ -1189,8 +1175,6 @@ To change Radius for any GP stroke (or selected GP vert) use Alt-S. Like in radi
 [Applying gradient as stroke is drawn (Grease Pencil, Blender) - YouTube](https://www.youtube.com/watch?v=0-zqwUTNEUI)
 
 ---
-
-<a id="collections-hierarchy-outliner"></a>
 
 ## COLLECTIONS, HIERARCHY & OUTLINER
 
@@ -1273,15 +1257,11 @@ NOTE: we can select any object (mesh, camera, light…), then a second mesh obje
 
 [What's the difference between Scene, Layer, and Collection?](https://blenderartists.org/t/whats-the-difference-between-scene-layer-and-collection/1185270)
 
-<a id="weight"></a>
-
 ## WEIGHT
 
 **How do I reset all weights in Blender?**
 
 Go into edit mode. Select all vertices. Hit **Ctrl-G** to bring up vertex group specials and select “remove from all”
-
-<a id="rigging"></a>
 
 ## RIGGING
 
@@ -1952,8 +1932,6 @@ Rigify helps automate the creation of character rigs. It is based around a build
 
 ---
 
-<a id="uvs"></a>
-
 ## UVS
 
 **Flip or adjust the mesh in general while keeping the image texture static**
@@ -2086,8 +2064,6 @@ Separate them into two different objects and use the data transfer modifier targ
 
 [Per object Uv projection in camera view. Blender Geometry nodes](https://x.com/f_rimasson/status/2035444232517775662?s=12)
 
-<a id="sculpting"></a>
-
 ## SCULPTING
 
 ### How to sculpt with curves:
@@ -2178,8 +2154,6 @@ If you want to make a still image, render out two frames as an animation and sav
 
 ---
 
-<a id="painting"></a>
-
 ## PAINTING
 
 [You can fix this annoying issue with one click and save yourself many hours of retexturing](https://x.com/mvjagaimo/status/1910379677832872196?s=12) - Fix issue painting at border of an object
@@ -2189,8 +2163,6 @@ If you want to make a still image, render out two frames as an animation and sav
 [Texture Painting in Blender Made Simple](https://www.youtube.com/watch?v=V-u6S64ym38)
 
 [Paint panel cuts directly on your Normal map with UcuPaint](https://preview.mailerlite.com/j1h1h2i3i9/3045358746227186278/j5l3/)
-
-<a id="fur"></a>
 
 ## FUR
 
@@ -2265,8 +2237,6 @@ Basically, use an Attribute node to catch **“surface_uv_coordinate”** and pa
 [Hair Rendering Secret: Make Your Hair Softer!](https://x.com/vfxgrace/status/2005975413609406723?s=12)
 
 ---
-
-<a id="nodes"></a>
 
 ## NODES
 
@@ -2973,8 +2943,6 @@ Notice how fields turn into constants when they go inside the zone, and vice ver
 What makes constants and fields different and incompatible is a longer technical discussion. 😅
 
 But yeah, using For-Each to make these two play together is a good rule-of-thumb to remember.
-
-<a id="shading-lighting"></a>
 
 ## SHADING & LIGHTING
 
@@ -4013,8 +3981,6 @@ Physically accurate and free of artifacts.
 
 [The correct way to make decals in Blender (NO SHRINKWRAP) - YouTube](https://www.youtube.com/watch?v=rUP8aAG4AQ8) (DOWNLOADED)
 
-<a id="cameras"></a>
-
 ## CAMERAS
 
 **Local Cameras**
@@ -4207,8 +4173,6 @@ Answer: I haven't found any good ways to do it, it is a render limitation of tra
 
 [Lenses. How to use them properly in Blender](https://www.youtube.com/watch?v=_AXwPrkWuMo&t=12s)
 
-<a id="animation"></a>
-
 ## ANIMATION
 
 Here are some of the best Blender shortcuts combo:
@@ -4352,8 +4316,6 @@ So, motion paths are ephemeral: they exist only in memory, like a viewport helpe
 [You can use 1 camera per viewport](https://x.com/ilyassel_/status/1792710213914763577?s=12) - This is how
 
 [How to sync animation to music in blender](https://www.youtube.com/watch?v=eFWN3x84NcU)
-
-<a id="previews-render"></a>
 
 ## PREVIEWS & RENDER
 
@@ -5388,8 +5350,6 @@ You can clear the cache if it gets stuck or corrupted.
 
 ---
 
-<a id="davinci-resolve-blender"></a>
-
 ## DAVINCI RESOLVE & BLENDER
 
 [DaVinci Resolve – Training | Blackmagic Design](https://www.blackmagicdesign.com/products/davinciresolve/training) - The official ones - CONTINUE HERE, nobody will know better this app!
@@ -5423,8 +5383,6 @@ More:
 [Sample RED Files](https://www.red.com/sample-r3d-files) (needs register, free, I think…)
 
 [ACES is now even more deeply integrated into Blender 5.2](https://x.com/thomasmarcoscom/status/2035640690462347717?s=12)
-
-<a id="sequencer-compositor"></a>
 
 ## SEQUENCER + COMPOSITOR
 
@@ -5473,8 +5431,6 @@ To export video + audio from Sequencer, I must choose Audio Codec > **AAC**. For
 [Amazing technique by Ilyasse to make things and environments grow from the ground using Compositor](https://x.com/ilyassel_/status/1972745323966808555?s=12) (see second post with node setup)
 
 [Start COMPOSITING in Blender 5.0 in 16 minutes | Blender Compositor Tutorial #b3d - YouTube](https://www.youtube.com/watch?v=kAWfjBKcgFc)
-
-<a id="import-export"></a>
 
 ## IMPORT / EXPORT
 
@@ -5545,8 +5501,6 @@ Alternatively, if you want to extract the image maps to a separate folder
 *File > External Data > Unpack Resources*
 
 - *> Use files in current directory (create when necessary)*
-
-<a id="scripting-maths"></a>
 
 ## SCRIPTING & MATHS
 

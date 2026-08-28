@@ -2,8 +2,6 @@
 
 # LINKS ON TRAINING
 
-<a id="training-general"></a>
-
 ## GENERAL
 
 [Blender Reference Manual — Blender Manual](https://docs.blender.org/manual/en/latest/)
@@ -152,8 +150,6 @@ Great techniques, tips and tricks from a veteran profesional. A great “courses
 And also, *great free resources* in his site:
 
 [Subdivision Surface Modelling | Blender](https://www.hardvertex.com/)
-
-<a id="training-geometry-nodes"></a>
 
 ## GEOMETRY NODES
 
@@ -374,8 +370,6 @@ And much more interesting topics…
 
 [Visualization for each mode of math node with set position node (Geometrh nodes, Blender) - YouTube](https://www.youtube.com/watch?v=jKUTQOrs0YI) - *TO DO* - (check comments, they may explain other procedures)
 
-<a id="training-shading-lights-render"></a>
-
 ## SHADING, LIGHTS & RENDER
 
 [Alex Pearce - YouTube](https://www.youtube.com/@AlexPearce3d) - Good tutorials, ie: [How to create and access custom Node Groups in all your Blender Projects!](https://www.youtube.com/watch?v=HzFUeOfCJzo)
@@ -428,13 +422,9 @@ And much more interesting topics…
 
 5. [Finishing the main hair](https://www.youtube.com/watch?v=ulUh7AbKHm8&list=PLVn1U4WzCN31gIRUFf5fCoy4z-pyZydJM&index=6)
 
-<a id="training-sculpting"></a>
-
 ## SCULPTING
 
 [Sculpt a Realistic Head in Blender](https://www.youtube.com/watch?v=BPAvvF8py1M)
-
-<a id="training-rigging"></a>
 
 ## RIGGING
 
@@ -462,15 +452,11 @@ And much more interesting topics…
 
 [CG Tiger Breakdown | Blender Zbrush](https://www.youtube.com/watch?v=_2P_Y_Xgof8) - A CG tiger made using Zbrush and Blender. The goal was to create a photorealistic CG animal that could blend seamlessly into real world footage
 
-<a id="training-grease-pencil"></a>
-
 ## GREASE PENCIL
 
 [Blender 2D Animation Basics for Beginners](https://www.youtube.com/watch?v=yaOEsAOnq7s) - Grease pencil guide
 
 [Create Procedural Animation using Grease Pencil Nodes](https://www.youtube.com/watch?v=8mTR08WQ4Rc) - Use geometry nodes and Grease Pencil to create a procedural looping arcs animation
-
-<a id="training-uv"></a>
 
 ## UV
 
@@ -489,8 +475,6 @@ And much more interesting topics…
 [Dieline to 3D, part 2. UV unwrapping and initial folding tutorial](https://www.youtube.com/watch?v=Tuu_POR8Do0)
 
 [Blender's "Follow Active Quads" UV Mapping Feature](https://www.youtube.com/watch?v=SgVrp_zpqYQ)
-
-<a id="training-scripting-python"></a>
 
 ## SCRIPTING - PYTHON - MATHS
 
@@ -517,8 +501,6 @@ And much more interesting topics…
 [How I animate 3Blue1Brown | A Manim demo with Ben Sparks - YouTube](https://www.youtube.com/watch?v=rbu7Zu5X1zI) (see links to **Manim** Python app below video)
 
 [Vectors & Dot Product • Math for Game Devs [Part 1]](https://www.youtube.com/watch?v=MOYiVLEnhrw) - Extensive video by Freya Holmér (3h 16m)
-
-<a id="info-modo-to-blender"></a>
 
 ## MODO TO BLENDER
 

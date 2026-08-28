@@ -1,21 +1,15 @@
 *Compiled by* [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) *- Latest update: August 26, 2026*
 
-<a id="installed-add-ons"></a>
-
 # INSTALLED ADD-ONS
 ## PENDING TASKS
 *Install Blender 5.2 in Windows*
 *[ WIN ]* means, pending to install/update on my Windows machine, since I usually work on a Mac, using Win just for rendering
-
-<a id="native-preinstalled"></a>
 
 ## NATIVE - PREINSTALLED
 
 This is pre-installed in 5.x
 
 [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/node/node_wrangler.html) - Use the panel in Sidebar of the node editor or press **Shift-W** to bring up the quick access menu
-
-<a id="installed-from-ext-blender-org"></a>
 
 ## INSTALLED FROM EXT.BLENDER.ORG
 
@@ -120,8 +114,6 @@ This is pre-installed in 5.x
 [World Apply](https://extensions.blender.org/add-ons/world-apply/) - Sync viewport world (environment) settings with scene world settings
 
 [You Are Autosave](https://extensions.blender.org/add-ons/you-are-autosave/) - Show a red warning when you haven't saved in a while
-
-<a id="third-part-free"></a>
 
 ## THIRD PART - FREE
 ### Kushiro - Free
@@ -233,8 +225,6 @@ This is pre-installed in 5.x
 
 > *(#n) Means connected, relative, very similar or even redundant. To simplify…*
 
-<a id="third-part-paid"></a>
-
 ## THIRD PART - PAID
 
 ### KeKit
@@ -341,8 +331,6 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 [Shaders Plus - Caustics, Thin Film, Dispersion for Cycles & Eevee (v4)](https://superhivemarket.com/products/shadersplus) - Smouse - Shaders Plus v4 + Modules Bundle = *USD 35* - [Shaders Plus Docs](https://docs-shadersplus.crd.co/#docsmenu) - Allows you to achieve Real Time Caustics, Dispersion, and physically accurate Thin Film Interference Effects!
 [SIMPLE N-PANEL](https://chippwalters.gumroad.com/l/simple-n-panel) - *USD 10* - A new version for the free (and un-installed) [SIMPLE TABS](https://chippwalters.gumroad.com/l/simpletabs)
 [Quad Remesher](https://exoside.com/quadremesher/quadremesher-upgrade/) - By Exoside - *USD 30* > UPDATED “Indie Modo” > “Indie for all softwares”
-
-<a id="custom-nodes"></a>
 
 ## CUSTOM NODES
 ### Paid Custom Nodes
@@ -463,8 +451,6 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 - G_Normals_01
 - G_Nodgroups_Library_01
 
-<a id="my-own-add-ons-and-nodes"></a>
-
 ## MY OWN ADD-ONS AND NODES
 
 > **Finally! All these add-ons are already unified on a single kit, but:**
@@ -505,8 +491,6 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 > **Interesting resource:** [lunadigital/blender-addon-template: An empty template for Blender add-ons](https://github.com/lunadigital/blender-addon-template) - A boilerplate template to help you organize your Blender add-on code. You can even install and enable the template as-is, even though it doesn't do anything
 
-<a id="downloaded-not-installed"></a>
-
 ## DOWNLOADED - NOT INSTALLED
 
 [CR Basic Brushpack for blender texture painting](https://omarfaruqtawsif.gumroad.com/l/zcpfq) - 6 customizable brushes along regular blender Brush
@@ -519,8 +503,6 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [ClothFX - Payhip](https://payhip.com/b/5FPqR) - By AFX LAB - Blender Cloth Effects. Made simple & fast
 **Average Normal Move** - Shared by Rouven Miller in Discord. To move a face along normal and stop vertices at collision
-
-<a id="uninstalled"></a>
 
 ## UNINSTALLED
 
@@ -577,8 +559,6 @@ Custom Notes and Frame Tools - [Time Range Notes](https://www.youtube.com/watch?
 
 **etr\_match\_surface\_viewport** - Replaced by [Sync Material Viewport Color](https://extensions.blender.org/add-ons/sync-material-viewport-color/)
 
-<a id="add-ons-to-consider"></a>
-
 # ADD-ONS TO CONSIDER
 
 [Awesome-Blender: A curated list of awesome Blender addons, tools, tutorials; and 3D resources for everyone](https://github.com/agmmnn/awesome-blender) - Recommended by Javi Polo
@@ -626,8 +606,6 @@ Lots are *FREE*:
 - [Select Sim](https://kushiro.gumroad.com/l/smjsbe?layout=profile)
 
 - [Pixel Dot Drawer](https://kushiro.gumroad.com/l/pixel_dot_drawer) - for drawing pixel art in Blender's Texture Editor since Blender does not draw exact 1 x 1 pixel in Texture Editor
-
-<a id="free-at-ext-blender-org-to-consider"></a>
 
 ## TO CONSIDER - FREE - AT EXT.BLENDER.ORG
 
@@ -746,8 +724,6 @@ Lots are *FREE*:
 ### Approval queue
 
 [Mesh Analysis Overlay](https://extensions.blender.org/approval-queue/mesh-analysis-overlay/) - Triangles, quads, n-gons, etc. of different color - Similar to Analyze Mesh and Check Toolbox (already installed). Maybe smarter, simpler & stronger?
-
-<a id="free-others-to-consider"></a>
 
 ## TO CONSIDER - FREE - OTHERS
 
@@ -890,8 +866,6 @@ Especially interesting by Johny Gizmo:
 [waylow/boneWidget](https://github.com/waylow/boneWidget) - Making custom bone shapes. It has an editable library of shapes that make it easy to apply to any rig
 
 [wiggle-2: Rewrite of blender-wiggle with new features and physics](https://github.com/shteeve3d/blender-wiggle-2) - To manage chains of bones, to easily setups tubes, chains, collisions, etc
-
-<a id="paid-to-consider"></a>
 
 ## TO CONSIDER - PAID
 
@@ -1081,8 +1055,6 @@ Especially interesting by Johny Gizmo:
 
 [Gaffer update adds HDRI Favorites | Blender Secrets - YouTube](https://www.youtube.com/watch?v=OUHIBZJw6cI) (to see how it works)
 
-<a id="custom-nodes-to-consider"></a>
-
 ## TO CONSIDER - CUSTOM NODES
 
 ### Collections
@@ -1141,8 +1113,6 @@ Especially interesting by Johny Gizmo:
 [Johnny Matthews](https://johnnygizmo.gumroad.com/) - Some interesting collections, and *many are FREE*: Spiral nodes - Coil on curve - Tile Generators - Blender Pick Node (?) - Multiplex Nodes - Circular Instance Array…
 
 [Alex Martinelli](https://sagado.gumroad.com/) - *FREE* - GREAT Procedural Assets for Blender - Procedural Crystal, L-Systems, Phyllotaxis, Differential Groth, Spiderwebs, Cellular Automata, Camera control & Animation, Recursive Subdivision, Flock Simulation
-
-<a id="other-assets-tools"></a>
 
 ## OTHER ASSETS & TOOLS
 

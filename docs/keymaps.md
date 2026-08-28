@@ -1,7 +1,5 @@
 *Compiled by* [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/) *- Latest update: February 1, 2026*
 
-<a id="prefs-keymaps"></a>
-
 # PREFS & KEYMAPS
 
 This is a compilation of **Default Keymaps** that I find important or interesting. There are tips also.
@@ -74,8 +72,6 @@ The *[ WIN ]* tag means, pending to *install*, *add*, *change* on my Windows mac
 
 - [Radium's Hotkey Graph](https://b3dkey.space/)
 - [Radium's Guide To Blender Hotkeys - Radium's Ko-fi Shop](https://ko-fi.com/s/f03814f636)
-
-<a id="added-to-quick-favorites"></a>
 
 ## ADDED TO QUICK FAVORITES
 
@@ -158,8 +154,6 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 
 > *(#2)* Caution with single keyframe + noise modifiers - I created a modified version for this, asking the author to fix itself…
 
-<a id="panels-areas"></a>
-
 ## PANELS & AREAS
 
 **LMB** on the panel header expands or collapses it.
@@ -195,8 +189,6 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 - **Shift-F11** — Text Editor
 - Shift-F12 — Dope Sheet / Timeline
 
-<a id="general"></a>
-
 ## GENERAL
 
 - Preferences — **Cmd-Comma**
@@ -205,8 +197,6 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 - Rename Active Object — **F2** (Menu Edit)
 - Batch Rename — **Cmd-F2** (Menu Edit)
 - Return to default value — **Backspace** (just put your mouse over a setting —not clicking— and press Backspace)
-
-<a id="navigation-view-cameras"></a>
 
 ## NAVIGATION, VIEW & CAMERAS
 
@@ -272,8 +262,6 @@ To perform camera moves looking from Camera, **the camera must first be selected
 - Dolly (Z travel) — **G + ZZ**
 - Sideways Tracking — **G + XX or YY**
 
-<a id="visibility"></a>
-
 ## VISIBILITY
 
 - Fit all visible objects — **Home**
@@ -308,8 +296,6 @@ To perform camera moves looking from Camera, **the camera must first be selected
 - Shade Flat — *Alt-=* *[ WIN ]*
 - Shade Autosmooth — *Alt-Shift-=* *[ WIN ]*
 
-<a id="transform"></a>
-
 ## TRANSFORM
 
 - Move, Scale, Rotate — **G, S, R**
@@ -331,8 +317,6 @@ To perform camera moves looking from Camera, **the camera must first be selected
 
   **Use 0 for cage** - CAUTION: use top numbers, not numpad) - Works only in Object Mode - [Subdivision Surface Modifier - Blender 4.1 Manual](https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/subdivision_surface.html)
 - Edit XYZ values at same time — **LMB** click on the first property, drag your cursor down to the last one and you can enter one value for all of them - Both editing numerically or just after your drag, pressing **Shift** to move the 3 sliders at a time at small increments
-
-<a id="pivot-origin-3d-cursor"></a>
 
 ## PIVOT, ORIGIN & 3D CURSOR
 
@@ -361,8 +345,6 @@ To use 3D Cursor as a pivot — **Dot-4** (Pivot > Select 3D Cursor)
 - Align Object to Cursor — *Alt-F7* (KeKit) *[ WIN ]*
 - Cursor to World Origin — *F8* (Object > Snap >…) *[ WIN ]*
 - Object Origin to Cursor — *Alt-F8* (Object > Set Origin >…) *[ WIN ]*
-
-<a id="selections"></a>
 
 ## SELECTIONS
 
@@ -413,8 +395,6 @@ To use 3D Cursor as a pivot — **Dot-4** (Pivot > Select 3D Cursor)
 - Select List Objects Under — *Alt-RMB* (it was Alt-LMB - Because conflict with new Orbit)
   - 3DView Global > Select List (Enumerate)
 - Switch Objects in Edit Mode — **Alt-Q** while having your mousse pointer over the desired mesh item (to Switch Between Different Objects in Edit, Sculpt, Weight or Draw Mode)
-
-<a id="edit"></a>
 
 ## EDIT
 
@@ -468,8 +448,6 @@ To use 3D Cursor as a pivot — **Dot-4** (Pivot > Select 3D Cursor)
 - Decrease Font Kerning — **Alt-Left Arrow** (place cursor between 2 characters in edit mode)
 - Move Parent Only — In Viewport **Options** (top-right) choose Transform **Affect Only** (to) **Parents**
 - Move Origins Only — In Viewport **Options** (top-right) choose Transform **Affect Only** (to) **Origins**
-
-<a id="tools"></a>
 
 ## TOOLS
 
@@ -573,8 +551,6 @@ Knife has it's own snapping method which does not need to be enabled (yellow, sn
 
 If the green square indicating the knife's position is hovered over an edge this turns yellow to indicate, if you now click the cut will be snapped to the edge. If you move over closer to a vertex, a red outline around the green square will indicate the knife is now snapping to the vertex.
 
-<a id="sculpting"></a>
-
 ## SCULPTING
 
 - Brush Size — **F**
@@ -610,8 +586,6 @@ If the green square indicating the knife's position is hovered over an edge this
 - Move Line Trim/Project — **Ctrl-Spacebar** (Reposition the line)
 - Limit Trim/Project to Segment — **N** > Tool > Active Tool > Limit to Segment
 
-<a id="curves"></a>
-
 ## CURVES
 
 **TIP:** For precise curve creation first place your 3D Cursor (Shift-RMB), then Create Point in Object Mode, then Extend using E and XYZ. Use Grid Absolute Snapping and Rotate using R + CTRL
@@ -632,8 +606,6 @@ If the green square indicating the knife's position is hovered over an edge this
 
 Complete Keymaps and Tips with [Using Blender's Curve Pen Tool](https://www.youtube.com/watch?v=APxkUd7OAAk) (downloaded)
 
-<a id="grease-pencil"></a>
-
 ## GREASE PENCIL
 
 - Line Thickness — **Alt-S**
@@ -649,8 +621,6 @@ While any tool is active:
 - Remove Annotation Active Layer — *[ Quick Favorites ]*
 - Change Eraser Radius — **Rotate Wheel** while active
 - Rotate Annotate Rectangle tool — Press **CTRL** once the rectangle is drawn (add-on [Annotate Plus](https://superhivemarket.com/products/annotate-plus))
-
-<a id="uvs"></a>
 
 ## UVS
 
@@ -676,16 +646,12 @@ You do not have to select all the polygons of the islands that we are going to u
 
 For the “Zen Unwrap” command to work, you must be in UV Sync mode
 
-<a id="weight-paint"></a>
-
 ## WEIGHT PAINT
 
 - Vertex Group Specials — **Ctrl-G** (to reset all weights)
 - Change Radius Size — **F > LMB**
 - Change Width — **Ctrl-F > LMB**
 - Select Bone for Paint — **Alt-RMB-Click** on bone
-
-<a id="outliner-collections-relations"></a>
 
 ## OUTLINER, COLLECTIONS & RELATIONS
 
@@ -772,8 +738,6 @@ Preferences > Keymap > Search for all “Hide Other Collections” > Disable All
 
 ---
 
-<a id="geometry-nodes"></a>
-
 ## GEOMETRY NODES
 
 - Node-Wrangler Menu — **Shift-W**
@@ -822,8 +786,6 @@ Preferences > Keymap > Search for all “Hide Other Collections” > Disable All
 - World Node Editor — *Numpad-3* (original 3)
 - Compositor Node Editor — *Numpad-4* (original 4[)](https://extensions.blender.org/add-ons/node-editor-switcher/)
 
-<a id="shading-lighting"></a>
-
 ## SHADING & LIGHTING
 
 ---
@@ -857,8 +819,6 @@ Preferences > Keymap > Search for all “Hide Other Collections” > Disable All
 
 > Add a principled texture setup from the selected texture files. **Select a Principled BSDF node**, select **Add Principled Setup** from the quick access menu (or press **Shift-Ctrl-T**), and select texture files. It automates the process of adding Image Texture nodes, loading images, selecting the appropriate Color Space, and connecting their outputs to the Principled BSDF node. It detects the type of textures by looking at their file names. You can edit the tags used for this matching process in the add-on preferences.
 
-<a id="rigging"></a>
-
 ## RIGGING
 
 - Toggle Object/Edit — **Tab**
@@ -873,7 +833,7 @@ Preferences > Keymap > Search for all “Hide Other Collections” > Disable All
 - Scale B-Bones Thickness — **Ctrl-Shift-Alt-S**
 - Add Hook Constraint — **Ctrl-H** (select a Vert or a Curve Control Point or a Handle and press Ctrl-H to create a Hook Constraint)
 - Add Constraint with Target — **Ctrl-Shift-C** (first select Target, then select bone to be constrained, then this shortcut)
-<a id="animation-timeline"></a>
+
 ## ANIMATION / TIMELINE
 - Toggle Time-Dope/Graph — **Ctrl-Tab**
   - Toggle Time/Dope
@@ -909,7 +869,6 @@ Preferences > Keymap > Search for all “Hide Other Collections” > Disable All
 
 - Rename Selected Marker — **F2**
 
-<a id="render"></a>
 ## RENDER
 - Render Image — **F12**
 - Render Animation — **Cmd-F12**
@@ -917,7 +876,6 @@ Preferences > Keymap > Search for all “Hide Other Collections” > Disable All
 - Reset Render Region — **Cmd-Alt-B**
 - Render Specific Frames — *Ctrl-Shift-F12* (using [Loom Add-on](https://github.com/p2or/blender-loom)) > Look add-on preferences
 
-<a id="annotate-tool"></a>
 ## ANNOTATE TOOL
 
 **TEMPORAL (while not enabled the tool):**
@@ -930,13 +888,12 @@ Preferences > Keymap > Search for all “Hide Other Collections” > Disable All
 **Once enabled the tool:**
 
 - Erase — **Ctrl** and draw
-<a id="sequencer-vse"></a>
+
 ## SEQUENCER - VSE
 - Add Marker — **M** (to the entire Timeline, not possible to the Strip only)
 - Split — **K**
 - Slide — **S**
 - Clear Strip Offsets — **Alt-O**
-<a id="misc-add-on-specific"></a>
 
 ## MISC ADD-ON SPECIFIC
 
