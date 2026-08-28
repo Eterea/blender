@@ -638,11 +638,9 @@ Important: when you're extruding faces along normals, be sure to also press S af
 [The Easy Way to Fix Ugly Shading in Blender](https://www.youtube.com/watch?v=ZdNEqv6M7p8) - Specially with high dense n-gons
 
 [Topology Quick Tip: A surprising fact about 3-point poles](https://www.youtube.com/watch?v=2WzDWj11TzA) - A quick tip on reflowing topology with 3-point poles
----
 
-## WIP - CONTINUE CLEANUP HERE - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## WIP - CONTINUE CLEANUP HERE - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
----
 [10 ways to make Holes in Blender](https://www.youtube.com/watch?v=oFg367w5Cpo) - Local file:
 
 `.../TUTORIALS_BLENDER/Blender Secrets Book Feb 27th 2024/Vid 401-500/Blender Secrets 435 - 10 ways to make Holes in Blender.mp4`
