@@ -10,7 +10,7 @@
   --md-primary-fg-color: #221F22;
   --md-primary-bg-color: #FCFCFA;
 
-  --md-accent-fg-color: #FC9867;
+  --md-accent-fg-color: #FC9867;i
 
   --md-typeset-color: #FCFCFA;
   --md-typeset-a-color: #78DCE8;
@@ -24,10 +24,12 @@
 }
 
 /* Headings pick up the Monokai Pro accent hues */
-[data-md-color-scheme="slate"] .md-typeset h1 { color: #FF6188; }
-[data-md-color-scheme="slate"] .md-typeset h2 { color: #FFD866; }
-[data-md-color-scheme="slate"] .md-typeset h3 { color: #A9DC76; }
-[data-md-color-scheme="slate"] .md-typeset h4 { color: #78DCE8; }
+[data-md-color-scheme="slate"] .md-typeset h1 { color: #ED6C89; }
+[data-md-color-scheme="slate"] .md-typeset h2 { color: #F9DA78; }
+[data-md-color-scheme="slate"] .md-typeset h3 { color: #B4DB82; }
+[data-md-color-scheme="slate"] .md-typeset h4 { color: #91DAE6; }
+[data-md-color-scheme="slate"] .md-typeset h5 { color: #A99EEC; }
+[data-md-color-scheme="slate"] .md-typeset h6 { color: #EE9D70; }
 
 /* Blockquotes (the ">" highlight style) get a colored left bar instead of plain grey */
 [data-md-color-scheme="slate"] .md-typeset blockquote {
@@ -44,7 +46,7 @@
 
 /* Italic (used for prices, colored/highlighted text carried over from the source docs) */
 [data-md-color-scheme="slate"] .md-typeset em {
-  color: #AB9DF2;
+  color: #F9DA78;
 }
 
 .md-header {
