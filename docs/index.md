@@ -2,12 +2,18 @@
 
 Personal reference notes on Blender, compiled and maintained by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resources/).
 
-- **[Add-ons](addons.md)** — installed, considered, and discarded add-ons.
+- **[Add-ons](addons.md)** — with my installed, considered, and discarded add-ons.
 - **[Keymaps](keymaps.md)** — default and custom keyboard shortcuts.
-- **[Links](links.md)** — training resources, tutorials, and references.
-- **[Tips](tips.md)** — workflow tips and tricks. The most important area: *TIP use the Search!*
+- **[Links](links.md)** — general training resources, tutorials, and references.
+- **[Tips](tips.md)** — workflow tips and tricks. The most important area: lot of info here!
 
-## Go back to Etérea Site?
+---
+
+*TIP: use the TOC for navigation. And the Search field: it's global, for this entire site, and really fast.*
+
+---
+
+Go back to Etérea Site?
 
 - [Home](https://etereaestudios.com/)
 - [About](https://etereaestudios.com/about/)
