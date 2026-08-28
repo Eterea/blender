@@ -95,7 +95,7 @@ This is pre-installed in 5.x
 
 [Rotor](https://extensions.blender.org/add-ons/rotor/) - advanced mirror tool. Press **ALT-X** or select active to l and pick the side you want to mirror along - [Rotor Documentation](https://rotor.ezelar.com/) *[ WIN ]*
 
-[rmKit](https://extensions.blender.org/add-ons/rmkit/) - advanced functionality for mesh editing, precision modeling, and material management - [rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/)t **-** *TO STUDY + [ WIN ]*
+[rmKit](https://extensions.blender.org/add-ons/rmkit/) - advanced functionality for mesh editing, precision modeling, and material management - [rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/) **-** *TO STUDY + [ WIN ]*
 
 [Save Selection](https://extensions.blender.org/add-ons/saveselection/) - Export selection to .blend file. File -> Export -> Save Selection (.blend) *[ WIN UPDATE ]*
 
@@ -118,9 +118,9 @@ This is pre-installed in 5.x
 ## THIRD PART - FREE
 ### Kushiro - Free
 
-[KUSHIRO](https://kushiro.gumroad.com/) - All add-ons at Gumroad
+[KUSHIRO](https://kushiro.gumroad.com/) - All his add-ons at Gumroad
 
-[Kushiro Tools](https://kushiro.gumroad.com/l/ikzrmy)[ - Free Collection](https://kushiro.gumroad.com/l/visualaxis)
+[Kushiro Tools](https://kushiro.gumroad.com/l/ikzrmy)[ - Free Collection](https://kushiro.gumroad.com/l/visualaxis) - A specific collection with his free tools. **Details**:
 
 - [Attach Align](https://kushiro.gumroad.com/l/iutJRq)
 
@@ -174,20 +174,22 @@ This is pre-installed in 5.x
 
 ### Blender Bob - Free
 
- *Replace with versions on extensions.blender.org, when (if) approved…*
+ *Various of his add-ons are available on extensions.blender.org, but not all…*
 
 [Blender Pro, a series of extensions to enhance productivity](https://www.youtube.com/watch?v=iSfooaKbRRU) - Links to all Blender Bob add-ons (and explanations)
 
 [Parent-to-Empty: Adds a item on object/parent menu in Blender to parent objects to an empty](https://github.com/riouxr/BB_Parent-to-Empty) - *Modified to add also ROTATION*
 
-[fSpy](https://fspy.io/) + [fSpy-Blender: Official fSpy importer for Blender](https://github.com/stuffmatic/fSpy-Blender) - Free app reccomended by Bob + add-on combo - Open source still image camera matching - *INSTALL APP!!!!!!!*
+Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: Official fSpy importer for Blender](https://github.com/stuffmatic/fSpy-Blender) - Free app + add-on combo - Open source still image camera matching.
 
 - [Modeling from an image using fSpy in Blender (or others)](https://www.youtube.com/watch?v=vawPWAB_0-U) - Mini-tutorial by Blender Bob
   [Riouxr/BB-Snap:](https://github.com/riouxr/BB-Snap) A Blender addon so move objects with a specific snap distance - *v1.1 modified by me & Claude.ia*
 
 ### Xen Wildman - Free
-[Set Attribute Button](https://imperfectlink.gumroad.com/l/ilsetattrbutton) - @Pixel Fondue Discord Link - Small add-on that Adds a Set Attribute button to the Attributes panel, by ImperfectLink aka Xen Wildman
-[SmartWireframeOverlay](https://discord.com/channels/267112699517861888/1276613499878903808/1502699194585059439) - @Pixel Fondue Discord Link - Small add-on that Excludes objects from global wireframe, by ImperfectLink aka Xen Wildman
+
+[Set Attribute Button](https://imperfectlink.gumroad.com/l/ilsetattrbutton) - @Pixel Fondue Discord Link - Small add-on that Adds a Set Attribute button to the Attributes panel, by ImperfectLink aka **Xen Wildman**
+[SmartWireframeOverlay](https://discord.com/channels/267112699517861888/1276613499878903808/1502699194585059439) - @Pixel Fondue Discord Link - Small add-on that Excludes objects from global wireframe, by ImperfectLink aka **Xen Wildman**
+
 1. Enable globally in 3D Viewport > Viewport Overlays > Smart Wireframe
 2. Enable Locally per Object in Object Properties > Viewport Display > Exclude Wireframe
 
@@ -201,7 +203,7 @@ This is pre-installed in 5.x
 
 [Bone Widget](https://blenderdefender.gumroad.com/l/boneWidget) - for easy creation of custom Bone Shapes - *TO REMOVE, I DON’T USE IT*
 
-[Bradley-Presets-Add-on](https://github.com/Gerstmann-Bradley/Bradley-Presets-Add-on) *(#3)* - To automatically install and update Geometry Nodes by Bradley Animation - See below, at “Custom Geometry Nodes”
+[Bradley-Presets-Add-on](https://github.com/Gerstmann-Bradley/Bradley-Presets-Add-on) - To automatically install and update Geometry Nodes by Bradley Animation - See below, at “Custom Geometry Nodes”
 
 [CheckToolBox](https://vfxgrace.gumroad.com/l/apny) *(#1)* - Highlights poles, triangles, N-gons… in real-time with colors in Edit Mode. Overview the project, for instance, object count, double count, isolated element count, etc.
 
@@ -223,7 +225,7 @@ This is pre-installed in 5.x
 
 [Set Origin](https://emilsvfx.gumroad.com/l/cidqwp) - *(#2)* Emīls Vfx - There is another one, a little more advanced, for the same purpose.: [3DPRS Origin Box - Blender Market](https://blendermarket.com/products/3dprs-origin-box) USD $3*
 
-> *(#n) Means connected, relative, very similar or even redundant. To simplify…*
+> *(#N) Means connected, relative, very similar or even redundant pairs. To simplify…*
 
 ## THIRD PART - PAID
 
@@ -305,16 +307,17 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 ### By Sergey Tyapkin
 
-[Zen UV](https://sergeytyapkin.gumroad.com/l/zenuv4) - *USD 34* - By Sergey Tyapkin
+[Zen UV](https://sergeytyapkin.gumroad.com/l/zenuv4) - *USD 34*
 
 - **To update:** use the internal button, inside the Addon preferences.
 
-[Zen Sets](https://sergeytyapkin.gumroad.com/l/zensets?layout=profile) - *USD 14* discounted at USD 10.5 - By Sergey Tyapkin *[ WIN UPDATE ]*
+[Zen Sets](https://sergeytyapkin.gumroad.com/l/zensets?layout=profile) - *USD 14* discounted at USD 10.5  *[ WIN UPDATE ]*
 
 - **To update:** just install new Zen Sets version, the old one will be replaced automatically, the settings will maintain.
 
 ### By Kushiro - Paid
-[Simple Bend Ex](https://kushiro.gumroad.com/l/simple-bend-ex) - *USD 10* - To bend the mesh very easily.You just need to select the faces (the bend area), then run the tool using RMB
+
+[Simple Bend Ex](https://kushiro.gumroad.com/l/simple-bend-ex) - *USD 10* - To bend the mesh very easily.You just need to select the faces (the bend area), then run the tool using RMB.
 
 [Slide Edge](https://kushiro.gumroad.com/l/oaykc?layout=profile) - *USD 10* - Edge-sliding tool designed for duplicate and slide the selected edges.
 
@@ -334,8 +337,8 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 ## CUSTOM NODES
 ### Paid Custom Nodes
+[Higgsas Blender Geometry Nodes Groups Toolset Pack](https://higgsas.gumroad.com/l/wrusot) - *USD 10* - [Manual 0.1 documentation](https://higgsas-geo-nodes-manual.readthedocs.io/en/latest/) - (Higgsas) Geometry Nodes Groups Blender 3.3/4.4 - Tutorials, Tips and Tricks at [Blender Artists Community.](https://blenderartists.org/t/higgsas-geometry-nodes-groups-blender-3-3-4-4/1351737)
 
-[Higgsas Blender Geometry Nodes Groups Toolset Pack](https://higgsas.gumroad.com/l/wrusot) - *USD 10* - [Manual 0.1 documentation](https://higgsas-geo-nodes-manual.readthedocs.io/en/latest/) - (Higgsas) Geometry Nodes Groups Blender 3.3/4.4 - Tutorials, Tips and Tricks at [Blender Artists Community](https://blenderartists.org/t/higgsas-geometry-nodes-groups-blender-3-3-4-4/1351737)
 [Geometry Nodes Building Blocks Toolkit](https://shmueldisrl.gumroad.com/l/pxpdx?layout=profile) - *USD 10* - By Shmuel Israel - Functionality you wouldn't get with only the built-in nodes. They will cover most basic node types to create most average node structures one step above the default.
 [PatternMaker](https://blendermarket.com/products/patternmaker/) *USD 10* - “Almost” like having Substance Designer inside Blender - [Docs](https://blendermarket.com/products/patternmaker/docs)
 [Numeric Attribute Visualizer in Geometry Nodes](https://ilirbeqiri.gumroad.com/l/xxjuix) - Ilir Beqiri - *USD 5* - **Purchased (not installed, stored)**
