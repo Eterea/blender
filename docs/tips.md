@@ -895,7 +895,7 @@ For asset management, keep your project fonts in a dedicated folder such as:
 
 Then load them into Blender so they become embedded in the project file.
 
----
+## CONTINUE HERE WITH CLEANUP---
 
 ## PHYSICS
 
