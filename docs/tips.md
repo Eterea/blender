@@ -6,36 +6,6 @@ Compiled by [Cristóbal Vila](https://etereaestudios.com/resources/blender-resou
 
 ## GENERAL - MISC
 
-### Misc General Tips
-
-[Tool System - Blender Manual](https://docs.blender.org/manual/en/latest/interface/tool_system.html)
-
-[Operators - Blender Manual](https://docs.blender.org/manual/en/latest/interface/operators.html)
-
-[Blender crashes at startup? Delete the default startup.blend file! - YouTube](https://www.youtube.com/watch?v=1_G9AYh4v0g)
-
-[Groups in Blender and confusion with Collections](https://www.rendereverything.com/blender-groups-confusion-about-collections/)
-
-[How Blender Keymap Presets Works](https://discord.com/channels/267112699517861888/1276613499878903808/1312076163463643221) - *Discord link*, by Xen Wildman - Saved on disk
-
-[How To Install or Reset Blender (The Right Way)](https://www.youtube.com/watch?v=Y_DRWnWq2fI)
-
-[Make And Change Hotkeys In Blender](https://www.youtube.com/watch?v=bwwKQLDoOyg)
-
-[Theres More to Blender's Custom Startup Saves Than You Realize](https://www.youtube.com/watch?v=VHlFAobw6wc)
-
-[Understanding Blend1 Files: Do You Really Need Them? - CG Cookie](https://cgcookie.com/posts/what-is-a-blend1-file-and-do-you-really-need-them)
-
-[You can still move the old Preferences to your new Version by hand](https://cgcookie.com/community/14898-question-about-quick-favorites?page=1#answer-61367)
-
-[Zenplates - New File Templates Made Easy](https://www.patreon.com/posts/zenplates-new-100172069?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link)
-
-[Application Templates - Blender Manual](https://docs.blender.org/manual/en/latest/advanced/app_templates.html)
-
-[Link, Append, Pack & Library Overrides Explained](https://www.youtube.com/watch?v=Ieb_VGl8MTI)
-
----
-
 ### Upgrade Blender without losing anything:
 
 [How to Update Blender Without Losing Settings and Add-Ons](https://www.tripo3d.ai/blog/collect/how-to-update-blender-without-losing-settings-and-add-ons-t1d5nijtdx4)
@@ -108,42 +78,42 @@ It's essentially the difference between "object is invisible" and "object no lon
 
 **Outliner → Eye icon** 👁️
 
-Temporarily hides the object from view in the 3D viewport.
+- Temporarily hides the object from view in the 3D viewport.
 
-The object is still active in the scene, meaning it will still:
+- The object is still active in the scene, meaning it will still:
 
-Participate in modifiers.
+- Participate in modifiers.
 
-Affect simulations (e.g., collisions).
+- Affect simulations (e.g., collisions).
 
-Be evaluated by the dependency graph.
+- Be evaluated by the dependency graph.
 
-Still visible in renders (unless also hidden from render).
+- Still visible in renders (unless also hidden from render).
 
 Use case: When you just want to hide something visually for clarity.
 #### Disable in Viewport (Monitor icon)
 
 **Outliner → Monitor icon** 🖥️ (you may need to enable it from the filter options)
 
-Disables the object entirely in the viewport.
+- Disables the object entirely in the viewport.
 
-The object is excluded from the dependency graph, so:
+- The object is excluded from the dependency graph, so:
 
-Modifiers, constraints, physics, and drivers are not evaluated.
+- Modifiers, constraints, physics, and drivers are not evaluated.
 
-It does not affect other objects (e.g., collisions, booleans).
+- It does not affect other objects (e.g., collisions, booleans).
 
-It behaves as if it doesn't exist in the scene at all (for viewport purposes).
+- It behaves as if it doesn't exist in the scene at all (for viewport purposes).
 
-Still rendered unless you also disable it for rendering.
+- Still rendered unless you also disable it for rendering.
 
 Use case: For performance optimization or to prevent interference with other objects (e.g., when debugging simulations or modifiers).
 
 ### Report and Missing Files
 
-*File > External Data >* **Report** *Missing Files*, will report all missing files, but it only show a single line at bottom of interface. To see ALL missing ones, open an **Info** viewport (clean it deleting all, first of all)
+**File > External Data > Report Missing Files**, will report all missing files, but it only show a single line at bottom of interface. To see ALL missing ones, open an **Info** viewport (clean it deleting all, first of all)
 
-Then, with *File > External Data >* **Find** *Missing Files*, you can catch all those directories where your missing data is stored
+Then, with **File > External Data > Find Missing Files**, you can catch all those directories where your missing data is stored
 
 ### Fake user - caution!!!
 
@@ -202,11 +172,23 @@ Answer:
 
 > BF is currently designing "embedding" which is a midpoint between link and append to solve previously mentioned issue. You can also decide when you drag it in or per session at the top of the asset browser.
 
----
+### GENERAL MISC - LINKS
 
-[Link & Append - Blender Manual](https://docs.blender.org/manual/en/latest/files/linked_libraries/link_append.html)
+[Tool System - Blender Manual](https://docs.blender.org/manual/en/latest/interface/tool_system.html)
+[Operators - Blender Manual](https://docs.blender.org/manual/en/latest/interface/operators.html)
+[Blender crashes at startup? Delete the default startup.blend file! - YouTube](https://www.youtube.com/watch?v=1_G9AYh4v0g)
+[Groups in Blender and confusion with Collections](https://www.rendereverything.com/blender-groups-confusion-about-collections/)
+[How Blender Keymap Presets Works](https://discord.com/channels/267112699517861888/1276613499878903808/1312076163463643221) - *Discord link*, by Xen Wildman - Saved on disk
+[How To Install or Reset Blender (The Right Way)](https://www.youtube.com/watch?v=Y_DRWnWq2fI)
+[Make And Change Hotkeys In Blender](https://www.youtube.com/watch?v=bwwKQLDoOyg)
+[Theres More to Blender's Custom Startup Saves Than You Realize](https://www.youtube.com/watch?v=VHlFAobw6wc)
+[Understanding Blend1 Files: Do You Really Need Them? - CG Cookie](https://cgcookie.com/posts/what-is-a-blend1-file-and-do-you-really-need-them)
+[You can still move the old Preferences to your new Version by hand](https://cgcookie.com/community/14898-question-about-quick-favorites?page=1#answer-61367)
+[Zenplates - New File Templates Made Easy](https://www.patreon.com/posts/zenplates-new-100172069?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link)
+[Application Templates - Blender Manual](https://docs.blender.org/manual/en/latest/advanced/app_templates.html)
+[Link, Append, Pack & Library Overrides Explained](https://www.youtube.com/watch?v=Ieb_VGl8MTI)
 
-These functions help you reuse objects, materials and other data-blocks from another blend-file. You can build libraries of common content and share them across multiple referencing files.
+[Link & Append - Blender Manual](https://docs.blender.org/manual/en/latest/files/linked_libraries/link_append.html) - These functions help you reuse objects, materials and other data-blocks from another blend-file. You can build libraries of common content and share them across multiple referencing files.
 
 [When to link external blend files - Support / Modeling - Blender Artists Community](https://blenderartists.org/t/when-to-link-external-blend-files/1222869)
 
@@ -294,17 +276,11 @@ To avoid breaking instance dependencies
 
 [Select Multiple Edge Loops Instantly in Blender - YouTube](https://www.youtube.com/shorts/aouPOvImP50)
 
-LMB-Select an edge, press CTRL-LMB-Select another far away parallel edge (this is: Pick Shortest Path)
+1. LMB-Select an edge, press CTRL-LMB-Select another far away parallel edge (this is: Pick Shortest Path)
 
-In the bottom options enable **Face Stepping**
+2. In the bottom options enable **Face Stepping**
 
-Menu Select > Select Loops > **Edge Loops** (available on QuickMenu)
-
-### Switch Objects in Edit Mode
-
-For quickly Switch Between Different Objects in Edit but also in Sculpt, Weight or Draw Mode:
-
-Just place you mouse over the other object and press **Alt-Q**
+3. Menu Select > Select Loops > **Edge Loops** (available on QuickMenu)
 
 ### Use always Bevel Modifier with Weight Limit Method
 
@@ -345,7 +321,7 @@ for obj in bpy.data.objects:
 
 To shade differently the active and inactive geometry in the viewport go to 3D Viewport Overlays while in edit mode and look for that Fade Inactive Geometry Checkbox and Opacity Slider
 
-- I use a custom keymap **Alt-Ctrl-Z** for the checkbox
+- I use a custom keymap *Alt-Ctrl-Z* for the checkbox
 
 ### Quick cut, slice, boolean, carver objects
 
@@ -363,27 +339,23 @@ Select an ELEMENT of the ISLAND that you want to make active.
 
 Press TAB twice, to convert to Object Mode and then to Edit Mode.
 
-### Triangles to Quads
-
-You can un-triangulate the selected portion of a mesh by hitting Alt-J. This is in Menu Faces > Triangles to Quads
-
 ### How to directly draw a handmade Curve onto a mesh with the Draw tool
 
-Add Curve object, switch to Edit mode, Delete curve, take Draw tool (free-hand pen), under Tool properties (N) switch to Surface, draw a shape over your model
+1. Add Curve object, switch to Edit mode, Delete curve, take Draw tool (free-hand pen), under Tool properties (N) switch to Surface, draw a shape over your model
 
-Be sure Curve object is set to 3D type
+2. Be sure Curve object is set to 3D type
 
-**Also, to project a premade curve (any kind) to a surface**
+#### Also, to project a premade curve (any kind) to a surface
 
-Select all points on the path,
+1. Select all points on the path,
 
-Navigate to a POV where you’re looking past the curve to the object,
+2. Navigate to a POV where you’re looking past the curve to the object,
 
-Turn on Snap,
+3. Turn on Snap,
 
-Enable Face Project
+4. Enable Face Project
 
-Press G and Enter
+5. Press G and Enter
 
 **Also, consider using Shrinkwrap Modifier, for a live projection**
 
@@ -391,13 +363,13 @@ Press G and Enter
 
 It seems that the **Quick Snap Tool** add-on does not work in combination with Shift-R (repeat last action). So to move with copy and snape to mesh islands vertices we can do:
 
-Adjust 3D cursor to the vertex that serves as anchor.
+1. Adjust 3D cursor to the vertex that serves as anchor.
 
-Transform Pivot Point: 3D Cursor
+2. Transform Pivot Point: 3D Cursor
 
-Snap Base Center / Snap Vertex
+3. Snap Base Center / Snap Vertex
 
-Duplicate island with Shift-D and move the copy while snapping.
+4. Duplicate island with Shift-D and move the copy while snapping.
 
 ### How to setup blender 3.0 in millimeters (mm) for precision modeling
 
@@ -405,19 +377,19 @@ Duplicate island with Shift-D and move the copy while snapping.
 
 [How To Setup Blender 3.0 In Millimetres (mm) Precision Modeling - YouTube](https://www.youtube.com/watch?v=R-Vq2O-hvfo)
 
-- Scene / Units / Length / **Millimeters**
+1. Scene / Units / Length / **Millimeters**
 
-- Scene / Units / Unit Scale / **0.001**
+2. Scene / Units / Unit Scale / **0.001**
 
-- 3D Viewport Overlays / Scale / **0.001**
+3. 3D Viewport Overlays / Scale / **0.001**
 
-- N Panel / View / Clip Start / **0.1 mm (#)**
+4. N Panel / View / Clip Start / **0.1 mm (#)**
 
-- N Panel / View / Clip End / **10000 mm (#)**
+5. N Panel / View / Clip End / **10000 mm (#)**
 
-- Camera Data / Lens / Clip End / **10000 mm (#)**
+6. Camera Data / Lens / Clip End / **10000 mm (#)**
 
-- (#) You can play with these amounts depending on scene specifics and maximum/minimum sizes
+(#) You can play with these amounts depending on scene specifics and maximum/minimum sizes
 
 ### Set the origin of an object to the center of it´s bounding box
 
@@ -427,9 +399,9 @@ Duplicate island with Shift-D and move the copy while snapping.
 
 ### To align our Transform Gizmo (Move, Rotate, Scale) to a given edge loop
 
-Change Transform Orientation (comma) to Normal
+1. Change Transform Orientation (comma) to Normal
 
-Change Transform Pivot Point (dot) to Active Element
+2. Change Transform Pivot Point (dot) to Active Element
 
 ### To manage custom Attributes for elements (verts, edges, faces…)
 
@@ -493,9 +465,9 @@ Use **Background** if you want a static image that doesn’t get in your way whi
 
 ### Select edges with same bevel weight
 
-If you have edges with different bevel weights, e.g. 1.0, 0.5 and 0.25 while some have 0, and you want to select all with some bevel weight, whatever high it may be, you could try to select one with i.e. 0.5 and then use *Select > Select Similar > Bevel*.
+If you have edges with different bevel weights, e.g. 1.0, 0.5 and 0.25 while some have 0, and you want to select all with some bevel weight, whatever high it may be, you could try to select one with i.e. 0.5 and then use **Select > Select Similar > Bevel**.
 
-To select all edges with a bevel weight > 0, select one which has 0, then *Select > Select Similar > Bevel*. Now all edges with bevel weight = 0 are selected. Then press Ctrl+I to invert the selection. Now all edges with a weight above 0 are selected.
+To select all edges with a bevel weight > 0, select one which has 0, then **Select > Select Similar > Bevel**. Now all edges with bevel weight = 0 are selected. Then press Ctrl+I to invert the selection. Now all edges with a weight above 0 are selected.
 
 ### To convert a Blender loop to a circle
 
@@ -569,7 +541,144 @@ Important: Make sure you don't have any coplanar faces when you boolean, always 
 4. Press Ctrl+F,F to extrude along normals
 
 Important: when you're extruding faces along normals, be sure to also press S after you press Ctrl+F,F to enable the "Even Thickness" option for a better result! So the full shortcut is Ctrl+F,F,S (yes, really)
-### Misc Modeling Tips
+
+### Make holes
+
+[10 ways to make Holes in Blender](https://www.youtube.com/watch?v=oFg367w5Cpo) - Local file:
+
+`.../TUTORIALS_BLENDER/Blender Secrets Book Feb 27th 2024/Vid 401-500/Blender Secrets 435 - 10 ways to make Holes in Blender.mp4`
+I specially like this method
+
+#### Cut with a polygon or closed line in front of it.
+
+1. We have a cube.
+
+2. Add a circle in front of it (curve, hollow polygon or fill, it doesn't matter) - It could also be a non-closed surface, like a hemisphere.
+
+3. Select only the cube > EDIT MODE
+
+4. CTRL + LMB to select also the circle (in 3DVP or in the Outliner)
+
+5. Front view (or from the angle of projection that we want)
+
+6. Mesh > Knife Project (we can activate “Cut Through”)
+
+### Orient ortho views to selected geo
+
+Orient ortho views to selected geo & create an oriented Empty (similar to Modo Orient View to Selected Object)
+
+1. Select an edge to mark Y orientation
+
+2. Shift-7 to view from RELATIVE TOP view
+
+3. Shift-D, 2 (Cursor to Selected)
+
+4. Go Object mode
+
+5. Add an Empty, change Align to View. Rename and Store
+
+### Work in a given orientation (defined by an object):
+
+1. Select your Object/Empty
+
+2. Go to Transforms Orientation and press "+" (this will create a New Transform Orientation) - *GREAT TIP!!!*
+
+### Orient S as Selected Object/Empty
+#### Super-slow method
+
+Not good for component selections, just objects/empties
+
+1. Change your transform orientation to Local
+
+2. Select the object you want to snap to
+
+3. Select the cursor tool in the toolbar
+
+4. Change its orientation setting from **None** to **Transform** in N panel > Tool > Active Tool
+
+5. Click anywhere in the viewport to move the cursor, which will align its orientation with the selected object.
+
+6. Press Shift S > Cursor To Selected to snap the cursor location to the object origin.
+
+#### Fast Method
+
+Good for all, objects & components
+
+- Use **KeKit** add-on > Select & Align > Cursor Fit & Align > Custom Keymap: **F6**
+
+### Spin face around an axis
+
+[Blender Docs](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/spin.html) [Example](https://www.instagram.com/reel/C-Kl0OrKXiA)
+
+1. Select top of cube
+
+2. Front view
+
+3. Shift-RMB to move 3D Cursor to the center of rotation
+
+4. N > Tool Options
+
+5. Spin tool (change Axis in N if necessary)
+
+6. Control extrude-rotation and steps (caution: if using bottom options, then no more direct edit is possible…)
+
+### Randomise vertices position along an axis
+
+[Link to Blender Exchange](https://blender.stackexchange.com/questions/47849/how-to-randomise-vertex-position-along-an-axis) - Tip using Proportional Editing
+
+1. Select the vertices you want affected, press Ctrl + I, to invert the selection, and then H to hide those vertices. Now, select a vertex of the ones left, press O, to turn Proportional Editing on, and, in the 3D view header, set the falloff to random:
+
+2. Then, press G, to move, followed by one of X, Y or Z, either once or twice, to limit to the axis you want. Now, use the scroll wheel to enlarge the affected area so that all the vertices are affected and move the mouse until you get the results you want. Then, press Alt + H to show all hidden vertices again.
+
+### Extend and align randomised verts on a tilted plane-mesh border
+
+Two methods:
+
+#### Method 1
+
+1. Pivot Point > Active Element
+
+2. Transform Orientations > View
+
+3. Select Directional Edge > Shift-7 to align Top View orthogonal to Edge Selection
+
+4. Select randomised border as verts, deselect and select desired active vert
+
+5. S-Y-0
+
+#### Method 2
+
+1. Pivot Point > Active Element
+
+2. Select Directional Edge > Transform Orientations > + (Create Orientation - Edge)
+
+3. And also Shift-7 to align Top View orthogonal to Edge Selection
+
+4. Select randomised border as verts, deselect and select desired active vert
+
+5. S-Y-0
+
+### MODELING - QUICK TIPS
+
+#### Triangles to Quads
+You can un-triangulate the selected portion of a mesh by hitting Alt-J. This is in Menu Faces > Triangles to Quads
+#### Fix Near Clip on extremely small or large models
+
+N (Side Panel) > View > View > Clip Start / Clip End (adjust both)
+
+#### To know the coordinates of a selected vertex
+
+Of a mesh or a curve: N > Element > Transform
+
+#### There is not Workplane in Blender
+
+Use **Empties-Arrows**, instead and saved them as Custom **Transform Orientations***
+
+#### Switch Objects in Edit Mode
+
+For quickly Switch Between Different Objects in Edit but also in Sculpt, Weight or Draw Mode just place you mouse over the other object and press **Alt-Q**
+
+### MODELING  - LINKS
 
 [Symmetrize](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/symmetrize.html) (in QuickMenu) vs [Mirror](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/mirror.html) (Ctrl-M)
 
@@ -637,167 +746,25 @@ Important: when you're extruding faces along normals, be sure to also press S af
 
 [Topology Quick Tip: A surprising fact about 3-point poles](https://www.youtube.com/watch?v=2WzDWj11TzA) - A quick tip on reflowing topology with 3-point poles
 
-## WIP - CONTINUE MD CLEANUP HERE - !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-[10 ways to make Holes in Blender](https://www.youtube.com/watch?v=oFg367w5Cpo) - Local file:
-
-`.../TUTORIALS_BLENDER/Blender Secrets Book Feb 27th 2024/Vid 401-500/Blender Secrets 435 - 10 ways to make Holes in Blender.mp4`
-
-I like this: cut with a polygon or closed line in front of it.
-
-We have a cube.
-
-Add a circle in front of it (curve, hollow polygon or fill, it doesn't matter) - It could also be a non-closed surface, like a hemisphere.
-
-Select only the cube > EDIT MODE
-
-CTRL + LMB to select also the circle (in 3DVP or in the Outliner)
-
-Front view (or from the angle of projection that we want)
-
-Mesh > Knife Project (we can activate “Cut Through”)
-
----
-
-**Orient ortho views to selected geo & create an oriented Empty (similar to Modo Orient View to Selected Object)**
-
-— Select an edge to mark Y orientation
-
-— Shift-7 to view from RELATIVE TOP view
-
-— Shift-D, 2 (Cursor to Selected)
-
-— Go Object mode
-
-— Add an Empty, change Align to View. Rename and Store
-
-**Work in a given orientation (defined by an object):**
-
-— Select your Object/Empty
-
-— Go to Transforms Orientation and press "+" (this will create a New Transform Orientation) -> GREAT TIP!!!
-
-**Orient S as Selected Object/Empty**
-
-**Super-slow method** (not good for component selections, just objects/empties)
-
-— Change your transform orientation to Local
-
-— Select the object you want to snap to
-
-— Select the cursor tool in the toolbar
-
-— Change its orientation setting from **None** to **Transform** in N panel > Tool > Active Tool
-
-— Click anywhere in the viewport to move the cursor, which will align its orientation with the selected object.
-
-— Press Shift S > Cursor To Selected to snap the cursor location to the object origin.
-
-**Fast Method** (good for all, objects & components)
-
-— Use **KeKit** add-on > Select & Align > Cursor Fit & Align > Custom Keymap: **F6**
-
----
-
-**Fix Near Clip on extremely small or large models**
-
-N (Side Panel) > View > View > Clip Start / Clip End (adjust both)
-
----
-
-**To know the coordinates of a selected vertex (of a mesh or a curve): N > Element > Transform**
-
----
-
-There is not **Workplane** in Blender. Use **Empties-Arrows**, instead and saved them as Custom **Transform Orientations**
-
----
-
-[Spin face around an axis](https://docs.blender.org/manual/en/latest/modeling/meshes/tools/spin.html) ([example](https://www.instagram.com/reel/C-Kl0OrKXiA))
-
-— Select top of cube
-
-— Front view
-
-— Shift-RMB to move 3D Cursor to the center of rotation
-
-— N > Tool Options
-
-— Spin tool (change Axis in N if necessary)
-
-— Control extrude-rotation and steps (caution: if using bottom options, then no more direct edit is possible…)
-
----
-
-[Randomise vertices position along an axis](https://blender.stackexchange.com/questions/47849/how-to-randomise-vertex-position-along-an-axis) - Tip using Proportional Editing
-
-Select the vertices you want affected, press Ctrl + I, to invert the selection, and then H to hide those vertices. Now, select a vertex of the ones left, press O, to turn Proportional Editing on, and, in the 3D view header, set the falloff to random:
-
-Then, press G, to move, followed by one of X, Y or Z, either once or twice, to limit to the axis you want. Now, use the scroll wheel to enlarge the affected area so that all the vertices are affected and move the mouse until you get the results you want. Then, press Alt + H to show all hidden vertices again.
-
----
-
-**Extend and align randomised verts on a tilted plane-mesh border - TWO METHODS**
-
-**Method 1**
-
-Pivot Point > Active Element
-
-*Transform Orientations > View*
-
-*Select Directional Edge > Shift-7 to align Top View orthogonal to Edge Selection*
-
-Select randomised border as verts, deselect and select desired active vert
-
-S-Y-0
-
-**Method 2**
-
-Pivot Point > Active Element
-
-*Select Directional Edge > Transform Orientations > + (Create Orientation - Edge)*
-
-*And also Shift-7 to align Top View orthogonal to Edge Selection*
-
-Select randomised border as verts, deselect and select desired active vert
-
-S-Y-0
-
 ## CURVES
 
-[Bezier Curves in Blender 3.x - YouTube](https://www.youtube.com/watch?v=z4PxYAKVG9Q) - Fantastic video about drawing with beziers!!!
+### To change radius for all points in a Curve
 
-[Curves & Curve Modifier in Blender - Beginner Tutorial - YouTube](https://www.youtube.com/watch?v=9xNdPA65dJo)
+And do it in an Absolute way (not Median). Two methods, both in Edit mode:
 
-[NURBS CURVES! Why the heck should I use them?. - YouTube](https://www.youtube.com/watch?v=jO40hu7ELfA&t=0s) (downloaded)
+**Method A**
 
-[Part 1, Sardines Can Packaging, tab modeling - YouTube](https://www.youtube.com/watch?v=vJb_UioIelA&t=0s) (downloaded)
+1. Select all points, press Alt-S, write 0
 
-[The BEST bezier curve tutorial for new Blender users. - YouTube](https://www.youtube.com/watch?v=f53GvpTIO2w) - **Updated version** (downloaded)
+2. Go to N panel, change Mean Radius to 1
 
----
+**Method B**
 
-**Tip to Move an Object to another Target Object or Empty Position.**
+Select all points, Search (spacebar), write “Set Curve Radius”, write 1
 
-Select Object to Move, then select Target (to become active) and then Ctrl-C > Copy Location
+NOTE: I don't find this command in any menu - *Added to quick menu*
 
----
-
-**To change radius for all points in a Curve in an Absolute way (not Median)**
-
-Two methods, in Edit mode:
-
-A. 1. Select all points, press Alt-S, write 0
-
-- 2. Go to N panel, change Mean Radius to 1
-
-B. Select all points, Search (spacebar), write “Set Curve Radius”, write 1
-
-- (I don't find this command in any menu?) >>> **ADDED TO QUICK MENU**
-
----
-
-**Completely Flat ribbons from Curves**
+### Completely Flat ribbons from Curves
 
 The key is to change spline to 3D (not 2D), maintain it flat, give some Extrude amount and change the **Mean Tilt for all points to 90º**
 
@@ -805,51 +772,21 @@ To convert a curve seen in Front (XZ plane) into a flat ribbon we have to draw a
 
 And then, to visualize and edit everything better, rotate it 90º in X
 
----
+### To work on a symmetrical curve maintaining it symmetrical
 
-For **precise curve creation** first place your 3D Cursor (Shift-RMB), then Create Point in Object Mode, then Extend using E and XYZ. Use Grid Absolute Snapping and Rotate using R + CTRL
+Since the Enable Symmetry in 3D Viewport only works for meshes
 
----
+- Use Mirror Modifier, work on half, and finally apply and merge (or make cyclic)
 
-**Hand drawn curves that are CURVES and not Meshes, for use with GN:**
+OR
 
-After drawing them make sure that in Spline Data > Shape > Fill Mode is set to “None” (if not, it considers it Mesh).
-
----
-
-**To Merge two spline sections** on a single curve, select a couple of extreme points and press F
-
----
-
-**To work on a symmetrical curve maintaining it symmetrical** (since the Enable Symmetry in 3D Viewport only works for meshes)
-
-— Use Mirror Modifier, work on half, and finally apply and merge (or make cyclic)
-
-- OR
-
-— Convert curve to mesh, Enable Mesh Symmetry in the 3D viewport, and create an intermediate Geometry Nodes to convert back and visualize final output as curve. Suitable only for Poly and NURBS curve. Bezier are not adequate for this procedure…
+- Convert curve to mesh, Enable Mesh Symmetry in the 3D viewport, and create an intermediate Geometry Nodes to convert back and visualize final output as curve. Suitable only for Poly and NURBS curve. Bezier are not adequate for this procedure…
 
 And maybe the best approach is to start drawing a single mesh vert, enable modifiers for mirror & merge, and apply another SDS modifier. And convert all to curves at end.
 
----
-
-**To set first point in a given spline(s)**
-
-Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Spline Order > Set First Point
-
-IMPORTANT: this does not work if curve is open. Then, make it closed temporarily (N panel > Item > Active Spline > Enable Cyclic), Set First Point and then make it open again.
-
----
-
-**To enable Curve Resolution Visibility**
-
-Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution > Set Resolution (press ESC to disable)
-
----
-
 ### Batch change setting for all splines on a nurbs curve
 
-Select NURBS in Object mode, Open Text Editor, paste and run this (changing *True* / *False*)
+Select NURBS in Object mode, Open Text Editor, paste and run this (changing **True** / **False**)
 
 **Endpoint U**
 
@@ -884,7 +821,36 @@ if obj and obj.type == 'CURVE':
             spline.use_bezier_u = True
 ```
 
----
+### CURVES - QUICK TIPS
+
+#### Tip to Move an Object to another Target Object or Empty Position
+Select Object to Move, then select Target (to become active) and then **Ctrl-C > Copy Location**
+
+#### For precise curve creation
+first place your 3D Cursor (Shift-RMB), then Create Point in Object Mode, then Extend using E and XYZ. Use Grid Absolute Snapping and Rotate using R + CTRL
+#### Hand drawn curves that are CURVES and not Meshes, for use with GN:
+After drawing them make sure that in Spline Data > Shape > Fill Mode is set to “None” (if not, it considers it Mesh).
+#### To Merge two spline sections on a single curve
+Select a couple of extreme points and press F
+#### To set first point in a given spline(s)
+Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Spline Order > Set First Point
+IMPORTANT: this does not work if curve is open. Then, make it closed temporarily (N panel > Item > Active Spline > Enable Cyclic), Set First Point and then make it open again.
+#### To enable Curve Resolution Visibility
+Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution > Set Resolution (press ESC to disable)
+
+### CURVES - LINKS
+
+[Bezier Curves in Blender 3.x - YouTube](https://www.youtube.com/watch?v=z4PxYAKVG9Q) - Fantastic video about drawing with beziers!!!
+
+[Curves & Curve Modifier in Blender - Beginner Tutorial - YouTube](https://www.youtube.com/watch?v=9xNdPA65dJo)
+
+[NURBS CURVES! Why the heck should I use them?. - YouTube](https://www.youtube.com/watch?v=jO40hu7ELfA&t=0s) (downloaded)
+
+[Part 1, Sardines Can Packaging, tab modeling - YouTube](https://www.youtube.com/watch?v=vJb_UioIelA&t=0s) (downloaded)
+
+[The BEST bezier curve tutorial for new Blender users. - YouTube](https://www.youtube.com/watch?v=f53GvpTIO2w) - **Updated version** (downloaded)
+## CONTINUE HERE WITH CLEANUP--------------------------------------
+
 
 ## FONTS
 
