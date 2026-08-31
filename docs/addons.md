@@ -100,7 +100,7 @@ This is pre-installed in 5.x
 
 [Rotor](https://extensions.blender.org/add-ons/rotor/) - advanced mirror tool. Press **ALT-X** or select active to l and pick the side you want to mirror along - [Rotor Documentation](https://rotor.ezelar.com/) *[ WIN ]*
 
-[rmKit](https://extensions.blender.org/add-ons/rmkit/) - advanced functionality for mesh editing, precision modeling, and material management - [rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/) **-** *TO STUDY + [ WIN ]*
+[rmKit](https://extensions.blender.org/add-ons/rmkit/) - advanced functionality for mesh editing, precision modeling, and material management - [rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/) **-** *TO STUDY + [ WIN UPDATE ]*
 
 [Save Selection](https://extensions.blender.org/add-ons/saveselection/) - Export selection to .blend file. File -> Export -> Save Selection (.blend) *[ WIN UPDATE ]*
 
@@ -110,7 +110,7 @@ This is pre-installed in 5.x
 
 [Simplify Curves+](https://extensions.blender.org/add-ons/simplify-curves-plus/) - To simplify curves, both in the 3D viewport and also
 
-[Synchronize Workspaces](https://extensions.blender.org/add-ons/synchronize-workspaces) - Synchronize 3D views between workspaces
+[Synchronize Workspaces](https://extensions.blender.org/add-ons/synchronize-workspaces) - Synchronize 3D views between workspaces  *[ WIN UPDATE ]*
 
 [Tree Clipper](https://extensions.blender.org/add-ons/tree-clipper/) - exporting and importing Blender node trees as JSON- Here is a [REPOSITORY](https://tree-clipper.com/) with some samples (Use the dedicated TAB at N panel) *[ WIN UPDATE ]*
 
@@ -312,7 +312,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 #### By Sergey Tyapkin
 
-[Zen UV](https://sergeytyapkin.gumroad.com/l/zenuv4) - *USD 34*
+[Zen UV](https://sergeytyapkin.gumroad.com/l/zenuv4) - *USD 34*  *[ WIN UPDATE ]*
 
 - **To update:** use the internal button, inside the Addon preferences.
 
