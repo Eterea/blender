@@ -637,25 +637,17 @@ Two methods:
 #### Method 1
 
 1. Pivot Point > Active Element
-
 2. Transform Orientations > View
-
 3. Select Directional Edge > Shift-7 to align Top View orthogonal to Edge Selection
-
 4. Select randomised border as verts, deselect and select desired active vert
-
 5. S-Y-0
 
 #### Method 2
 
 1. Pivot Point > Active Element
-
 2. Select Directional Edge > Transform Orientations > + (Create Orientation - Edge)
-
 3. And also Shift-7 to align Top View orthogonal to Edge Selection
-
 4. Select randomised border as verts, deselect and select desired active vert
-
 5. S-Y-0
 
 ### MODELING - QUICK TIPS
@@ -825,7 +817,6 @@ if obj and obj.type == 'CURVE':
 
 #### Tip to Move an Object to another Target Object or Empty Position
 Select Object to Move, then select Target (to become active) and then **Ctrl-C > Copy Location**
-
 #### For precise curve creation
 first place your 3D Cursor (Shift-RMB), then Create Point in Object Mode, then Extend using E and XYZ. Use Grid Absolute Snapping and Rotate using R + CTRL
 #### Hand drawn curves that are CURVES and not Meshes, for use with GN:
@@ -837,7 +828,6 @@ Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Spline Order > S
 IMPORTANT: this does not work if curve is open. Then, make it closed temporarily (N panel > Item > Active Spline > Enable Cyclic), Set First Point and then make it open again.
 #### To enable Curve Resolution Visibility
 Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution > Set Resolution (press ESC to disable)
-
 ### CURVES - LINKS
 
 [Bezier Curves in Blender 3.x - YouTube](https://www.youtube.com/watch?v=z4PxYAKVG9Q) - Fantastic video about drawing with beziers!!!
@@ -849,8 +839,6 @@ Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution
 [Part 1, Sardines Can Packaging, tab modeling - YouTube](https://www.youtube.com/watch?v=vJb_UioIelA&t=0s) (downloaded)
 
 [The BEST bezier curve tutorial for new Blender users. - YouTube](https://www.youtube.com/watch?v=f53GvpTIO2w) - **Updated version** (downloaded)
-## CONTINUE HERE WITH CLEANUP--------------------------------------
-
 
 ## FONTS
 
@@ -861,58 +849,49 @@ Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution
 Blender does **not** use the operating system’s font registry (unlike Adobe applications).
 Fonts must be **explicitly loaded into each .blend file**.
 
-**Procedure**
+#### Procedure
 
-Add or select a **Text** object.
-
-Go to **Object Data Properties** (green “F” icon).
-
-Open the **Font** panel.
-
-In the **Regular** slot, click the **folder icon** → **Load Font…**
-
-Select the desired .ttf or .otf font file.
+1. Add or select a **Text** object.
+2. Go to **Object Data Properties** (green “F” icon).
+3. Open the **Font** panel.
+4. In the **Regular** slot, click the **folder icon** → **Load Font…**
+5. Select the desired .ttf or .otf font file.
 
 From that moment on, the font is **embedded inside the .blend file**.
 
-**How fonts differ from textures**
+#### How fonts differ from textures
 
 Fonts in Blender are **physically embedded into the .blend file**.
 They are **not referenced by file path**, unlike: Textures, HDRIs, Videos, Audio, Image references…
 
 Once loaded, the font becomes part of the Blender file itself.
 
-**Practical consequence**
+#### Practical consequence
 
 After loading a font and saving the .blend, the original font file can be deleted from disk and:
 
-The text will still work
-
-The render output will remain identical
-
-The font will remain available inside the scene
+- The text will still work
+- The render output will remain identical
+- The font will remain available inside the scene
 
 The font is now stored internally within the .blend.
 
-**File portability**
+#### File portability
 
 Because fonts are embedded:
 
-The file can be opened on any machine
-
-No system fonts are required
-
-No font substitutions occur
-
-Renders are 100% reproducible
+- The file can be opened on any machine
+- No system fonts are required
+- No font substitutions occur
+- Renders are 100% reproducible
 
 Blender treats fonts as **embedded assets**, not as system resources.
 
-**Pipeline recommendation**
+#### Pipeline recommendation
 
 For asset management, keep your project fonts in a dedicated folder such as:
 
-- /assets/fonts/
+`/assets/fonts/`
 
 Then load them into Blender so they become embedded in the project file.
 

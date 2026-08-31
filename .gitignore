@@ -1,1 +1,11 @@
+# macOS
 .DS_Store
+
+# Obsidian (local editor config — personal settings, not project content)
+docs/.obsidian/
+
+# VS Code (local editor config, in case it's ever used inside this repo)
+.vscode/
+
+# BBEdit (local editor state)
+*.bbprojectd/
