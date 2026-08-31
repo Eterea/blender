@@ -1036,6 +1036,8 @@ Especially interesting by Johny Gizmo:
 
 [uvFactory for Blender](https://spaghetmenot.gumroad.com/l/uvfactory) - *USD 12* - to automate, eliminate, or streamline tedious unwrapping tasks. Use it to speed up manual unwrapping or create fully automatic UV pipelines.
 
+[UV Flex](https://payhip.com/b/GeKdw) - *USD 7.5* - Manipulate UVs directly, specially interesting for reshaping.
+
 [uvProject for Blender](https://spaghetmenot.gumroad.com/l/uvproject) - *USD 7* (early access) - A kind of automatic UVs for architectural-kind of geometry
 
 [Viewport presets for Blender](https://bartoszstyperek.gumroad.com/l/viewport_presets) - *USD 3.6* - For creating, storing and loading custom 3d view presets (previous one seems newer)
