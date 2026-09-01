@@ -900,7 +900,7 @@ Then load them into Blender so they become embedded in the project file.
 
 [Particle System Panel - Blender Manual](https://docs.blender.org/manual/en/latest/physics/particles/particle_system_panel.html)
 
-[Change Particles Size Over Lifetime](https://www.youtube.com/watch?v=DhTd5Hhaahk)
+[Change Particles Size Over Lifetime - YouTube Tutorial](https://www.youtube.com/watch?v=DhTd5Hhaahk)
 
 ### Use a collision object to kill particles outside a mesh
 
@@ -941,61 +941,45 @@ Blender’s particle collision treats the outside of a mesh as the "colliding" s
 
 - If your particles have no velocity, or they spawn already outside the cube, this method may not stop them immediately. Consider adding a Force Field (e.g., Turbulence or Drag) to push them and make them interact.
 
----
-
 ### Liquids
 
-[Introduction - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/physics/fluid/introduction.html)
+[Introduction to Fluids (Liquid & Gas) - Blender Manual](https://docs.blender.org/manual/en/latest/physics/fluid/introduction.html)
 
-[Liquid Settings - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/liquid/index.html)
+[Liquid Settings - Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/liquid/index.html)
 
-[Flow - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/flow.html)
+[Flow - Blender Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/flow.html)
 
-[Common Mantaflow Problems & How to Fix Them!](https://www.youtube.com/watch?v=2O0QcLpAxV4) (downloaded, very interesting tips and tricks)
+[Common Mantaflow Problems & How to Fix Them! - YouTube](https://www.youtube.com/watch?v=2O0QcLpAxV4) - Downloaded, very interesting tips and tricks.
 
----
+#### Add liquid to fill volumes - basic steps
 
-**Add liquid to fill volumes - basic steps**
+- Add any object like a Sphere
+- Select Sphere in Object Mode > Object > Quick Effects > Quick Liquid
+- This will create a Liquid Domain, a box bigger than your Sphere, with a small cube at bottom corner,
+- Press Play: you will see the animation of particles moving from Sphere to the bottom or our cubic Liquid Domain
+- Select the Liquid Domain and go to Physics Tab: you can disable Liquid (particles) or Mesh
 
-Add any object like a Sphere
+#### To fill our Liquid Domain with a constant flow of liquid coming from Sphere:
 
-Select Sphere in Object Mode > Object > Quick Effects > Quick Liquid
+- Move the Liquid Domain to place bottom at Z=0
+- Move the Sphere to up, while inside the Liquid Domain.
 
-This will create a Liquid Domain, a box bigger than your Sphere, with a small cube at bottom corner
+Play again to check all remains working properly.
 
-Press Play: you will see the animation of particles moving from Sphere to the bottom or our cubic Liquid Domain
+- Select Sphere > Physics > Flow Behavior > Change from Geometry to Inflow.
+- Select the Liquid Domain > Physics > Cache > Change Type from Replay to Modular and Enable Resumable.
+- Select the Liquid Domain > Physics > Settings > Bake Data
 
-Select the Liquid Domain and go to Physics Tab: you can disable Liquid (particles) or Mesh
+Play to see the resulting liquid-particle animation.
 
-**To fill our Liquid Domain with a constant flow of liquid coming from Sphere:**
+- Select the Liquid Domain > Physics > Mesh > Bake mesh
+- You can now disable Liquid to hide particles and show only animated Mesh (but remember to enable again, if further simulations are created!)
+- You can scale Sphere to be smaller.
+- Free Mesh and Free Data to remove stored cache.
+- Bake Data and Bake Mesh to see new results.
+- To Scale both Liquid Domain or Mesh source use always Object Mode, then Apply Scale with **Cmd/Ctrl-A > Scale**
 
-Move the Liquid Domain to place bottom at Z=0
-
-Move the Sphere to up, while inside the Liquid Domain
-
-Play again to check all remains working properly
-
-Select Sphere > Physics > Flow Behavior > Change from Geometry to Inflow
-
-Select the Liquid Domain > Physics > Cache > Change Type from Replay to Modular and Enable Resumable
-
-Select the Liquid Domain > Physics > Settings > Bake Data
-
-Play to see the resulting liquid-particle animation
-
-Select the Liquid Domain > Physics > Mesh > Bake mesh
-
-You can now disable Liquid to hide particles and show only animated Mesh (but remember to enable again, if further simulations are created!)
-
-You can scale Sphere to be smaller
-
-Free Mesh and Free Data to remove stored cache
-
-Bake Data and Bake Mesh to see new results
-
-To Scale both Liquid Domain or Mesh source use always Object Mode, then Apply Scale with Cmd/Ctrl-A > Scale
-
-**To fill any custom geometry (like a bottle, cup or glass):**
+#### To fill any custom geometry (like a bottle, cup or glass):
 
 Create the object, with a thickness (you can use Solidify modifier)
 
@@ -1013,7 +997,7 @@ And also, you can use Boolean to remove extra volume from Liquid.
 
 Use Smooth and Weighted Normal modifiers to smooth resulting surface.
 
-**Tips:**
+#### Tips:
 
 If you change animation duration, from 250 to 150, remember also to change it at Physics > Cache
 
