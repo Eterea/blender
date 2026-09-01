@@ -1448,57 +1448,55 @@ More advanced setup:
 
 ### Shape keys by bone transforms
 
-Shape keys (a.k.a. morph targets) can be driven by bone transforms
-
-usually location, rotation, or scale.
+Shape keys (a.k.a. morph targets) can be driven by bone transforms, usually location, rotation, or scale.
 
 So we can:
 
-Create a control bone (for example “CTRL_Eyelid” or “CTRL_Nose”)
+- Create a control bone (for example “CTRL_Eyelid” or “CTRL_Nose”)
 
-Move or rotate that bone
+- Move or rotate that bone
 
-And have the Shape Key value automatically change accordingly.
+- And have the Shape Key value automatically change accordingly.
 
-**How to Set It Up**
+#### How to Set It Up
 
-Select your mesh (the one with the Shape Keys)
+- Select your mesh (the one with the Shape Keys)
 
-Go to the Shape Keys panel
+- Go to the Shape Keys panel
 
-Right-click on the Value slider of the Shape Key you want to control
+- Right-click on the Value slider of the Shape Key you want to control
 
-Choose “Add Driver”
+- Choose “Add Driver”
 
-Open a Graph Editor → Drivers view
+- Open a Graph Editor → Drivers view
 
-**Then set up your driver:**
+#### Then set up your driver:
 
-Type: Average Value (usually fine)
+- Type: Average Value (usually fine)
 
-Object: your Armature
+- Object: your Armature
 
-Bone: the control bone you want to use
+- Bone: the control bone you want to use
 
-Transform Channel: for example X Location or Z Rotation, usually Local Space
+- Transform Channel: for example X Location or Z Rotation, usually Local Space
 
-Adjust influence (min/max) using the “Driver Variables” and “Modifier” settings until the value goes from 0 → 1 nicely when you move/rotate the control bone.
+- Adjust influence (min/max) using the “Driver Variables” and “Modifier” settings until the value goes from 0 → 1 nicely when you move/rotate the control bone.
 
-**Typical Workflow**
+#### Typical Workflow
 
-Create a small custom bone near the area you want to control (eyelid, nose, etc.) - Disable Deformation
+- Create a small custom bone near the area you want to control (eyelid, nose, etc.) - Disable Deformation
 
-Assign it a custom shape (like a circle or arrow) in Pose Mode so it’s intuitive to use
+- Assign it a custom shape (like a circle or arrow) in Pose Mode so it’s intuitive to use
 
-Lock unnecessary transforms (e.g., only allow movement in one axis)
+- Lock unnecessary transforms (e.g., only allow movement in one axis)
 
-Drive the Shape Key with that transform
+- Drive the Shape Key with that transform
 
-Add a Limit Location (or Rotation) constraint to the control bone to limit min and max transformation. Owner: Local Space. Enable “Affect Transform”
+- Add a Limit Location (or Rotation) constraint to the control bone to limit min and max transformation. Owner: Local Space. Enable “Affect Transform”
 
 You can even create multiple drivers for one Shape Key (e.g., both left and right eyelids), or blend several Shape Keys from one bone using different value ranges.
 
----
+## CONTINUE CLEANING HERE ---------
 
 ### How to add an f-modifier to an animated channel in a bone, but transforming it in world coordinates, and not local
 
