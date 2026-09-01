@@ -1129,22 +1129,6 @@ Go into edit mode. Select all vertices. Hit **Ctrl-G** to bring up vertex group 
 
 ## RIGGING
 
-### RIGGING - QUICK TIPS
-
-#### Move Parent without affecting Children
-
-Transformations can be limited to affect only the parents. The setting can be found in the N Panel > Tool > Options.
-
-#### Copy & Paste Global PSR Transforms
-
-Use “Copy Global Transforms” add-on, located in 3D Viewport > N-panel > Animation tab.
-
-#### To Fix Roll on Bones
-
-To Fix Roll on Bones and get a nice overall rotation around longitudinal bone Y use the command **Shift-N** in Edit Mode. **NOTE: Better to do this before creating the IKs**
-
----
-
 ### Copy & Paste Bone Constraints
 
 And also other stuff, between Bones:
@@ -1157,8 +1141,6 @@ And also other stuff, between Bones:
 
 4. Press **Ctrl-C** (also in Mac: Ctrl-C, not Cmd-C) and choose Copy Bone Constraints to transfer all constraints from the source bone to the selected target bones.
 
----
-
 ### Copy Rotation Constraint with an influence higher than 1?
 
 1.0 is the maximum influence for any given constraint, so setting it beyond 1.0 is impossible.
@@ -1166,8 +1148,6 @@ And also other stuff, between Bones:
 Using the **Transformation** constraint, you could easily map any kind of simple transformation from one object to the other. [In the following example](https://blender.stackexchange.com/questions/5108/is-there-a-way-to-put-a-copy-rotation-constraint-with-an-influence-higher-than-1), the object being constrained will rotate twice the amount of Cube_target's rotation in the Y axis.
 
 Checking **Extrapolation** will extend the transformation beyond stated range of values.
-
----
 
 ### Basic rigging procedure and tips
 
@@ -1404,7 +1384,7 @@ In short: yes, with pure Automatic Weights you would need to toggle Deform each 
 
 But for a model split into separate pieces it’s usually more efficient to skip auto-weight altogether and work with Empty Groups + Assign.
 
-### Bendy bones (bbones) quick setup
+### Bendy Bones (BBones) quick setup
 
 Next steps are from [Blender 2.78 Bendy Bones Tutorial - YouTube](https://www.youtube.com/watch?v=BsJ3Grq_3GM) (old, but simple and direct - *Downloaded*)
 
@@ -1496,275 +1476,282 @@ So we can:
 
 You can even create multiple drivers for one Shape Key (e.g., both left and right eyelids), or blend several Shape Keys from one bone using different value ranges.
 
-## CONTINUE CLEANING HERE ---------
+### F-Modifier in world coordinates
 
-### How to add an f-modifier to an animated channel in a bone, but transforming it in world coordinates, and not local
+How to add an F-Modifier to an animated channel in a bone, but transforming it in world coordinates, and not local?
 
 Simply use an extra floating control bone (inside the same Armature) oriented as you need:
 
-**Why it’s a great approach**
+#### Why it’s a great approach
 
-Keeps everything inside the Armature → no external objects cluttering the scene.
+- Keeps everything inside the Armature → no external objects cluttering the scene.
 
-Fully pose-space aware → you can still work in Pose Mode, with keying sets, bone groups, colors, etc.
+- Fully pose-space aware → you can still work in Pose Mode, with keying sets, bone groups, colors, etc.
 
-More stable and portable → exporting, appending, or reusing the rig won’t lose the link.
+- More stable and portable → exporting, appending, or reusing the rig won’t lose the link.
 
-Can use bone constraints directly → no need for object-level constraints.
+- Can use bone constraints directly → no need for object-level constraints.
 
-**Setup Steps for this “Floating Noise Bone” method**
+#### Setup Steps for this “Floating Noise Bone” method
 
-In Edit Mode of your Armature, add a new bone — call it NoiseDriver or whatever makes sense. Place it anywhere convenient (it doesn’t need to be connected and deformation must be disabled).
+1. In Edit Mode of your Armature, add a new bone — call it NoiseDriver or whatever makes sense. Place it anywhere convenient (it doesn’t need to be connected and deformation must be disabled).
 
-In Pose Mode, select that bone and add your Noise F-Modifier to its Location X F-Curve (or whichever world axis you want).
+2. In Pose Mode, select that bone and add your Noise F-Modifier to its Location X F-Curve (or whichever world axis you want).
 
-Now, on the target bone (the one you want to wiggle):
+3. Now, on the target bone (the one you want to wiggle):
 
-Add a Copy Location constraint.
+	- Add a Copy Location constraint.
 
-Target: NoiseDriver.
+	- Target: NoiseDriver.
 
-Both Target Space and Owner Space → World Space.
+	- Both Target Space and Owner Space → World Space.
 
-Influence controls how strong the noise is.
+	- Influence controls how strong the noise is.
 
 Now your bone will follow the world-aligned noise, but everything stays neatly contained inside the armature.
 
-**Important to use:**
+**It's important to use:**
 
-TARGET: **Local Space (Owner Orientation)**
+- TARGET: **Local Space (Owner Orientation)**
 
-OWNER: **Local Space**
+- OWNER: **Local Space**
 
 By this way you’re telling Blender:
 
-*“Take the noise movement in the target bone’s local space, but first interpret its axes in the owner’s orientation.”*
+>“Take the noise movement in the target bone’s local space, but first interpret its axes in the owner’s orientation.”
 
 So if your whole armature (or its parent object) is rotated in the world — for example, the character is walking uphill, or the whole rig is turned 45° — the noise still travels in what feels like global X relative to the rig, instead of being baked into absolute world space.
 
-**Why this works so elegantly**
+#### Why this works so elegantly
 
-The Owner Orientation option effectively re-maps the target’s local axes through the owner’s transform matrix.
+- The Owner Orientation option effectively re-maps the target’s local axes through the owner’s transform matrix.
 
-That means the “floating noise bone” stays inside the armature hierarchy, yet its motion is evaluated consistently when the rig is rotated or scaled.
+- That means the “floating noise bone” stays inside the armature hierarchy, yet its motion is evaluated consistently when the rig is rotated or scaled.
 
-This makes the noise transform-agnostic — a must for reusable rigs or linked characters.
+- This makes the noise transform-agnostic — a must for reusable rigs or linked characters.
 
----
+### FK / IK switch setup
 
-### Fk/ik switch setup
+See also this video: [How to Quickly Rig IK FK in Blender (For Beginners)](https://www.youtube.com/watch?v=xEnu_EsnzjI) - *Downloaded*
 
-See also this video: [How to Quickly Rig IK FK in Blender (For Beginners)](https://www.youtube.com/watch?v=xEnu_EsnzjI) (downloaded)
-
-**Basic Concept**
+#### Basic Concept
 
 You’ll have two parallel control systems:
 
-FK Chain – You directly rotate each bone for precise posing.
+- **FK Chain** – You directly rotate each bone for precise posing.
 
-IK Chain – You move a single controller (with a Pole Target) to pose the whole neck at once.
+- **IK Chain** – You move a single controller (with a Pole Target) to pose the whole neck at once.
 
-Deform Chain – The actual bones that deform the mesh.
+- **Deform Chain** – The actual bones that deform the mesh.
 
 Then you blend between the two systems with a custom “IK/FK” slider
 
-STEP-BY-STEP SETUP
+#### Step-by-step setup
 
-1. **Duplicate Your Deform Chain**
+##### A. Duplicate Your Deform Chain
 
 Let’s assume your neck bones are:
 
-neck_01 → neck_02 → neck_03 → head
+`neck_01 → neck_02 → neck_03 → head`
 
 Create:
 
-FK Chain: neck_FK_01, neck_FK_02, neck_FK_03, head_FK
+- FK Chain: `neck_FK_01, neck_FK_02, neck_FK_03, head_FK`
 
-IK Chain: neck_IK_01, neck_IK_02, neck_IK_03, head_IK
+- IK Chain: `neck_IK_01, neck_IK_02, neck_IK_03, head_IK`
 
-Deform Chain: the original ones (these deform the mesh)
+- Deform Chain: the original ones (these deform the mesh)
 
 Each chain should be a separate copy (but aligned perfectly).
 
-**2. Add an IK Constraint**
+##### B. Add an IK Constraint
 
 On neck_IK_01, add an IK constraint:
 
-Target: an IK controller bone (e.g., neck_IK_CTRL)
+- Target: an IK controller bone (e.g., neck_IK_CTRL)
 
-Pole Target: a Pole Vector bone (optional, for twist control)
+- Pole Target: a Pole Vector bone (optional, for twist control)
 
-Chain Length: number of neck bones (e.g., 3)
+- Chain Length: number of neck bones (e.g., 3)
 
 Now moving the IK control will pose the IK chain.
 
-3. **Add Copy Rotation Constraints to the Deform Chain**
+##### C. **Add Copy Rotation Constraints to the Deform Chain**
 
 Each Deform Bone (neck_01, neck_02, …) should copy from both the FK and IK versions:
 
-Constraint 1: Copy Rotation → neck_FK_01
+- Constraint 1: Copy Rotation → neck_FK_01
 
-Constraint 2: Copy Rotation → neck_IK_01
+- Constraint 2: Copy Rotation → neck_IK_01
 
 Now you’ll blend between these two using a driver.
 
-**4. Create a Custom Property on a Control Bone**
+##### D. Create a Custom Property on a Control Bone
 
-Add a custom property (e.g. on a main “Neck Settings” bone):
+- Add a custom property (e.g. on a main “Neck Settings” bone):
 
-Property name: IK_FK_Switch
+- Property name: IK_FK_Switch
 
-Default value: 0.0
+- Default value: 0.0
 
-Min: 0
+- Min: 0
 
-Max: 1
+- Max: 1
 
-**5. Drive the Constraint Influence**
+##### E. Drive the Constraint Influence
 
 For each Deform Bone:
 
-FK constraint Influence → driven by 1 - IK_FK_Switch
+- FK constraint Influence → driven by 1 - IK_FK_Switch
 
-IK constraint Influence → driven by IK_FK_Switch
+- IK constraint Influence → driven by IK_FK_Switch
 
 Now:
 
-When the property = 0 → Full FK (manual rotation)
+- When the property = 0 → Full FK (manual rotation)
 
-When the property = 1 → Full IK (controller)
+- When the property = 1 → Full IK (controller)
 
 You can smoothly blend between them too.
 
----
 
-**CREATE A SPLINE IK (for a Long Neck or a Tail)**
+### Create a Spline IK
 
-**1. Create the Neck Bones**
+#### This is ideal for things like a Long Neck or a Tail
+
+##### A. Create the Neck Bones
 
 Say you have:
 
-neck_01
+- neck_01
 
-neck_02
+- neck_02
 
-neck_03
+- neck_03
 
-neck_04
+- neck_04
 
-neck_05
+- neck_05
 
-head
+- head
 
 All connected in a chain.
 
-**2. Create a Curve**
+##### B. Create a Curve
 
-Add a Bezier Curve (e.g. along the neck).
+- Add a Bezier Curve (e.g. along the neck).
 
-Align it roughly to your bones in Edit Mode.
+- Align it roughly to your bones in Edit Mode.
 
-Name it something like neck_curve.
+- Name it something like neck_curve.
 
-**3. Apply Spline IK**
+##### C. Apply Spline IK
 
-Select your neck bones (not the head).
+- Select your neck bones (not the head).
 
-Go to the last bone in chain (neck_05) → Add Constraint → Spline IK.
+- Go to the last bone in chain (neck_05) → Add Constraint → Spline IK.
 
-Target → neck_curve.
+- Target → neck_curve.
 
-Chain Length → 5.
+- Chain Length → 5.
 
-Uncheck “Use Curve Radius” (optional).
+- Uncheck “Use Curve Radius” (optional).
 
-Enable “Y Stretch” if you want subtle elongation.
+- Enable “Y Stretch” if you want subtle elongation.
 
 Now all neck bones follow that curve — beautifully smooth bending, no twist flips.
 
-**4. Add Control Bones for the Curve**
+##### D. Add Control Bones for the Curve
 
-To make it animator-friendly:
+To make it animator-friendly add 3 control bones:
 
-Add 3 control bones:
+- **neck_base_ctrl** → controls start of curve.
 
-neck_base_ctrl → controls start of curve.
+- **neck_mid_ctrl** → controls mid curvature.
 
-neck_mid_ctrl → controls mid curvature.
+- **neck_tip_ctrl** → controls top/head zone.
 
-neck_tip_ctrl → controls top/head zone.
-
-Use Hooks Hook Modifiers” **(*)**
+Use Hooks Hook Modifiers (see *NOTE*)
 
 Now moving or rotating those control bones shapes the curve → the whole neck follows.
 
-**(*) Hook Curve Points to Bones**
+##### NOTE: Hook Curve Points to Bones
 
 Still in Edit Mode on the Curve:
 
-Select one control point (or handle) you want the base bone to control.
+- Select one control point (or handle) you want the base bone to control (e.g. the first vertex of the curve)
 
-(e.g. the first vertex of the curve)
+- Hit **Ctrl + H** → Hook new Object (will create a new Empty)
 
-Hit **Ctrl + H** → Hook new Object (will create a new Empty)
+- Now go to your Modifier Hook and choose your Armature’s bone (neck_base_ctrl).
 
-Now go to your Modifier Hook and choose your Armature’s bone (neck_base_ctrl).
-
-Repeat for each region (bezier points and handles)
-
----
+- Repeat for each region (bezier points and handles)
 
 ### Controlling child bone pivot placement in blender
 
-Specially useful for mechanical rigs
+#### Specially useful for mechanical rigs
 
-**Option 1 — Disconnect and Reposition (Simple & Practical)**
+##### Option 1 — Disconnect and Reposition (Simple & Practical)
 
 Disable Connected on the child bone, then freely move its Head to any position (e.g., mid-point of the parent bone).
 
-Keeps the parent–child hierarchy
+- Keeps the parent–child hierarchy
 
-Fast and flexible
+- Fast and flexible
 
-Ideal for mechanical rigs when you just need a different pivot location
+- Ideal for mechanical rigs when you just need a different pivot location
 
-**Option 2 — Intermediate (Dummy) Bone (Structured & Precise)**
+##### Option 2 — Intermediate (Dummy) Bone (Structured & Precise)
 
 Insert a small helper bone at the desired pivot location.
 
-Parent chain becomes: A → Dummy → B
+- Parent chain becomes: A → Dummy → B
 
-Keeps everything properly connected
+- Keeps everything properly connected
 
-Provides clean, explicit articulation points
+- Provides clean, explicit articulation points
 
-Preferred for more precise or scalable mechanical setups
+- Preferred for more precise or scalable mechanical setups
 
-**Option 3 — Separate Structure from Visualization (Advanced)**
+##### Option 3 — Separate Structure from Visualization (Advanced)
 
 Use two layers of bones:
 
-Technical bones (optimized for IK and constraints)
+- Technical bones (optimized for IK and constraints)
 
-Visual/deform bones driven via constraints (e.g., Copy Transforms)
+- Visual/deform bones driven via constraints (e.g., Copy Transforms)
 
-Maximum control and flexibility
+- Maximum control and flexibility
 
-Clean rigs without compromising behavior
+- Clean rigs without compromising behavior
 
-Common in more complex or production-level rigs
+- Common in more complex or production-level rigs
 
-**Key Insight**
+##### Key Insight
 
 Bone position is not just visual — it defines the actual pivot and affects the mechanics. Adjusting it changes the system’s behavior, not just its appearance.
 
----
+### RIGGING - QUICK TIPS
+
+#### Move Parent without affecting Children
+
+Transformations can be limited to affect only the parents. The setting can be found in the N Panel > Tool > Options.
+
+#### Copy & Paste Global PSR Transforms
+
+Use “Copy Global Transforms” add-on, located in 3D Viewport > N-panel > Animation tab.
+
+#### To Fix Roll on Bones
+
+To Fix Roll on Bones and get a nice overall rotation around longitudinal bone Y use the command **Shift-N** in Edit Mode. **NOTE: Better to do this before creating the IKs**
+
+### RIGGING - LINKS
 
 [Pose Library - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/animation/armatures/posing/editing/pose_library.html)
 
 ---
 
-[Rigify - Blender 4.4 Manual](https://docs.blender.org/manual/en/latest/addons/rigging/rigify/index.html) (for the moment I prefer to have it **disabled**)
+[Rigify - Blender 4.4 Manual](https://docs.blender.org/manual/en/latest/addons/rigging/rigify/index.html) - For the moment I prefer to have it **disabled** and do all manually.
 
 Rigify helps automate the creation of character rigs. It is based around a building-block approach, where you build complete rigs out of smaller rig parts (e.g. arms, legs, spines, fingers…)
 
@@ -1772,7 +1759,7 @@ Rigify helps automate the creation of character rigs. It is based around a build
 
 [richstubbsanimation - YouTube](https://www.youtube.com/@richstubbsanimation) - Lots of GREAT tutorials on rigging here. Visit also the shop with free assets: [Buy Rich a Coffee](https://ko-fi.com/richstubbsanimation/shop)
 
-[How to Quickly Rig IK FK in Blender (For Beginners)](https://www.youtube.com/watch?v=xEnu_EsnzjI) (downloaded)
+[How to Quickly Rig IK FK in Blender (For Beginners)](https://www.youtube.com/watch?v=xEnu_EsnzjI) - *Downloaded*
 
 [Setting Up an IK Arm Rig](https://www.youtube.com/watch?v=vZaNZhAoMts&t=0s)
 
@@ -1782,17 +1769,17 @@ Rigify helps automate the creation of character rigs. It is based around a build
 
 [Spline IK Constraint - Blender 4.4 Manual](https://docs.blender.org/manual/en/latest/animation/constraints/tracking/spline_ik.html)
 
-[The Easiest Way To Rig Creatures In Blender (For Beginners) - YouTube](https://www.youtube.com/watch?v=rOcNY00Mv1I) (using Rigify)
+[The Easiest Way To Rig Creatures In Blender (For Beginners) - YouTube](https://www.youtube.com/watch?v=rOcNY00Mv1I) - Using Rigify
 
 [DemNikoArt - YouTube](https://www.youtube.com/DemNikoArt) - Tutorials on mechanical rigging
 
-- [Mechanical Rigging - A Blender Tutorial - YouTube](https://www.youtube.com/watch?v=nyC57_HN6B0) - how to set up a rather complex rig for a robot hand
+- [Mechanical Rigging - A Blender Tutorial - YouTube](https://www.youtube.com/watch?v=nyC57_HN6B0) - How to set up a rather complex rig for a robot hand
 
 [Level Pixel Level - YouTube](https://www.youtube.com/@LevelPixelLevel) - Fantastic tutorials on mechanical riggins
 
 - [Level Pixel Level](https://levelpixellevel.gumroad.com/) - Files with free examples
 
----
+## CONTINUE HERE WITH CLEANUP
 
 ## UVS
 
