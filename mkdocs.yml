@@ -29,6 +29,7 @@ markdown_extensions:
   - toc:
       permalink: true
       title: On this page
+      toc_depth: 3
   - tables
   - pymdownx.highlight:
       anchor_linenums: true
