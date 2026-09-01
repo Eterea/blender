@@ -981,21 +981,19 @@ Play to see the resulting liquid-particle animation.
 
 #### To fill any custom geometry (like a bottle, cup or glass):
 
-Create the object, with a thickness (you can use Solidify modifier)
+- Create the object, with a thickness (you can use Solidify modifier)
 
-Put the object completely inside the Liquid Domain (resize this if necessary)
+- Put the object completely inside the Liquid Domain (resize this if necessary)
 
-Select the cup > Physics > Press on Fluid Button > Type > Effector
+- Select the cup > Physics > Press on Fluid Button > Type > Effector
 
-Generate a new data cache
+- Generate a new data cache
 
-Play with cup > Physics > Surface Thickness if system does not recognize thickness (increase to something like 0.5 to start)
+- Play with cup > Physics > Surface Thickness if system does not recognize thickness (increase to something like 0.5 to start). Alternately you can use a thicker object just for the simulation, instead of final rendered thin cup…
 
-- Alternately you can use a thicker object just for the simulation, instead of final rendered thin cup…
+- And also, you can use Boolean to remove extra volume from Liquid.
 
-And also, you can use Boolean to remove extra volume from Liquid.
-
-Use Smooth and Weighted Normal modifiers to smooth resulting surface.
+- Use Smooth and Weighted Normal modifiers to smooth resulting surface.
 
 #### Tips:
 
