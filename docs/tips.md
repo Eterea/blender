@@ -1444,7 +1444,7 @@ Now you can move and rotate both the Head and Tail and our BBone adapts fine to 
 
 More advanced setup:
 
-[The Most POWERFUL Way To Rig Bendy Bones in Blender - YouTube](https://www.youtube.com/watch?v=s0xE0G_uhZs&t=177s) (more complete and complex - Downloaded and also the sample **“Ultimate Bendy Bone Rig”** .blend)
+[The Most POWERFUL Way To Rig Bendy Bones in Blender - YouTube](https://www.youtube.com/watch?v=s0xE0G_uhZs&t=177s) (more complete and complex - *Downloaded* and also the sample **“Ultimate Bendy Bone Rig”** .blend)
 
 ### Shape keys by bone transforms
 
