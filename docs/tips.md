@@ -17,13 +17,14 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 ### Routes for config, datafiles, extensions, nodes & scripts
 
 **Mac:**
+
 `/Users/cristobal/Library/Application Support/Blender/[version]`
 
 **Windows:**
 
 `cristobal › AppData[#] › Roaming Blender Foundation › Blender › [version]`
 
-[#] To locate this in Windows go to Search field (bottom-left), write `execute` (`ejecutar`) and then write `%appdata%`
+NOTE: to locate this in Windows go to Search field (bottom-left), write `execute` (`ejecutar`) and then write `%appdata%`
 
 ### To open a second instance of Blender in Mac
 
@@ -895,54 +896,44 @@ For asset management, keep your project fonts in a dedicated folder such as:
 
 Then load them into Blender so they become embedded in the project file.
 
-## CONTINUE HERE WITH CLEANUP---
-
 ## PHYSICS
 
 [Particle System Panel - Blender Manual](https://docs.blender.org/manual/en/latest/physics/particles/particle_system_panel.html)
 
 [Change Particles Size Over Lifetime](https://www.youtube.com/watch?v=DhTd5Hhaahk)
 
----
-
 ### Use a collision object to kill particles outside a mesh
 
-Goal: Only keep particles inside a given mesh (e.g. a cube or sphere… or a bottle of wine), and remove any that go outside.
+**Goal:** Only keep particles inside a given mesh (e.g. a cube or sphere… or a bottle of wine), and remove any that go outside.
 
 1. Create your emitter
-- Add a Plane or any mesh to emit particles.
+	- Add a Plane or any mesh to emit particles.
+	- Set up your Particle System (emit from Face, Render as Object, etc).
 
-- Set up your Particle System (emit from Face, Render as Object, etc).
 2. Create the containment mesh
-- Add a Sphere or Cube (let’s say it’s a Cube) that defines the allowed volume.
+	- Add a Sphere or Cube (let’s say it’s a Cube) that defines the allowed volume.
+	- Scale and position it as needed so particles should stay inside this mesh.
 
-- Scale and position it as needed so particles should stay inside this mesh.
 3. Enable Collision on the Cube
-- Select the Cube.
+	- Select the Cube.
+	- Go to the Physics tab > Collision.
+	- Check "Kill Particles".
+	- Important: This will kill particles that collide with the mesh.
+	- But in our case, we want to reverse that logic.
 
-- Go to the Physics tab > Collision.
-
-- Check "Kill Particles".
-
-- Important: This will kill particles that collide with the mesh.
-
-- But in our case, we want to reverse that logic.
-
-Workaround Trick to Invert Behavior:
+#### Workaround Trick to Invert Behavior:
 
 To kill particles that go outside the cube instead of those that hit it from the outside:
 
 Invert Normals (for closed meshes)
-
-- Enter Edit Mode on the Cube.
-
-- Select all (A), then press Alt+N → Flip normals.
+	- Enter Edit Mode on the Cube.
+	- Select all (A), then press Alt+N → Flip normals.
 
 Now particles inside the mesh won’t be killed, but particles that exit (collide with the inverted surface) will be killed.
 
 Blender’s particle collision treats the outside of a mesh as the "colliding" surface. Flipping normals makes the "inside" act as the "outer" side.
 
-Notes & Caveats:
+#### Notes & Caveats:
 
 - The collision detection isn’t mathematically perfect for very fast particles, so you may need to adjust substeps (under Physics > Particle settings > Integration).
 
@@ -5240,7 +5231,7 @@ You can clear the cache if it gets stuck or corrupted.
 
 ---
 
-## DAVINCI RESOLVE & BLENDER
+## DAVINCI RESOLVE AND BLENDER
 
 [DaVinci Resolve – Training | Blackmagic Design](https://www.blackmagicdesign.com/products/davinciresolve/training) - The official ones - CONTINUE HERE, nobody will know better this app!
 
@@ -5459,3 +5450,4 @@ Howard Trickey is a developer who likes 3D programming, and contributes to Blend
 [howardtrickey](https://sites.google.com/site/howardtrickey/home)
 
 ---
+
