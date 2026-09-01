@@ -951,33 +951,45 @@ Blender’s particle collision treats the outside of a mesh as the "colliding" s
 
 [Common Mantaflow Problems & How to Fix Them! - YouTube](https://www.youtube.com/watch?v=2O0QcLpAxV4) - Downloaded, very interesting tips and tricks.
 
-#### Add liquid to fill volumes - basic steps
+#### Add liquid to fill volumes - Basic steps
 
 - Add any object like a Sphere
+
 - Select Sphere in Object Mode > Object > Quick Effects > Quick Liquid
-- This will create a Liquid Domain, a box bigger than your Sphere, with a small cube at bottom corner,
+
+- This will create a Liquid Domain, a box bigger than your Sphere, with a small cube at bottom corner
+
 - Press Play: you will see the animation of particles moving from Sphere to the bottom or our cubic Liquid Domain
+
 - Select the Liquid Domain and go to Physics Tab: you can disable Liquid (particles) or Mesh
 
 #### To fill our Liquid Domain with a constant flow of liquid coming from Sphere:
 
 - Move the Liquid Domain to place bottom at Z=0
+
 - Move the Sphere to up, while inside the Liquid Domain.
 
 Play again to check all remains working properly.
 
 - Select Sphere > Physics > Flow Behavior > Change from Geometry to Inflow.
+
 - Select the Liquid Domain > Physics > Cache > Change Type from Replay to Modular and Enable Resumable.
+
 - Select the Liquid Domain > Physics > Settings > Bake Data
 
 Play to see the resulting liquid-particle animation.
 
-- Select the Liquid Domain > Physics > Mesh > Bake mesh
-- You can now disable Liquid to hide particles and show only animated Mesh (but remember to enable again, if further simulations are created!)
+Select the Liquid Domain > Physics > Mesh > Bake mesh
+
+You can now disable Liquid to hide particles and show only animated Mesh (but remember to enable again, if further simulations are created!)
+
 - You can scale Sphere to be smaller.
+
 - Free Mesh and Free Data to remove stored cache.
+
 - Bake Data and Bake Mesh to see new results.
-- To Scale both Liquid Domain or Mesh source use always Object Mode, then Apply Scale with **Cmd/Ctrl-A > Scale**
+
+To Scale both Liquid Domain or Mesh source use always Object Mode, then Apply Scale with **Cmd/Ctrl-A > Scale**
 
 #### To fill any custom geometry (like a bottle, cup or glass):
 
@@ -1017,7 +1029,9 @@ Generally speaking: use a low Resolution Divisions (32-48) to design your animat
 
 For better final result add a Smooth modifier, with Factor 1
 
-Al these tips are from these tutorials:
+---
+
+**Al these tips are from these tutorials:**
 
 [Water Filling Invisible Volume [Blender Tutorial]](https://www.youtube.com/watch?v=SjvDmf4ovv4) (downloaded)
 
@@ -1027,25 +1041,22 @@ Al these tips are from these tutorials:
 
 [Fill any Object with Fluid in Blender [Mantaflow] | English - YouTube](https://www.youtube.com/watch?v=3ud6Hozy0vw)
 
----
-
 ## GREASE PENCIL
 
-**Tip for a Grease Pencil stroke:** set the 3D cursor to your vertex by selecting it and then using Shift+S and then Cursor -> Selection and then read the 3D cursor position in the View panel, View Properties.
+**Tip for a Grease Pencil stroke:** set the 3D cursor to your vertex by selecting it and then using **Shift+S** and then Cursor -> Selection and then read the 3D cursor position in the View panel, View Properties.
 
-To change Radius for any GP stroke (or selected GP vert) use Alt-S. Like in radius for Curves
+To change Radius for any GP stroke (or selected GP vert) use **Alt-S**. Like in radius for Curves
 
 [Applying gradient as stroke is drawn (Grease Pencil, Blender) - YouTube](https://www.youtube.com/watch?v=0-zqwUTNEUI)
 
----
 
 ## COLLECTIONS, HIERARCHY & OUTLINER
 
 ### About collections and hierarchies with common parents but uncommon siblings
 
-### Question
+#### Strange situation for a Blender newbie
 
-I have this scene in Blender
+Imagine this scene in Blender
 
 - Collection 1 with these items: a parent Empty with 2 objects: a Cube and a Sphere
 
@@ -1061,20 +1072,17 @@ And, on the other side, the Sphere still appears **greyed** under Empty inside C
 
 (and in both cases, without the eye and camera icons for visibility, and also without the data)
 
-**Is this the normal behavior? This workflow is valid and secure?**
+This seems like a strange behavior. But it's complete valid, inside Blender, because **the same Object or Empty can be inside two different Collections or even inside more!**
 
-### Chat-gpt answer
+#### Longer explanation
 
-Yes — what you are describing is normal behavior in Blender 4.5 (and has been this way for a long time).
-
-Here’s why it happens:
-
-In Blender, hierarchy (parent–child) and collections are two separate systems.
+**In Blender, hierarchy (parent–child) and collections are two separate systems.**
 
 When you parent objects under an Empty, the Outliner will always show the child objects indented under the parent — in every collection where the parent appears.
 
 If one of those children does not actually belong to that collection, Blender shows it there but greyed out. That’s Blender’s way of saying:
-*“This object is part of the parent’s hierarchy, but it does not belong to this collection.”*
+
+>“This object is part of the parent’s hierarchy, but it does not belong to this collection.”
 
 The absence of the eye/camera icons and datablock link is also expected — because in that collection, the object has no membership.
 
@@ -1084,83 +1092,74 @@ Break the parent–child relationship (so the child isn’t forced to display un
 
 Unlink the parent from one of the collections (so the whole parent/child group isn’t duplicated in multiple collections).
 
-**Conclusion:**
+#### Conclusion:
 
 **It’s not a bug, it’s just how Blender’s Outliner works.** Greyed-out children are Blender’s way of making sure you can still “see” the hierarchy, even if collection membership doesn’t match. If you want a perfectly “clean” collection listing (no greyed entries), the only way is to avoid parenting across collections, or to restructure your collections so each parent–child set only lives in one collection.
 
----
-
-**To move a complete hierarchy from one Collection to another:**
+### To move a complete hierarchy from one Collection to another
 
 Select parent / RMB > Select Hierarchy / Move.
 
 We can also select the parent, Shift-G, and then in the popup select “Extend”.
 
----
-
-**TIP: different 3D views can show different Collections.**
+### TIP: different 3D views can show different Collections
 
 Just go to N panel > View > Collections and enable Local Collections to also decide there which collection is visible and which not for that particular view
 
----
-
-**Vertex Parenting Feature**
+### Vertex Parenting Feature
 
 NOTE: we can select any object (mesh, camera, light…), then a second mesh object (to make this one ACTIVE), change to Edit mode, select a SINGLE VERT in the mesh object, and then, with Cmd/Ctrl-P we define a “Vertex Parent”. Optionally we can also select 3 Vertices, instead of 1 (but not 2).
 
----
+### Hide in Viewport
 
 [Hide in Viewport, a crappy Blender default. How to fix it. - YouTube](https://www.youtube.com/watch?v=cL2680MYc0M)
 
 - Difference between Hide in Viewport and Disable in Viewport
 
-- An awesome little addon called Edit Instanced Collection.
+- An awesome [little addon](https://github.com/SuperFLEB/BlenderEditCollectionAddon) called Edit Instanced Collection.
 
----
-
+### Scene vs Layer vs Collection
 [What's the difference between Scene, Layer, and Collection?](https://blenderartists.org/t/whats-the-difference-between-scene-layer-and-collection/1185270)
 
 ## WEIGHT
 
-**How do I reset all weights in Blender?**
+### How do I reset all weights in Blender?
 
 Go into edit mode. Select all vertices. Hit **Ctrl-G** to bring up vertex group specials and select “remove from all”
 
 ## RIGGING
 
----
+### RIGGING - QUICK TIPS
 
-**Move Parent without affecting Children**
+#### Move Parent without affecting Children
 
 Transformations can be limited to affect only the parents. The setting can be found in the N Panel > Tool > Options.
 
----
+#### Copy & Paste Global PSR Transforms
 
-**Copy & Paste Global PSR Transforms** using “Copy Global Transforms” add-on
+Use “Copy Global Transforms” add-on, located in 3D Viewport > N-panel > Animation tab.
 
-Located in 3D Viewport > N-panel > Animation tab.
+#### To Fix Roll on Bones
 
----
-
-To **Fix Roll on Bones** and get a nice overall rotation around longitudinal bone Y use the command Shift-N in Edit Mode
-
-- Better to do this before creating the IKs
+To Fix Roll on Bones and get a nice overall rotation around longitudinal bone Y use the command **Shift-N** in Edit Mode. **NOTE: Better to do this before creating the IKs**
 
 ---
 
-**Copy & Paste Bone Constraints (and other stuff) between Bones**
+### Copy & Paste Bone Constraints
 
-Switch to **Pose Mode.**
+And also other stuff, between Bones:
 
-Select the Target Bones.
+1. Switch to **Pose Mode.**
 
-Then select the Source Bone with the constraint.
+2. Select the Target Bones.
 
-Press **Ctrl-C** (also in Mac: Ctrl-C, not Cmd-C) and choose Copy Bone Constraints to transfer all constraints from the source bone to the selected target bones.
+3. Then select the Source Bone with the constraint.
+
+4. Press **Ctrl-C** (also in Mac: Ctrl-C, not Cmd-C) and choose Copy Bone Constraints to transfer all constraints from the source bone to the selected target bones.
 
 ---
 
-**Copy Rotation Constraint with an influence higher than 1?**
+### Copy Rotation Constraint with an influence higher than 1?
 
 1.0 is the maximum influence for any given constraint, so setting it beyond 1.0 is impossible.
 
@@ -1172,92 +1171,92 @@ Checking **Extrapolation** will extend the transformation beyond stated range of
 
 ### Basic rigging procedure and tips
 
-All learned from this great tutorial:
+**All learned from this great tutorial:**
 [Let's Learn Blender!: Character Rigging 101 (Armatures, Bones, & IK)](https://www.youtube.com/watch?v=iZBLtooU2Cs)
 
-Add a first Bone using Add > Armature
+- Add a first Bone using Add > Armature
 
-Modify this and further Bones in Armature **EDIT** Mode
+- Modify this and further Bones in Armature **EDIT** Mode
 
-For Bones is a good thing to use the Move Gizmo (to select and move both the Start/Root/**Head** & End/Tip/**Tail** Joints and the Bone **Body** itself)
+- For Bones is a good thing to use the Move Gizmo (to select and move both the Start/Root/**Head** & End/Tip/**Tail** Joints and the Bone **Body** itself)
 
-Activating the Armature Data > Viewport Display > **Axes** checkbox will show local axes for each bone’s tip.
+- Activating the Armature Data > Viewport Display > **Axes** checkbox will show local axes for each bone’s tip.
 
-The **Y axis** is always aligned **along the bone**, oriented from root to tip, this is the “roll” axis of the bones.
+- The **Y axis** is always aligned **along the bone**, oriented from root to tip, this is the “roll” axis of the bones.
 
-Also, showing the **Names** for bones is a good thing. And enable the **In Front** option.
+- Also, showing the **Names** for bones is a good thing. And enable the **In Front** option.
 
-Select the Bone Tip, press E to extrude and creating a new child bone
+- Select the Bone Tip, press E to extrude and creating a new child bone
 
-Selecting the Body you can RMB > Subdivide the bone in two ones (parent and child)
+- Selecting the Body you can RMB > Subdivide the bone in two ones (parent and child)
 
-Being in EDIT mode you can move any Root, Body or Tip, freely.
+- Being in EDIT mode you can move any Root, Body or Tip, freely.
 
-Press F2 to rename bones. As “spine1” or “legUp.R”
+- Press F2 to rename bones. As “spine1” or “legUp.R”
 
-Better to use lowerCase.L and lowerCase.R structure for naming.
+- Better to use lowerCase.L and lowerCase.R structure for naming.
 
-Use **.L** and **.R** suffixes to naming **Left** and **Right** bones (this allows automatic recognition for symmetrize)
+- Use **.L** and **.R** suffixes to naming **Left** and **Right** bones (this allows automatic recognition for symmetrize)
 
-Use **Cmd/Ctrl-R** to manually Roll a bone. Look at N panel > Item for more details (with a bone selected)
+- Use **Cmd/Ctrl-R** to manually Roll a bone. Look at N panel > Item for more details (with a bone selected)
 
-While in Armature **EDIT** we can see the Head & Tail coordinates for each bone.
+- While in Armature **EDIT** we can see the Head & Tail coordinates for each bone.
 
-Both in Armature **OBJECT** or **POSE** mode all standard coordinates will be zeroed.
+- Both in Armature **OBJECT** or **POSE** mode all standard coordinates will be zeroed.
 
-While in **POSE** mode we can change (and animate) the BONE coordinates. Caution: do not change the **OBJECT** coordinates.
+- While in **POSE** mode we can change (and animate) the BONE coordinates. Caution: do not change the **OBJECT** coordinates.
 
-No matter how change the Pose, you can return to default by Pose > Clear Transform > All (added to Quick Favorites)
+- No matter how change the Pose, you can return to default by Pose > Clear Transform > All (added to Quick Favorites)
 
 **To add or replace Parent for a given Bone:** go back to **EDIT** mode, select bone to be child, then Shift select the one to be parent, and **Cmd/Ctrl-P** and choose **Keep Offset**
 
-### To create ik controllers
+#### To create ik controllers
 
-First, in **EDIT** mode, duplicate the last bone for your IK chain (example: first bone for hand)
+- First, in **EDIT** mode, duplicate the last bone for your IK chain (example: first bone for hand)
 
-Make it longer going to N panel > Item > Transform > Length
+- Make it longer going to N panel > Item > Transform > Length
 
-UN-PARENT the extra added node going to Properties > Bone > Relations > Parent (click that small “X”)
+- UN-PARENT the extra added node going to Properties > Bone > Relations > Parent (click that small “X”)
 
-Also, disable the Deform checkbox, below. Call it something like **hand_IK.L**
+- Also, disable the Deform checkbox, below. Call it something like **hand_IK.L**
 
-Then go to **POSE** mode, select the PREVIOUS bone, Properties > Bone Constraints > Add Bone Constraint > Inverse Kinematics
+- Then go to **POSE** mode, select the PREVIOUS bone, Properties > Bone Constraints > Add Bone Constraint > Inverse Kinematics
 
-Choose for Target > **Armature**
+- Choose for Target > **Armature**
 
-Then choose for Bone > **hand_IK.L** (or whatever was your chosen name) It will become soft-yellow
+- Then choose for Bone > **hand_IK.L** (or whatever was your chosen name) It will become soft-yellow
 
-Change Chain **Length** to something appropriate (like 2, 3 or whatever numbers of bones must be considered for the IK operation - “0” Means all bones to up)
+- Change Chain **Length** to something appropriate (like 2, 3 or whatever numbers of bones must be considered for the IK operation - “0” Means all bones to up)
 
-Also: while in **POSE** mode select the **original hand.L** go to Properties > Bone Constraints > Add Bone Constraint > Copy Rotation
+- Also: while in **POSE** mode select the **original hand.L** go to Properties > Bone Constraints > Add Bone Constraint > Copy Rotation
 
-Choose for Target > **Armature**
+- Choose for Target > **Armature**
 
-Then choose for Bone > **hand_IK.L** (or whatever was your chosen name) It will become soft-green
+- Then choose for Bone > **hand_IK.L** (or whatever was your chosen name) It will become soft-green
 
-### To create a pole vector for an ik chain
+#### To create a pole vector for an ik chain
 
-Being in **EDIT** mode, select a Tail for the Bone for the Elbow, press E to extrude along convenient direction (back, for an arm). Then select this new bone and UNPARENT going to Bone > Relations > Parent (click that small “X”). Also: disable “Deform”.
+- Being in **EDIT** mode, select a Tail for the Bone for the Elbow, press E to extrude along convenient direction (back, for an arm). Then select this new bone and UNPARENT going to Bone > Relations > Parent (click that small “X”). Also: disable “Deform”.
 
-Then you can move away this special bone (to be used as Pole Vector). Name it **arm_PV.L** (or whatever you find convenient)
+- Then you can move away this special bone (to be used as Pole Vector). Name it **arm_PV.L** (or whatever you find convenient)
 
-Then change to **POSE** mode, go back to the bone where you added the IK Constraint (will be soft yellow)
+- Then change to **POSE** mode, go back to the bone where you added the IK Constraint (will be soft yellow)
 
-Just below the Target and Bone for IK, you will see a “Pole Target” field. Choose Armature. A new Bone empty field will appear, choose the **arm_PV.L** special Pole Vector bone.
+- Just below the Target and Bone for IK, you will see a “Pole Target” field. Choose Armature. A new Bone empty field will appear, choose the **arm_PV.L** special Pole Vector bone.
 
-CAUTION: if your armature rotate in an strange way, change the **Pole Angle** to a convenient angle (change the pose to create a more evident flexion, if necessary).
+- CAUTION: if your armature rotate in an strange way, change the **Pole Angle** to a convenient angle (change the pose to create a more evident flexion, if necessary).
 
-Remember to disable “Deform” for both PoleVectors and IK special bones
+- Remember to disable “Deform” for both PoleVectors and IK special bones
 
-### Special collections for bones
+#### Special collections for bones
 
-Go to Armature > Bone Collections to create new Collections to assign your bones. For example “VisibleBones”, “HiddenBones”, “PoleVectors”, etc…
+- Go to Armature > Bone Collections to create new Collections to assign your bones. For example “VisibleBones”, “HiddenBones”, “PoleVectors”, etc…
 
-Then, you can use **M** key to move bones between Collections. And Hide or Solo those Collections.
+- Then, you can use **M** key to move bones between Collections. And Hide or Solo those Collections.
 
-Change to **EDIT** mode to create a new general “**Controller**” bone (at bottom) to make all un-parented bones children of it (like PVs, IKs and top hierarchy bones). While in **EDIT** mode use CMD/CTRL-P to parent each main bone to this general controller - Also, while en **EDIT** mode, disable Deform on this special bone
+- Change to **EDIT** mode to create a new general “**Controller**” bone (at bottom) to make all un-parented bones children of it (like PVs, IKs and top hierarchy bones). While in **EDIT** mode use CMD/CTRL-P to parent each main bone to this general controller - Also, while en **EDIT** mode, disable Deform on this special bone
 
-### Symmetrize
+#### Symmetrize
 
 Being in **EDIT** mode, select ALL your bones (both the marked with .L but also the central ones) and choose Symmetrize from RMB or Armature menu
 
@@ -1265,181 +1264,181 @@ Being in **EDIT** mode, select ALL your bones (both the marked with .L but also 
 
 - And the bones without **.L** nor **.R** suffix will remain alone
 
-### To bind your armature to your mesh
+#### To bind your armature to your mesh
 
-Important: be sure to temporarily disable Edit > **Lock Object Modes**. Also disable **X-Ray** mode (if it was enabled)
+- Important: be sure to temporarily disable Edit > **Lock Object Modes**. Also disable **X-Ray** mode (if it was enabled)
 
-Then, make sure that the latest time you selected your armature was in **POSE** mode.
+- Then, make sure that the latest time you selected your armature was in **POSE** mode.
 
-Enable **OBJECT** mode, select your mesh > Then press **SHIFT** and select your armature (it should change automatically to **POSE** mode) > Also, Select any bone, it doesn’t matter.
+- Enable **OBJECT** mode, select your mesh > Then press **SHIFT** and select your armature (it should change automatically to **POSE** mode) > Also, Select any bone, it doesn’t matter.
 
-Finally press **Cmd/Ctrl-P** (like to Parent) but mark **Armature Deform > “With Automatic Weights”**
+- Finally press **Cmd/Ctrl-P** (like to Parent) but mark **Armature Deform > “With Automatic Weights”**
 
-**To remove all armature influence,** you will need to remove the parent and remove the armature modifier from the mesh.
+#### To remove all armature influence
 
-Select the mesh object and press **ALT-P -> Clear** Parent to remove parenting. Go to the modifier properties and remove all armature modifiers with the X on the right. Do not apply the modifier nor apply it as a shapekey.
+- You will need to remove the parent and remove the armature modifier from the mesh.
 
-**BEST AN QUICK METHOD TO BIND YOUR ARMATURE TO YOUR MESH** **RIGIDLY** (Objects to Bones like in a robot, insect or armature, without “bending” deformations)
+- Select the mesh object and press **ALT-P -> Clear** Parent to remove parenting. Go to the modifier properties and remove all armature modifiers with the X on the right. Do not apply the modifier nor apply it as a shapekey.
 
-Object Mode > Select a single o various objects to be controlled by a single bone
+#### Best an quick method to bind your armature to your mesh rigidly
 
-Shift-Click to also Select the Armature (still in Object Mode)
+This is: objects to Bones like in a robot, insect or armature, without “bending” deformations
 
-Ctrl-Tab to change to Pose Mode
+- Object Mode > Select a single o various objects to be controlled by a single bone
 
-Select the single Bone
+- Shift-Click to also Select the Armature (still in Object Mode)
 
-Parent using Cmd-P > “Bone”
+- Ctrl-Tab to change to Pose Mode
+
+- Select the single Bone
+
+- Parent using Cmd-P > “Bone”
 
 To Un-parent just use Alt-P > Clear and keep transform
 
 This method really makes each bone a PARENT for our objects. There is also another method, using “Armature Deform / With Empty Groups”, that created Weights and then you need to assign full weights for bones to object vertices (details are below)
 
----
-
 ### Using bones for all in blender rigging
 
 In Blender rigging, it is orthodox (and very common) to use bones for everything:
 
-Bones for deformation (the ones that actually influence the mesh).
+- Bones for deformation (the ones that actually influence the mesh).
 
-Bones for mechanics (IK targets, pole vectors, constraints, etc.).
+- Bones for mechanics (IK targets, pole vectors, constraints, etc.).
 
-Bones for controllers (the ones animators grab and move around).
+- Bones for controllers (the ones animators grab and move around).
 
 So when you see IK targets and pole vector controls built as bones in tutorials, that’s not a quirk of the author — that’s the standard Blender workflow.
 
-**Why Blender does it this way**
+#### Why Blender does it this way
 
-Armature object design: Blender groups all bones inside a single Armature object. Unlike Modo/C4D, you don’t have a free hierarchy of “nulls” and “joints.” Everything inside the Armature has to be a bone.
+- Armature object design: Blender groups all bones inside a single Armature object. Unlike Modo/C4D, you don’t have a free hierarchy of “nulls” and “joints.” Everything inside the Armature has to be a bone.
 
-Animation workflow: Bones can live in different layers, can be marked as Deform or Non-Deform, and you can use custom bone shapes so they look and feel like nulls, arrows, circles, etc. to the animator.
+- Animation workflow: Bones can live in different layers, can be marked as Deform or Non-Deform, and you can use custom bone shapes so they look and feel like nulls, arrows, circles, etc. to the animator.
 
-Constraints: IK and Pole Vector constraints in Blender are designed to point to bones inside the same armature, not external empties/nulls. This keeps rigs compact and self-contained.
+- Constraints: IK and Pole Vector constraints in Blender are designed to point to bones inside the same armature, not external empties/nulls. This keeps rigs compact and self-contained.
 
-Portability & performance: A rig that’s “all bones” is easier to transfer, duplicate, and animate efficiently, without mixing multiple object types.
+- Portability & performance: A rig that’s “all bones” is easier to transfer, duplicate, and animate efficiently, without mixing multiple object types.
 
-**Equivalent to “nulls/locators” in Blender**
+#### Equivalent to “nulls/locators” in Blender
 
 The non-deforming control bones in Blender are effectively your locators. Best practice is:
 
-Mark them as Non-Deforming (so they don’t affect the mesh).
+- Mark them as Non-Deforming (so they don’t affect the mesh).
 
-Put them in separate bone layers (so animators see only the controls they need).
+- Put them in separate bone layers (so animators see only the controls they need).
 
-Assign custom shapes (so they look like curves, circles, arrows, etc. instead of bones).
+- Assign custom shapes (so they look like curves, circles, arrows, etc. instead of bones).
 
 That way, from an animator’s perspective, they’re not “bones” at all — they look and behave just like nulls or controllers in Modo/C4D.
 
 So yes: in Blender the orthodox way is to use bones for both deformation and control. Empties/nulls exist, but they’re rarely used in rigs beyond some helper objects — everything important usually stays inside the armature as bones.
 
----
+### How to use “With automatic weights”
 
-### How to use with automatic weights in a “selective” way on different objects of a single armature
+And do it in a “selective” way on different objects of a single armature.
 
-If you want to use With Automatic Weights in a “selective” way on different objects of a single Armature, Blender only follows one internal logic:
+If you want to use “With Automatic Weights” in a “selective” way on different objects of a single Armature, Blender only follows one internal logic:
 
-*it considers all bones with Deform enabled at the moment you run the parenting operation.*
+>It considers all bones with Deform enabled at the moment you run the parenting operation.
 
 Therefore, if you apply this method several times (abdomen, head, elytra, legs…), you would indeed need to keep turning the Deform flag ON and OFF for each round of “With Automatic Weights” if you want each object to be weighted only to its own subset of bones.
 
 That is the expected behavior.
 
-**Ways to avoid this constant Deform ON/OFF toggling**
+#### Ways to avoid this constant Deform ON/OFF toggling
 
 Here are a few more convenient workflows commonly used by animators:
 
-**1️. Use With Empty Groups from the start**
+##### A. Use With Empty Groups from the start
 
-Parent each object to the armature with With Empty Groups.
+- Parent each object to the armature with With Empty Groups.
 
-Blender creates vertex groups only for the bones you have selected at that moment (this is not exactly so: no matter you select a single bone, it creates empty vertex groups for all bones in an armature. Just remove the ones not needed for each object)
+- Blender creates vertex groups only for the bones you have selected at that moment (this is not exactly so: no matter you select a single bone, it creates empty vertex groups for all bones in an armature. Just remove the ones not needed for each object)
 
-Then, in Edit Mode, select the mesh area and press Assign (Weight = 1) for each group.
+- Then, in Edit Mode, select the mesh area and press Assign (Weight = 1) for each group.
 
-After that, if you need smoothing, you can switch to Weight Paint and use Auto Normalize.
+- After that, if you need smoothing, you can switch to Weight Paint and use Auto Normalize.
 
 > Advantage: you never have to touch the Deform flag.
 
 > Disadvantage: you don’t get the “magic” of automatic calculations, but for rigid pieces (head, elytra, abdomen) simple weight 1.0 is enough.
 
-**2️. Manual “Weight Collection” with Vertex Groups**
+##### B. Manual “Weight Collection” with Vertex Groups
 
 If the pieces are rigid, automatic weights are basically unnecessary.
 
-Parent simply with Armature Deform > With Empty Groups (or even Parent > Object and add an Armature Modifier manually).
+- Parent simply with Armature Deform > With Empty Groups (or even Parent > Object and add an Armature Modifier manually).
 
-Create the vertex groups that correspond to each bone and assign all vertices to 1.
+- Create the vertex groups that correspond to each bone and assign all vertices to 1.
 
 > Especially quick if the pieces are already separated.
 
-**3️. Run Automatic Weights once for the WHOLE model**
+##### C. Run Automatic Weights once for the WHOLE model
 
 Another common strategy:
 
-Deform the entire insect at once using With Automatic Weights (with all deform bones enabled).
+- Deform the entire insect at once using With Automatic Weights (with all deform bones enabled).
 
-Then, for each object, delete the vertex groups you don’t need (Object Data Properties > Vertex Groups > Remove).
+- Then, for each object, delete the vertex groups you don’t need (Object Data Properties > Vertex Groups > Remove).
 
-Since the pieces are separate objects, cleaning groups only takes seconds.
+- Since the pieces are separate objects, cleaning groups only takes seconds.
 
 > Sometimes it’s actually faster to clean groups than to toggle Deform repeatedly.
 
-**Practical recommendation** for an insect divided into rigid parts:
+##### Practical recommendation for an insect divided into rigid parts:
 
-*Fastest and cleanest:*
+**Fastest and cleanest:**
 
-With Empty Groups + assign vertices with weight 1 to the bones that actually move each piece.
+- With Empty Groups + assign vertices with weight 1 to the bones that actually move each piece.
 
-(No Deform toggling and no reliance on auto-weight.)
+- (No Deform toggling and no reliance on auto-weight.)
 
-*If you truly need smooth auto-weights (for example a soft abdomen):*
+**If you truly need smooth auto-weights (for example a soft abdomen):**
 
-Do the abdomen first with Deform enabled only on those bones, then re-enable the rest for the next parts.
+- Do the abdomen first with Deform enabled only on those bones, then re-enable the rest for the next parts.
 
-But for head/elytra/legs, automatic weighting doesn’t add much.
+- But for head/elytra/legs, automatic weighting doesn’t add much.
 
 In short: yes, with pure Automatic Weights you would need to toggle Deform each time,
 
-but for a model split into separate pieces it’s usually more efficient to skip auto-weight altogether and work with Empty Groups + Assign.
-
----
+But for a model split into separate pieces it’s usually more efficient to skip auto-weight altogether and work with Empty Groups + Assign.
 
 ### Bendy bones (bbones) quick setup
 
-Next steps are from [Blender 2.78 Bendy Bones Tutorial - YouTube](https://www.youtube.com/watch?v=BsJ3Grq_3GM) (old, but simple and direct - DOWNLOADED)
+Next steps are from [Blender 2.78 Bendy Bones Tutorial - YouTube](https://www.youtube.com/watch?v=BsJ3Grq_3GM) (old, but simple and direct - *Downloaded*)
 
-Add an Armature (a single bone)
+- Add an Armature (a single bone)
 
-In EDIT mode change Display for that bone to B-Bone instead of “Armature Defined” and subdivide it in 3 bones
+- In EDIT mode change Display for that bone to B-Bone instead of “Armature Defined” and subdivide it in 3 bones
 
-Make first and last very small, leaving a longer bone in the middle (quick way: scale the middle
+- Make first and last very small, leaving a longer bone in the middle (quick way: scale the middle
 
-First one in Outliner (Parent) is the HEAD and last one is the TAIL. Middle will be the BBONE (rename all)
+- First one in Outliner (Parent) is the HEAD and last one is the TAIL. Middle will be the BBONE (rename all)
 
-Also, increase segments for BBONE to something like 10
+- Also, increase segments for BBONE to something like 10
 
-While in EDIT mode, select the Tail and **Alt-P** to Clear Parent
+- While in EDIT mode, select the Tail and **Alt-P** to Clear Parent
 
-Change to POSE mode, select the BBONE > Constraints > Add Stretch To
+- Change to POSE mode, select the BBONE > Constraints > Add Stretch To
 
-- *Target: Armature*
+	- Target: Armature
 
-- *Bone: Tail*
+	- Bone: Tail
 
-Now you can freely move the Head and Tail and BBone will adapt and stretch to both.
+- Now you can freely move the Head and Tail and BBone will adapt and stretch to both.
 
-To allow rotation for Head and Tail and having your BBone follow both:
+- To allow rotation for Head and Tail and having your BBone follow both:
 
-Select the BBONE > Bendy Bones
+- Select the BBONE > Bendy Bones
 
-- *Start Handle: Absolute*
+	- Start Handle: Absolute
 
-- *Custom: Head*
+	- Custom: Head
 
-- *End Handle: Absolute*
+	- End Handle: Absolute
 
-- *Custom: Tail*
+	- Custom: Tail
 
 Now you can move and rotate both the Head and Tail and our BBone adapts fine to both transformations and also stretch
 
@@ -1447,9 +1446,11 @@ More advanced setup:
 
 [The Most POWERFUL Way To Rig Bendy Bones in Blender - YouTube](https://www.youtube.com/watch?v=s0xE0G_uhZs&t=177s) (more complete and complex - Downloaded and also the sample **“Ultimate Bendy Bone Rig”** .blend)
 
----
+### Shape keys by bone transforms
 
-**SHAPE KEYS (A.K.A. MORPH TARGETS) CAN BE DRIVEN BY BONE TRANSFORMS** — usually location, rotation, or scale.
+Shape keys (a.k.a. morph targets) can be driven by bone transforms
+
+usually location, rotation, or scale.
 
 So we can:
 
