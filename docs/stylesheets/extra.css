@@ -70,3 +70,11 @@
 .md-nav__link--active, .md-nav__link:focus, .md-nav__link:hover {
   color: #FC9867 !important;
 }
+
+/* Loose lists (a blank line between items in the Markdown source) get extra
+   breathing room between items, matching Obsidian's tight/loose distinction.
+   Tight lists (no blank line between items) stay compact, as before. */
+[data-md-color-scheme="slate"] .md-typeset li > p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
