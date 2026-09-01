@@ -70,23 +70,3 @@
 .md-nav__link--active, .md-nav__link:focus, .md-nav__link:hover {
   color: #FC9867 !important;
 }
-
-/* Distinguish "tight" lists (no blank line between items in the Markdown
-   source) from "loose" lists (blank line between items), matching the
-   behavior visible in Obsidian's editing view.
-   Material's own CSS gives every <li> a 0.5em bottom margin AND, when a
-   loose list wraps its content in <p>, the same 0.5em margin on that <p> -
-   these two margins collapse into each other (same value), so by default
-   tight and loose lists render identically. To make the distinction real:
-   1) shrink the base <li> margin, so tight lists get visibly more compact
-   2) give the <li> a hairline padding, which stops the child <p>'s margin
-      from collapsing into it, so loose lists keep the larger spacing */
-[data-md-color-scheme="slate"] .md-typeset li {
-  margin-bottom: 0.15em;
-  padding-top: 0.01px;
-  padding-bottom: 0.01px;
-}
-
-[data-md-color-scheme="slate"] .md-typeset li > p {
-  margin: 0.6em 0;
-}
