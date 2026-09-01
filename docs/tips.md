@@ -923,11 +923,11 @@ Then load them into Blender so they become embedded in the project file.
 
 #### Workaround Trick to Invert Behavior:
 
-To kill particles that go outside the cube instead of those that hit it from the outside:
+To kill particles that go outside the cube instead of those that hit it from the outside > Invert Normals (for closed meshes)
 
-Invert Normals (for closed meshes)
-	- Enter Edit Mode on the Cube.
-	- Select all (A), then press Alt+N → Flip normals.
+- Enter Edit Mode on the Cube.
+
+- Select all (A), then press Alt+N → Flip normals.
 
 Now particles inside the mesh won’t be killed, but particles that exit (collide with the inverted surface) will be killed.
 
