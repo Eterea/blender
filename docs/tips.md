@@ -176,17 +176,29 @@ Answer:
 ### GENERAL MISC - LINKS
 
 [Tool System - Blender Manual](https://docs.blender.org/manual/en/latest/interface/tool_system.html)
+
 [Operators - Blender Manual](https://docs.blender.org/manual/en/latest/interface/operators.html)
+
 [Blender crashes at startup? Delete the default startup.blend file! - YouTube](https://www.youtube.com/watch?v=1_G9AYh4v0g)
+
 [Groups in Blender and confusion with Collections](https://www.rendereverything.com/blender-groups-confusion-about-collections/)
+
 [How Blender Keymap Presets Works](https://discord.com/channels/267112699517861888/1276613499878903808/1312076163463643221) - *Discord link*, by Xen Wildman - Saved on disk
+
 [How To Install or Reset Blender (The Right Way)](https://www.youtube.com/watch?v=Y_DRWnWq2fI)
+
 [Make And Change Hotkeys In Blender](https://www.youtube.com/watch?v=bwwKQLDoOyg)
+
 [Theres More to Blender's Custom Startup Saves Than You Realize](https://www.youtube.com/watch?v=VHlFAobw6wc)
+
 [Understanding Blend1 Files: Do You Really Need Them? - CG Cookie](https://cgcookie.com/posts/what-is-a-blend1-file-and-do-you-really-need-them)
+
 [You can still move the old Preferences to your new Version by hand](https://cgcookie.com/community/14898-question-about-quick-favorites?page=1#answer-61367)
+
 [Zenplates - New File Templates Made Easy](https://www.patreon.com/posts/zenplates-new-100172069?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link)
+
 [Application Templates - Blender Manual](https://docs.blender.org/manual/en/latest/advanced/app_templates.html)
+
 [Link, Append, Pack & Library Overrides Explained](https://www.youtube.com/watch?v=Ieb_VGl8MTI)
 
 [Link & Append - Blender Manual](https://docs.blender.org/manual/en/latest/files/linked_libraries/link_append.html) - These functions help you reuse objects, materials and other data-blocks from another blend-file. You can build libraries of common content and share them across multiple referencing files.
@@ -835,11 +847,11 @@ Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution
 
 [Curves & Curve Modifier in Blender - Beginner Tutorial - YouTube](https://www.youtube.com/watch?v=9xNdPA65dJo)
 
-[NURBS CURVES! Why the heck should I use them?. - YouTube](https://www.youtube.com/watch?v=jO40hu7ELfA&t=0s) (downloaded)
+[NURBS CURVES! Why the heck should I use them?. - YouTube](https://www.youtube.com/watch?v=jO40hu7ELfA&t=0s) - *Downloaded*
 
-[Part 1, Sardines Can Packaging, tab modeling - YouTube](https://www.youtube.com/watch?v=vJb_UioIelA&t=0s) (downloaded)
+[Part 1, Sardines Can Packaging, tab modeling - YouTube](https://www.youtube.com/watch?v=vJb_UioIelA&t=0s) - *Downloaded*
 
-[The BEST bezier curve tutorial for new Blender users. - YouTube](https://www.youtube.com/watch?v=f53GvpTIO2w) - **Updated version** (downloaded)
+[The BEST bezier curve tutorial for new Blender users. - YouTube](https://www.youtube.com/watch?v=f53GvpTIO2w) - **Updated version** - *Downloaded*
 
 ## FONTS
 
