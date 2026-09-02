@@ -22,11 +22,11 @@ This is pre-installed in 5.x
 
 [3D Cursors Briefcase](https://extensions.blender.org/add-ons/c3db/) - Store and manage multiple 3D Cursors *[ WIN ]*
 
-[3D Cursor Plus](https://extensions.blender.org/add-ons/cursor-plus/) - Axes, undo and few other tools for your 3D Cursor *[ WIN ]* - Installed but disabled because it conflicts with 3D Cursor Briefcase - Issue notified to author
+[3D Cursor Plus](https://extensions.blender.org/add-ons/cursor-plus/) - Axes, undo and few other tools for your 3D Cursor *[ WIN ]* - Installed but disabled because it conflicts with 3D Cursor Briefcase - Issue notified to author 🔴
 
 [Bool Tool](https://extensions.blender.org/add-ons/bool-tool/) - Quick boolean operations and tools for mesh modeling - [DOCS](https://github.com/nickberckley/bool_tool/wiki) *[ WIN UPDATE ]*
 
-[Cameraide](https://extensions.blender.org/approval-queue/cameraide-settings/) - Saves render settings per camera, including: Resolution and frame ranges, Output paths and file names, Format settings *[ WIN UPDATE ]*
+[Cameraide](https://extensions.blender.org/approval-queue/cameraide-settings/) - Saves render settings per camera, including: Resolution and frame ranges, Output paths and file names, Format settings [ WIN UPDATE ] 🟠
 
 [Copy Attributes Menu](https://extensions.blender.org/add-ons/copy-attributes-menu) - [Copy Attributes Menu - Blender 4.1 Manual](https://docs.blender.org/manual/en/4.1//addons/interface/copy_attributes.html)
 
