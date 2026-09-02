@@ -1779,41 +1779,22 @@ Rigify helps automate the creation of character rigs. It is based around a build
 
 - [Level Pixel Level](https://levelpixellevel.gumroad.com/) - Files with free examples
 
-## CONTINUE HERE WITH CLEANUP
-
 ## UVS
 
-**Flip or adjust the mesh in general while keeping the image texture static**
-
-While in 'Edit' mode, click on 'Options' just below the 'Viewport Shading' modes on the top right corner, then click on 'Correct Face Attributes'. Now when you scale the mesh on the X-axis by -1, it will flip the mesh while keeping the image texture in place.
-
----
-
-**IMPORTANT:** take always a second look to UVs in POINT mode to **detect if vertex are in RED (pinned)**, specially before proceed to Packing, using tools like UVPackmaster
-
----
+### Problems renaming UV maps
 
 If a given UV Map for an object hast a name like **“UVMap.001”** and you can not simple rename to **“UVMap”**, try this:
 
-**Object > Relations > Make Local > All**
+- **Object > Relations > Make Local > All**
 
 **OR ALSO THIS** (probably even better):
 
-Go to **Data > Attributes** and search for an existent (not used) “UVMap”, if any, delete and create your new “UVMap” in **Data > UV Maps**.
+- Go to **Data > Attributes** and search for an existent (not used) “UVMap”, if any, delete and create your new “UVMap” in **Data > UV Maps**.
 
----
 
-[How to convert UV to mesh in blender](https://blender.stackexchange.com/questions/231662/how-to-convert-uv-to-mesh-in-blender) - See Update for Blender 3.2 and up
+### Rectify UVs
 
----
-
-[A UV Unwrapping Guide – Blog — Blender Studio](https://studio.blender.org/blog/a-uv-unwrapping-guide/) - Collection of advice for specific cases you might need a UV map for and how to unwrap your UV maps.
-
-[Packing UV Maps for Production – Blog — Blender Studio](https://studio.blender.org/blog/packing-uv-maps/) - All about packing them together into a useful arrangement. You could pack all of them into a single 1:1 UV tile but there are more powerful tools at your disposal
-
----
-
-**To “rectify” UVs**
+**“Vanilla” method:**
 
 Select a polygon that is already “almost” perfectly orthogonal. If necessary, rotate the entire UV island so that it is close to being orthogonal.
 
@@ -1821,15 +1802,17 @@ Make sure that this polygon is the ACTIVE polygon, so that it has been selected 
 
 Use RMB with its 4 edges to align them horizontally and vertically.
 
-Move to faces, select all (A), RMB > Follow Active Quads
+Move to faces, select all (A), RMB > Follow Active Quads.
 
 In addition to that:
 
-["Using pin and relax is a great way to straighten a lot of UV layouts in #Blender without plugins." / X](https://twitter.com/kasperarnklit/status/1788543991668949285)
+[Using pin and relax is a great way to straighten a lot of UV layouts in Blender without plugins / X](https://twitter.com/kasperarnklit/status/1788543991668949285)
 
----
+**ALSO:** various installed add-ons have great dedicated tools for this.
 
-**To center the selected UVs in the middle (or in other places we need)**
+### Center selected UVs in the middle
+
+Or in other places we need:
 
 Enable built-in Add-on Magic UV. Now, there is an easy option to align the Cursor to the center of UV space:
 
@@ -1839,77 +1822,93 @@ Enable built-in Add-on Magic UV. Now, there is an easy option to align the Curso
 
 You can also use the UV Position (UV Vertex XY) in the N menu.
 
----
-
-**Pack Islands Tip**
+### Pack Islands Tip
 
 It’s important to have enough space (Margin) between UV Islands to avoid visual artefacts connected with texture filtering in game engine renders. Here are suggested Margin values to use for different size textures:
 
-256 - 2px
+256 — **2px**
 
-512 - 4px
+512 — **4px**
 
-1024 - 8px
+1024 — **8px**
 
-2048 - 16px
+2048 — **16px**
 
-4096 - 32px
+4096 — **32px**
 
-8192 - 64px
+8192 — **64px**
 
----
+### How to avoid UV stretching after subdivision
 
-**Stack identical shell islands**
-
-Just select first, then second island, and make a Cmd/Ctrl-C, Cmd/Ctrl-V
-
----
-
-**How to avoid UV stretching after subdivision, with or without bevels**
-
-[Thanks for BlenderBob for the tip!](https://x.com/robertrioux/status/1994060622833516762?s=12)
+With or without bevels:
 
 In a model like a primitive cube with bevels and subdivision is important to have each face separated away from the others.
 
 TIP: while in SYNC mode OFF, select faces, press “Y” (Rip) and then, immediately move away a bit. Repack UVs.
 
-In the Subdivision Modifier, change UV Smooth from “Keep Boundaries” to “Keep Corners”
+In the Subdivision Modifier, change UV Smooth from **“Keep Boundaries”** to **“Keep Corners”**
 
----
+[Thanks for BlenderBob for the tip!](https://x.com/robertrioux/status/1994060622833516762?s=12)
 
-**To match UVs in two objects with same meshes bur different UV maps**
+### Match UVs in two objects
 
-Caution: it’s necessary that both objects have not only the same components (verts, edges and faces) but also the **same indices**.
+With same meshes bur different UV maps:
 
-This is: the same TOPOLOGY. Otherwise this will create weak UVs
+Caution: it’s necessary that both objects have not only the same components (verts, edges and faces) but also the **same indices**. This is: the same TOPOLOGY. Otherwise this will create weak UVs
 
 Select object B to receive UVs from the other A
 
-Add a **Data Transfer** Modifier
+- Add a **Data Transfer** Modifier
 
-Put in Source the other object A (to receive UVs from)
+- Put in Source the other object A (to receive UVs from)
 
-Enable “Face Corner Data”
+- Enable “Face Corner Data”
 
-Enable “UVs” tab
+- Enable “UVs” tab
 
-Change Mapping to “Topology”
+- Change Mapping to “Topology”
 
-UVs will transfer from A to B
+- UVs will transfer from A to B
 
-Now you can apply Modifier and Join if necessary
+- Now you can apply Modifier and Join if necessary
 
-UPDATE: **How to copy UVs from one object to another with the same topology but different vert ID?** ([source X thread](https://x.com/henningsanden/status/1991479453399363783))
+UPDATE -  Question: **How to copy UVs from one object to another with the same topology but different vert ID?** ([source X thread](https://x.com/henningsanden/status/1991479453399363783))
 
 ANSWERS:
 
-Select active object and other - Transfer Mesh Data (Ctrl + L). Or Data Transfer modifier
+- Select active object and other - Transfer Mesh Data (Ctrl + L). Or Data Transfer modifier
 
-Separate them into two different objects and use the data transfer modifier targeting the uvs
+- Separate them into two different objects and use the data transfer modifier targeting the uvs
 
----
+### UVS - QUICK TIPS
 
-[Zen UV for Blender - 10 Tips to Transform UVs like a Pro - YouTube](https://www.youtube.com/watch?v=_Zp1mLsV_ao) — !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! (VERY GOOD)
+#### Stack identical shell islands
+
+Just select first, then second island, and make a Cmd/Ctrl-C, Cmd/Ctrl-V
+
+#### Caution with pinned vertices
+
+**IMPORTANT:** take always a second look to UVs in POINT mode to **detect if vertex are in RED (pinned)**, specially before proceed to Packing, using tools like UVPackmaster.
+
+#### Flip or adjust the mesh in general while keeping the image texture static
+
+While in **Edit** mode, click on **Options** just below the 'Viewport Shading' modes on the top right corner, then click on **Correct Face Attributes**. Now when you scale the mesh on the X-axis by -1, it will flip the mesh while keeping the image texture in place.
+
+#### How to convert UV to mesh in blender
+
+[Thread in Blender Exchange](https://blender.stackexchange.com/questions/231662/how-to-convert-uv-to-mesh-in-blender) - See Update for Blender 3.2 and up.
+
+#### A UV Unwrapping Guide
+
+[Blog — Blender Studio](https://studio.blender.org/blog/a-uv-unwrapping-guide/) - Collection of advice for specific cases you might need a UV map for and how to unwrap your UV maps.
+
+#### Packing UV Maps for Production
+
+[Blog — Blender Studio](https://studio.blender.org/blog/packing-uv-maps/) - All about packing them together into a useful arrangement. You could pack all of them into a single 1:1 UV tile but there are more powerful tools at your disposal.
+
+### UVS - LINKS:
+
+[Zen UV for Blender - 10 Tips to Transform UVs like a Pro - YouTube](https://www.youtube.com/watch?v=_Zp1mLsV_ao) — *Very good*
 
 [Per object Uv projection in camera view. Blender Geometry nodes](https://x.com/f_rimasson/status/2035444232517775662?s=12)
 
@@ -1917,37 +1916,70 @@ Separate them into two different objects and use the data transfer modifier targ
 
 ### How to sculpt with curves:
 
-**1. Enable Dynamic Topology** (optional)
+- **Enable Dynamic Topology** (optional): If you want more detail on your mesh, enable Dynamic Topology (found in the Sculpt mode's header).
 
-If you want more detail on your mesh, enable Dynamic Topology (found in the Sculpt mode's header).
+- **Select the Brush:** Choose a sculpting brush like the "Snake Hook" brush, as it works well with curves.
 
-**2. Select the Brush:**
+- **Change Stroke Method:** Go to the Stroke panel and change the Stroke Method to "Curve".
 
-Choose a sculpting brush like the "Snake Hook" brush, as it works well with curves.
+- **Draw the Curve:** Hold down **Ctrl** and **right-click-drag** to create points and handles, forming a bezier curve. You can add multiple points and adjust their handles.
 
-**3. Change Stroke Method:**
-
-Go to the Stroke panel and change the Stroke Method to "Curve".
-
-**4. Draw the Curve:**
-
-Hold down **Ctrl** and **right-click-drag** to create points and handles, forming a bezier curve. You can add multiple points and adjust their handles.
-
-**5. Sculpt Along the Curve:**
-
-Once you're happy with the curve, **left-click while still holding Ctrl to apply the curve to your sculpting**.
+- **Sculpt Along the Curve:** Once you're happy with the curve, **left-click while still holding Ctrl to apply the curve to your sculpting**.
 
 You can refine the curve further by:
 
-Editing Points: Select points by left-clicking and move with G or adjust handles by right-clicking and dragging.
+- **Editing Points:** Select points by left-clicking and move with G or adjust handles by right-clicking and dragging.
 
-Adding/Removing Points: Add points by Ctrl + clicking and remove them by Shift + Ctrl + clicking.
+- **Adding/Removing Points:** Add points by Ctrl + clicking and remove them by Shift + Ctrl + clicking.
 
----
+### Metaballs and geometry nodes
 
-**To add details to a Shape key using Sculpt brushes**, be sure to change your Value slider for the Shape Key to 1.0 instead of 0.0
+#### Workaround
 
----
+**Metaballs are NOT “officially” supported by GN. But there is workarounds**
+
+First of all, we need to create a **Mesh** object, but it should be empty:
+
+- Add an empty Mesh
+
+- Rename it as BaseGeo
+
+- Add Metaball > Ball and make it a child of BaseGeo
+
+- Select BaseGeo > Go to Object Properties > Instancing > Enable Vertices
+
+- With BaseGeo selected, add a Geometry Nodes Modifier—this will display the Group Input and Group Output
+
+Now, for the setup in Geometry Nodes:
+
+- Mesh Line → Connect it directly to Group Output → And voilà! The Metaball is now instanced along the line.
+
+- You can replace it with a Cube > Set Size to 2m, and the same happens—the Metaballs behave as expected.
+
+By selecting the Metaball, you can adjust its resolution, scale, etc.
+
+If you select BaseGeo, go to Object Properties > Instancing > Vertices, and disable Instancing in the Viewport, the Cube added in Geometry Nodes will disappear.
+
+Then, you can go back to Geometry Nodes, adjust the Cube’s size or change the number of vertices.
+
+#### Metaball Instances not displaying in Render using Geometry Nodes?
+
+[Thread in Blender Exchange](https://blender.stackexchange.com/questions/272588/metaball-instances-not-displaying-in-render-using-geometry-nodes/294616#294616)
+
+Export an image sequence, this way blender updates the metaballs and shows them.
+
+If you animated the metaballs don't worry if they don't show up in a single image render, render the whole animation and they will be there.
+
+One thing: in the first frame the metaballs don't show up, so you need to render out an additional frame before the first frame, so change the start frame from 1 to 0, and then delete the exported 0th frame bc that's blank.
+
+If you want to make a still image, render out two frames as an animation and save the one that has the metaballs in it.
+
+### SCULPTING - QUICK TIPS
+#### Add details to a Shape key using Sculpt
+
+To add details to a Shape key using Sculpt brushes, be sure to change your Value slider for the Shape Key to 1.0 instead of 0.0
+
+### SCULPTING - LINKS
 
 [Improve Sculpting Performance Instantly | Blender Secrets - YouTube](https://www.youtube.com/watch?v=j-GQDMypLDI)
 
@@ -1959,49 +1991,7 @@ Adding/Removing Points: Add points by Ctrl + clicking and remove them by Shift +
 
 [Sculpting sharp corners perfectly can be tricky, but the Curve Stroke Method is the solution](https://x.com/janvandenhemel/status/2071307276472775027?s=66)
 
----
-
-### Metaballs and geometry nodes
-
-**Metaballs are NOT “officially” supported by GN. But there is workaround:s**
-
-First of all, we need to create a **Mesh** object, but it should be empty:
-
-Add an empty Mesh
-
-Rename it as BaseGeo
-
-Add Metaball > Ball and make it a child of BaseGeo
-
-Select BaseGeo > Go to Object Properties > Instancing > Enable Vertices
-
-With BaseGeo selected, add a Geometry Nodes Modifier—this will display the Group Input and Group Output
-
-Now, for the setup in Geometry Nodes:
-
-Mesh Line → Connect it directly to Group Output → And voilà! The Metaball is now instanced along the line.
-
-You can replace it with a Cube > Set Size to 2m, and the same happens—the Metaballs behave as expected.
-
-By selecting the Metaball, you can adjust its resolution, scale, etc.
-
-If you select BaseGeo, go to Object Properties > Instancing > Vertices, and disable Instancing in the Viewport, the Cube added in Geometry Nodes will disappear.
-
-Then, you can go back to Geometry Nodes, adjust the Cube’s size or change the number of vertices.
-
----
-
-[Metaball Instances not displaying in Render using Geometry Nodes?](https://blender.stackexchange.com/questions/272588/metaball-instances-not-displaying-in-render-using-geometry-nodes/294616#294616)
-
-Export an image sequence, this way blender updates the metaballs and shows them.
-
-If you animated the metaballs don't worry if they don't show up in a single image render, render the whole animation and they will be there.
-
-One thing: in the first frame the metaballs don't show up, so you need to render out an additional frame before the first frame, so change the start frame from 1 to 0, and then delete the exported 0th frame bc that's blank.
-
-If you want to make a still image, render out two frames as an animation and save the one that has the metaballs in it.
-
----
+## CONTINUE HERE WITH CLEANUP -----
 
 ## PAINTING
 
