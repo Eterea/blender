@@ -1991,8 +1991,6 @@ To add details to a Shape key using Sculpt brushes, be sure to change your Value
 
 [Sculpting sharp corners perfectly can be tricky, but the Curve Stroke Method is the solution](https://x.com/janvandenhemel/status/2071307276472775027?s=66)
 
-## CONTINUE HERE WITH CLEANUP -----
-
 ## PAINTING
 
 [You can fix this annoying issue with one click and save yourself many hours of retexturing](https://x.com/mvjagaimo/status/1910379677832872196?s=12) - Fix issue painting at border of an object
@@ -2005,25 +2003,19 @@ To add details to a Shape key using Sculpt brushes, be sure to change your Value
 
 ## FUR
 
-[Hair Nodes - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/hair/index.html) (this is the NEW system, based on Geometry Nodes. USE THIS)
+### To transfer fur from a Sphere to a Cube object:
 
-[Hair - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/physics/particles/hair/index.html) (this is the OLD system)
+- Select cube
 
----
+- Open add menu ->curve -> fur
 
-**To transfer fur from a Sphere to a Cube object:**
+- Select the cube fur and then shift select the sphere fur
 
-Select cube
+- Hit Ctrl +L -> Copy Modifiers
 
-Open add menu ->curve -> fur
+- Then select Cube fur -> Modifier Section -> interpolate Hair Curves -> Surface and then change it from sphere to cube
 
-Select the cube fur and then shift select the sphere fur
-
-Hit Ctrl +L -> Copy Modifiers
-
-Then select Cube fur -> Modifier Section -> interpolate Hair Curves -> Surface and then change it from sphere to cube
-
-**To change length of quick fur**
+### To change length of quick fur
 
 Add the "Trim hair curves" modifier to the existing hair.
 
@@ -2031,9 +2023,9 @@ Now you get an option to adjust the length.
 
 BTW: when you first create the "Fur" if you untick "Apply Hair Guides" in the quick fur menu, then you could modify these options in the modifiers tab after the quick menu disappears.
 
----
+### To comb fur
 
-**TO COMB YOUR FUR** use that **Comb** brush in combination with **Puff** (the opposite)
+Use that **Comb** brush in combination with **Puff** (the opposite)
 
 You can disable all GN fur modifiers to see only the Curve Guides.
 
@@ -2041,9 +2033,9 @@ Reduce Strength to 50% (generally speaking, do this with all brushes) and try Pr
 
 Change Radius with **“F”**
 
----
+### Apply fur in a small area
 
-### Apply fur (and curve guides) in a small area of an object only
+To apply fur (and curve guides) in a small area of an object only
 
 No matter I only want my final Fur in some a small portion of polygons (achieved via Vertex/Weight Group mask), Blender always cover my entire object with the Base Curve Profiles. I mean: not the final fur, but the original curve splines to serve as guides for my fur. And what if I only this fur covering just a 6x6 faces matrix inside my sphere? (not the whole object)
 
@@ -2061,37 +2053,26 @@ Great advantage: **Curve Guides** will be only in the desired small patch of fac
 
 Then, even is the final fur appears in the whole object (once we join both objects), we can add an extra Vertex Map Group to determine where fur must be added, through Curves > Modifiers > Interpolate hair Curves > Density Mask > Our Vertex Map Group . Again: that small patch of faces.
 
----
-
 ### To pass surface material to fur material
 
 Check my setup project **“Pass Surface material to Fur Material - ETR”** inside ”Setups_Tips_Tricks”
 
 Basically, use an Attribute node to catch **“surface_uv_coordinate”** and pass this to Principled Hair BSDF, using an intermediate common mapping Group to contain the common material for Surface and Fur
 
----
+### FUR - LINKS
+
+[Hair Nodes - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/hair/index.html) (this is the NEW system, based on Geometry Nodes. USE THIS)
+
+[Hair - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/physics/particles/hair/index.html) (this is the OLD system)
 
 [Hair Simulation: From Cosmos Laundromat to Geometry Nodes — Blender Conference 2025 - YouTube](https://www.youtube.com/watch?v=sfUDDKSx-1c)
 
 [Hair Rendering Secret: Make Your Hair Softer!](https://x.com/vfxgrace/status/2005975413609406723?s=12)
 
----
-
 ## NODES
 
-[Node Parts - Blender Manual](https://docs.blender.org/manual/en/latest/interface/controls/nodes/parts.html) - Sockets Colors - Valid Conversions
 
-[All about SOCKETS - ALL THE NODES | Blender Geometry Nodes - YouTube](https://www.youtube.com/watch?v=HLMRM8_80cQ)
-
-[Attributes - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html) - All about Attributes, including the names for the default ones
-
-[Geometry Nodes Overview 4.5.0.1 documentation](https://geometry-nodes-overview.docs.quellenform.at/en/latest/) - A complete list of all Geometry Nodes that have been added to Blender over time.
-
----
-
-### Important, for blender 5.1 and up
-
-*Node tools from previous versions must be opened and saved with 5.1*
+>Important, for blender 5.1 and up: *Node tools from previous versions must be opened and saved with 5.1*
 
 ---
 
@@ -2105,25 +2086,14 @@ Set Curve Radius is there so old files keep working. When you open a file from p
 
 [Blender 4.5 LTS: Geometry Nodes Changes](https://developer.blender.org/docs/release_notes/4.5/geometry_nodes/)
 
----
-
 ### Also, about the “use radius” setting in the bounding box node in 4.5
 
 Other change that may cause confusion is the new "Use Radius" setting in the Bounding Box node. It is enabled by default. So the default Bezier curve gives about twice as big BB than without radius.
 
 [#143080 - Bounding Box incompatibility with version 4.5 - blender - Blender Projects](https://projects.blender.org/blender/blender/issues/143080)
 
----
 
-**Multi-line text on Frames:** When you need to display more comprehensive text, frame nodes can display the contents of a **text data-block**. This is read-only, so you will need to use the Text Editor (Shift-F11) to modify the contents.
-
----
-
-Way to **retype “-inf” and “inf”** once we have clicked on these fields: write **-4e44** and **4e44**
-
----
-
-**Tips by Kimmo on Random Value & Repeat Zone**
+### Tips by Kimmo on Random Value & Repeat Zone
 
 Random Value outputs a **Field** by default. If we need **single value**:
 
@@ -2135,13 +2105,16 @@ You can also remove the link if you want to use single Random value for all iter
 
 ---
 
+### Switch Geometry singular boolean limitation
+
 A **Switch (Geometry)** could only handle a *singular boolean value and not a field*. For that reason, for nodes like **Is Spline Cyclic** you'd have to pull out the value from a specific spline via Sample Index. If you're only dealing with one spline, then it should be the 0th one.
 
 [Link at Discord](https://discord.com/channels/314131871376080906/734779545454116918/1332674634973315072) - More, related: [Is there a way to connect a field Boolean output to a geometry switch node?](https://blender.stackexchange.com/questions/296335/is-there-a-way-to-connect-a-field-boolean-output-to-a-geometry-switch-node/296337#296337)
 
----
 
-**Automatic (or not) Domain Conversions in GN** - Advice by Quackers
+### Automatic (or not) Domain Conversions in GN
+
+**Advice by Quackers:**
 
 Blender does domain conversions implicitly, if you plug a Face attribute into a node that's set to Edge, it'll do the conversion.
 
@@ -2165,7 +2138,7 @@ For **booleans**, the behavior is slightly different.
 
 It's outlined by this table in the Blender documentation: [Attributes - Blender 5.0 Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html#boolean-domain-interpolation)
 
----
+### On “Separate Geometry on Instances”
 
 When you use **Separate Geometry on Instances**, the selection and inverted become **two different geometry sets**. So you can safely flip one without affecting the other.
 
@@ -2175,9 +2148,10 @@ But otherwise they become distinct sets of instances.
 
 Thank god for the 4.3 spreadsheet for just making this visible, this used to be just something you mentally tracked
 
-[ [context in Discord](https://discord.com/channels/314131871376080906/734779545454116918/1370385684568739960) ]
+[ [More context in Discord](https://discord.com/channels/314131871376080906/734779545454116918/1370385684568739960) ]
 
----
+
+### Create Custom Nodes and store as Assets
 
 **Step by Step to create Custom Nodes and store as Assets for future use**
 
@@ -2185,9 +2159,9 @@ Group your Node Tree using Cmd/Ctrl-G
 
 Inside the internal Node Tree > N panel:
 
-- > Group > Group > Rename your Group (ie: “Curve to Ribbon”)
+- Group > Group > Rename your Group (ie: “Curve to Ribbon”)
 
-- > Group > Usage > Enable Modifier (if you want it to use so)
+- Group > Usage > Enable Modifier (if you want it to use so)
 
 Return back to the general Geometry Node Tree. Save the present Node Tree (containing your recently create Group) something clever, like “YourName Nodes” (ie: ETR Nodes)
 
@@ -2211,11 +2185,11 @@ Move your recently created asset from “Unassigned” to “Curves” sub-catal
 
 Press N here (or use the small Gear) to open local side panel and add a Preview Icon previously stored as PNG or JPG (something as 256x256 is enough)
 
-Save your Blender document, ideally inside:
+Save your Blender document, something like this:
 
-*/Users/***cristobal***/Library/Application Support/Blender/***4.3***/nodes/***Eterea***/***etr_nodes_source.blend**
+`/Users/cristobal/Library/Application Support/Blender/VERSION/nodes/eterea/etr_nodes_source.blend`
 
-(change bold references to your needs)
+(change to your needs)
 
 Also press the small floppy disk at side of Catalog. This will save a “blender_assets.cats.txt” side by side with your .blend file.
 
@@ -2227,17 +2201,17 @@ Now, no matter you have any other open document, you can look inside All Librari
 
 And also a new submenu inside Add Modifier > Eterea > Curves > Curve to Ribbon (or whatever nomenclature you use
 
----
+### On Capture Attributes and Evaluate on Domain
 
-[Interesting comments by Quackers user on Discord](https://discord.com/channels/314131871376080906/734779545454116918/1333794271307759677) on CAPTURE ATTRIBUTES and EVALUATE ON DOMAIN
+Interesting comments by **Quackers** user on Discord: [Discord Link](https://discord.com/channels/314131871376080906/734779545454116918/1333794271307759677)
 
-Every geometry operation in GN has an inherent domain, *Set Position* is inherently a **Point** domain operation.
+Every geometry operation in GN has an inherent domain, ie. **Set Position** is inherently a **Point** domain operation.
 
 This is important because it informs everything in your tree that doesn't have an explicit domain, which in this case is the chunk with the Random Value node.
 
 Blender doesn't see an explicit domain being set and assumes you want to randomize per point.
 
-**Evaluate on Domain** is how you explicitly specify the domain of whatever's plugged to it, so setting it to **Face** allowed the randomization to be done per face instead of per point. *(It's worth to note the effect of* **Evaluate on Domain** *is backwards, not forwards,* **Set Position** *is still a* **Point** *operation, but how much those points are offset by is random per Face)*
+**Evaluate on Domain** is how you explicitly specify the domain of whatever's plugged to it, so setting it to **Face** allowed the randomization to be done per face instead of per point. (It's worth to note the effect of **Evaluate on Domain** is backwards, not forwards, **Set Position** is still a **Point** operation, but how much those points are offset by is random per Face)
 
 As for why changing the domain of **Capture Attribute** doesn't do anything here, that's because going from **Point/Edge** to **Face** has an effect of averaging the field.
 
@@ -2245,9 +2219,9 @@ Coincidentally, the **Face** position is defined as the average position of all 
 
 So capturing the face position has the same result as capturing the point positions and averaging them via domain conversion.
 
----
+### On Repeat and For Each Zones
 
-**Interesting comments by Quackers about Repeat / For Each Zones** (better to avoid these options and using Fields, when possible)
+Interesting comments by **Quackers** about Repeat / For Each Zones. **In short: is better to avoid these options and using Fields, when possible.**
 
 [Fields](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/fields.html) can have different values per geometry element (per point, edge, spline, etc.)
 
@@ -2267,21 +2241,35 @@ A lot of that is as Erin explained, where each iteration has to wait for the pre
 
 Performance-wise, it's a good rule of thumb to avoid Repeat Zone whenever possible. It's pretty much only necessary if what you're computing cannot be done directly and instead uses an iterative approach.
 
-Here's a performance comparison I did (Quackers) where the idea was just to generate a ton of circles with different radii and resolution:
+Here's a performance comparison I did (Quackers) where the idea was just to generate a ton of circles with different radii and resolution: [Discord Link](https://discord.com/channels/314131871376080906/734779371549753364/1297386822329958471)
 
-[https://discord.com/channels/314131871376080906/734779371549753364/1297386822329958471](https://discord.com/channels/314131871376080906/734779371549753364/1297386822329958471)
+- Field Based: **5.2 ms** / For Each Based: **84 ms**
 
-Field Based: 5.2 ms / For Each Based: 84 ms
+Another comparison by Quackers: [Discord Link](https://discord.com/channels/314131871376080906/734779371549753364/1297387800521474069)
 
-Another comparison by Quackers:
-
-[https://discord.com/channels/314131871376080906/734779371549753364/1297387800521474069](https://discord.com/channels/314131871376080906/734779371549753364/1297387800521474069)
-
-Field Based: 4.04 ms / For Each: 399 ms / Repeat Zone: 53 s
+- Field Based: **4.04 ms** / For Each: **399 ms** / Repeat Zone: **53 s**
 
 ---
 
-**Interesting comments and considerations by Quackers about Set Materials and Instances**
+Also, related with this, from Quackers, [comment on Twitter/X](https://x.com/quackarooners/status/1888913461134123302) **about the FOR-EACH feature**:
+
+The For-Each isn't actually always needed, even if you want to modify things on a “per component” way.
+
+EXAMPLE: as both Set Curve Radius and Trim Curve support field inputs (diamond sockets) you can plug values derived from Index directly without any issues.
+
+Just replace the For Each's Element output w/ the base geometry, and the Index output w/ the Index node.
+
+To just add a bit of what the For-Each is usually needed for: **it's for applying fields on nodes that only support CONSTANTS (circle sockets)**.
+
+Notice how fields turn into constants when they go inside the zone, and vice versa when going out of them.
+
+What makes constants and fields different and incompatible is a longer technical discussion. 😅
+
+But yeah, using For-Each to make these two play together is a good rule-of-thumb to remember.
+
+### On Set Materials and Instances
+
+Interesting comments and considerations by **Quackers** about Set Materials and Instances:
 
 (and why it’s necessary to separate instances to assign different Materials)
 
@@ -2295,7 +2283,7 @@ If you have 8 instances of the same cube data, when I set the material on this c
 
 When you split the instances to separate groups and assign different materials to them, GN creates a separate copy of the geometry data for each branch and is able to do different things to them.
 
-(Note how the spreadsheet will list two geometry sets, one with some instances and another with others. Instead of one geometry set with all instances, like before the separate operation)
+Note how the spreadsheet will list two geometry sets, one with some instances and another with others. Instead of one geometry set with all instances, like before the separate operation.
 
 Also: Evaluate on Domain and Evaluate at Index won't work. You could think of there being a barrier between "instance data" and "geometry data", meaning you can't really mix both.
 
@@ -2305,25 +2293,25 @@ The exception to that is For-Each, as whatever field you plug into it turns into
 
 And everything can access constants, so using a For-Each is typically how you get around that limitation.
 
----
+### Sample vs Evaluate vs Capture Attribute
 
-• If a node's name starts with **Sample**, it's for getting data from other meshes.
+- If a node's name starts with **Sample**, it's for getting data from other meshes.
 
-• If it starts with **Evaluate**, it's for getting the data from whatever's the current mesh.
+- If it starts with **Evaluate**, it's for getting the data from whatever's the current mesh.
 
 These nodes serve the same function of getting the value at a specific index, but you'd ideally use them for different purposes.
 
-**Capture Attribute** doesn't sample attributes, it stores them.
+- **Capture Attribute** doesn't sample attributes, it stores them.
 
 "Sampling", in the context of geonodes means transferring a field's values from one geometry to another.
 
-Fields are computed in context of the current geometry, capturing them allows you to get a field's value at a specific part of the nodetree and use it later down the line.
+**Fields** are computed in context of the current geometry, capturing them allows you to get a field's value at a specific part of the nodetree and use it later down the line.
 
 These values persist even when converting the geometry, which is largely what makes them useful to have in node trees.
 
-(In contrast, sampling may require you to manipulate indices yourself should the source and target geometry be different.)
+In contrast, sampling may require you to manipulate indices yourself should the source and target geometry be different.
 
----
+### Remap Ranges, maintain 0
 
 If a range of values is -100/100 and we want to remap them to -20/50 while 0=0 on both maps we have to break the range into: -100/0 to -20/0 and 0/100 to 0/50 and write the driver like this:
 
@@ -2331,31 +2319,31 @@ If a range of values is -100/100 and we want to remap them to -20/50 while 0=0 o
 
 If you have multiple domains, just have to break it more (like color ramp thingy)
 
----
+### Compute a Noise as a Single Value instead of a Field
 
-**Compute a Noise as a Single Value instead of a Field**
+- Add a Scene Time node
 
-Add a Scene Time node
+- Use the Seconds output.
 
-Use the Seconds output.
+- Add a Noise Texture node
 
-Add a Noise Texture node
+- Set it to 4D
 
-Set it to 4D
+- Set W = Time
 
-Set W = Time
+#### And for Vectors?
 
-**Here comes the trick: For the Vector, use (0, 0, 0) — just a dummy fixed point.**
+Here comes the trick: For the Vector, use (0, 0, 0) — just a dummy fixed point.
 
-→ This way, it outputs a single scalar value.
+This way, it outputs a single scalar value.
 
 Optionally: Use Map Range to convert from [0,1] to [-1,1]
 
 Plug this into a single value input (like a Bend) — now it’s not a field, just a float.
 
----
+### Noise Texture lacks seed. Hack
 
-**Unlike the Random Value node, the Noise Texture node doesn’t have a direct Seed input.**
+Unlike the Random Value node, the **Noise Texture** node doesn’t have a direct Seed input.
 
 But! You can absolutely generate different results by varying the inputs that influence the noise:
 
@@ -2363,37 +2351,33 @@ But! You can absolutely generate different results by varying the inputs that in
 
 - Option 2: Use W in 4D Noise as a Seed
 
----
+### Special technique by Erindale
 
-**From Erindale - It looks VERY useful - WATCH IT AND PUT IT INTO PRACTICE:**
-
-[Supercharge Your Geometry Nodes Workflow - Blender Tutorial - YouTube](https://www.youtube.com/watch?v=xBM4BPpfbUg) (BAJADO)
+[Supercharge Your Geometry Nodes Workflow - Blender Tutorial - YouTube](https://www.youtube.com/watch?v=xBM4BPpfbUg) - *Downloaded*
 
 I'm going to show you my special technique that opens the door to infinitely more complex, more integrated procedural workflows in Blender. Super easy to do. Super effective.
 
----
+### Tip to hide node groups from lists and menus
 
-Like all data-blocks, **node groups with names that start with “.” are normally hidden** from lists and menus and can only be accessed through search. This can be useful for node asset authors to hide their internal sub-groups from the final user.
+Like all data-blocks, node groups with names that start with “.” are normally hidden from lists and menus and can only be accessed through search. This can be useful for node asset authors to hide their internal sub-groups from the final user.
 
----
-
-### Understanding append, link and pack in blender asset libraries
+### Understanding Append, Link and Pack in blender asset libraries
 
 When adding a custom Node Group from an Asset Library, Blender offers three different import methods: **Append**, **Link** and **Pack**. Although they may appear similar at first, they behave very differently internally.
 
-### Append
+#### Append
 
 **Append** is the simplest case. Blender creates a complete copy of the Node Group inside the current .blend file.
 
 From that point on:
 
-the Node Group becomes a l**ocal datablock;**
+- the Node Group becomes a l**ocal datablock;**
 
-it has no remaining relationship with the original Asset Library;
+- it has no remaining relationship with the original Asset Library;
 
-it is fully editable;
+- it is fully editable;
 
-it appears under:
+- it appears under:
 
 ```
 Current File
@@ -2402,7 +2386,7 @@ Current File
 
 If the original Asset Library is later deleted or moved, nothing happens. The scene still contains its own independent copy of the Node Group.
 
-### Link
+#### Link
 
 With **Link**, Blender does **not** copy the Node Group into the scene. Instead, the .blend file simply stores a reference similar to:
 
@@ -2417,7 +2401,7 @@ Whenever the scene is opened, Blender loads that Node Group directly from the ex
 
 If the library file is missing, renamed or moved, the link breaks because the data never existed inside the scene itself.
 
-### Pack
+#### Pack
 
 This is the most confusing—and most interesting—case. **Pack is not a third type of import.**
 
@@ -2447,7 +2431,7 @@ The library still exists as a library… but it now lives **inside the .blend fi
 
 Because of this, Blender no longer needs to access the original file on disk.
 
-### Why does the outliner still show the original library path?
+#### Why does the outliner still show the original library path?
 
 This is the part that usually causes confusion.
 
@@ -2465,19 +2449,19 @@ This information is retained only to identify the asset's origin. It is not nece
 
 In other words, the displayed path becomes historical information rather than an active dependency.
 
-### Why does the scene still work after deleting the asset library?
+#### Why does the scene still work after deleting the asset library?
 
 Suppose you perform the following test:
 
-Add the Node Group using Pack.
+1. Add the Node Group using Pack.
 
-Save the scene.
+2. Save the scene.
 
-Close Blender.
+3. Close Blender.
 
-Delete the original Asset Library.
+4. Delete the original Asset Library.
 
-Reopen the scene.
+5. Reopen the scene.
 
 Everything still works. This proves that Blender is **not** reading the Node Group from the deleted library.
 
@@ -2485,7 +2469,7 @@ Instead, it loads the embedded copy stored inside the .blend file.
 
 The original path shown in the Outliner is simply the asset's recorded origin.
 
-### Why doesn't the node group appear under "current file → node groups"?
+#### Why doesn't the node group appear under "current file → node groups"?
 
 Because it is **not** a local datablock. Its internal type is still a **Library datablock,** even though the library itself has been embedded into the .blend.
 
@@ -2505,7 +2489,7 @@ Library stored inside the .blend file
 
 This distinction explains why the Outliner continues to display the Node Group under the embedded library instead of under **Current File → Node Groups**.
 
-### A useful analogy
+#### A useful analogy
 
 Imagine you have a book.
 
@@ -2521,7 +2505,7 @@ You can edit it freely, and the original book is no longer needed.
 
 You simply write a note in your notebook that says:
 
-*"Read Chapter 8 from the book on the shelf."*
+>"Read Chapter 8 from the book on the shelf."
 
 If someone removes the book, your note still exists—but the chapter is no longer accessible.
 
@@ -2531,7 +2515,7 @@ You place the entire book inside a compartment attached to your notebook.
 
 The book's cover still says:
 
-*"Central Library"*
+>"Central Library"
 
 even if that library no longer exists.
 
@@ -2539,7 +2523,7 @@ Whenever you open your notebook, the book is already inside it.
 
 That is essentially what Blender does with a packed library.
 
-### An elegant detail
+#### An elegant detail
 
 One particularly elegant aspect of **Pack** is that Blender preserves the identity of the original library.
 
@@ -2557,7 +2541,45 @@ In other words:
 
 This subtle distinction explains why packed assets behave like linked data in the Outliner while remaining completely self-contained and functional, even if the original Asset Library has been deleted.
 
----
+### Node tools
+
+[Node-Based Tools - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/tools.html)
+
+[Node Tools in Blender 4.0 — Blender Developers Blog](https://code.blender.org/2023/10/node-tools/) - Introduction
+
+[How to use Node Tools in Blender 4.0](https://www.youtube.com/watch?v=rU_j1Jw3ev4) - Developer Hans Goudey walks us through the Node Tools system
+
+[Introduction to Node Tools in Blender 4.0](https://www.youtube.com/watch?v=Y8Udi1AkdGY) - Short (10m) and concise. With an example.
+
+### Steps to create a node tool
+
+Switch to TOOLS (be sure to check N panel > Group > Properties > Enabled TOOL (not Modifier)
+
+Once we created a new Node Tool a new icon appears just right after UV menu (a “document” icon) menu with our Tool, to be applied.
+
+Be sure to generate data that is same type than existing geo (ie: curves, or meshes…)
+
+Use Group Inputs to expose parameters that will be accessed through bottom tool options panel.
+
+### NODES - QUICK TIPS
+
+#### Multi-line text on Frames:
+
+When you need to display more comprehensive text, frame nodes can display the contents of a **text data-block**. This is read-only, so you will need to use the Text Editor (Shift-F11) to modify the contents.
+
+#### Way to retype “-inf” and “inf”
+
+Way to **retype “-inf” and “inf”** once we have clicked on these fields: write **-4e44** and **4e44**
+
+#### Interesting tip on For-Each feature, by Ilir Beqiri:
+
+[Using the newly added For Each Element node I'm instancing a unique text block on each vertex. Drag the points around in edit mode to position the text](https://x.com/ilirbeqiri/status/1846887190736863381)
+
+### NODES - LINKS
+
+[All about SOCKETS - ALL THE NODES | Blender Geometry Nodes - YouTube](https://www.youtube.com/watch?v=HLMRM8_80cQ)
+
+[Attributes - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html) - All about Attributes, including the names for the default ones
 
 [ALL 300+ Geometry Nodes in Blender](https://www.youtube.com/watch?v=Y0zAZnbBcQU) (4.3) - Outdated, but can be useful for a lot of nodes, as a QUICK and FAST review.
 
@@ -2608,6 +2630,8 @@ This subtle distinction explains why packed assets behave like linked data in th
 [Flip indices in curves](https://www.youtube.com/watch?v=TTgtrqO1llw&t=692s) - Goes to 11:32 in this video tutorial by Erindale - NOTE: is not about “reversing” indices, but FLIPPING them (X/Y) for a loft curves operation
 
 [Fluid Simulation via Vertex Animation Textures](https://www.youtube.com/watch?v=xoLxKinzBwI) - two experimental techniques for encoding fluid simulation into Vertex Animation Textures using OpenVAT
+
+[Geometry Nodes Overview Documentation](https://geometry-nodes-overview.docs.quellenform.at/en/latest/) - A complete list of all Geometry Nodes that have been added to Blender over time. This is maintained by **Stephan Kellermayr**. *A great resource!*
 
 [Geonodes: which is faster, Set Position or Transform node?](https://blender.stackexchange.com/questions/297620/geonodes-which-is-faster-set-position-or-transform-node)
 
@@ -2663,7 +2687,9 @@ This subtle distinction explains why packed assets behave like linked data in th
 
 [New Socket Shapes — Blender Developers Blog](https://code.blender.org/2025/08/new-socket-shapes/)
 
-[Obj node caching](https://x.com/quackarooners/status/1919822118625108117?s=12) - (**for 4.5**) - Great tips for OBJ animation sequences - Read response by Quackers: *“You can even squeeze out a lot more performance out of this by not importing an OBJ for every point. Instead, you can use as many points as the sequence length, load all OBJs, and use Instance on Points. Pretty much an 80x speedup for 39k”*
+[Node Parts - Blender Manual](https://docs.blender.org/manual/en/latest/interface/controls/nodes/parts.html) - Sockets Colors - Valid Conversions
+
+[Obj node caching](https://x.com/quackarooners/status/1919822118625108117?s=12) - (**for 4.5**) - Great tips for OBJ animation sequences - Read response by Quackers: “You can even squeeze out a lot more performance out of this by not importing an OBJ for every point. Instead, you can use as many points as the sequence length, load all OBJs, and use Instance on Points. Pretty much an 80x speedup for 39k”
 
 [How to Fracture Anything with Blender 3.0 and Geometrynodes!](https://www.youtube.com/watch?v=keKDABQfxQU) - Great tutorial by Cartesian Caramel
 
@@ -2736,52 +2762,6 @@ This subtle distinction explains why packed assets behave like linked data in th
 [Voronoi Fracture with Dual Mesh Node](https://www.youtube.com/watch?v=a6oMMzRBIfo) - Interesting tutorial by Bradley
 
 [Workflow for interesting generative graphics in a processing or cavalry style](https://x.com/redjam_9/status/1860665259125887212?s=12) - Doing 2d mograph using the new 4.3 Grease Pencil and Geometry Nodes - Node graph in reply
-
----
-
-### Node tools
-
-[Node-Based Tools - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/tools.html)
-
-[Node Tools in Blender 4.0 — Blender Developers Blog](https://code.blender.org/2023/10/node-tools/) - Introduction
-
-[How to use Node Tools in Blender 4.0](https://www.youtube.com/watch?v=rU_j1Jw3ev4) - Developer Hans Goudey walks us through the Node Tools system
-
-[Introduction to Node Tools in Blender 4.0](https://www.youtube.com/watch?v=Y8Udi1AkdGY) - Short (10m) and concise. With an example.
-
-### Steps to create a node tool
-
-Switch to TOOLS (be sure to check N panel > Group > Properties > Enabled TOOL (not Modifier)
-
-Once we created a new Node Tool a new icon appears just right after UV menu (a “document” icon) menu with our Tool, to be applied.
-
-Be sure to generate data that is same type than existing geo (ie: curves, or meshes…)
-
-Use Group Inputs to expose parameters that will be accessed through bottom tool options panel.
-
----
-
-**Interesting tip on FOR-EACH feature, by Ilir Beqiri:**
-
-[Using the newly added For Each Element node I'm instancing a unique text block on each vertex. Drag the points around in edit mode to position the text](https://x.com/ilirbeqiri/status/1846887190736863381)
-
----
-
-From Quackers, [comment on Twitter/X](https://x.com/quackarooners/status/1888913461134123302) about the FOR-EACH feature:
-
-The For-Each isn't actually always needed, even if you want to modify things on a “per component” way.
-
-EXAMPLE: as both Set Curve Radius and Trim Curve support field inputs (diamond sockets) you can plug values derived from Index directly without any issues.
-
-Just replace the For Each's Element output w/ the base geometry, and the Index output w/ the Index node.
-
-To just add a bit of what the For-Each is usually needed for: **it's for applying fields on nodes that only support CONSTANTS (circle sockets)**.
-
-Notice how fields turn into constants when they go inside the zone, and vice versa when going out of them.
-
-What makes constants and fields different and incompatible is a longer technical discussion. 😅
-
-But yeah, using For-Each to make these two play together is a good rule-of-thumb to remember.
 
 ## SHADING & LIGHTING
 
