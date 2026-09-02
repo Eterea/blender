@@ -192,8 +192,8 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 
 #### Xen Wildman - Free
 
-[Set Attribute Button](https://imperfectlink.gumroad.com/l/ilsetattrbutton) - @Pixel Fondue Discord Link - Small add-on that Adds a Set Attribute button to the Attributes panel, by ImperfectLink aka **Xen Wildman**
-[SmartWireframeOverlay](https://discord.com/channels/267112699517861888/1276613499878903808/1502699194585059439) - @Pixel Fondue Discord Link - Small add-on that Excludes objects from global wireframe, by ImperfectLink aka **Xen Wildman**
+[Set Attribute Button](https://imperfectlink.gumroad.com/l/ilsetattrbutton) - Originally shared at Pixel Fondue Discord, now also in Gumroad - Small add-on that Adds a Set Attribute button to the Attributes panel, by ImperfectLink aka **Xen Wildman**
+[SmartWireframeOverlay](https://discord.com/channels/267112699517861888/1276613499878903808/1502699194585059439) - Pixel Fondue Discord Link - Small add-on that Excludes objects from global wireframe, by ImperfectLink aka **Xen Wildman**
 
 1. Enable globally in 3D Viewport > Viewport Overlays > Smart Wireframe
 2. Enable Locally per Object in Object Properties > Viewport Display > Exclude Wireframe
@@ -870,7 +870,7 @@ Especially interesting by Johny Gizmo:
 
 [Tree\_clipper: Add-on and library to export and import Blender node trees as JSON](https://github.com/Algebraic-UG/tree_clipper)
 
-[Unit Menu](https://imperfectlink.gumroad.com/l/ILUnitMenu?layout=profile) - Adds a menu to the top right of the 3d viewport that displays the current units and gives you control over the scale of the grid
+[Unit Menu](https://imperfectlink.gumroad.com/l/ILUnitMenu?layout=profile) - By Imperfect Link aka Xen Wildman. Adds a menu to the top right of the 3d viewport that displays the current units and gives you control over the scale of the grid - *Downloaded, but not installed*
 
 [UV-Rename](https://github.com/bsdbx/Blender-UV-Rename) - Extension for iterative renaming of multiple UV Maps
 
