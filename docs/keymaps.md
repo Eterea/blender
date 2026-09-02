@@ -3,11 +3,11 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 # PREFS & KEYMAPS
 
 This is a compilation of **Default Keymaps** that I find important or interesting. There are tips also.
-Also, in *ITALIC*, I mark my Custom Keymaps, just for my personal reference.
+In *ITALIC*, I mark my CUSTOM KEYMAPS, just for my personal reference.
 
-> NOTE: I highly recommend you not to change default keymaps in Blender until you are really sure about it. **Believe me: this is a very good tip!!!**
+> TIP: *I highly recommend you not to change default keymaps in Blender until you are really sure about it.* **Believe me: this is a very good tip!!!**
 
-The *[ WIN ]* tag means, pending to install, add, change on my Windows machine, since I usually work on a Mac, using Win just for rendering and turning it on from time to time.
+>The emoji 🔴 means, *pending to DEFINE this keymap on my Windows machine*. I usually work on a daily basis on a Mac, using Win just for rendering.
 
 ---
 
@@ -47,9 +47,9 @@ The *[ WIN ]* tag means, pending to install, add, change on my Windows machine, 
 
 **Save & Load** > Blend Files > Save Versions > *Change from 1 to 0* (to disable that .blend1 extra files)
 
-**Save & Load** > Blend Files > *Disable Auto Run Python Scripts* (is Disabled by Default) *[ WIN ]*
+**Save & Load** > Blend Files > *Disable Auto Run Python Scripts* (is Disabled by Default) - 🔴
 
-**File Paths** > Asset Libraries > /Users/cristobal/Library/Application Support/Blender/5.x/nodes/...
+**File Paths** > Asset Libraries > `/Users/cristobal/Library/Application Support/Blender/5.x/nodes/...`
 
 - Import Method > **Pack** > Relative Path ON
 - In 5.x Import Method is: “Pack” and no more “Append (Reuse Data)”
@@ -60,7 +60,7 @@ The *[ WIN ]* tag means, pending to install, add, change on my Windows machine, 
 
 [Keymap Customization - Blender 4.2 Manual](https://docs.blender.org/manual/en/latest/advanced/keymap_editing.html)
 
-[Blender Shortcuts](https://hollisbrown.github.io/blendershortcuts/) (Not any complete or exhaustive, but with beautiful examples and animations)
+[Blender Shortcuts](https://hollisbrown.github.io/blendershortcuts/) - Not any complete or exhaustive, but with beautiful examples and animations
 
 [How to Transfer Keyboard Shortcuts to Another Blender Version](https://www.youtube.com/watch?v=gFw4EyNi5Vg)
 
@@ -89,15 +89,15 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 - **Purge Unused Data** — File > Clean Up > Purge Unused Data
 - **Manage Unused Data** — File > Clean Up > Manage Unused Data
 - **Find Missing Files** — File > External Data > Find Missing Files
-- **Render Playblast** — 3D Viewport > View > Render Playblast *[ WIN ]*
+- **Render Playblast** — 3D Viewport > View > Render Playblast - 🔴
 - **Show in Outliner** — KeKit > Select & Align > Show in Outliner
 - **Remove Subdivision Modifiers** — N Panel > Tool > Remove Subdivision Modifiers - From all selected objects - Add-on
 - **Set Attributes** — Depending on N > YT Tools > Viewport Display - Select an object, press here and then all other objects will appear as WFR
 - **Sync Material & Viewport** — Depending on N > Ke-Kit > Render & Shade
 - **Custom Properties** — To reset object custom properties to default value - Depends on add-on “[Reset Custom Properties](https://extensions.blender.org/add-ons/bl-reset-custom-properties/)”
-- **Parent to Empty** — Menu Object > Parent > Parent to Empty (Blender Bob add-on, modified to add active object Rotation) *[ WIN ]*
-- **Round Values to 0 or 1** — Menu Object > Transform > Round Values to 0 or 1 (etr\_round\_values add-on) *[ WIN ]*
-- **Viewport Vis** — Modifiers > Viewport Vis (Show/Hide Modifiers in the active objects) - Depends on add-on [“Modifier Tools” ](https://extensions.blender.org/add-ons/modifier-tools)- *[ WIN ]*
+- **Parent to Empty** — Menu Object > Parent > Parent to Empty (Blender Bob add-on, modified to add active object Rotation) - 🔴
+- **Round Values to 0 or 1** — Menu Object > Transform > Round Values to 0 or 1 (etr\_round\_values add-on) - 🔴
+- **Viewport Vis** — Modifiers > Viewport Vis (Show/Hide Modifiers in the active objects) - Depends on add-on [“Modifier Tools” ](https://extensions.blender.org/add-ons/modifier-tools)- 🔴
 
 ### Edit mode (mesh)
 
@@ -116,18 +116,18 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 - **Clear Seam** — Menu Edge > Clear Seam (for UVs)
 - **Symmetrize** — Menu Mesh > Symmetrize (default mirrors from -X to +X. Look at bottom to change this)
 - **Select Boundary Loop** — Menu Select > Select Loops > Select Boundary Loops
-- **Set Dimensions** — Add-on from Blender for Artists / Jake Dube, modified by ChatGPT - Sets dimensions for selected vertices in world coordinates *[ WIN ]*
-- **New Object from Clipboard (#1)** — N Panel > **Taz** > Sub Tools > Clipboard > New Object from Clipboard *[ WIN ]*
-- **Kushiro Tools** — RMB (in Edit Mode) > Kushiro Tools *[ WIN ]*
-- **Select Loop Inner Region** — Menu Select > Select Loops > Select Loop Inner Region *[ WIN ]*
+- **Set Dimensions** — Add-on from Blender for Artists / Jake Dube, modified by ChatGPT - Sets dimensions for selected vertices in world coordinates - 🔴
+- **New Object from Clipboard (#1)** — N Panel > **Taz** > Sub Tools > Clipboard > New Object from Clipboard - 🔴
+- **Kushiro Tools** — RMB (in Edit Mode) > Kushiro Tools - 🔴
+- **Select Loop Inner Region** — Menu Select > Select Loops > Select Loop Inner Region - 🔴
 
 ### Edit mode (curve)
 
-- **Set Curve Radius** — RMB > Set Curve Radius (write 1.0 or whatever and press Enter to apply that value to selected points) *[ WIN ]*
+- **Set Curve Radius** — RMB > Set Curve Radius (write 1.0 or whatever and press Enter to apply that value to selected points) - 🔴
 - **Clear Tilt** — Menu Control Points > Clear Tilt
 - **Apply Uniform Radius (1.0)** — RMB on selected curve points and call Custom add-on “etr\_set\_curve\_radius\_to\_1” *(not really needed this addon)*
   - *TO DO: work on all selected separate curve objects*
-- **New Object from Clipboard** *(#1)* — N Panel > **Taz** > Sub Tools > Clipboard > New Object from Clipboard *[ WIN ]*
+- **New Object from Clipboard** *(#1)* — N Panel > **Taz** > Sub Tools > Clipboard > New Object from Clipboard - 🔴
 
 > *(#1)* This seems broken for Copy & Paste Splines between different Curve Objects - Test again and bug it!!!
 
@@ -137,11 +137,11 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 
 ### Geometry nodes editor
 
-- **Node Options** — RMB over Node Group > Show/Hide > Node Options *[ WIN ]*
+- **Node Options** — RMB over Node Group > Show/Hide > Node Options - 🔴
 
 ### Shading nodes editor
 
-- **Node Options** — RMB over Node Group > Show/Hide > Node Options *[ WIN ]*
+- **Node Options** — RMB over Node Group > Show/Hide > Node Options - 🔴
 
 ### Edit mode (armature)
 
@@ -149,8 +149,8 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 
 ### Graph editor
 
-- **Remove Static FCurves** — Spacebar, write “Remove Static FCurves” > Add-on - *(#2)* - *[ WIN ]*
-- **Show Cursor Toggle** — Graph Editor N Panel > Show Cursor Check *[ WIN ]*
+- **Remove Static FCurves** — Spacebar, write “Remove Static FCurves” > Add-on - *(#2)* - 🔴
+- **Show Cursor Toggle** — Graph Editor N Panel > Show Cursor Check - 🔴
 
 > *(#2)* Caution with single keyframe + noise modifiers - I created a modified version for this, asking the author to fix itself…
 
@@ -236,7 +236,7 @@ I keep the Blender navigation standard AND also add the Modo one:
 - Orbit around 3D Cursor — **Side Bar (N)** / View tab / View Lock / **Lock To 3D Cursor**
 - Orbit around an object — **Side Bar (N)** / View tab / View Lock / **Lock to Object** and clicking on the object
 - N View > Lock Camera to View — *Alt-0* (toggle)
-- N View > Lock to 3D Cursor — *Shift-<* (toggle) *[ WIN ]*
+- N View > Lock to 3D Cursor — *Shift-<* (toggle) - 🔴
   - In order to work, disable 3D View (Global) > View Navigation (Walk/Fly) - Key Binding appears as Shift ´ not as Shift >
 - Look from Active Camera — **Numpad 0**
 - View from Selected Object — **Cmd-Numpad 0**
@@ -277,7 +277,7 @@ To perform camera moves looking from Camera, **the camera must first be selected
 - Toggle Wireframe — **Shift-Z**
 - Toggle X-Ray — **Alt-Z**
 - Toggle All Overlays — **Alt-Shift-Z**
-- Toggle Fade Inactive Geometry — *Alt-Ctrl-Z* (important to change in Edit Mode) *\*[ WIN ]**
+- Toggle Fade Inactive Geometry — *Alt-Ctrl-Z* (important to change in Edit Mode) \- 🔴
 - Lighting — *X* (cycle Studio, MatCap, Flat) (it was 3D View > Object Mode > Delete)
   - Important to disable all “Deletes or Remove > X” in Keymaps
 - Viewport Shading Color — *Alt-X* (cycle Material-Random-Texture) - *[ REMOVED - Remove in WIN ]*
@@ -292,9 +292,9 @@ To perform camera moves looking from Camera, **the camera must first be selected
 - Show Open Boundaries — **Select > Select All by Trait > Non-Manifold**
 - Show Selected in Outliner — KeKit > Select & Align > Show in Outliner *[ Quick Favorites ]*
 - Toggle View Face Orientation — *<* (it was 3D View / 3D View Global / View Pie Menu - Disable it. Key Bind appears as an accent)
-- Shade Smooth — *=* *[ WIN ]*
-- Shade Flat — *Alt-=* *[ WIN ]*
-- Shade Autosmooth — *Alt-Shift-=* *[ WIN ]*
+- Shade Smooth — *=* - 🔴
+- Shade Flat — *Alt-=* - 🔴
+- Shade Autosmooth — *Alt-Shift-=* - 🔴
 
 ## TRANSFORM
 
@@ -311,8 +311,8 @@ To perform camera moves looking from Camera, **the camera must first be selected
 - Apply Transforms & to Deltas — **Cmd-A** (apply PSR, and also Modifiers)
 - Snap Base — **B** - Start moving in object or edit mode, press B, then click on a vert and a second click on another vert to snap -[Snap Base Tutorial \| New Snapping Tool for Blender - YouTube](https://www.youtube.com/watch?v=8Q5HoFn5Kxg&t=34s)
 - Mirror Selection — **Ctrl-M** and **X/Y/Z** (or **XX/YY/ZZ** for Normal orientation) - Duplicate using **Shift-D + Esc** before - Use **3D Cursor** for axis
-  - Better Mirror using [Rotor Ext](https://extensions.blender.org/add-ons/rotor/) — **Alt-X** - [Rotor \| Rotor Documentation](https://rotor.ezelar.com/) *[ WIN ]*
-- Skin Resize — **Ctrl-A** ([+Info](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/transform/skin_resize.html) - to change radius on selected vertices at using [Skin Modifier](https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/skin.html))
+  - Better Mirror using [Rotor Ext](https://extensions.blender.org/add-ons/rotor/) — **Alt-X** - [Rotor \| Rotor Documentation](https://rotor.ezelar.com/) - 🔴
+- Skin Resize — **Ctrl-A** - To change radius on selected vertices at using [Skin Modifier](https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/skin.html) - [+Info](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/transform/skin_resize.html) 
 - Add SubD Modifier to selected — **Cmd-1, 2, 3, 4…** (applying that subdivision to Editor, not render.
 
   **Use 0 for cage** - CAUTION: use top numbers, not numpad) - Works only in Object Mode - [Subdivision Surface Modifier - Blender 4.1 Manual](https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/subdivision_surface.html)
@@ -339,12 +339,12 @@ To use 3D Cursor as a pivot — **Dot-4** (Pivot > Select 3D Cursor)
 (\*) Adding objects to scene you can orient them with 3D Cursor (left-bottom floating temporal palette)
 
 - Reset Cursor & View Pos & Rot — **Shift-C**
-- Cursor to Selected — *F6* (Object > Snap >…) *[ WIN ]*
-- Selected to Cursor — *F7* (Object > Snap >…) *[ WIN ]*
-- Cursor Fit & Align — *Alt-F6* (KeKit) *[ WIN ]*
-- Align Object to Cursor — *Alt-F7* (KeKit) *[ WIN ]*
-- Cursor to World Origin — *F8* (Object > Snap >…) *[ WIN ]*
-- Object Origin to Cursor — *Alt-F8* (Object > Set Origin >…) *[ WIN ]*
+- Cursor to Selected — *F6* (Object > Snap >…) - 🔴
+- Selected to Cursor — *F7* (Object > Snap >…) - 🔴
+- Cursor Fit & Align — *Alt-F6* (KeKit) - 🔴
+- Align Object to Cursor — *Alt-F7* (KeKit) - 🔴
+- Cursor to World Origin — *F8* (Object > Snap >…) - 🔴
+- Object Origin to Cursor — *Alt-F8* (Object > Set Origin >…) - 🔴
 
 ## SELECTIONS
 
@@ -391,15 +391,15 @@ To use 3D Cursor as a pivot — **Dot-4** (Pivot > Select 3D Cursor)
 - Select Grouped Objects — **Shift-G** (various options + Popup > Extend) - Children, Siblings, Color, etc
 - Select Creased Edges — **TIP** - In edge selection mode select a creased edge, go to Select > Select Similar > Crease
 - Select Side — No shortcut > Menu Select > https://discord.gg/PuCYpuAB. Change axis. To select a vert, apply, change to faces and remove half or any side
-- Select Invert Linked — *Cmd-Shift-I* (using KeKit add-on > Select and Align > Select > Select Invert Linked) *[ WIN ]*
+- Select Invert Linked — *Cmd-Shift-I* (using KeKit add-on > Select and Align > Select > Select Invert Linked) - 🔴
 - Select List Objects Under — *Alt-RMB* (it was Alt-LMB - Because conflict with new Orbit)
   - 3DView Global > Select List (Enumerate)
 - Switch Objects in Edit Mode — **Alt-Q** while having your mousse pointer over the desired mesh item (to Switch Between Different Objects in Edit, Sculpt, Weight or Draw Mode)
 
 ## EDIT
 
-- Add Object Origin Only — *Alt-N* (Dependent on Add-on) *[ WIN ]*
-- Add Single Vert — *Alt-Ctrl-N* (Dependent on Add-on) *[ WIN ]*
+- Add Object Origin Only — *Alt-N* (Dependent on Add-on) - 🔴
+- Add Single Vert — *Alt-Ctrl-N* (Dependent on Add-on) - 🔴
 - Toggle Subdivision — *Alt-Tab* - Important to Select Object - Dependent on KeKit add-on (doesn't work in Windows?)
 - Mode switching pie menu — **Ctrl-Tab** (to change to Object, Edit, Weight Paint, etc)
 - Toggle Snap — **Shift-Tab**
@@ -478,11 +478,11 @@ To use 3D Cursor as a pivot — **Dot-4** (Pivot > Select 3D Cursor)
   - Adjust number of segments — **Mouse Wheel**
   - Even — **E** (press once it's interactive, just after first Enter)
   - Flip Even — **F**
-- ETR Flat Stripes — **Alt-Shift-E** - Custom Node Tool to extrude Edges *[ WIN ]*
+- ETR Flat Stripes — **Alt-Shift-E** - Custom Node Tool to extrude Edges - 🔴
 
 ### YT Tools by Taz-San
-- Loop Slice - Taz — *Alt-Shift-R* (original was **Alt-L**) *[ WIN ]*
-- Add Loop - Taz — *Alt-R* (defined new) *[ WIN ]*
+- Loop Slice - Taz — *Alt-Shift-R* (original was **Alt-L**) - 🔴
+- Add Loop - Taz — *Alt-R* (defined new) - 🔴
 - Copy Selected Components — *Cmd-C* (original was Ctrl-C)  *[ WIN - Only activate in preferences, leaving default ]*
 - Cut Selected Components — *Cmd-X* (original was Ctrl-X)  *[ WIN - Only activate in preferences, leaving default ]*
 - Paste Selected Components — *Cmd-V* (original was Ctrl-V)  *[ WIN - Only activate in preferences, leaving default ]*

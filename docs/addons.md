@@ -8,7 +8,7 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 
 - *Install Blender 5.2.1 on my Windows Computer and update all add-ons and keymaps*
 
-> NOTE that *[ WIN ]* means, pending to install/update on my Windows machine, since I usually work on a Mac, using Win just for rendering
+> The emojis 🔴 or 🟠 means, *pending to INSTALL or UPDATE on my Windows machine*. I usually work on a daily basis on a Mac, using Win just for rendering.
 
 ### NATIVE - PREINSTALLED
 
@@ -20,13 +20,13 @@ This is pre-installed in 5.x
 
 > [BLENDER EXTENSIONS](https://extensions.blender.org/) - Source for all this Blender Extensions - Install from Blender Preferences
 
-[3D Cursors Briefcase](https://extensions.blender.org/add-ons/c3db/) - Store and manage multiple 3D Cursors *[ WIN ]*
+[3D Cursors Briefcase](https://extensions.blender.org/add-ons/c3db/) - Store and manage multiple 3D Cursors - 🔴
 
-[3D Cursor Plus](https://extensions.blender.org/add-ons/cursor-plus/) - Axes, undo and few other tools for your 3D Cursor *[ WIN ]* - Installed but disabled because it conflicts with 3D Cursor Briefcase - Issue notified to author 🔴
+[3D Cursor Plus](https://extensions.blender.org/add-ons/cursor-plus/) - Axes, undo and few other tools for your 3D Cursor - *Installed but disabled because it conflicts with 3D Cursor Briefcase. Issue notified to author* - 🔴
 
-[Bool Tool](https://extensions.blender.org/add-ons/bool-tool/) - Quick boolean operations and tools for mesh modeling - [DOCS](https://github.com/nickberckley/bool_tool/wiki) *[ WIN UPDATE ]*
+[Bool Tool](https://extensions.blender.org/add-ons/bool-tool/) - Quick boolean operations and tools for mesh modeling - [DOCS](https://github.com/nickberckley/bool_tool/wiki) - 🟠
 
-[Cameraide](https://extensions.blender.org/approval-queue/cameraide-settings/) - Saves render settings per camera, including: Resolution and frame ranges, Output paths and file names, Format settings [ WIN UPDATE ] 🟠
+[Cameraide](https://extensions.blender.org/approval-queue/cameraide-settings/) - Saves render settings per camera, including: Resolution and frame ranges, Output paths and file names, Format settings - 🟠
 
 [Copy Attributes Menu](https://extensions.blender.org/add-ons/copy-attributes-menu) - [Copy Attributes Menu - Blender 4.1 Manual](https://docs.blender.org/manual/en/4.1//addons/interface/copy_attributes.html)
 
@@ -34,11 +34,11 @@ This is pre-installed in 5.x
 
 [Curve Tools](https://extensions.blender.org/add-ons/curve-tools) - [Curve Tools - Blender 4.1 Manual](https://docs.blender.org/manual/en/4.1//addons/add_curve/curve_tools.html) - Adds some functionality for bezier/nurbs curve/surface modeling
 
-[Data-Block Utilities](https://extensions.blender.org/add-ons/datablock-utils/) - Show users, merge duplicates, find similar, and more - Go to Properties ‣ Scene > **Similar & Duplicates** / **Data-Block Users** *[ WIN UPDATE ]*
+[Data-Block Utilities](https://extensions.blender.org/add-ons/datablock-utils/) - Show users, merge duplicates, find similar, and more - Go to Properties ‣ Scene > **Similar & Duplicates** / **Data-Block Users** - 🟠
 
-[Dimensions in Edit Mode](https://extensions.blender.org/add-ons/editmode-dimensions/) - Allows previewing and editing the dimensions of currently selected geometry in edit mode, just like in object mode *[ WIN ]*
+[Dimensions in Edit Mode](https://extensions.blender.org/add-ons/editmode-dimensions/) - Allows previewing and editing the dimensions of currently selected geometry in edit mode, just like in object mode - 🔴
 
-[EasyWeight](https://extensions.blender.org/add-ons/easyweight/) - improvements for weight painting - [Easy Weight Documentation](https://studio.blender.org/tools/addons/easy_weight) *[ WIN UPDATE ]*
+[EasyWeight](https://extensions.blender.org/add-ons/easyweight/) - improvements for weight painting - [Easy Weight Documentation](https://studio.blender.org/tools/addons/easy_weight) - 🟠
 
 [Edit Mesh Tools](https://extensions.blender.org/add-ons/edit-mesh-tools/?utm_source=blender-4.2.1-lts) - [Edit Mesh Tools - Blender 4.1 Manual](https://docs.blender.org/manual/en/4.1//addons/mesh/edit_mesh_tools.html) - Mesh modeling toolkit. Several tools to aid modelling.
 
@@ -52,9 +52,9 @@ This is pre-installed in 5.x
 
 [Geodesic Domes](https://extensions.blender.org/add-ons/geodesic-domes/) - Create geodesic dome type objects and much more (grid, cylinder, parabola…)
 
-[Group input helper](https://extensions.blender.org/add-ons/group-input-helper/) - Quick Add Split Merge Move Group Input Nodes - Quick Add Input and Output Socket *[ WIN UPDATE ]*
+[Group input helper](https://extensions.blender.org/add-ons/group-input-helper/) - Quick Add Split Merge Move Group Input Nodes - Quick Add Input and Output Socket - 🟠
 
-[HDRI Rotator](https://extensions.blender.org/add-ons/hdrirotator/) - Rotation HDR by **Ctrl-Alt-RMB** Drag in 3D View (both for built-in Studio Lights and/or Scene World). This works best for me than [Hdr Rotation](https://extensions.blender.org/add-ons/hdr-rotation/) (because this didn't always rotated lights…) *[ WIN UPDATE ]*
+[HDRI Rotator](https://extensions.blender.org/add-ons/hdrirotator/) - Rotation HDR by **Ctrl-Alt-RMB** Drag in 3D View (both for built-in Studio Lights and/or Scene World). This works best for me than [Hdr Rotation](https://extensions.blender.org/add-ons/hdr-rotation/) (because this didn't always rotated lights…) - 🟠
 
 [Keyframe selected](https://extensions.blender.org/add-ons/keyframe-selected/) - Hold Alt to insert/delete keyframe on all selected objects
 
@@ -70,7 +70,7 @@ This is pre-installed in 5.x
 
 [Mio3 Flex](https://extensions.blender.org/add-ons/mio3-flex/) - Reshape edge loops into smooth, freeform curves using a controllable path
 
-[Mio3 UV](https://extensions.blender.org/add-ons/mio3-uv/) - UV Edit Assistant Tool - Unwrap so that the selected edge loop becomes a straight line OR the boundary becomes a rectangle - [Mio3 UV](https://extensions.blender.org/add-ons/mio3-uv/) *[ WIN UPDATE ]*
+[Mio3 UV](https://extensions.blender.org/add-ons/mio3-uv/) - UV Edit Assistant Tool - Unwrap so that the selected edge loop becomes a straight line OR the boundary becomes a rectangle - [Mio3 UV](https://extensions.blender.org/add-ons/mio3-uv/) - 🟠
 
 [Modifier Tools](https://extensions.blender.org/add-ons/modifier-tools) - [Modifier Tools - Blender 4.1 Manual](https://docs.blender.org/manual/en/4.1//addons/interface/modifier_tools.html) - Modifiers Specials Show/Hide/Apply Selected
 
@@ -78,7 +78,7 @@ This is pre-installed in 5.x
 
 [Node Group Presets](https://extensions.blender.org/add-ons/node-group-presets/) - Saves the current values of a given node group into a applicable/editable/copyable preset(s)
 
-[Node Align](https://extensions.blender.org/add-ons/node-align/) - Align Nodes in Multiple Ways using **Shift-Q** and **Ctrl-Q** *[ WIN UPDATE ]*
+[Node Align](https://extensions.blender.org/add-ons/node-align/) - Align Nodes in Multiple Ways using **Shift-Q** and **Ctrl-Q** - 🟠
 
 [Node Color Tools Pie](https://extensions.blender.org/add-ons/node-color-tools/) - With Two Dynamic Pie Menus: **Quick** (Hardcoded) Color Pie Menu (**D**) and **Precise** (Customizable) Color Pie Menu (**Z**)
 
@@ -90,7 +90,7 @@ This is pre-installed in 5.x
 
 [Orient and Origin to Selected](https://extensions.blender.org/add-ons/orient-and-origin-to-selected/) - Quickly manipulate the object origin. Edit Mode -> Mesh -> Snap menu > **Origin to Selected**. Edit Mode -> Transform Orientations > Local > **Orient to Selected**
 
-[POPOTI Align Helper](https://extensions.blender.org/add-ons/popoti-align-helper/) - More friendly alignment based on perspective *[ WIN ]*
+[POPOTI Align Helper](https://extensions.blender.org/add-ons/popoti-align-helper/) - More friendly alignment based on perspective - 🔴
 
 [Ramp Generator](https://extensions.blender.org/add-ons/ramp-generator/) - Select a ColorRamp and generate colors in the Shader, Geometry, Compositor & Texture Node Editors in one click
 
@@ -98,23 +98,23 @@ This is pre-installed in 5.x
 
 [Reset Custom Properties](https://extensions.blender.org/add-ons/bl-reset-custom-properties/) - To reset custom properties to their default values on objects and pose bones
 
-[Rotor](https://extensions.blender.org/add-ons/rotor/) - advanced mirror tool. Press **ALT-X** or select active to l and pick the side you want to mirror along - [Rotor Documentation](https://rotor.ezelar.com/) *[ WIN ]*
+[Rotor](https://extensions.blender.org/add-ons/rotor/) - advanced mirror tool. Press **ALT-X** or select active to l and pick the side you want to mirror along - [Rotor Documentation](https://rotor.ezelar.com/) - 🔴
 
 [rmKit](https://extensions.blender.org/add-ons/rmkit/) - advanced functionality for mesh editing, precision modeling, and material management - [rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/) **-** *TO STUDY + [ WIN UPDATE ]*
 
-[Save Selection](https://extensions.blender.org/add-ons/saveselection/) - Export selection to .blend file. File -> Export -> Save Selection (.blend) *[ WIN UPDATE ]*
+[Save Selection](https://extensions.blender.org/add-ons/saveselection/) - Export selection to .blend file. File -> Export -> Save Selection (.blend) - 🟠
 
 [ShapeKeySwapper](https://extensions.blender.org/add-ons/shape-key-swapper-extension/) - swap vertex positions between the 0 and 1 values of the active shape key with a single click
 
-[Simple Renaming](https://extensions.blender.org/add-ons/simple-renaming-panel/) - To batch rename objects and data in Blender quickly - [Overview - Documentation](https://weisl.github.io/renaming_overview/) - *[ WIN UPDATE ]*
+[Simple Renaming](https://extensions.blender.org/add-ons/simple-renaming-panel/) - To batch rename objects and data in Blender quickly - [Overview - Documentation](https://weisl.github.io/renaming_overview/) - 🟠
 
 [Simplify Curves+](https://extensions.blender.org/add-ons/simplify-curves-plus/) - To simplify curves, both in the 3D viewport and also
 
-[Synchronize Workspaces](https://extensions.blender.org/add-ons/synchronize-workspaces) - Synchronize 3D views between workspaces  *[ WIN UPDATE ]*
+[Synchronize Workspaces](https://extensions.blender.org/add-ons/synchronize-workspaces) - Synchronize 3D views between workspaces  - 🟠
 
-[Tree Clipper](https://extensions.blender.org/add-ons/tree-clipper/) - exporting and importing Blender node trees as JSON- Here is a [REPOSITORY](https://tree-clipper.com/) with some samples (Use the dedicated TAB at N panel) *[ WIN UPDATE ]*
+[Tree Clipper](https://extensions.blender.org/add-ons/tree-clipper/) - exporting and importing Blender node trees as JSON- Here is a [REPOSITORY](https://tree-clipper.com/) with some samples (Use the dedicated TAB at N panel) - 🟠
 
-[UniV](https://extensions.blender.org/add-ons/univ/) - [GitHub - Oxicid/UniV: Blender add-on for UV Mapping](https://github.com/Oxicid/UniV) - UV Editor to cover all sorts of operators for working with UV - Simple but very powerful *[ WIN UPDATE ]*
+[UniV](https://extensions.blender.org/add-ons/univ/) - [GitHub - Oxicid/UniV: Blender add-on for UV Mapping](https://github.com/Oxicid/UniV) - UV Editor to cover all sorts of operators for working with UV - Simple but very powerful - 🟠
 
 [World Apply](https://extensions.blender.org/add-ons/world-apply/) - Sync viewport world (environment) settings with scene world settings
 
@@ -206,7 +206,7 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 
 [Loom](https://github.com/p2or/blender-loom) - to simplify the process of rendering image sequences and specific frames - Use **CTRL-SHIFT-F12**
 
-[Bone Widget](https://blenderdefender.gumroad.com/l/boneWidget) - for easy creation of custom Bone Shapes - *TO REMOVE, I DON’T USE IT*
+[Bone Widget](https://blenderdefender.gumroad.com/l/boneWidget) - for easy creation of custom Bone Shapes - *To remove, I don’t use it*
 
 [Bradley-Presets-Add-on](https://github.com/Gerstmann-Bradley/Bradley-Presets-Add-on) - To automatically install and update Geometry Nodes by Bradley Animation - See below, at “Custom Geometry Nodes”
 
@@ -222,11 +222,11 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 
 [Quick Origin](https://decoded.gumroad.com/l/quick-origin?layout=profile) - *(#2)* To quickly move the origin point of an object to a selected area
 
-[RePrimitive](https://exzact7.gumroad.com/l/reprimitive) - Change a STANDARD primitive shape at any point - [Blender add-on RePrimitive](https://www.youtube.com/watch?v=xmXLGlx7yl0) - *TO REMOVE, I DON’T USE IT*
+[RePrimitive](https://exzact7.gumroad.com/l/reprimitive) - Change a STANDARD primitive shape at any point - [Blender add-on RePrimitive](https://www.youtube.com/watch?v=xmXLGlx7yl0) - *To remove, I don’t use it*
 
 [3D\_Cursor\_Axis\_Drawer](https://discord.com/channels/267112699517861888/1276613499878903808/1403469070032048332) - By Rouven Miller - Shared in [Pixel Fondue Discord](https://discord.com/channels/267112699517861888/1276613499878903808/1403469070032048332) - To enable draw of color axis for 3D Cursor (available at N Panel > View)
 
-[renderborder: pixel-precise render border](https://github.com/p2or/blender-renderborder) - To set the Render Region precisely - It’s an old add-on (created for 2.9) but it works fine *[ WIN ]*
+[renderborder: pixel-precise render border](https://github.com/p2or/blender-renderborder) - To set the Render Region precisely - It’s an old add-on (created for 2.9) but it works fine - 🔴
 
 [Set Origin](https://emilsvfx.gumroad.com/l/cidqwp) - *(#2)* Emīls Vfx - There is another one, a little more advanced, for the same purpose.: [3DPRS Origin Box - Blender Market](https://blendermarket.com/products/3dprs-origin-box) USD $3*
 
@@ -236,7 +236,7 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 
 #### KeKit
 
-[KeKit](https://ke-code.xyz/scripts/kekit.html) - *USD 20* - By Kjell Emanuelsson - [keKit WIKI](https://ke-code.xyz/scripts/wiki.html) *[ WIN UPDATE ]*
+[KeKit](https://ke-code.xyz/scripts/kekit.html) - *USD 20* - By Kjell Emanuelsson - [keKit WIKI](https://ke-code.xyz/scripts/wiki.html) - 🟠
 
 To update ([steps](https://ke-code.xyz/scripts/wiki.html)):
 
@@ -273,7 +273,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 #### NormalMagic
 
-[normalMagic](https://spaghetmenot.gumroad.com/l/normalmagic) - *USD 12* - Powerful new modeling workflows and advanced control over mesh normals - [Docs](https://spaghetmenot.github.io/normalmagic/latest/) - *JUST INSTALLED: TO STUDY* - *[ WIN UPDATE ]*
+[normalMagic](https://spaghetmenot.gumroad.com/l/normalmagic) - *USD 12* - Powerful new modeling workflows and advanced control over mesh normals - [Docs](https://spaghetmenot.github.io/normalmagic/latest/) - *JUST INSTALLED: TO STUDY* - - 🟠
 
 - [Merging Magic: Normal Magic's Surface Tools for Blender](https://www.youtube.com/watch?v=Fna4uisMbnE) - Tutorial by Christopher 3D demonstrating the **Surface Project** and **Surface Insert** tools only!
 
@@ -282,7 +282,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 #### Sanctus Library
 
-[Sanctus Library - Procedural Materials and Assets Library for Blender 3D](https://sanctus.gumroad.com/l/SLibrary?layout=profile) - *USD 35* - [Sanctus Library - Documentation](https://sanctusnodes.com/documentation/main/en/topic/sanctus-library/) *UPDATE MAC & WIN - Check Mac Install*
+[Sanctus Library - Procedural Materials and Assets Library for Blender 3D](https://sanctus.gumroad.com/l/SLibrary?layout=profile) - *USD 35* - [Sanctus Library - Documentation](https://sanctusnodes.com/documentation/main/en/topic/sanctus-library/) - 🟠 - *Check also Mac Install*
 
 - If you use Sanctus Products bought in Gumroad You can now use my Extension Manager to install and update your products within Blender - [Link](https://x.com/sanctus_art/status/2068721137488408970?s=66)
 
@@ -290,7 +290,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 #### UVPackmaster
 
-[UVPackmaster 4 – GPU accelerated UV packing engine](https://uvpackmaster.com/) - Discount from USD 44 to *USD 38* - By Glukoz *[ WIN UPDATE ]*
+[UVPackmaster 4 – GPU accelerated UV packing engine](https://uvpackmaster.com/) - Discount from USD 44 to *USD 38* - By Glukoz - 🟠
 
 - Gumroad Downloads (for all, add-on and engine): [UVPackmaster 4 PRO for Blender](https://glukoz.gumroad.com/l/uvpackmaster)
 
@@ -306,17 +306,17 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [Taz site](https://tazee.github.io/) - Great Japanese developer coming from Modo
 
-[YT-Tools](https://tazaki.gumroad.com/l/gamki) - *USD 20* - To enhance modeling workflow, especially for users familiar with Modo - *Remember to disable custom keymaps* - [Documentation](https://tazee.github.io/yt-tools/) *[ WIN UPDATE ]*
+[YT-Tools](https://tazaki.gumroad.com/l/gamki) - *USD 20* - To enhance modeling workflow, especially for users familiar with Modo - *Remember to disable custom keymaps* - [Documentation](https://tazee.github.io/yt-tools/) - 🟠
 
 [Attribute Manager](https://tazaki.gumroad.com/l/wirsjp?layout=profile) - From USD 20 to *USD 15* with launch discount - Spreadsheet-style attribute editing - [Documentation](https://tazee.github.io/AttributeManager/)
 
 #### By Sergey Tyapkin
 
-[Zen UV](https://sergeytyapkin.gumroad.com/l/zenuv4) - *USD 34*  *[ WIN UPDATE ]*
+[Zen UV](https://sergeytyapkin.gumroad.com/l/zenuv4) - *USD 34*  - 🟠
 
 - **To update:** use the internal button, inside the Addon preferences.
 
-[Zen Sets](https://sergeytyapkin.gumroad.com/l/zensets?layout=profile) - *USD 14* discounted at USD 10.5  *[ WIN UPDATE ]*
+[Zen Sets](https://sergeytyapkin.gumroad.com/l/zensets?layout=profile) - *USD 14* discounted at USD 10.5  - 🟠
 
 - **To update:** just install new Zen Sets version, the old one will be replaced automatically, the settings will maintain.
 
@@ -362,15 +362,15 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [Blenderesse](https://blenderesse.gumroad.com/) - Procedural generators and other interesting stuff - *FREE* - **Purchased (not installed, just stored)**
 
-[Easy Photorealism,a Free Blender Compositing NodeGoup](https://selman0.gumroad.com/l/EasyPhotorealism) - *FREE* *[ WIN ]*
+[Easy Photorealism,a Free Blender Compositing NodeGoup](https://selman0.gumroad.com/l/EasyPhotorealism) - *FREE* - 🔴
 
 [Easing Functions - celestialmaze's](https://ko-fi.com/s/da82a98966) - *FREE* - *[ WIN Update with new Mix Basics + Full ]*
 
-[Edge Masks - Blender Smart Materials](https://alaaeldien.gumroad.com/l/lzqZZF) - 12 Mask Group To be Used for masking Materials - Created custom icons - *FREE* (or donate) *[ WIN ]*
+[Edge Masks - Blender Smart Materials](https://alaaeldien.gumroad.com/l/lzqZZF) - 12 Mask Group To be Used for masking Materials - Created custom icons - *FREE* (or donate) - 🔴
 
-[Procedural Noise Pack [Blender]](https://simonthommes.gumroad.com/l/NOISE-P?layout=profile) - 9 hand-crafted basic procedural noise texture nodegroups by Simon Thommes - *To be fixed 3 of them* - Created custom icons *[ WIN ]* - [Procedural Noise Texture Pack - Blender 2.8 - YouTube](https://www.youtube.com/watch?v=K91OKfeUT34)
+[Procedural Noise Pack [Blender]](https://simonthommes.gumroad.com/l/NOISE-P?layout=profile) - 9 hand-crafted basic procedural noise texture nodegroups by Simon Thommes - *To be fixed 3 of them* - Created custom icons - 🔴 - [Procedural Noise Texture Pack - Blender 2.8 - YouTube](https://www.youtube.com/watch?v=K91OKfeUT34)
 
-[Procedural Noise Textures - Blender](https://nacreous.gumroad.com/l/cntipc) - 20 Procedural Noise Textures, more “advanced” - Created custom icons *[ WIN ]*
+[Procedural Noise Textures - Blender](https://nacreous.gumroad.com/l/cntipc) - 20 Procedural Noise Textures, more “advanced” - Created custom icons - 🔴
 
 [Parallax Strands](https://mrrolord.gumroad.com/l/parallaxstrand) - Parallax strand shader that helps simulating a dense patch of grass or fur on any surface without the need of any additional geometry *[ Downloaded only ]*
 [geoNodesAO for Blender [FREE]](https://spaghetmenot.gumroad.com/l/geonodesao?layout=profile) - Ray-traced Ambient Occlusion Directly on Geometry. Fully procedural, no need to bake texturesDownloaded - *[ To install properly ]*
@@ -484,7 +484,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 **etr\_custom\_gn\_color** - Automatically apply a custom color to all selected frames or nodes in Geometry Nodes - *TO DO: extend to Shader*
 
-**etr\_distribute** - *TO COMPLETELY REMOVE* - A better version from original [“Distribute” addon by Blender Bob](https://extensions.blender.org/add-ons/distribute/). This one also includes an option to use bounding box, instead of origins *[ WIN ]*
+**etr\_distribute** - *TO COMPLETELY REMOVE* - A better version from original [“Distribute” addon by Blender Bob](https://extensions.blender.org/add-ons/distribute/). This one also includes an option to use bounding box, instead of origins - 🔴
 
 **etr\_join\_equalizing\_bevels** - To equalize Bevel Amounts and Bevel Weights once we join various objects
 
