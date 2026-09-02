@@ -2771,49 +2771,47 @@ Way to **retype “-inf” and “inf”** once we have clicked on these fields:
 
 ---
 
-**How to override all materials**
+### How to override all materials
 
-Be sure to select **Cycles** engine
+- Be sure to select **Cycles** engine
 
-Go to **View Layer tab**
+- Go to **View Layer tab**
 
-See that **Override** section. Open and select your overrides both for Materials and World
+- See that **Override** section. Open and select your overrides both for Materials and World
 
 ---
 
-### Light linking in cycles (viewport gpu vs cpu)
+### Light linking in Cycles (Viewport GPU vs CPU)
 
 Sometimes Light Linking doesn’t work in GPU viewport initially, but starts working after switching to CPU and back. This is not random.
 
-**What’s happening:**
+#### What’s happening:
 
-Cycles uses cached GPU kernels and shader states in the viewport.
+- Cycles uses cached GPU kernels and shader states in the viewport.
 
-Light Linking may fail to initialize correctly on GPU.
+- Light Linking may fail to initialize correctly on GPU.
 
-Switching to CPU forces a full rebuild of shading and scene state.
+- Switching to CPU forces a full rebuild of shading and scene state.
 
-When switching back to GPU, it reuses the now-correct state.
+- When switching back to GPU, it reuses the now-correct state.
 
-**Key takeaway:**
+#### Key takeaway:
 
-The issue is state initialization / cache invalidation, not your setup.
+- The issue is state initialization / cache invalidation, not your setup.
 
-GPU viewport can display Light Linking correctly, but may need a refresh.
+- GPU viewport can display Light Linking correctly, but may need a refresh.
 
-**Possible Quick fixes (without switching CPU/GPU):**
+#### Possible Quick fixes (without switching CPU/GPU):
 
-Toggle viewport shading (Solid <> Rendered)
+- Toggle viewport shading (Solid <> Rendered)
 
-Slightly change samples
+- Slightly change samples
 
-Adjust any light parameter
+- Adjust any light parameter
 
-Toggle Light Linking on/off
+- Toggle Light Linking on/off
 
 These actions force a kernel/shader refresh and usually resolve the issue.
-
----
 
 ### Anisotropy
 
@@ -2829,8 +2827,6 @@ If you need a different axis to place the Anisotropy reflections, then add a Tan
 
 Another approach is to change this Tangent Node to UV Map and create a SPECIFIC uv map for that object, to be used exclusively in combination of this tangent node, and make these rectified.
 
----
-
 ### Why a linear uv gradient looks non-linear in blender (and how to fix it)
 
 When using a linear gradient in Blender via: UV → Separate X → Color
@@ -2845,29 +2841,29 @@ Blender works in linear color space, but the image is displayed through sRGB gam
 
 Because of this, linear ramps are visually misleading when used as analytical or control tools.
 
-### How to view a perceptually linear gradient
+#### How to view a perceptually linear gradient
 
 To make the gradient appear linear to the eye, you must pre-compensate the gamma before display.
 
 CAUTION: all this is only for VISUAL FEEDBACK, don’t leave these adjustments active in your node tree.
 
-**Option A — Recommended (Simple and Effective)**
+#### Option A — Recommended (Simple and Effective)
 
 Insert a Power node:
 
-Separate X → **Power** (Exponent = 2.2) → Combine XYZ → Color
+- Separate X → **Power** (Exponent = 2.2) → Combine XYZ → Color
 
-Separate Y → **Power** (Exponent = 2.2) → Combine XYZ → Color
+- Separate Y → **Power** (Exponent = 2.2) → Combine XYZ → Color
 
 This counteracts the sRGB display gamma, so the gradient appears perceptually linear.
 
 The 0.5 value will now visually sit at the center.
 
-**Option B — Equivalent (More Explicit)**
+#### Option B — Equivalent (More Explicit)
 
 Use a Gamma node:
 
-Separate XYZ → Operate with separate channels → Combine XYZ → **Gamma** = 2.2 → Color
+- Separate XYZ → Operate with separate channels → Combine XYZ → **Gamma** = 2.2 → Color
 
 Key Takeaway:
 
@@ -2875,53 +2871,51 @@ The gradient is not wrong — the display is non-linear.
 
 For ramps, masks, thresholds, and analytical shader tools, always compensate gamma when judging values visually.
 
----
+### How to work with “bump” maps in Blender 
 
 [Bump Node](https://docs.blender.org/manual/en/latest/render/shader_nodes/vector/bump.html) - How to work with “bump” maps in Blender (to convert to Normal input)
 
-**Strength (Visual Influence)**
+#### Strength (Visual Influence)
 
 Controls the influence of the bump effect on the surface's normal.
 
-It answers: *“How much should this bump affect how the surface reacts to light?”*
+It answers: **“How much should this bump affect how the surface reacts to light?”**
 
 1.0 = full effect, 0.0 = no effect at all.
 
 Think of this as the intensity of the illusion — like how harsh the lighting trick is, not how tall the bump actually is.
 
-**Distance (Physical Displacement Scale)**
+#### Distance (Physical Displacement Scale)
 
 Controls the scale of height difference in world/virtual units.
 
-It answers: *“How far apart is the highest point from the lowest one?”*
+It answers: **“How far apart is the highest point from the lowest one?”**
 
 Larger values = deeper or taller bumps.
 
 Think of this as the actual virtual "height" you're simulating.
 
-**When to Adjust What:**
+#### When to Adjust What:
 
-STRENGTH Make the bump appear more or less strong without changing shape
+STRENGTH — Make the bump appear more or less strong without changing shape
 
-STRENGTH Fine-tune how it looks under lighting (less aggressive effect)
+STRENGTH — Fine-tune how it looks under lighting (less aggressive effect)
 
-DISTANCE Make bumps taller or deeper
+DISTANCE — Make bumps taller or deeper
 
-DISTANCE Match bump scale to object size (e.g., real-world height of a texture)
+DISTANCE — Match bump scale to object size (e.g., real-world height of a texture)
 
-**Common Practice**
+#### Common Practice
 
 Set Distance first — based on your model scale and how tall bumps should appear.
 
 Then tweak Strength to dial in the visual intensity you want under lighting.
 
-**Blender’s Distance value in the Bump node is unit-aware, meaning:**
+#### Blender’s Distance value in the Bump node is unit-aware, meaning:
 
 • If your scene scale is set to use millimeters, then a value of 1.000 = 1 mm.
 
 • If your scene is in meters, then 1.000 = 1 meter.
-
----
 
 ### Get "true" displacement using micro-displacement in cycles
 
@@ -2929,115 +2923,111 @@ This allows for subpixel-level displacement without adding actual geometry subdi
 
 Here's a step-by-step guide to setting up Subpixel Displacement (Micro-displacement) in Blender Cycles:
 
-**1. Switch to Cycles + Experimental Feature Set**
+1. Switch to Cycles + Experimental Feature Set (no more needed on 5.x)
 
-Go to Render Properties (the camera icon).
+- Go to Render Properties (the camera icon).
 
-Set Render Engine to **Cycles**.
+- Set Render Engine to **Cycles**.
 
-Set Feature Set to **Experimental**.
+- Set Feature Set to **Experimental**.
 
-**2. Set the Displacement Method**
+2. Set the Displacement Method
 
-In Material Properties, scroll down to the **Settings** panel.
+- In Material Properties, scroll down to the **Settings** panel.
 
-Under Surface > Displacement, change **from Bump Only to**:
+- Under Surface > Displacement, change **from Bump Only to**:
 
-- Displacement Only (for pure geometry displacement), or
+	- Displacement Only (for pure geometry displacement), or
 
-- **Displacement and Bump** (for extra detail combining both) < **Much better this one!**
+	- **Displacement and Bump** (for extra detail combining both) < **Much better this one!**
 
-**3. Add a Subdivision Surface Modifier**
+3. Add a Subdivision Surface Modifier
 
-Add a **Subdivision Surface modifier** to your object.
+- Add a **Subdivision Surface modifier** to your object.
 
-Important:
+- Important:
 
-Set the modifier to **"Adaptive"** (only available in Experimental mode).
+- Set the modifier to **"Adaptive"** (only available in Experimental mode).
 
-- In the Subdivision Modifier, check **Adaptive Subdivision**.
+	- In the Subdivision Modifier, check **Adaptive Subdivision**.
 
-- You can leave the "Levels Viewport" low (like 1), as the real detail comes from the adaptive tessellation.
+	- You can leave the "Levels Viewport" low (like 1), as the real detail comes from the adaptive tessellation.
 
-- Leave also “Optimal Display” enabled
+	- Leave also “Optimal Display” enabled
 
-**4. Enable Adaptive Subdivision in Render Settings**
+4. Enable Adaptive Subdivision in Render Settings
 
-Go back to **Render Properties.**
+- Go back to **Render Properties.**
 
-Under the **Subdivision section** (now visible due to Experimental mode), ensure:
+- Under the **Subdivision section** (now visible due to Experimental mode), ensure:
 
-- Dicing Rate Render is set appropriately. Default is **1.0**, increase to **2.0** for 4K renders. Or even up to **4.0 or 5.0**, specially if Displaced mesh has other animated deformations
+	- Dicing Rate Render is set appropriately. Default is **1.0**, increase to **2.0** for 4K renders. Or even up to **4.0 or 5.0**, specially if Displaced mesh has other animated deformations
 
-- Smaller values = more geometry detail = heavier render.
+	- Smaller values = more geometry detail = heavier render.
 
-- Render > Subdivision > Max Subdivision from > **12** to **8** for 4K renders. Or even down to **5**, specially if Displaced mesh has other animated deformations
+	- Render > Subdivision > Max Subdivision from > **12** to **8** for 4K renders. Or even down to **5**, specially if Displaced mesh has other animated deformations
 
-**5. Create and Connect a Displacement Map**
+5. Create and Connect a Displacement Map
 
-Go to the **Shader Editor.**
+- Go to the **Shader Editor.**
 
-Add a Displacement node:
+- Add a Displacement node:
 
-- Add > Vector > **Displacement** (caution: just “Displacement”, not “Vector Displacement”)
+	- Add > Vector > **Displacement** (caution: just “Displacement”, not “Vector Displacement”)
 
-Connect:
+- Connect:
 
-- Your Height Map Texture (e.g., from an Image Texture or Noise Texture) to the Height input.
+	- Your Height Map Texture (e.g., from an Image Texture or Noise Texture) to the Height input.
 
-- The Displacement node's output to the Material Output > Displacement input.
+	- The Displacement node's output to the Material Output > Displacement input.
 
-Set the Displacement node's:
+- Set the Displacement node's:
 
-- Midlevel (usually 0.5 for height maps).
+	- Midlevel (usually 0.5 for height maps).
 
-- Scale to control intensity.
+	- Scale to control intensity.
 
-**6. Optional: Use Vector Displacement**
+6. Optional: Use Vector Displacement
 
-If you have a Vector Displacement Map (3D displacement), set the Displacement node to Vector and use an RGB map.
+- If you have a Vector Displacement Map (3D displacement), set the Displacement node to Vector and use an RGB map.
 
-**7. Render**
+7. Render
 
-Render the scene to see the fine subpixel-level displacement. You’ll notice high geometric detail even on flat planes.
+- Render the scene to see the fine subpixel-level displacement. You’ll notice high geometric detail even on flat planes.
 
-*See TIPS FOR FAST CYCLES RENDERING before rendering scenes with REAL DISPLACEMENT.* Optimizations are needed, specially for 4K
-
-**Tips for Better Results**
+#### Tips for Better Results with Displacement
 
 Ideally use 16-bit or 32-bit EXR height maps for best results (avoid 8-bit JPG for displacement).
 
 You can preview the displacement in the viewport by enabling Viewport Shading > Rendered.
 
----
+>NOTE: see TIPS FOR FAST CYCLES RENDERING before rendering scenes with REAL DISPLACEMENT. Because optimizations are needed with Displacemente, specially for 4K
+
+
+### SHADING & LIGHTING - QUICK TIPS
+#### Which objects use certain material?
 
 **To find out on which objects in our scene a certain Material is applied**: go to the “Material” tab, click on the small arrow to the right of the list (even if it is blank) and choose “Select by Material”.
 
----
-
-**To make a material fully transparent depending on surface normals:**
+#### To make a material fully transparent depending on surface normals:
 
 Material Properties > Settings > Surface > Enable Camera Backface Culling
 
----
+#### Use “Non-Color” for Normal maps
 
 **IMPORTANT:** for **Normal Maps** change the Color Space from sRGB (or whatever) to **Non-Color**
 
 ALSO: After setting the Color Space to Non-Color, don’t forget to plug the normal map through a **Normal Map** node (not directly into a shader's Normal input). That node interprets the RGB data as a vector. CAUTION: **Normal Map** node (not a simple “Normal” node)
 
----
+#### Fix Normal Maps ready for DirectX
 
-**FIX NORMAL MAPS READY FOR DirectX TO BE USED WITH OpenGL**
-
-If we perceive some strange artifact in Normal Maps, it can be because it’s DirectX-Ready
-
-To fix, just invert the Green channel.
+If we perceive some strange artifact in Normal Maps, it can be because it’s DirectX-Ready. To fix normal maps ready for DirectX to be used with OpenGL, just **invert the Green channel**.
 
 Use a Separate Color > Invert Green > Combine Color Again
 
----
+### Caution with normal maps on Procedural Geometry
 
-### Caution with normal maps on procedural geometry (with uvs stored at gn level)
+#### Caution with uvs stored at GN level
 
 If we apply a normal map on a procedural geometry (created with GN, for example a Grid) then, do NOT specify the UVMap inside the Normal Map node. It doesn’t work on Cycles (!)
 
@@ -3061,15 +3051,13 @@ So in your case:
 
 But if you leave the UV input empty, Blender magically uses the active UV attribute (as long as your UV Map node is named correctly, which it is).
 
----
-
-### Caution with normal maps on procedural geometry + real displacement and deformations
+#### Caution with real displacement and deformations
 
 This is a common and tricky issue when combining real displacement with deforming geometry in Blender (Cycles). Real displacement modifies actual mesh geometry at render time, and when you deform that base mesh (e.g., with an animated bulge), it can lead to severe shading artifacts—especially if normals or tangent space calculations break due to the displacement no longer aligning with the underlying topology.
 
 Here’s a breakdown of what’s likely happening and what you can do to fix or work around it:
 
-**What’s Going Wrong**
+##### What’s Going Wrong
 
 Real displacement happens after modifiers/deformations.
 
@@ -3079,7 +3067,7 @@ Normals and tangent space may get distorted, particularly if the normal map or b
 
 Self-intersections or non-manifold geometry can occur in highly deformed areas, confusing Cycles’ shading.
 
-**Solution & Workaround**
+##### Solution & Workaround
 
 Avoid Tangent Space Normal Maps
 
@@ -3095,7 +3083,7 @@ Using just a good Displacement Map set to “Displacement and Bump” can absolu
 
 Here’s why that approach works well:
 
-**• Displacement and Bump Combines Best of Both**
+##### Displacement and Bump Combines Best of Both
 
 Real displacement adds actual mesh detail (depth, shadowing, silhouette).
 
@@ -3103,7 +3091,7 @@ Bump mapping (from the same displacement source) simulates finer detail not capt
 
 This setup is physically consistent, avoiding the mismatch that sometimes occurs when using normal maps that "fight" the displaced geometry.
 
-**• Normal Maps Are Static by Nature**
+##### Normal Maps Are Static by Nature
 
 They don’t adapt to deformation unless baked per frame (which is complex).
 
@@ -3111,15 +3099,13 @@ Tangent-space normals get especially problematic with animated topology changes.
 
 Removing them avoids that entire layer of issues.
 
-**• Cleaner Workflow**
+##### Cleaner Workflow
 
 One less texture to manage and synchronize.
 
 Less confusion in blending maps and shading artifacts.
 
----
-
-**NORMAL VS. HEIGHT MAPS (used as Bump)**
+### Normal vs. Height Maps used as Bump
 
 If you're not using real displacement, then using only the Normal Map is generally best.
 
@@ -3127,17 +3113,18 @@ Using Height as Bump on top of a Normal Map can sometimes enhance microdetail, b
 
 Using both improperly can cause shading conflicts, double-ups, or a muddy result.
 
-**Best Practice in Blender (no real displacement):**
+#### Approaches:
+##### Best Practice in Blender (no real displacement)
 
 If you:
 
-Already have a good-quality Normal Map
+- Already have a good-quality Normal Map
 
-Don’t need true displacement (i.e., no real surface deformation)
+- Don’t need true displacement (i.e., no real surface deformation)
 
 Then: Use the Normal Map only. It’s sharper, more performant, and handles directional lighting better.
 
-**Can I Combine Both (Normal + Bump from Height)?**
+##### Can I Combine Both (Normal + Bump from Height)?
 
 You can, and sometimes it’s used like this:
 
@@ -3147,71 +3134,71 @@ Height Map as Bump: low-frequency forms (e.g., subtle waviness or curvature)
 
 BUT: This must be done carefully using Blender’s "Bump" node, and combining normals like this:
 
-• Height Map --> Bump Node (connect to Normal input)
+• Height Map → Bump Node (connect to Normal input)
 
-• Normal Map --> Normal Map Node --> Normal input of the Bump Node
+• Normal Map → Normal Map Node → Normal input of the Bump Node
 
-• Final output of Bump Node --> Shader's Normal input
+• Final output of Bump Node → Shader's Normal input
 
 This adds bump detail on top of the normal, blending them properly.
 
 Caution: Overdoing this can cause lighting artifacts, shadow oddities, or overemphasized relief.
 
----
-
 ### Combining bevel and bump/normal maps in blender
 
 When working on the shading of mechanical parts such as gears, it is often desirable to combine multiple sources of normal perturbation:
 
-A Bevel node to simulate rounded edges without adding geometry.
+- A Bevel node to simulate rounded edges without adding geometry.
 
-One or more Bump nodes to create scratches, dents, or other relief details from grayscale textures.
+- One or more Bump nodes to create scratches, dents, or other relief details from grayscale textures.
 
-A Normal Map node to add additional surface detail from tangent-space normal maps.
+- A Normal Map node to add additional surface detail from tangent-space normal maps.
 
 The important point is that these effects should not be connected independently to the same Normal input of the shader. Instead, they must be chained together.
 
-**Bevel + Bump**
+#### Approaches:
+
+##### Bevel + Bump
 
 A common setup is:
 
-*Bevel → Bump → Principled BSDF*
+>Bevel → Bump → Principled BSDF
 
-The Bevel node generates smoothed normals that simulate rounded edges.
+- The Bevel node generates smoothed normals that simulate rounded edges.
 
-The Bevel output is connected to the Normal input of the Bump node.
+- The Bevel output is connected to the Normal input of the Bump node.
 
-The Bump node adds scratches, dents, or other height-based details.
+- The Bump node adds scratches, dents, or other height-based details.
 
-The Bump output is connected to the Normal input of the Principled BSDF.
+- The Bump output is connected to the Normal input of the Principled BSDF.
 
 This allows the bump details to be calculated on top of the beveled surface normals.
 
-**Bevel + Normal Map**
+##### Bevel + Normal Map
 
 The same principle applies:
 
-*Bevel → Normal Map → Principled BSDF*
+>Bevel → Normal Map → Principled BSDF
 
 The Normal Map node provides a Normal input specifically so that it can receive and modify an existing normal field (NO, THIS IS NOT TRUE)
 
-**Multiple Bump Nodes and Normal Maps**
+##### Multiple Bump Nodes and Normal Maps
 
 For more complex materials, several normal-modifying nodes can be chained together:
 
-*Bevel → Bump (large scratches) → Bump (micro-scratches) → Normal Map → Principled BSDF*
+>Bevel → Bump (large scratches) → Bump (micro-scratches) → Normal Map → Principled BSDF
 
 Each node receives the output normal of the previous node and adds its own perturbation.
 
+### Different materials to front and back
+
+To apply different maps (or even materials) to FRONT and BACK side of a surface, like both sides of a leaf
+
+Create both materials inside a single material with 2 shaders (Principled BSDF or other), then use Mix Shader an add a Geometry Node (inside Shader Editor), connecting the “Backfacing” socket to the Fac one in the Mix Shader. There is an **“Apply different maps to front and back of a plane”** sample saved in my files.
+
 ---
 
-**To apply different maps (or even materials) to FRONT and BACK side of a surface, like both sides of a leaf**
-
-Create both materials inside a single material with 2 shaders (Principled BSDF or other), then use Mix Shader an add a Geometry Node (inside Shader Editor), connecting the “Backfacing” socket to the Fac one in the Mix Shader. There is an *“Apply different maps to front and back of a plane”* sample saved in my files.
-
----
-
-*CAUTION with Bump node in Blender 4.4 and up!!!*
+### CAUTION with Bump node in Blender 4.4 and up!!!
 
 The new “Filter Width” could ruin your renders if you use the default 0.1 value.
 
@@ -3221,19 +3208,17 @@ Up to Blender 4.3 this setting was hardcoded as 1.0, and this value could be bet
 
 [Bump Node & Filter Width, what you need to know](https://www.youtube.com/watch?v=2WNS88ofUZE) - By Christopher 3D - With more in-depth info on this new setting
 
----
+### AgX / Filmic
 
-**CAUTION: Render > Color Management > View Transform** defaults to **AgX**, but in the Blender Studio tutorial they recommend using **Filmic**.
+CAUTION: Render > Color Management > View Transform** defaults to **AgX**, but in the Blender Studio tutorial they recommend using **Filmic**.
 
 And in fact, pure R, G or B colors look much more realistic using Filmic than AgX (with the latter they become more “pastel”).
 
----
+### Reload all textures
 
-**“Force” and reload all textures** Press Alt+R with the mouse cursor over the Shader Editor and Blender will re-load all the textures.
+“Force” and reload all textures Press Alt+R with the mouse cursor over the Shader Editor and Blender will re-load all the textures.
 
----
-
-**To copy material on active object to all selected**
+### To copy material on active object to all selected
 
 Select objects, keep one active, the one with the material you want to copy from;
 
@@ -3243,15 +3228,13 @@ This is also useful to completely remove all materials on all selected object, b
 
 Another option is to use Link (Cmd/Ctrl-M) > Materials - But this does NOT works for removing from all selected object (picking on an object without mat)
 
----
-
-**TRANSPARENCY (like in a Glass or Water)**
+### Transparency (like in a Glass or Water)
 
 *THIS AREA NEEDS MORE STUDY*
 
 The “orthodox” way to handle transparency (Glass / Water / Oil) AKA Physically correct vs. artistically controllable
 
-**1. Physically correct approach (for realism in Cycles):**
+#### Physically correct approach (for realism in Cycles):
 
 Use only the [Glass BSDF](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/glass.html) (or [Principled BSDF](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html) with Transmission = 1).
 
@@ -3273,25 +3256,27 @@ So you can’t control how see-through it is directly — it’s physically “f
 
 For this to actually look transparent in Eevee:
 
-In Material Properties → Settings → Blend Mode: set to Alpha Blend or Alpha Hashed.
+- In Material Properties → Settings → Blend Mode: set to Alpha Blend or Alpha Hashed.
 
-Enable Screen Space Refraction and Refraction in material settings if you use those effects.
+- Enable Screen Space Refraction and Refraction in material settings if you use those effects.
 
-In Render Properties → Screen Space Refraction, enable it too.
+- In Render Properties → Screen Space Refraction, enable it too.
 
 In Cycles, no special settings — it just works.
 
-**2. Artistically controllable / practical approach (most common for windows, architectural glass, stylized materials, or Eevee):**
+#### Artistically controllable / practical approach
+
+Most common for windows, architectural glass, stylized materials, or Eevee:
 
 You should mix the [Glossy BSDF](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/glossy.html) shader with a [Transparent BSDF](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/transparent.html), using a Mix Shader node.
 
 Control **transparency**:
 
-Mix Factor = 0.0 → fully glass (opaque to renderer)
+- Mix Factor = 0.0 → fully glass (opaque to renderer)
 
-Mix Factor = 1.0 → fully transparent
+- Mix Factor = 1.0 → fully transparent
 
-Intermediate (e.g. 0.2 → 0.4) gives you window-like glass
+- Intermediate (e.g. 0.2 → 0.4) gives you window-like glass
 
 You can expose that as a single “Transparency” slider in your node group if you wish.
 
@@ -3309,11 +3294,11 @@ Use a lighter, similar hue for Transparent BSDF that mimics how real window glas
 
 All this allows for easy alpha blending / masking / fade effects
 
-+ Best for Eevee and fast look-dev.
+- Best for Eevee and fast look-dev.
 
-+ You can expose a simple “Transparency” slider.
+- You can expose a simple “Transparency” slider.
 
-+ You can layer it with reflections or textures.
+- You can layer it with reflections or textures.
 
 - Slightly less physically accurate (light energy not perfectly conserved).
 
@@ -3321,13 +3306,13 @@ All this allows for easy alpha blending / masking / fade effects
 
 ### Translucency
 
-### Subsurface
+#### Subsurface
 
 In Cycles, Subsurface Color is part of the Base Color — the Base Color is used for both surface color and SSS tint.
 
 There is no separate “Subsurface Color” slot anymore in most cases.
 
-**Method:**
+##### Method:
 
 Christensen-Burley = faster, less accurate, good for soft forms.
 
@@ -3335,7 +3320,7 @@ Random Walk = more accurate, ideal for thin/fine detail.
 
 Random Walk (Skin) = designed for Skin shading
 
-**Settings:**
+##### Settings:
 
 • Base Color > Controls what color the subsurface scattering has, not only the base color.
 
@@ -3379,17 +3364,18 @@ Powdery or soft materials > use lower or zero anisotropy
 
 [Eevee 'sss' translucency method](https://x.com/gleb_alexandrov/status/1962432373678620840?s=12) - [Eevee Fake Translucency Trick - YouTube](https://www.youtube.com/watch?v=mjK5ppSTjOg)
 
-* no translucency whatsoever
+- no translucency whatsoever
 
-* subsurface scattering weight = 1
+- subsurface scattering weight = 1
 
-* 'thickness' shader input - to taste
+- 'thickness' shader input - to taste
 
-* SSS scale to taste
+- SSS scale to taste
 
-* raytraced transmission = on (not sure if it matters though)
+- raytraced transmission = on (not sure if it matters though)
 
-### Transmission
+---
+#### Transmission
 
 Simulates clear materials like glass or fully transparent plastic.
 
@@ -3397,7 +3383,7 @@ Use only if your plastic is see-through, like colored acrylic.
 
 Transmission: Set 0.0 – 1.0 depending on how transparent it should be.
 
-### Roughness
+#### Roughness
 
 Controls how blurry the reflections are but also how blurry the transparency is.
 
@@ -3405,124 +3391,132 @@ For frosted/matte plastic: increase Roughness (0.4 – 0.8).
 
 For shiny plastic: lower Roughness.
 
-**USE CASE: GRAPE FRUITS WITH SUBSURFACE AND INNER SEEDS SLIGHTLY TRANSLUCENT** - By ChatGPT
+#### Use case: grape fruits with subsurface and inner seeds slightly translucent
+
+**Tips by ChatGPT**
 
 A mix between SSS and subsurface transmission / translucency (like in thin fruit skins or jelly), where internal objects are barely visible but blurred.
 
 Here are some approaches in Blender to get the “see-through skin with blurred seeds” look:
 
-**1. Use Subsurface Scattering + Transmission**
+##### Use Subsurface Scattering + Transmission
 
-In your **grape skin material**:
+- In your **grape skin material**:
 
-Keep **Subsurface Scattering** enabled (as you already have).
+- Keep **Subsurface Scattering** enabled (as you already have).
 
-Add some **Transmission** (in the Principled BSDF → Transmission = 0.2–0.5, experiment).
+- Add some **Transmission** (in the Principled BSDF → Transmission = 0.2–0.5, experiment).
 
-Increase **Subsurface Radius** slightly to allow light to spread inside (try 1.0, 0.5, 0.3 in RGB channels).
+- Increase **Subsurface Radius** slightly to allow light to spread inside (try 1.0, 0.5, 0.3 in RGB channels).
 
-Balance **Roughness**: higher values will blur the seeds more.
+- Balance **Roughness**: higher values will blur the seeds more.
 
-- > > > This will let the inner seeds show through, but always slightly diffused, not crystal clear.
+>This will let the inner seeds show through, but always slightly diffused, not crystal clear.
 
-**2. Fake Blurred Transparency with Thin Shell + Volume Scatter**
+##### Fake Blurred Transparency with Thin Shell + Volume Scatter
 
-Give the grape skin object some **thickness** (a solidify modifier helps).
+- Give the grape skin object some **thickness** (a solidify modifier helps).
 
-In the **material**, add a small **Volume Scatter** node plugged into the *Volume* input of the Material Output.
+- In the **material**, add a small **Volume Scatter** node plugged into the *Volume* input of the Material Output.
 
-Density: very low (0.02–0.05).
+- Density: very low (0.02–0.05).
 
-Anisotropy: slightly positive (0.2–0.3).
+- Anisotropy: slightly positive (0.2–0.3).
 
-This acts like a foggy medium inside the grape flesh, softening the visibility of seeds.
+- This acts like a foggy medium inside the grape flesh, softening the visibility of seeds.
 
-- > > > Result: seeds visible, but washed in a translucent “pulp” look.
+>Result: seeds visible, but washed in a translucent “pulp” look.
 
-**3. Mix Glass / Transmission Shader with SSS**
+##### Mix Glass / Transmission Shader with SSS
 
-Use a **Mix Shader** between:
+- Use a **Mix Shader** between:
 
-A **Principled BSDF** with strong SSS (for the grape flesh look).
+	- A **Principled BSDF** with strong SSS (for the grape flesh look).
 
-A **Glass BSDF** or Principled with Transmission=1 and high Roughness (to blur refraction).
+	- A **Glass BSDF** or Principled with Transmission=1 and high Roughness (to blur refraction).
 
-Control the mix with a Fresnel or Layer Weight node → so you get more transmission on edges and SSS on frontal parts.
+- Control the mix with a Fresnel or Layer Weight node → so you get more transmission on edges and SSS on frontal parts.
 
-- > > > This gives that “slightly see-through” feel mostly at the grape edges.
+>This gives that “slightly see-through” feel mostly at the grape edges.
 
-**4. Cheat with Object for Seeds Visibility**
+##### Cheat with Object for Seeds Visibility
 
-If you want **more blur than transmission can give**, you can duplicate the seeds:
+- If you want **more blur than transmission can give**, you can duplicate the seeds:
 
-One set is **real seeds** inside (for volume/occlusion).
+	- One set is **real seeds** inside (for volume/occlusion).
 
-A second, **blurred fake projection** baked as a texture onto the grape’s inner shell, so they appear diffused through the flesh.
+	- A second, **blurred fake projection** baked as a texture onto the grape’s inner shell, so they appear diffused through the flesh.
 
-Rendering tip:
+##### Rendering tip:
 
-These effects require **Cycles** (not Eevee) for correct transmission/SSS.
+- These effects require **Cycles** (not Eevee) for correct transmission/SSS.
 
-Make sure **“Subsurface Translucency”** and **“Transmission”** are enabled in render settings (in Cycles, this is automatic).
+- Make sure **“Subsurface Translucency”** and **“Transmission”** are enabled in render settings (in Cycles, this is automatic).
 
-If render times explode, try **Clamp Indirect** to reduce fireflies.
+- If render times explode, try **Clamp Indirect** to reduce fireflies.
 
-Easiest starting point:
+##### Easiest starting point:
 
-Use **Principled BSDF** with **SSS + Transmission + Roughness**.
+- Use **Principled BSDF** with **SSS + Transmission + Roughness**.
 
-If too sharp, add **Volume Scatter** to soften.
+- If too sharp, add **Volume Scatter** to soften.
 
 ---
 
-**FRESNEL EFFECTS** - By ChatGPT
+### Fresnel Effects
+
+**Tips by ChatGPT**
 
 Fresnel effect or facing ratio is: a value that changes depending on the angle between the camera view and the surface normal. In Blender’s Shader Editor you can do it in a couple of different ways. Let me give you the clearest ones:
 
-**Method 1: Using the Fresnel Node**
+#### A couple of methods
+
+##### Method 1: Using the Fresnel Node
 
 1. Add a Fresnel node (Shift+A → Input → Fresnel).
 
 2. Connect its Fac output → to drive a Mix Shader or ColorRamp.
-- With Mix Shader: mix between two shaders (e.g. Glossy vs Diffuse), so the edges are more reflective.
+	- With Mix Shader: mix between two shaders (e.g. Glossy vs Diffuse), so the edges are more reflective.
 
-- With ColorRamp: map the 0–1 range into colors (e.g. black = red, white = green).
+	- With ColorRamp: map the 0–1 range into colors (e.g. black = red, white = green).
 3. The IOR value controls how sharp the transition is (higher = more narrow rim).
 
 In ColorRamp: left = red, right = green.
 
-**Method 2: Using the Layer Weight Node**
+##### Method 2: Using the Layer Weight Node
 
 This one is often more controllable:
 
 1. Add a Layer Weight node (Shift+A → Input → Layer Weight).
 
 2. Use its Facing output (this is basically “how much the surface faces the camera”).
-- Facing = 1 for surfaces perpendicular to the camera (front),
+	- Facing = 1 for surfaces perpendicular to the camera (front),
 
-- Facing = 0 near grazing angles (edges).
+	- Facing = 0 near grazing angles (edges).
 3. Plug Facing into a ColorRamp to remap or invert.
 
 4. Use this output to:
-- Blend shaders (like Diffuse vs Glossy).
+	- Blend shaders (like Diffuse vs Glossy).
 
-- Drive color (red at facing = 1, green at facing = 0).
+	- Drive color (red at facing = 1, green at facing = 0).
 
 If it’s inverted, just flip the ColorRamp handles.
 
-**Quick Comparison**
+##### Quick Comparison
 
 Fresnel node = physically based (uses IOR).
 
 Layer Weight (Facing) = more artistic control (linear gradient with a Blend slider).
 
----
+### Material variations using Instances
 
-**RANDOM COLOR* VARIATION FOR EACH INSTANCE USING SAME MATERIAL** - By ChatGPT
+**Tips by ChatGPT**
 
-(*) or any other channel
+To introduce random color (or any other channel) variation for each instance using same material:
 
-**In Shader Nodes you can use:**
+#### Two methods:
+
+##### In Shader Nodes you can use:
 
 • Object Info → Random
 
@@ -3532,51 +3526,51 @@ Layer Weight (Facing) = more artistic control (linear gradient with a Blend slid
 
 - Plug the Random into a ColorRamp to map it into a gradient or a set of discrete colors.
 
-Add an Object Info node.
+1. Add an Object Info node.
 
-Use the Random output.
+2. Use the Random output.
 
-Connect that into a ColorRamp.
+3. Connect that into a ColorRamp.
 
-Feed the ColorRamp output into Base Color (or whatever you want to vary).
+4. Feed the ColorRamp output into Base Color (or whatever you want to vary).
 
 That’s it — each sphere instance now gets its own color variation even though they share the same material.
 
-**If you want variation inside Geometry Nodes**
+##### If you want variation inside Geometry Nodes:
 
-You can use the Random Value node in Geometry Nodes and store it as a custom attribute (for example, instance_random).
+- You can use the Random Value node in Geometry Nodes and store it as a custom attribute (for example, instance_random).
 
-Then pass it to the shader via a Named Attribute node.
+- Then pass it to the shader via a Named Attribute node.
 
-This gives you more control (like controlling the seed or ensuring specific distributions).
+- This gives you more control (like controlling the seed or ensuring specific distributions).
 
----
-
-### About uvmaps / texture coordinates in blender
+### About UVMaps / Texture Coordinates in Blender
 
 In Blender, if you do NOT manually connect a Texture Coordinate node or a UVMap to a texture (whether it's procedural like Noise Texture or an Image Texture), the system uses certain default values, but they vary depending on the type of texture:
 
-**1. Noise Texture node (or any procedural texture):**
+#### Cases
 
-If you don't connect any coordinates, Blender defaults to using **Generated** coordinates.
+##### Noise Texture node (or any procedural texture):
 
-These coordinates are automatic and based on the bounding box of the object.
+- If you don't connect any coordinates, Blender defaults to using **Generated** coordinates.
 
-They are suitable for procedural shaders because they don't need UV unwrapping.
+- These coordinates are automatic and based on the bounding box of the object.
 
-They work well on objects without defined UVs.
+- They are suitable for procedural shaders because they don't need UV unwrapping.
 
-Common example: If you add a sphere and apply a Noise Texture without coordinates, you'll see the texture projects correctly because it uses Generated
+- They work well on objects without defined UVs.
 
-**2. Image Texture node (image-based texture)**:
+- Common example: If you add a sphere and apply a Noise Texture without coordinates, you'll see the texture projects correctly because it uses Generated
 
-If you don't connect any coordinates, Blender tries to use the object's UV coordinates (typically named in Blender **UVMap**)
+##### Image Texture node (image-based texture):
 
-Specifically, it tries to use the first available UV layer of the object.
+- If you don't connect any coordinates, Blender tries to use the object's UV coordinates (typically named in Blender **UVMap**)
 
-If the object has no UVs, the texture may not display correctly (it might appear black, distorted, or random).
+- Specifically, it tries to use the first available UV layer of the object.
 
-This is because an image needs specific mapping to know how to "wrap" onto the geometry.
+- If the object has no UVs, the texture may not display correctly (it might appear black, distorted, or random).
+
+- This is because an image needs specific mapping to know how to "wrap" onto the geometry.
 
 ---
 
