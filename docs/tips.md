@@ -3003,28 +3003,6 @@ You can preview the displacement in the viewport by enabling Viewport Shading > 
 
 >NOTE: see TIPS FOR FAST CYCLES RENDERING before rendering scenes with REAL DISPLACEMENT. Because optimizations are needed with Displacemente, specially for 4K
 
-
-### SHADING & LIGHTING - QUICK TIPS
-#### Which objects use certain material?
-
-**To find out on which objects in our scene a certain Material is applied**: go to the “Material” tab, click on the small arrow to the right of the list (even if it is blank) and choose “Select by Material”.
-
-#### To make a material fully transparent depending on surface normals:
-
-Material Properties > Settings > Surface > Enable Camera Backface Culling
-
-#### Use “Non-Color” for Normal maps
-
-**IMPORTANT:** for **Normal Maps** change the Color Space from sRGB (or whatever) to **Non-Color**
-
-ALSO: After setting the Color Space to Non-Color, don’t forget to plug the normal map through a **Normal Map** node (not directly into a shader's Normal input). That node interprets the RGB data as a vector. CAUTION: **Normal Map** node (not a simple “Normal” node)
-
-#### Fix Normal Maps ready for DirectX
-
-If we perceive some strange artifact in Normal Maps, it can be because it’s DirectX-Ready. To fix normal maps ready for DirectX to be used with OpenGL, just **invert the Green channel**.
-
-Use a Separate Color > Invert Green > Combine Color Again
-
 ### Caution with normal maps on Procedural Geometry
 
 #### Caution with uvs stored at GN level
@@ -3214,10 +3192,6 @@ CAUTION: Render > Color Management > View Transform** defaults to **AgX**, but i
 
 And in fact, pure R, G or B colors look much more realistic using Filmic than AgX (with the latter they become more “pastel”).
 
-### Reload all textures
-
-“Force” and reload all textures Press Alt+R with the mouse cursor over the Shader Editor and Blender will re-load all the textures.
-
 ### To copy material on active object to all selected
 
 Select objects, keep one active, the one with the material you want to copy from;
@@ -3250,7 +3224,7 @@ That means it’s always “opaque” to the renderer — it doesn’t have an a
 
 So you can’t control how see-through it is directly — it’s physically “fully transparent,” just with light distortion.
 
-+ Best for photoreal renders.
+- Best for photoreal renders.
 
 - But hard to “tune” visually or for compositing (because alpha = opaque).
 
@@ -3302,8 +3276,6 @@ All this allows for easy alpha blending / masking / fade effects
 
 - Slightly less physically accurate (light energy not perfectly conserved).
 
----
-
 ### Translucency
 
 #### Subsurface
@@ -3314,51 +3286,57 @@ There is no separate “Subsurface Color” slot anymore in most cases.
 
 ##### Method:
 
-Christensen-Burley = faster, less accurate, good for soft forms.
+- Christensen-Burley = faster, less accurate, good for soft forms.
 
-Random Walk = more accurate, ideal for thin/fine detail.
+- Random Walk = more accurate, ideal for thin/fine detail.
 
-Random Walk (Skin) = designed for Skin shading
+- Random Walk (Skin) = designed for Skin shading
 
 ##### Settings:
 
-• Base Color > Controls what color the subsurface scattering has, not only the base color.
+- Base Color → Controls what color the subsurface scattering has, not only the base color.
 
-• Subsurface Weight > Controls how much subsurface scattering is applied.
+- Subsurface Weight → Controls how much subsurface scattering is applied.
 
-• Radius > Controls the scattering distance per RGB channel.
+- Radius → Controls the scattering distance per RGB channel.
 
-- For example, Radius = (1.0, 0.2, 0.1) means red light scatters farther than blue.
+	- For example, Radius = (1.0, 0.2, 0.1) means red light scatters farther than blue.
 
-• Scale > Multiplies the radius globally.
+- Scale → Multiplies the radius globally.
 
-• IOR (Index of Refraction)
+---
 
-Controls how much light bends inside the material (like it does in glass or skin).
+- IOR (INDEX OF REFRACTION)
 
-In SSS, IOR affects the intensity and angle of internal scattering.
+	- Controls how much light bends inside the material (like it does in glass or skin).
 
-Typical values: 1.3 – 1.5 for most plastics and skin.
+	- In SSS, IOR affects the intensity and angle of internal scattering.
 
-Higher IOR = stronger internal reflections and more focused scattering.
+	- Typical values: 1.3 – 1.5 for most plastics and skin.
 
-Think of it as the “density” of the material to light. Water is ~1.33, plastic ~1.45.
+	- Higher IOR = stronger internal reflections and more focused scattering.
 
-• Anisotropy (for Subsurface)
+	- Think of it as the “density” of the material to light. Water is ~1.33, plastic ~1.45.
 
-Controls directionality of subsurface scattering.
+---
 
-Values range from:
+- ANISOTROPY (FOR SUBSURFACE)
 
-0.0 → Isotropic scattering (light spreads equally in all directions).
+	- Controls directionality of subsurface scattering.
 
-> 0.0 → Forward scattering (light mostly travels forward — like wax or gelatin).
+	- Values range from:
 
-< 0.0 → Backward scattering (light tends to bounce back — useful for thin, fibrous materials).
+		- 0.0 → Isotropic scattering (light spreads equally in all directions).
 
-Example use: Wax, skin, or frosted plastic > try Anisotropy = 0.2 – 0.8
+		- Larger than 0.0 → Forward scattering (light mostly travels forward — like wax or gelatin).
 
-Powdery or soft materials > use lower or zero anisotropy
+		- Smaller than 0.0 → Backward scattering (light tends to bounce back — useful for thin, fibrous materials).
+
+---
+
+Example use: Wax, skin, or frosted plastic → try Anisotropy = 0.2 – 0.8
+
+Powdery or soft materials → use lower or zero anisotropy
 
 ---
 
@@ -3375,6 +3353,7 @@ Powdery or soft materials > use lower or zero anisotropy
 - raytraced transmission = on (not sure if it matters though)
 
 ---
+
 #### Transmission
 
 Simulates clear materials like glass or fully transparent plastic.
@@ -3460,8 +3439,6 @@ Here are some approaches in Blender to get the “see-through skin with blurred 
 - Use **Principled BSDF** with **SSS + Transmission + Roughness**.
 
 - If too sharp, add **Volume Scatter** to soften.
-
----
 
 ### Fresnel Effects
 
@@ -3572,29 +3549,16 @@ In Blender, if you do NOT manually connect a Texture Coordinate node or a UVMap 
 
 - This is because an image needs specific mapping to know how to "wrap" onto the geometry.
 
----
+### Noise on Instances with Global Coordinates
 
-**Apply a Noise Texture to a bunch of Instanced Objects. But with a global coordinates, not “per object” or “per UV”**
+How to apply a Noise Texture to a bunch of Instanced Objects, but with a global coordinates, not “per object” or “per UV”. And, at the same time, if our instances are moving or scaling, allow the Noise to remain attached to each instance (but different for all)
 
-**And, at the same time, if our instances are moving or scaling, allow the Noise to remain attached to each instance (but different for all)**
+SOLUTION: [This long thread, with ChatGPT](https://chatgpt.com/share/68c31054-88f0-8010-b28d-9c9ef24056d3)
 
-SOLUTION:
+This was applied on my scene with the Grapes for [Brocard animation](https://etereaestudios.com/works/brocard/)
 
-[https://chatgpt.com/share/68c31054-88f0-8010-b28d-9c9ef24056d3](https://chatgpt.com/share/68c31054-88f0-8010-b28d-9c9ef24056d3)
 
-(applied on scene with Grapes for Brocard animation)
-
----
-
-[2 Blender lighting tips](https://www.instagram.com/reel/C-GFwfbKkl5/?igsh=OXZhbDI2bWRtOGpk):
-
-• I think the view transform should be AGX by default, but this is the most realistic I find.
-
-• Colour temperature is a great way of creating realistic lighting by using Kelvins - I have a colour temperature tutorial already.
-
----
-
-### Liquids
+### Shade and Render Liquids
 
 [Liquid inside glass, proper setup for Cycles](https://blender.stackexchange.com/questions/35726/fluid-in-a-glass) - A couple of alternatives. #2 seems more accurate/technical, following this other notes: [Liquid / glass interface IOR and normals in Cycles](https://blender.stackexchange.com/questions/2823/liquid-glass-interface-ior-and-normals-in-cycles)
 
@@ -3604,29 +3568,57 @@ SOLUTION:
 
 [Liquids - Creating a Basic Fluid Simulation](https://www.youtube.com/watch?v=vBCHQGALHZc)
 
-**Liquid inside a bottle or cup (Cycles)**
+### Liquid inside a bottle or cup (Cycles)
 
-1. Coincident surfaces (glass and liquid touching)
+#### Various possible approaches:
 
-Problem: coplanar faces with opposite normals cause artifacts.
+##### Coincident surfaces (glass and liquid touching)
 
-Cycles can’t decide which material to prioritize → leads to noise, black spots, or discontinuities.
+- Problem: coplanar faces with opposite normals cause artifacts.
 
-2. Liquid slightly overlaps into the glass
+- Cycles can’t decide which material to prioritize → leads to noise, black spots, or discontinuities.
 
-The liquid mesh penetrates into the glass thickness.
+##### Liquid slightly overlaps into the glass
 
-Avoids coplanar issue, but not physically correct → creates double refraction and wrong thickness perception.
+- The liquid mesh penetrates into the glass thickness.
 
-3. Liquid slightly smaller, leaving a tiny gap (**recommended**)
+- Avoids coplanar issue, but not physically correct → creates double refraction and wrong thickness perception.
 
-Create a minimal air gap (e.g. ~0.001 m).
+##### Liquid slightly smaller, leaving a tiny gap (recommended)
 
-Cycles sees clear material transitions: air → glass → air → liquid.
+- Create a minimal air gap (e.g. ~0.001 m).
 
-Physically accurate and free of artifacts.
+- Cycles sees clear material transitions: air → glass → air → liquid.
 
----
+- Physically accurate and free of artifacts.
+
+### SHADING & LIGHTING - QUICK TIPS
+
+#### Reload all textures
+
+“Force” and reload all textures Press Alt+R with the mouse cursor over the Shader Editor and Blender will re-load all the textures.
+
+#### Which objects use certain material?
+
+**To find out on which objects in our scene a certain Material is applied**: go to the “Material” tab, click on the small arrow to the right of the list (even if it is blank) and choose “Select by Material”.
+
+#### To make a material fully transparent depending on surface normals:
+
+Material Properties > Settings > Surface > Enable Camera Backface Culling
+
+#### Use “Non-Color” for Normal maps
+
+**IMPORTANT:** for **Normal Maps** change the Color Space from sRGB (or whatever) to **Non-Color**
+
+ALSO: After setting the Color Space to Non-Color, don’t forget to plug the normal map through a **Normal Map** node (not directly into a shader's Normal input). That node interprets the RGB data as a vector. CAUTION: **Normal Map** node (not a simple “Normal” node)
+
+#### Fix Normal Maps ready for DirectX
+
+If we perceive some strange artifact in Normal Maps, it can be because it’s DirectX-Ready. To fix normal maps ready for DirectX to be used with OpenGL, just **invert the Green channel**.
+
+Use a Separate Color > Invert Green > Combine Color Again
+
+### SHADING & LIGHTING - LINKS
 
 [32 procedural textures that use the Wave node in Blender](https://www.youtube.com/watch?v=_Ewq6e-HSWE) by Sam Bowman - I usually do all this kind of stuff with Substance Designer - Interesting to have a Blender perspective
 
@@ -3665,24 +3657,6 @@ Physically accurate and free of artifacts.
 [Displacement in real time (for Blender 4.5)](https://x.com/ilyassel_/status/1904689949598773376) - Test by Ilyasse - See node tree on same thread
 
 [Doing Surface Imperfections Right | Vray, Cycles, Arnold…](https://www.youtube.com/watch?v=OW4L0vdo_e4)
-
-### Edge masks
-
-[How to Make an Edge Mask](https://www.youtube.com/watch?v=hEbvGHceid4) - Basic setup
-
-[How to use EDGE MASKS in Blender](https://www.youtube.com/watch?v=yZku65ONVOw) - A bit more advanced and pretty good
-
-[Blender Secrets - Eevee Edge Wear](https://www.youtube.com/watch?v=2stkQE0buqA) - Alternate method
-
-[Blender Let's Build Create an Outer Edge Mask Node](https://www.youtube.com/watch?v=Jqm0g02F85M) - Alternate method for inner and outer edges
-
-[Better Edge Masks in Blender - Procedural Texturing](https://www.youtube.com/watch?v=Aa8gf1pwb4E) - Learn how to use the bevel node, and dot product vector math node in Blender, for perfect edge masks.
-
-[Edge Masks - Blender Smart Materials](https://alaaeldien.gumroad.com/l/lzqZZF) - 12 Mask Group To be Used for masking Materials - *FREE* (or donate)
-
-[Edges are crucial for realism](https://x.com/ilyassel_/status/1839034573537292693?s=12)
-
-[Edging when doing texturing using Ucupaint addon](https://x.com/passivestar_/status/1837877883383025767?s=12) (metal effect on the edges of painted objects)
 
 [Eevee Fake Translucency Trick](https://www.creativeshrimp.com/eevee-fake-translucency-trick.html)
 
@@ -3784,7 +3758,27 @@ Physically accurate and free of artifacts.
 
 ---
 
-### Add decals and logos
+#### Various links on edge masks
+
+[How to Make an Edge Mask](https://www.youtube.com/watch?v=hEbvGHceid4) - Basic setup
+
+[How to use EDGE MASKS in Blender](https://www.youtube.com/watch?v=yZku65ONVOw) - A bit more advanced and pretty good
+
+[Blender Secrets - Eevee Edge Wear](https://www.youtube.com/watch?v=2stkQE0buqA) - Alternate method
+
+[Blender Let's Build Create an Outer Edge Mask Node](https://www.youtube.com/watch?v=Jqm0g02F85M) - Alternate method for inner and outer edges
+
+[Better Edge Masks in Blender - Procedural Texturing](https://www.youtube.com/watch?v=Aa8gf1pwb4E) - Learn how to use the bevel node, and dot product vector math node in Blender, for perfect edge masks.
+
+[Edge Masks - Blender Smart Materials](https://alaaeldien.gumroad.com/l/lzqZZF) - 12 Mask Group To be Used for masking Materials - *FREE* (or donate)
+
+[Edges are crucial for realism](https://x.com/ilyassel_/status/1839034573537292693?s=12)
+
+[Edging when doing texturing using Ucupaint addon](https://x.com/passivestar_/status/1837877883383025767?s=12) (metal effect on the edges of painted objects)
+
+---
+
+#### Add decals and logos
 
 [Adding Decals And Logos To 3D Models (two ways)](https://www.youtube.com/watch?v=UBBx-kZcmzI)
 
@@ -3796,11 +3790,9 @@ Physically accurate and free of artifacts.
 
 ## CAMERAS
 
-**Local Cameras**
+### Local Cameras
 
 The active camera is normally defined on the scene level, so that it’s the same across all 3D Viewports. However, it’s also possible t**o make a camera the active one within one Viewport only** - [LOCAL CAMERA](https://docs.blender.org/manual/en/latest/editors/3dview/sidebar.html#bpy-types-spaceview3d-use-local-camera)
-
----
 
 ### Animated camera switching
 
@@ -3812,17 +3804,15 @@ To use this operator, select the object to become the active camera and select a
 
 These markers can be moved to change the frame at which the active camera is changed to the object the marker is bound to.
 
----
+### Change Camera Passepartout opacity
 
-**Change Camera Passepartout Opacity**
+This is NOT a General Preference, unique Passepartout Color available is (black)
 
-This is NOT a General Preference, only Passepartout Color is (black)
+It's a “per-camera” setting. Go to Camera > Data > Viewport Display > Passepartout Opacity. Change from **0.5** to **0.9**
 
-It's a “per-camera” setting. Go to *Camera > Data > Viewport Display > Passepartout Opacity*. Change from 0.5 to 0.9
+### Lens-Sim add-on
 
----
-
-LENS-SIM ADD-ON - [Lens-Sim - Main tutorial](https://www.youtube.com/watch?v=1eDwnidoAME) - Overview of first part:
+[Lens-Sim - Main tutorial](https://www.youtube.com/watch?v=1eDwnidoAME) - Overview of first part:
 
 Once we convert a Default Camera to a Lens Sim one, the add-on try to inherit main parameters from it:
 
@@ -3856,11 +3846,11 @@ With the small Heart we can mark as favorite any Lens
 
 **“Best Fit”** drop menu sets the camera sensor size. Read the tips on-tool!
 
-- • “Best Fit” will fill the largest usable image area with an aspect ratio of 1.777
+- “Best Fit” will fill the largest usable image area with an aspect ratio of 1.777
 
-- • “Focal Length” will mimic Blenders focal length. Benefit of this is that we can change our lenses and will maintain the same focal length
+- “Focal Length” will mimic Blenders focal length. Benefit of this is that we can change our lenses and will maintain the same focal length
 
-- • “Sensor Width” allows a manual resizing of sensor.
+- “Sensor Width” allows a manual resizing of sensor.
 
 Button at right allows to rotate camera 90º (convenient for vertical formats, to maintain coherence on settings)
 
@@ -3870,18 +3860,17 @@ Play with **Focal Length** when using really anamorphic aspect ratios, to avoid 
 
 Enabling “Render Schematics” we can see the real relation between lenses and focal distance, as a kind of helper
 
----
+#### Achieving stronger depth of field blur with lens-sim
 
-### Achieving stronger depth of field blur with lens-sim
-(orthodox workflow)
+Orthodox workflow
 
-**Core Principle**
+##### Core Principle
 
 Lens Sim is designed to preserve physically plausible lens behavior.
 
 Exaggerated depth of field should therefore be achieved by camera emulation scaling, not by breaking lens parameters.
 
-**What Not to Rely On**
+##### What Not to Rely On
 
 Forcing the F-Stop below the physical limit
 
@@ -3895,15 +3884,19 @@ Produces stronger blur, but:
 
 Valid for artistic effects, not orthodox lens simulation
 
-*The Correct Control: Global Scale*
+---
 
-*Location: Advanced Settings > Camera > Emulation > Controversial > Global Scale*
+##### The Correct Control: Global Scale
 
-*Increase from 1 to 10, 20, 40 or even more, like 100 (*) (Remember to compensate Z distance variation with extra empty)*
+Location: Advanced Settings > Camera > Emulation > Controversial > Global Scale
 
-- *(*) I have the suspicion that working using CENTIMETERS as unit in my scenes, instead of METERS, has something to do with this so hight Global Scale requirement*
+Increase from 1 to 10, 20, 40 or even more, like 100 - SEE NOTE -Remember to compensate Z distance variation with extra empty
 
-**What Global Scale Does**
+>NOTE: have the suspicion that working using CENTIMETERS as unit in my scenes, instead of METERS, has something to do with this so hight Global Scale requirement
+
+---
+
+##### What Global Scale Does
 
 Rescales the camera–scene relationship
 
@@ -3921,34 +3914,41 @@ Preserves the lens’ optical character
 
 Does not trigger warnings
 
-**Recommended Workflow**
+##### Recommended Workflow
 
 1. Keep F-Stop Physical
-- Use the real lens value (e.g. f/4.1)
 
-- Optionally push slightly lower, but stay plausible
+	- Use the real lens value (e.g. f/4.1)
+
+	- Optionally push slightly lower, but stay plausible
+
 2. Use Manual Focus
-- Disable autofocus / ray-guided focus
 
-- Slightly offset focus distance if needed
+	- Disable autofocus / ray-guided focus
+
+	- Slightly offset focus distance if needed
+
 3. Increase Global Scale
-- Start at 1.2–1.5
 
-- Increase progressively until desired blur is achieved
+	- Start at 1.2–1.5
 
-- High values (10–20) are normal in:
+	- Increase progressively until desired blur is achieved
 
-- Macro shots
+	- High values (10–20) are normal in:
 
-- Very close camera distances
+		- Macro shots
 
-- Scenes using centimeters instead of meters
+		- Very close camera distances
+
+		- Scenes using centimeters instead of meters
+
 4. Ensure Strong Distance Separation
-- Subject close to camera
 
-- Background significantly farther away
+	- Subject close to camera
 
-**Macro & Scene Scale Considerations**
+	- Background significantly farther away
+
+##### Macro & Scene Scale Considerations
 
 Macro photography behaves non-linearly:
 
@@ -3958,7 +3958,7 @@ Changing Blender units from meters to centimeters compresses the optical scale
 
 High Global Scale values compensate for this and are expected
 
-**When to Break the Rules**
+##### When to Break the Rules
 
 Lowering F-Stop below physical limits is acceptable when:
 
@@ -3970,15 +3970,19 @@ Lowering F-Stop below physical limits is acceptable when:
 
 ---
 
-**Lens Sim Dark Vignetting Accumulative in Layers issue - HEINZELNISSE (add-on author answer)**
+#### Lens Sim Dark Vignetting Accumulative in Layers issue
 
-Question: On rendering with multiple view layers, since the barrel vignette is visible on all layers it accumulates into a very dark vignette around the final composited image. Is there any way of disabling only the barrel vignette?
+**Heinzelnisse** (add-on author) answer:
 
-Answer: I haven't found any good ways to do it, it is a render limitation of tracing the lens system and not something I have direct control over. However, if you use crypto mattes you should be able to mask out your objects, so that you can set the vignetting to be transparent.
+>**Question**: On rendering with multiple view layers, since the barrel vignette is visible on all layers it accumulates into a very dark vignette around the final composited image. Is there any way of disabling only the barrel vignette?
 
-- *(screen capture saved in my Setups, Tips & Tricks folder)*
+>**Answer**: I haven't found any good ways to do it, it is a render limitation of tracing the lens system and not something I have direct control over. However, if you use crypto mattes you should be able to mask out your objects, so that you can set the vignetting to be transparent.
 
----
+- Screen capture saved in my Setups, Tips & Tricks folder
+
+NOTE: I think that recent version can handle and solve this problem - *To investigate*
+
+### CAMERAS - LINKS
 
 [Achieving True Photorealism With Lens Simulation](https://www.youtube.com/watch?v=jT9LWq279OI)
 
@@ -3988,29 +3992,23 @@ Answer: I haven't found any good ways to do it, it is a render limitation of tra
 
 ## ANIMATION
 
-Here are some of the best Blender shortcuts combo:
-
-**A / Alt-G-R-S**
-
-This is: Select All, and then rest all Locations and Rotations to 0.0 and Scale to 1.0
-
----
+### Switch Cameras along animation
 
 **To switch Cameras along animation use “Bind Cameras to Markers”**
 
-Select the object to become the active camera and select a marker to bind the active camera to. Marker > Bind Camera to Marker
+- Select the object to become the active camera and select a marker to bind the active camera to. Marker > Bind Camera to Marker
 
 **Or even better workflow:**
 
-You don't even need to create marker nor setting active camera. Just select the camera in the outliner, hit **Cmd/Ctrl-B** (over the Timeline at a given frame) and marker with selected camera will be created automatically. **NOTE:** use DOPE SHEET EDITOR or TIMELINE, not Graph Editor
+- You don't even need to create marker nor setting active camera. Just select the camera in the outliner, hit **Cmd/Ctrl-B** (over the Timeline at a given frame) and marker with selected camera will be created automatically.
 
----
+	- **NOTE:** works only in *Dope Sheet Editor* or *Timeline*, not with Graph Editor - **Why?**
 
-Channel > **Extrapolation** Mode > Constant / Linear / Cyclic **Shift-E**
+### View in Graph Editor tip
 
----
+Map the new ''View in Graph Editor" to a hotkey to quickly find your curves
 
-[Map the new ''View in graph editor" to a hotkey to quickly find your curves (tweet with images)](https://twitter.com/RamenLook/status/1781036280681501052)
+[ Tweet with animated gif](https://twitter.com/RamenLook/status/1781036280681501052)
 
 1) open up prefs
 
@@ -4020,21 +4018,9 @@ Channel > **Extrapolation** Mode > Constant / Linear / Cyclic **Shift-E**
 
 4) assign hotkey (i use F) and turn isolate on
 
----
+### How to add keyframes for multiple objects at once
 
-Write **#frame** in any parameter to control that with time. Or, for example, **#frame*0.1**, or **#sin(frame*0.1)**
-
-(then, open the Drivers Editor to full access)
-
----
-
-**Using the new PORTAL node (in 4.2)**
-
-[Not just duplicate the scene, ray portal can also make it fractal](https://twitter.com/chiu_hans/status/1789287820697506234?s=12)
-
----
-
-**How to add keyframes for multiple objects at once**
+Several options:
 
 [Keyframe selected — Blender Extensions](https://extensions.blender.org/add-ons/keyframe-selected/) - Free, installed
 
@@ -4044,13 +4030,15 @@ Write **#frame** in any parameter to control that with time. Or, for example, **
 
 For things like Location, Rotation, Scale… press **K** to Insert Keyframe for selected objects.
 
-**Linked Animation datablocks:**
+### Linked Animation datablocks:
 
-If creating the *same animation* on all object, you can animate just the active object and then link the action to the rest of the selection: Object > Make links… (Cmd/Ctrl+L) > Animation Data).
+For creating the same animation on all objects, you can animate just the active object and then link the action to the rest of the selection:
 
----
+Object → Make Links… (Cmd/Ctrl+L) → Animation Data.
 
-**How to get a clean Apply Modifiers for F-Curves in Graph Editor**
+### Clean Apply Modifiers for F-Curves
+
+How to get a clean Apply Modifiers for F-Curves in Graph Editor
 
 1. Select channel
 
@@ -4060,9 +4048,7 @@ If creating the *same animation* on all object, you can animate just the active 
 
 4. RMB > Interpolation Mode > Linear (if necessary)
 
----
-
-**TIP FOR ANIMATED CAMERAS aka “LOCAL CAMERAS”**
+### Tip for animated cameras aka “local cameras”
 
 Doing a scene animation is very usual to have **Cam1**, **Cam2**, **Cam3**… being used and changing on timeline (using Cmd/Ctrl-B to create Camera-Markers)
 
@@ -4070,9 +4056,7 @@ But sometimes we need to see or animated items through a different camera (say �
 
 On these cases is very useful to use the **N-Panel > View > View > Local Camera** feature
 
-But important: REMEMBER TO DISABLE THIS ONCE NO LONGER IS NEEDED!!!
-
----
+>But important: *remember to disable this once no longer is needed!!!*
 
 ### Visualize motion paths
 
@@ -4082,13 +4066,13 @@ The Motion Paths tool allows you to visualize the motion of points as paths over
 
 To create or remove motion paths, it is necessary to first select the bones. Then:
 
-To show the paths (or update them, if needed), click on the Calculate Path button.
+- To show the paths (or update them, if needed), click on the Calculate Path button.
 
-To hide the paths, click on the Clear Paths button.
+- To hide the paths, click on the Clear Paths button.
 
 Remember that only selected bones and their paths are affected by these actions!
 
-Tech Stuff on Motion Paths
+#### Tech Stuff on Motion Paths
 
 Motion Paths in Blender (the ones you see when you enable them for bones or objects in Pose Mode or Object Mode) are not stored as geometry, nor as Grease Pencil or Annotation data.
 
@@ -4100,15 +4084,35 @@ They live in memory only — they’re generated, displayed, and discarded as ne
 
 Motion Paths are:
 
-Computed from evaluated animation data
+- Computed from evaluated animation data
 
-Stored temporarily in RAM (not in the .blend)
+- Stored temporarily in RAM (not in the .blend)
 
-Rendered directly via GPU API (no object, no mesh, no grease pencil)
+- Rendered directly via GPU API (no object, no mesh, no grease pencil)
 
 So, motion paths are ephemeral: they exist only in memory, like a viewport helper, not as a datablock you can save or link
 
----
+### ANIMATION - QUICK TIPS
+
+#### One the best Blender shortcuts combo:
+
+**A → Alt-G-R-S**
+
+This is: Select All, and then rest all Locations and Rotations to 0.0 and Scale to 1.0
+
+>NOTE: apply with caution, of course. Only if this is really what you want to do…
+
+#### Control behavior after a given keyframe
+
+Channel > **Extrapolation** Mode > Constant / Linear / Cyclic **Shift-E**
+
+#### Using the \#frame tag
+
+Write *\#frame* in any parameter to control that with time. Or, for example, *\#frame\*0.1*, or *\#sin(frame\*0.1)*
+
+Then, open the Drivers Editor to full access.
+
+### ANIMATION - LINKS
 
 [Animate Algebra formulas and equations with multiple steps](https://www.youtube.com/watch?v=MX90CkWzRtA) - Using the Typst importer extension [https://extensions.blender.org/add-on](https://extensions.blender.org/add-ons/typst-importer/), here's how to animate algebra in Blender.
 
@@ -4129,6 +4133,13 @@ So, motion paths are ephemeral: they exist only in memory, like a viewport helpe
 [You can use 1 camera per viewport](https://x.com/ilyassel_/status/1792710213914763577?s=12) - This is how
 
 [How to sync animation to music in blender](https://www.youtube.com/watch?v=eFWN3x84NcU)
+
+Using the new PORTAL node (in 4.2) - [Not just duplicate the scene, ray portal can also make it fractal](https://twitter.com/chiu_hans/status/1789287820697506234?s=12)
+
+---
+
+## --- CONTINUE HERE WITH CLEANUP ---
+---
 
 ## PREVIEWS & RENDER
 
