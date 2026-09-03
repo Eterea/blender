@@ -13,7 +13,14 @@
   --md-accent-fg-color: #FC9867;
 
   --md-typeset-color: #FCFCFA;
-  --md-typeset-a-color: #78DCE8;
+
+  /* --- LINKS -----------------------------------------------------------
+     Single color for links, whether visited or not (on purpose - see the
+     explicit rules further down). Hover reuses the accent orange so it
+     stays consistent with the blockquote bar / nav hover color below. */
+  --md-link-color: #5CA8E8;         /* link color (normal = visited) */
+  --md-link-hover-color: #FC9867;   /* link color on hover (= accent) */
+  --md-typeset-a-color: var(--md-link-color);
 
   --md-code-bg-color: #221F22;
   --md-code-fg-color: #FCFCFA;
@@ -57,6 +64,20 @@
 /* Italic (used for prices, colored/highlighted text carried over from the source docs) */
 [data-md-color-scheme="slate"] .md-typeset em {
   color: #F9DA78;
+}
+
+/* Links: same color whether visited or not, distinct color on hover,
+   never underlined (in any state). */
+[data-md-color-scheme="slate"] .md-typeset a,
+[data-md-color-scheme="slate"] .md-typeset a:visited {
+  color: var(--md-link-color);
+  text-decoration: none;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover,
+[data-md-color-scheme="slate"] .md-typeset a:focus {
+  color: var(--md-link-hover-color);
+  text-decoration: none;
 }
 
 .md-header {
