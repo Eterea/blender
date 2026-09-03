@@ -2,12 +2,11 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 
 # PREFS & KEYMAPS
 
-This is a compilation of **Default Keymaps** that I find important or interesting. There are tips also.
-In *ITALIC*, I mark my CUSTOM KEYMAPS, just for my personal reference.
+>This is a compilation of **Default Keymaps** that I find important or interesting. There are some small tips also. In *ITALIC*, I mark my **Custom Keymaps**, just for my personal reference.
 
-> TIP: *I highly recommend you not to change default keymaps in Blender until you are really sure about it.* **Believe me: this is a very good tip!!!**
+>I highly recommend you not to change default keymaps in Blender until you are really sure about it. **Believe me: this is a very good tip!!!**
 
->The emoji 🔴 means, *pending to DEFINE this keymap on my Windows machine*. I usually work on a daily basis on a Mac, using Win just for rendering.
+>The emoji 🔴 means, pending to DEFINE this keymap on my Windows machine. I usually work on a daily basis on a Mac, using Win just for rendering.
 
 ---
 

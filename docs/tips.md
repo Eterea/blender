@@ -2,7 +2,7 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 
 # BLENDER TIPS
 
-> **NOTE:** This is by far the most extensive and complex content resource. I’m currently working on organizing and cleaning it up, as it’s a bit chaotic at the moment. In the meantime, *use the Search field* — it’s very fast!
+> This is by far the most extensive and complex content resource, with tips, advices, descriptions, etc. And it's a completely live thing, adding new stuff on an (almost) daily basis. Take a look to the TABLE OF CONTENTS, and also: use the SEARCH field — it’s very fast!
 
 ## GENERAL - MISC
 
@@ -75,6 +75,7 @@ Now "Hide in Viewport" will disable visibility in all 3D viewports that do not h
 If you disable something, the animation, collision, etc. wont work affect anything. With hiding, it can still be a collider
 
 It's essentially the difference between "object is invisible" and "object no longer exists."
+
 #### Hide in Viewport (Eye icon)
 
 **Outliner → Eye icon** 👁️
@@ -92,6 +93,7 @@ It's essentially the difference between "object is invisible" and "object no lon
 - Still visible in renders (unless also hidden from render).
 
 Use case: When you just want to hide something visually for clarity.
+
 #### Disable in Viewport (Monitor icon)
 
 **Outliner → Monitor icon** 🖥️ (you may need to enable it from the filter options)
@@ -131,6 +133,7 @@ Summary: caution with all those Materials, Node Groups, etc which was created bu
 ### About assets (Link / Append / Append Reuse Data)
 
 [Discussion from Discord Erindale.xyz](https://discord.com/channels/314131871376080906/734779545454116918/1349676093442887710)
+
 Question:
 
 > I have an GN Asset Group, that I have imported in the Scene, and modified, and renamed.
@@ -173,39 +176,77 @@ Answer:
 
 > BF is currently designing "embedding" which is a midpoint between link and append to solve previously mentioned issue. You can also decide when you drag it in or per session at the top of the asset browser.
 
-### GENERAL MISC - LINKS
+## IMPORT / EXPORT
 
-[Tool System - Blender Manual](https://docs.blender.org/manual/en/latest/interface/tool_system.html)
+### Avoid crashes marking as Assets
 
-[Operators - Blender Manual](https://docs.blender.org/manual/en/latest/interface/operators.html)
+To Append stuff in my **etr_dones.blend**, **mark as ASSETS both the Objects and/or the Nodes BEFORE appending**. Because since 5.x I detect a high amount of crashes when marking as Asset once the stuff is in that master file… It’s really strange…
 
-[Blender crashes at startup? Delete the default startup.blend file! - YouTube](https://www.youtube.com/watch?v=1_G9AYh4v0g)
+### Export to painter
 
-[Groups in Blender and confusion with Collections](https://www.rendereverything.com/blender-groups-confusion-about-collections/)
+• Remember to create a **different Material** for each desired group of final maps.
 
-[How Blender Keymap Presets Works](https://discord.com/channels/267112699517861888/1276613499878903808/1312076163463643221) - *Discord link*, by Xen Wildman - Saved on disk
+• *VERY IMPORTANT:* Check normals to find flipped faces, before exporting. Also, check overlapping UVs (mirror operations give both problems)
 
-[How To Install or Reset Blender (The Right Way)](https://www.youtube.com/watch?v=Y_DRWnWq2fI)
+• Use the **Collection Tab > Exporters** inside the Properties panel, to export only the content of that Collection.
 
-[Make And Change Hotkeys In Blender](https://www.youtube.com/watch?v=bwwKQLDoOyg)
+• Add an **FBX** and parametrize it. **Include only Mesh** and **Disable Animation**.
 
-[Theres More to Blender's Custom Startup Saves Than You Realize](https://www.youtube.com/watch?v=VHlFAobw6wc)
+• Be sure that **“Apply Modifiers”** is active (it’s by default, usually)
 
-[Understanding Blend1 Files: Do You Really Need Them? - CG Cookie](https://cgcookie.com/posts/what-is-a-blend1-file-and-do-you-really-need-them)
+• Export two versions, LOW and HIGH, after changing the SDS viewport levels for all objects (use my add-on)
 
-[You can still move the old Preferences to your new Version by hand](https://cgcookie.com/community/14898-question-about-quick-favorites?page=1#answer-61367)
+• Define the File Path to be saved **side by side to our .blend** file - *TO STUDY:* for some reason, I can not store into another child directory…
 
-[Zenplates - New File Templates Made Easy](https://www.patreon.com/posts/zenplates-new-100172069?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link)
+• Important to write the extension “**.fbx**”
 
-[Application Templates - Blender Manual](https://docs.blender.org/manual/en/latest/advanced/app_templates.html)
+```
+//model_low.fbx
 
-[Link, Append, Pack & Library Overrides Explained](https://www.youtube.com/watch?v=Ieb_VGl8MTI)
+//model_high.fbx
+```
 
-[Link & Append - Blender Manual](https://docs.blender.org/manual/en/latest/files/linked_libraries/link_append.html) - These functions help you reuse objects, materials and other data-blocks from another blend-file. You can build libraries of common content and share them across multiple referencing files.
+### Multiple UVsets to Painter
 
-[When to link external blend files - Support / Modeling - Blender Artists Community](https://blenderartists.org/t/when-to-link-external-blend-files/1222869)
+Substance Painter does not support multiple Uv sets.
 
-[Best way/workflow to link between scenes - Support / Technical Support - Blender Artists Community](https://blenderartists.org/t/best-way-workflow-to-link-between-scenes/1332293/4)
+#### Hack / Workaround
+
+If you have multiple UVsets and you want them as separate materials in Painter, these are the steps you should take:
+
+- In Blender, separate the objects According to your UVsets.
+
+- Assign them individual materials, and name them also according to your UVsets
+
+Now if you export the FBX and import it into Painter, It will read the materials as different objects.
+
+### From Illustrator to Blender
+
+Just hide layers what you don’t need and export as **.SVG** - All by default!
+
+*NOTE: to update with detailed info for Affinity.* Bye, bye, Illustrator…
+
+### Pack Resources
+
+To Pack Resources to copy (and render) to another computer
+
+First of all:
+
+`File > External Data > Report Missing Files / Find Missing Files`
+
+(Open and Info viewport to read persistent results)
+
+Save As > Give another name, example “MyFile_ToRender.blend”
+
+`File > External Data > Pack Resources`
+
+- This ensures all external data is safely embedded in the file
+
+Alternatively, if you want to extract the image maps to a separate folder
+
+`File > External Data > Unpack Resources`
+
+- Use files in current directory (create when necessary)
 
 ## CLEANING
 
@@ -259,7 +300,101 @@ for obj in selection:
         bm.free()
 ```
 
+## COLLECTIONS, HIERARCHY & OUTLINER
+
+### About collections and hierarchies with common parents but uncommon siblings
+
+#### Strange situation from a Blender newbie perspective
+
+Imagine this scene in Blender
+
+- Collection 1 with these items: a parent Empty with 2 objects: a Cube and a Sphere
+
+- Collection 2 with these items: the same parent Empty with same objects: a Cube and a Sphere
+
+This is: initially, the Empty belongs to two collections, 1 and 2 and also the children, Cube and Sphere.
+
+Now imagine that we remove the Cube from Collection 1 and also remove the Sphere from Collection 2
+
+OK, now all works as expected, but Cube still appears **greyed** under Empty inside Collection 1
+
+And, on the other side, the Sphere still appears **greyed** under Empty inside Collection 2
+
+(and in both cases, without the eye and camera icons for visibility, and also without the data)
+
+This seems like a strange behavior. But it's complete valid, inside Blender, because **the same Object or Empty can be inside two different Collections or even inside more!**
+
+#### Longer explanation
+
+**In Blender, hierarchy (parent–child) and collections are two separate systems.**
+
+When you parent objects under an Empty, the Outliner will always show the child objects indented under the parent — in every collection where the parent appears.
+
+If one of those children does not actually belong to that collection, Blender shows it there but greyed out. That’s Blender’s way of saying:
+
+>“This object is part of the parent’s hierarchy, but it does not belong to this collection.”
+
+The absence of the eye/camera icons and datablock link is also expected — because in that collection, the object has no membership.
+
+You can’t make it disappear completely from the Outliner under that parent, unless you either:
+
+Break the parent–child relationship (so the child isn’t forced to display under the parent in collections where it doesn’t belong), or
+
+Unlink the parent from one of the collections (so the whole parent/child group isn’t duplicated in multiple collections).
+
+#### Conclusion:
+
+**It’s not a bug, it’s just how Blender’s Outliner works.** Greyed-out children are Blender’s way of making sure you can still “see” the hierarchy, even if collection membership doesn’t match. If you want a perfectly “clean” collection listing (no greyed entries), the only way is to avoid parenting across collections, or to restructure your collections so each parent–child set only lives in one collection.
+
+### To move a complete hierarchy from one Collection to another
+
+- Select parent / RMB > Select Hierarchy / Move.
+
+We can also select the parent, Shift-G, and then in the popup select “Extend”.
+
+### TIP: different 3D views can show different Collections
+
+Just go to N panel > View > Collections and enable Local Collections to also decide there which collection is visible and which not for that particular view
+
+### Vertex Parenting Feature
+
+NOTE: we can select any object (mesh, camera, light…), then a second mesh object (to make this one ACTIVE), change to Edit mode, select a SINGLE VERT in the mesh object, and then, with Cmd/Ctrl-P we define a “Vertex Parent”. Optionally we can also select 3 Vertices, instead of 1 (but not 2).
+
+### Hide in Viewport
+
+[Hide in Viewport, a crappy Blender default. How to fix it. - YouTube](https://www.youtube.com/watch?v=cL2680MYc0M)
+
+- Difference between Hide in Viewport and Disable in Viewport
+
+- An awesome [little addon](https://github.com/SuperFLEB/BlenderEditCollectionAddon) called Edit Instanced Collection.
+
+### Scene vs Layer vs Collection
+
+[What's the difference between Scene, Layer, and Collection?](https://blenderartists.org/t/whats-the-difference-between-scene-layer-and-collection/1185270)
+
 ## MODELING
+
+### QUICK TIPS
+
+#### Triangles to Quads
+
+You can un-triangulate the selected portion of a mesh by hitting Alt-J. This is in Menu Faces > Triangles to Quads
+
+#### Fix Near Clip on extremely small or large models
+
+N (Side Panel) > View > View > Clip Start / Clip End (adjust both)
+
+#### To know the coordinates of a selected vertex
+
+Of a mesh or a curve: N > Element > Transform
+
+#### There is not Workplane in Blender
+
+Use **Empties-Arrows**, instead and saved them as Custom **Transform Orientations***
+
+#### Switch Objects in Edit Mode
+
+For quickly Switch Between Different Objects in Edit but also in Sculpt, Weight or Draw Mode just place you mouse over the other object and press **Alt-Q**
 
 ### Remove a (sds) modifier from multiple objects
 
@@ -271,9 +406,9 @@ Various methods:
 
 3. Another approach, without script:
 
-> [How to add/remove modifiers from multiple objects at once - Blender Stack Exchange](https://blender.stackexchange.com/questions/147314/how-to-remove-modifiers-from-multiple-objects-at-once)
+	 - [How to add/remove modifiers from multiple objects at once - Blender Stack Exchange](https://blender.stackexchange.com/questions/147314/how-to-remove-modifiers-from-multiple-objects-at-once)
 
-> You can select the objects you wish to add/remove all modifiers from, then select an object with no modifiers, hit **Cmd+L**, and **Copy the Modifiers**. This will get rid of all of them on all of the objects.
+	 - You can select the objects you wish to add/remove all modifiers from, then select an object with no modifiers, hit **Cmd+L**, and **Copy the Modifiers**. This will get rid of all of them on all of the objects.
 
 4. Also, a simpler/better/clean option: select all objects with a SDS Modifier, press Alt and Delete a SDS Modifier (it will delete all SDS Modifiers in all objects)
 
@@ -663,95 +798,658 @@ Two methods:
 4. Select randomised border as verts, deselect and select desired active vert
 5. S-Y-0
 
-### MODELING - QUICK TIPS
+## NODES
 
-#### Triangles to Quads
-You can un-triangulate the selected portion of a mesh by hitting Alt-J. This is in Menu Faces > Triangles to Quads
-#### Fix Near Clip on extremely small or large models
+>*Important, for blender 5.1 and up:* Node tools from previous versions must be opened and saved with 5.1
 
-N (Side Panel) > View > View > Clip Start / Clip End (adjust both)
+### QUICK TIPS
 
-#### To know the coordinates of a selected vertex
+#### Multi-line text on Frames:
 
-Of a mesh or a curve: N > Element > Transform
+When you need to display more comprehensive text, frame nodes can display the contents of a **text data-block**. This is read-only, so you will need to use the Text Editor (Shift-F11) to modify the contents.
 
-#### There is not Workplane in Blender
+#### Way to retype “-inf” and “inf”
 
-Use **Empties-Arrows**, instead and saved them as Custom **Transform Orientations***
+Way to **retype “-inf” and “inf”** once we have clicked on these fields: write **-4e44** and **4e44**
 
-#### Switch Objects in Edit Mode
+#### Interesting tip on For-Each feature, by Ilir Beqiri:
 
-For quickly Switch Between Different Objects in Edit but also in Sculpt, Weight or Draw Mode just place you mouse over the other object and press **Alt-Q**
+[Using the newly added For Each Element node I'm instancing a unique text block on each vertex. Drag the points around in edit mode to position the text](https://x.com/ilirbeqiri/status/1846887190736863381)
 
-### MODELING  - LINKS
+### Notes on “set curve radius” in blender 4.5!
 
-[Symmetrize](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/symmetrize.html) (in QuickMenu) vs [Mirror](https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/mirror.html) (Ctrl-M)
+We no more need the Set Curve Radius node in Blender 4.5 Use the scale parameter in Curve to Mesh which is new in 4.5
 
-[100+ Tips to Boost Modeling in Blender](https://www.youtube.com/watch?v=JMBMHSca_j0) - *Really great tips here!!!*
+Set Curve Radius is there so old files keep working. When you open a file from previous blender that had set curve radius, the named attribute and switch node are created automatically in 4.5
 
-[3 ways to Slice Objects : r/BlenderSecrets](https://www.reddit.com/r/BlenderSecrets/comments/14se2cu/3_ways_to_slice_objects/)
+(if we connect a Radius node to the Scale input in Curve to Mesh, then, our Set Curve Radius would work like before, but this is completely unnecessary and convoluted. Use the scale parameter in Curve to Mesh
 
-[5 minutes of N-Gons to Quads tips](https://www.youtube.com/watch?v=DwpajQ0oQPI)
+[Blender 4.5 LTS: Geometry Nodes Changes](https://developer.blender.org/docs/release_notes/4.5/geometry_nodes/)
 
-[All 54 Modifiers in Blender Explained in 10 Minutes - YouTube](https://www.youtube.com/watch?v=idcFMhoSdIc)
+### Also, about the “use radius” setting in the bounding box node in 4.5
 
-[Basics of Nurbs modeling](https://www.youtube.com/watch?v=1zNfh_g8jXM&t=59s)
+Other change that may cause confusion is the new "Use Radius" setting in the Bounding Box node. It is enabled by default. So the default Bezier curve gives about twice as big BB than without radius.
 
-[Boolean modeling and SDS without ngons](https://x.com/FR3NKD/status/1902371952494338215) - Useful for non extremely complex shapes
+[#143080 - Bounding Box incompatibility with version 4.5 - blender - Blender Projects](https://projects.blender.org/blender/blender/issues/143080)
 
-[Bool Tool just got even better with Box Carve functionality in Blender 5.2](https://www.youtube.com/watch?v=tXuK3uIasUE)
+### Tips by Kimmo on Random Value & Repeat Zone
 
-[Connect two objects using the Data Transfer modifier](https://www.youtube.com/watch?v=Eu9abP0LIb8) - by Christopher 3D
+Random Value outputs a **Field** by default. If we need **single value**:
 
-[Deform an object to follow the surface of another, using Shrink Wrap, but avoid flattening using a Lattice](https://www.instagram.com/reel/C9H1PEhMbUD)
+Link a Integer node to ID input, so it will be single Random value, not a field.
 
-[Draw curves on surfaces](https://x.com/cmzw_/status/1830545955491553774)
+If you want to have own random value for each iteration, use the Iteration output from the random node as a Group. And remove that link that goes in the Repeat node.
 
-[Draw in 3D with Grease Pencil (part 1)](https://www.youtube.com/watch?v=XvkJ9R5lac4) and [(part 2)](https://www.youtube.com/watch?v=PGBs3WgkbRM) - *Fantastic tips to create handmade trees* or any organic branch structure
+You can also remove the link if you want to use single Random value for all iterations, there are no need to wire that through Repeat node. You can plug the random value straight to the Math Multiply node
 
-[Fix crappy surface shading with Data Transfer](https://www.youtube.com/watch?v=KGgYQH5A2eQ) - by Christopher 3D - *Fantastic!!!* - Use the Data Transfer modifier to fix surface shading irregularities that can arise from difficult modeling scenarios
+### Switch Geometry singular boolean limitation
 
-[Fixing shading artifacts around holes using Data Transfer](https://x.com/janvandenhemel/status/1986375360695439520?s=12) - By Jan van den Hemel (quick minitutorial, ¿summarized from to the one by Christopher 3D?)
+A **Switch (Geometry)** could only handle a *singular boolean value and not a field*. For that reason, for nodes like **Is Spline Cyclic** you'd have to pull out the value from a specific spline via Sample Index. If you're only dealing with one spline, then it should be the 0th one.
 
-[Advanced Text Retopology](https://www.youtube.com/playlist?list=PLoSyNsQF2hFDX8gsIhcnl2j2gvhNkhPZk) - A great “course” with 8 videos with FANTASTIC modeling and topology techniques, tips and tricks. Even if you are an experienced modeler. And NOT ONLY FOR TEXTS!!!
+[Link at Discord](https://discord.com/channels/314131871376080906/734779545454116918/1332674634973315072) - More, related: [Is there a way to connect a field Boolean output to a geometry switch node?](https://blender.stackexchange.com/questions/296335/is-there-a-way-to-connect-a-field-boolean-output-to-a-geometry-switch-node/296337#296337)
 
-[Flower Modeling Hack – Cloth Simulation + Sphere Method ⁣- A quick Blender cloth physics tutorial](https://www.instagram.com/reel/DIRG6l-PnV-)
+### Automatic (or not) Domain Conversions in GN
 
-[Quick Topology Hack - N-gon fix](https://www.youtube.com/shorts/ULCeBXY-D24) for those giant N-gons, like the entire silhouette of a map or an animal
+**Advice by Quackers:**
 
-[How to make your own preset in Blender with custom brushes, materials and layouts](https://x.com/cgcookie/status/1922609318907547998?s=12) - Saved and ready to go for your next project
+Blender does domain conversions implicitly, if you plug a Face attribute into a node that's set to Edge, it'll do the conversion.
 
-[How to Morph Shapes in Blender](https://www.youtube.com/watch?v=2s2n_PObCnc)
+But for fields that exist in multiple domains (Position, Normal, etc.), you could also explicitly specify a domain using Evaluate on Domain
 
-[How to use instances the right way](https://www.youtube.com/watch?v=SDkkQvWzg7Y&t=36s) (downloaded)
+How it works is that everything before the Evaluate on Domain is computed per Face, before it gets converted and transferred to the Edge domain.
 
-[How to use Ngons](https://www.artstation.com/artwork/0n93EV) - I made this guide with the goal of de-mystifying and de-stigmatizing the usage of Ngons within the 3d industry
+When converting fields across domains, two things can happen:
 
-[How you can use physics to easily populate your scene with objects](https://x.com/cgboost/status/1922579171605139651?s=12)
+• If the conversion is from a domain to another domain it's composed of. (i.e. a Face -> Face Corner conversion):
 
-[Is there a way to Increase the "Thickness" of an Empty?](https://blender.stackexchange.com/questions/302797/is-there-a-way-to-increase-the-thickness-of-an-empty) (answer is NO) - Alternatives
+- It'll just copy the Face values to every Face Corner that belongs to that Face.
 
-[Loop tools Curve Tool : Panel Beating](https://www.youtube.com/watch?v=goJ4LVHXkC4) - *Really great tips here!!!*
+• If it's the other way around. (i.e. Face Corner -> Face):
 
-[My Sacred Vector Displacement Tip](https://www.youtube.com/watch?v=Xw2ELWEk27M)
+- The Face gets the average value of all the Face Corners that belong to it.
 
-[Blend normals between different surface meshes](https://www.youtube.com/watch?v=jgVEdS6sZsk)
+All this is for fields that aren't Boolean.
 
-[Render Equations and Code Blocks in Blender](https://www.youtube.com/watch?v=w3FkHDPvp4o) - Tutorial, including link to download free add-on to import Typst files
+For **booleans**, the behavior is slightly different.
 
-[Working in Millimeters for modeling small items - YouTube](https://www.youtube.com/watch?v=kep-Fl_XcrI) - Setting up Blender to work in millimeters for jewelry design
+It's outlined by this table in the Blender documentation: [Attributes - Blender 5.0 Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html#boolean-domain-interpolation)
 
-[The Jewelry and Watch Bench](https://www.youtube.com/@watchesandjewelry/videos) - Interesting channel for really small models design (jewelry, swatches, etc)
+### On “Separate Geometry on Instances”
 
-[Snap Face Project + Align Rotation to Target will “sit” our selected object in the surface of other, rotating accordingly and all interactive](https://www.instagram.com/reel/C-Vc_MqPGNS)
+When you use **Separate Geometry on Instances**, the selection and inverted become **two different geometry sets**. So you can safely flip one without affecting the other.
 
-[Surface patch from Curves](https://www.youtube.com/shorts/s9l68RY5vLM)
+GN is smart enough to not do that if nothing is changed between the two
 
-[The Easy Way to Fix Ugly Shading in Blender](https://www.youtube.com/watch?v=ZdNEqv6M7p8) - Specially with high dense n-gons
+But otherwise they become distinct sets of instances.
 
-[Topology Quick Tip: A surprising fact about 3-point poles](https://www.youtube.com/watch?v=2WzDWj11TzA) - A quick tip on reflowing topology with 3-point poles
+Thank god for the 4.3 spreadsheet for just making this visible, this used to be just something you mentally tracked
+
+[ [More context in Discord](https://discord.com/channels/314131871376080906/734779545454116918/1370385684568739960) ]
+
+### Create Custom Nodes and store as Assets
+
+**Step by Step to create Custom Nodes and store as Assets for future use**
+
+Group your Node Tree using Cmd/Ctrl-G
+
+Inside the internal Node Tree > N panel:
+
+- Group > Group > Rename your Group (ie: “Curve to Ribbon”)
+
+- Group > Usage > Enable Modifier (if you want it to use so)
+
+Return back to the general Geometry Node Tree. Save the present Node Tree (containing your recently create Group) something clever, like “YourName Nodes” (ie: ETR Nodes)
+
+In the Node Tree leave only the Group, isolated (not connected) and a Group Input connected to a Group Output.
+
+All your other future groups will live here, unconnected.
+
+Remove ALL in your document except the current mesh. Leave there some very basic stuff, like a single Plane.
+
+Go to Display Mode > Blender File > Node Groups
+
+You will see your “YourName Nodes” (ie: ETR Nodes) and the existent Groups (ie: “Curve to Ribbon”)
+
+RMB on your most recently created group and Mark as Asset
+
+Create a Panel with the Asset Browser. Your recently created item will live in the “Unassigned” Library.
+
+If it's your first custom node, **change view from “All libraries” to “Current File”**, press the “+” symbol to create a new Catalog (ie: “Eterea”) and you can also add a sub-catalog inside (ie: “Curves”)
+
+Move your recently created asset from “Unassigned” to “Curves” sub-catalog.
+
+Press N here (or use the small Gear) to open local side panel and add a Preview Icon previously stored as PNG or JPG (something as 256x256 is enough)
+
+Save your Blender document, something like this:
+
+`/Users/cristobal/Library/Application Support/Blender/VERSION/nodes/eterea/etr_nodes_source.blend`
+
+(change to your needs)
+
+Also press the small floppy disk at side of Catalog. This will save a “blender_assets.cats.txt” side by side with your .blend file.
+
+You will end with an almost empty document, containing only a single mesh item (it doesn't matter: something like a plane or a single vert)
+
+And you will put all your future Groups there.
+
+Now, no matter you have any other open document, you can look inside All Libraries, and an “Eterea” & “Curves” catalog and sub-catalog should appear.
+
+And also a new submenu inside Add Modifier > Eterea > Curves > Curve to Ribbon (or whatever nomenclature you use
+
+### On Capture Attributes and Evaluate on Domain
+
+Interesting comments by **Quackers** user on Discord: [Discord Link](https://discord.com/channels/314131871376080906/734779545454116918/1333794271307759677)
+
+Every geometry operation in GN has an inherent domain, ie. **Set Position** is inherently a **Point** domain operation.
+
+This is important because it informs everything in your tree that doesn't have an explicit domain, which in this case is the chunk with the Random Value node.
+
+Blender doesn't see an explicit domain being set and assumes you want to randomize per point.
+
+**Evaluate on Domain** is how you explicitly specify the domain of whatever's plugged to it, so setting it to **Face** allowed the randomization to be done per face instead of per point. (It's worth to note the effect of **Evaluate on Domain** is backwards, not forwards, **Set Position** is still a **Point** operation, but how much those points are offset by is random per Face)
+
+As for why changing the domain of **Capture Attribute** doesn't do anything here, that's because going from **Point/Edge** to **Face** has an effect of averaging the field.
+
+Coincidentally, the **Face** position is defined as the average position of all points of that face.
+
+So capturing the face position has the same result as capturing the point positions and averaging them via domain conversion.
+
+### On Repeat and For Each Zones
+
+Interesting comments by **Quackers** about Repeat / For Each Zones. **In short: is better to avoid these options and using Fields, when possible.**
+
+[Fields](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/fields.html) can have different values per geometry element (per point, edge, spline, etc.)
+
+A lot of people starting out in GN would gravitate to doing things one at a time either via Repeat/For Each. But a lot of use cases can be done with a "create all the geometry you need > apply the operation in one go with fields", which is often the simpler & more performant way to go about GN.
+
+To clarify this further with an example, say I have multiple splines that I wanna rotate randomly.
+
+You could do it with the For Each Zone, but this is unnecessary, as both Set Position and Random Value support fields:
+
+So you can do this directly. Adding a zone here just adds extra links you have to make.
+
+For more complex use-cases, doing it via fields might not be as straightforward but reasoning about them get easier with familiarity.
+
+The main thing there is the performance cost when you increase the iteration count.
+
+A lot of that is as Erin explained, where each iteration has to wait for the previous iteration to finish, so there's a cap to how fast it could be.
+
+Performance-wise, it's a good rule of thumb to avoid Repeat Zone whenever possible. It's pretty much only necessary if what you're computing cannot be done directly and instead uses an iterative approach.
+
+Here's a performance comparison I did (Quackers) where the idea was just to generate a ton of circles with different radii and resolution: [Discord Link](https://discord.com/channels/314131871376080906/734779371549753364/1297386822329958471)
+
+- Field Based: **5.2 ms** / For Each Based: **84 ms**
+
+Another comparison by Quackers: [Discord Link](https://discord.com/channels/314131871376080906/734779371549753364/1297387800521474069)
+
+- Field Based: **4.04 ms** / For Each: **399 ms** / Repeat Zone: **53 s**
+
+---
+
+Also, related with this, from Quackers, [comment on Twitter/X](https://x.com/quackarooners/status/1888913461134123302) **about the FOR-EACH feature**:
+
+The For-Each isn't actually always needed, even if you want to modify things on a “per component” way.
+
+EXAMPLE: as both Set Curve Radius and Trim Curve support field inputs (diamond sockets) you can plug values derived from Index directly without any issues.
+
+Just replace the For Each's Element output w/ the base geometry, and the Index output w/ the Index node.
+
+To just add a bit of what the For-Each is usually needed for: **it's for applying fields on nodes that only support CONSTANTS (circle sockets)**.
+
+Notice how fields turn into constants when they go inside the zone, and vice versa when going out of them.
+
+What makes constants and fields different and incompatible is a longer technical discussion. 😅
+
+But yeah, using For-Each to make these two play together is a good rule-of-thumb to remember.
+
+### On Set Materials and Instances
+
+Interesting comments and considerations by **Quackers** about Set Materials and Instances:
+
+(and why it’s necessary to separate instances to assign different Materials)
+
+Keep in mind that instances acts as containers for other geometry types.
+
+Set Material isn't acting on the instances but rather the mesh those instances point to.
+
+And keep in mind that the same geometry data could be shared by multiple instances.
+
+If you have 8 instances of the same cube data, when I set the material on this cube data, it will always have the same result for all instances because a.) it does not have access to the instance index so that'll always be 0.000, and b.) all instances shared the same geometry data.
+
+When you split the instances to separate groups and assign different materials to them, GN creates a separate copy of the geometry data for each branch and is able to do different things to them.
+
+Note how the spreadsheet will list two geometry sets, one with some instances and another with others. Instead of one geometry set with all instances, like before the separate operation.
+
+Also: Evaluate on Domain and Evaluate at Index won't work. You could think of there being a barrier between "instance data" and "geometry data", meaning you can't really mix both.
+
+Like if it's an instance operation (Translate, Rotate, Scale Instances, etc.) it won't have access to geometry data and vice versa for geometry operations (Set Position, Set Material, Set Curve Resolution, etc.)
+
+The exception to that is For-Each, as whatever field you plug into it turns into a constant.
+
+And everything can access constants, so using a For-Each is typically how you get around that limitation.
+
+### Sample vs Evaluate vs Capture Attribute
+
+- If a node's name starts with **Sample**, it's for getting data from other meshes.
+
+- If it starts with **Evaluate**, it's for getting the data from whatever's the current mesh.
+
+These nodes serve the same function of getting the value at a specific index, but you'd ideally use them for different purposes.
+
+- **Capture Attribute** doesn't sample attributes, it stores them.
+
+"Sampling", in the context of geonodes means transferring a field's values from one geometry to another.
+
+**Fields** are computed in context of the current geometry, capturing them allows you to get a field's value at a specific part of the nodetree and use it later down the line.
+
+These values persist even when converting the geometry, which is largely what makes them useful to have in node trees.
+
+In contrast, sampling may require you to manipulate indices yourself should the source and target geometry be different.
+
+### Remap Ranges, maintain 0
+
+If a range of values is -100/100 and we want to remap them to -20/50 while 0=0 on both maps we have to break the range into: -100/0 to -20/0 and 0/100 to 0/50 and write the driver like this:
+
+(Linear interpolation for negative side formula) * (x<0) + (Linear interpolation for positive side formula) * (x>=0)
+
+If you have multiple domains, just have to break it more (like color ramp thingy)
+
+### Compute a Noise as a Single Value instead of a Field
+
+- Add a Scene Time node
+
+- Use the Seconds output.
+
+- Add a Noise Texture node
+
+- Set it to 4D
+
+- Set W = Time
+
+#### And for Vectors?
+
+Here comes the trick: For the Vector, use (0, 0, 0) — just a dummy fixed point.
+
+This way, it outputs a single scalar value.
+
+Optionally: Use Map Range to convert from [0,1] to [-1,1]
+
+Plug this into a single value input (like a Bend) — now it’s not a field, just a float.
+
+### Noise Texture lacks seed. Hack
+
+Unlike the Random Value node, the **Noise Texture** node doesn’t have a direct Seed input.
+
+But! You can absolutely generate different results by varying the inputs that influence the noise:
+
+- Option 1: Use different Vector Inputs (or offset by a constant)
+
+- Option 2: Use W in 4D Noise as a Seed
+
+### Special technique by Erindale
+
+[Supercharge Your Geometry Nodes Workflow - Blender Tutorial - YouTube](https://www.youtube.com/watch?v=xBM4BPpfbUg) - *Downloaded*
+
+I'm going to show you my special technique that opens the door to infinitely more complex, more integrated procedural workflows in Blender. Super easy to do. Super effective.
+
+### Tip to hide node groups from lists and menus
+
+Like all data-blocks, node groups with names that start with “.” are normally hidden from lists and menus and can only be accessed through search. This can be useful for node asset authors to hide their internal sub-groups from the final user.
+
+### Understanding Append, Link and Pack in blender asset libraries
+
+When adding a custom Node Group from an Asset Library, Blender offers three different import methods: **Append**, **Link** and **Pack**. Although they may appear similar at first, they behave very differently internally.
+
+#### Append
+
+**Append** is the simplest case. Blender creates a complete copy of the Node Group inside the current .blend file.
+
+From that point on:
+
+- the Node Group becomes a l**ocal datablock;**
+
+- it has no remaining relationship with the original Asset Library;
+
+- it is fully editable;
+
+- it appears under:
+
+```
+Current File
+    Node Groups
+```
+
+If the original Asset Library is later deleted or moved, nothing happens. The scene still contains its own independent copy of the Node Group.
+
+#### Link
+
+With **Link**, Blender does **not** copy the Node Group into the scene. Instead, the .blend file simply stores a reference similar to:
+
+```
+This Node Group is located in:
+/Users/.../etr_nodes.blend
+Node Groups
+    Thickness - Stepped
+```
+
+Whenever the scene is opened, Blender loads that Node Group directly from the external library.
+
+If the library file is missing, renamed or moved, the link breaks because the data never existed inside the scene itself.
+
+#### Pack
+
+This is the most confusing—and most interesting—case. **Pack is not a third type of import.**
+
+Internally, the Node Group **remains a linked library datablock.**
+
+The difference is that Blender embeds a copy of the external library inside the current .blend file.
+
+Conceptually, the file now looks something like this:
+
+```
+MyScene.blend
+
+    Scene
+    Objects
+    Materials
+
+    Embedded Library
+        etr_nodes.blend
+
+            Thickness - Stepped
+            Noise
+            Curve Width
+            ...
+```
+
+The library still exists as a library… but it now lives **inside the .blend file itself.**
+
+Because of this, Blender no longer needs to access the original file on disk.
+
+#### Why does the outliner still show the original library path?
+
+This is the part that usually causes confusion.
+
+Even after packing, the Node Group is **still a Library datablock**, not a local one.
+
+Blender preserves the original library information as metadata, including its original path, for example:
+
+```
+Library:
+
+/Library/Application Support/Blender/5.2/nodes/Eterea/etr_nodes.blend
+```
+
+This information is retained only to identify the asset's origin. It is not necessarily used to load the data anymore.
+
+In other words, the displayed path becomes historical information rather than an active dependency.
+
+#### Why does the scene still work after deleting the asset library?
+
+Suppose you perform the following test:
+
+1. Add the Node Group using Pack.
+
+2. Save the scene.
+
+3. Close Blender.
+
+4. Delete the original Asset Library.
+
+5. Reopen the scene.
+
+Everything still works. This proves that Blender is **not** reading the Node Group from the deleted library.
+
+Instead, it loads the embedded copy stored inside the .blend file.
+
+The original path shown in the Outliner is simply the asset's recorded origin.
+
+#### Why doesn't the node group appear under "current file → node groups"?
+
+Because it is **not** a local datablock. Its internal type is still a **Library datablock,** even though the library itself has been embedded into the .blend.
+
+Conceptually:
+
+```
+Append
+Node Group
+    Local datablock
+
+Pack
+Node Group
+    Library datablock
+        ↓
+Library stored inside the .blend file
+```
+
+This distinction explains why the Outliner continues to display the Node Group under the embedded library instead of under **Current File → Node Groups**.
+
+#### A useful analogy
+
+Imagine you have a book.
+
+**Append**
+
+You photocopy one chapter and glue it into your notebook.
+
+The chapter is now completely independent.
+
+You can edit it freely, and the original book is no longer needed.
+
+**Link**
+
+You simply write a note in your notebook that says:
+
+>"Read Chapter 8 from the book on the shelf."
+
+If someone removes the book, your note still exists—but the chapter is no longer accessible.
+
+**Pack**
+
+You place the entire book inside a compartment attached to your notebook.
+
+The book's cover still says:
+
+>"Central Library"
+
+even if that library no longer exists.
+
+Whenever you open your notebook, the book is already inside it.
+
+That is essentially what Blender does with a packed library.
+
+#### An elegant detail
+
+One particularly elegant aspect of **Pack** is that Blender preserves the identity of the original library.
+
+Because it still knows where the asset originally came from, Blender can later **Unpack** the library and restore it as an external dependency if desired.
+
+If packing had converted the Node Group into a local datablock (as **Append** does), that library identity would be lost, making such an operation impossible.
+
+In other words:
+
+**Append** converts the asset into local data.
+
+**Link** keeps the asset external.
+
+**Pack** keeps the asset as a linked library while embedding that library inside the .blend file.
+
+This subtle distinction explains why packed assets behave like linked data in the Outliner while remaining completely self-contained and functional, even if the original Asset Library has been deleted.
+
+### Node tools
+
+[Node-Based Tools - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/tools.html)
+
+[Node Tools in Blender 4.0 — Blender Developers Blog](https://code.blender.org/2023/10/node-tools/) - Introduction
+
+[How to use Node Tools in Blender 4.0](https://www.youtube.com/watch?v=rU_j1Jw3ev4) - Developer Hans Goudey walks us through the Node Tools system
+
+[Introduction to Node Tools in Blender 4.0](https://www.youtube.com/watch?v=Y8Udi1AkdGY) - Short (10m) and concise. With an example.
+
+### Steps to create a node tool
+
+Switch to TOOLS (be sure to check N panel > Group > Properties > Enabled TOOL (not Modifier)
+
+Once we created a new Node Tool a new icon appears just right after UV menu (a “document” icon) menu with our Tool, to be applied.
+
+Be sure to generate data that is same type than existing geo (ie: curves, or meshes…)
+
+Use Group Inputs to expose parameters that will be accessed through bottom tool options panel.
+
+## UVS
+
+### QUICK TIPS
+
+#### Stack identical shell islands
+
+Just select first, then second island, and make a Cmd/Ctrl-C, Cmd/Ctrl-V
+
+#### Caution with pinned vertices
+
+**IMPORTANT:** take always a second look to UVs in POINT mode to **detect if vertex are in RED (pinned)**, specially before proceed to Packing, using tools like UVPackmaster.
+
+#### Flip or adjust the mesh in general while keeping the image texture static
+
+While in **Edit** mode, click on **Options** just below the 'Viewport Shading' modes on the top right corner, then click on **Correct Face Attributes**. Now when you scale the mesh on the X-axis by -1, it will flip the mesh while keeping the image texture in place.
+
+#### How to convert UV to mesh in blender
+
+[Thread in Blender Exchange](https://blender.stackexchange.com/questions/231662/how-to-convert-uv-to-mesh-in-blender) - See Update for Blender 3.2 and up.
+
+#### A UV Unwrapping Guide
+
+[Blog — Blender Studio](https://studio.blender.org/blog/a-uv-unwrapping-guide/) - Collection of advice for specific cases you might need a UV map for and how to unwrap your UV maps.
+
+#### Packing UV Maps for Production
+
+[Blog — Blender Studio](https://studio.blender.org/blog/packing-uv-maps/) - All about packing them together into a useful arrangement. You could pack all of them into a single 1:1 UV tile but there are more powerful tools at your disposal.
+
+### Problems renaming UV maps
+
+If a given UV Map for an object hast a name like **“UVMap.001”** and you can not simple rename to **“UVMap”**, try this:
+
+- **Object > Relations > Make Local > All**
+
+**OR ALSO THIS** (probably even better):
+
+- Go to **Data > Attributes** and search for an existent (not used) “UVMap”, if any, delete and create your new “UVMap” in **Data > UV Maps**.
+
+### Rectify UVs
+
+**“Vanilla” method:**
+
+Select a polygon that is already “almost” perfectly orthogonal. If necessary, rotate the entire UV island so that it is close to being orthogonal.
+
+Make sure that this polygon is the ACTIVE polygon, so that it has been selected last also in 3D (it is not enough to select it only in UVs).
+
+Use RMB with its 4 edges to align them horizontally and vertically.
+
+Move to faces, select all (A), RMB > Follow Active Quads.
+
+In addition to that:
+
+[Using pin and relax is a great way to straighten a lot of UV layouts in Blender without plugins / X](https://twitter.com/kasperarnklit/status/1788543991668949285)
+
+**ALSO:** various installed add-ons have great dedicated tools for this.
+
+### Center selected UVs in the middle
+
+Or in other places we need:
+
+Enable built-in Add-on Magic UV. Now, there is an easy option to align the Cursor to the center of UV space:
+
+1. In the menu bar go to UV, at the bottom section of the dropdown menu choose "Align UV cursor", then choose "Center".
+
+2. Select the UV island you want to center and press Shift + S to display the cursor wheel menu and choose "Selected to Cursor (Offset)".
+
+You can also use the UV Position (UV Vertex XY) in the N menu.
+
+### Pack Islands Tip
+
+It’s important to have enough space (Margin) between UV Islands to avoid visual artefacts connected with texture filtering in game engine renders. Here are suggested Margin values to use for different size textures:
+
+256 — **2px**
+
+512 — **4px**
+
+1024 — **8px**
+
+2048 — **16px**
+
+4096 — **32px**
+
+8192 — **64px**
+
+### How to avoid UV stretching after subdivision
+
+With or without bevels:
+
+In a model like a primitive cube with bevels and subdivision is important to have each face separated away from the others.
+
+TIP: while in SYNC mode OFF, select faces, press “Y” (Rip) and then, immediately move away a bit. Repack UVs.
+
+In the Subdivision Modifier, change UV Smooth from **“Keep Boundaries”** to **“Keep Corners”**
+
+[Thanks for BlenderBob for the tip!](https://x.com/robertrioux/status/1994060622833516762?s=12)
+
+### Match UVs in two objects
+
+With same meshes bur different UV maps:
+
+Caution: it’s necessary that both objects have not only the same components (verts, edges and faces) but also the **same indices**. This is: the same TOPOLOGY. Otherwise this will create weak UVs
+
+Select object B to receive UVs from the other A
+
+- Add a **Data Transfer** Modifier
+
+- Put in Source the other object A (to receive UVs from)
+
+- Enable “Face Corner Data”
+
+- Enable “UVs” tab
+
+- Change Mapping to “Topology”
+
+- UVs will transfer from A to B
+
+- Now you can apply Modifier and Join if necessary
+
+UPDATE -  Question: **How to copy UVs from one object to another with the same topology but different vert ID?** ([source X thread](https://x.com/henningsanden/status/1991479453399363783))
+
+ANSWERS:
+
+- Select active object and other - Transfer Mesh Data (Ctrl + L). Or Data Transfer modifier
+
+- Separate them into two different objects and use the data transfer modifier targeting the uvs
 
 ## CURVES
+
+### QUICK TIPS
+
+#### Tip to Move an Object to another Target Object or Empty Position
+
+Select Object to Move, then select Target (to become active) and then **Ctrl-C > Copy Location**
+
+#### For precise curve creation
+
+first place your 3D Cursor (Shift-RMB), then Create Point in Object Mode, then Extend using E and XYZ. Use Grid Absolute Snapping and Rotate using R + CTRL
+
+#### Hand drawn curves that are CURVES and not Meshes, for use with GN:
+
+After drawing them make sure that in Spline Data > Shape > Fill Mode is set to “None” (if not, it considers it Mesh).
+
+#### To Merge two spline sections on a single curve
+
+Select a couple of extreme points and press F
+
+#### To set first point in a given spline(s)
+
+Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Spline Order > Set First Point
+IMPORTANT: this does not work if curve is open. Then, make it closed temporarily (N panel > Item > Active Spline > Enable Cyclic), Set First Point and then make it open again.
+
+#### To enable Curve Resolution Visibility
+
+Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution > Set Resolution (press ESC to disable)
 
 ### To change radius for all points in a Curve
 
@@ -826,38 +1524,145 @@ if obj and obj.type == 'CURVE':
             spline.use_bezier_u = True
 ```
 
-### CURVES - QUICK TIPS
+## SCULPTING
 
-#### Tip to Move an Object to another Target Object or Empty Position
-Select Object to Move, then select Target (to become active) and then **Ctrl-C > Copy Location**
-#### For precise curve creation
-first place your 3D Cursor (Shift-RMB), then Create Point in Object Mode, then Extend using E and XYZ. Use Grid Absolute Snapping and Rotate using R + CTRL
-#### Hand drawn curves that are CURVES and not Meshes, for use with GN:
-After drawing them make sure that in Spline Data > Shape > Fill Mode is set to “None” (if not, it considers it Mesh).
-#### To Merge two spline sections on a single curve
-Select a couple of extreme points and press F
-#### To set first point in a given spline(s)
-Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Spline Order > Set First Point
-IMPORTANT: this does not work if curve is open. Then, make it closed temporarily (N panel > Item > Active Spline > Enable Cyclic), Set First Point and then make it open again.
-#### To enable Curve Resolution Visibility
-Thanks to Curve Tool add-on, go to N panel > Edit > Utilities > Curve Resolution > Set Resolution (press ESC to disable)
-### CURVES - LINKS
+### QUICK TIPS
 
-[Bezier Curves in Blender 3.x - YouTube](https://www.youtube.com/watch?v=z4PxYAKVG9Q) - Fantastic video about drawing with beziers!!!
+#### Add details to a Shape key using Sculpt
 
-[Curves & Curve Modifier in Blender - Beginner Tutorial - YouTube](https://www.youtube.com/watch?v=9xNdPA65dJo)
+To add details to a Shape key using Sculpt brushes, be sure to change your Value slider for the Shape Key to 1.0 instead of 0.0
 
-[NURBS CURVES! Why the heck should I use them?. - YouTube](https://www.youtube.com/watch?v=jO40hu7ELfA&t=0s) - *Downloaded*
+### How to sculpt with curves:
 
-[Part 1, Sardines Can Packaging, tab modeling - YouTube](https://www.youtube.com/watch?v=vJb_UioIelA&t=0s) - *Downloaded*
+- **Enable Dynamic Topology** (optional): If you want more detail on your mesh, enable Dynamic Topology (found in the Sculpt mode's header).
 
-[The BEST bezier curve tutorial for new Blender users. - YouTube](https://www.youtube.com/watch?v=f53GvpTIO2w) - **Updated version** - *Downloaded*
+- **Select the Brush:** Choose a sculpting brush like the "Snake Hook" brush, as it works well with curves.
+
+- **Change Stroke Method:** Go to the Stroke panel and change the Stroke Method to "Curve".
+
+- **Draw the Curve:** Hold down **Ctrl** and **right-click-drag** to create points and handles, forming a bezier curve. You can add multiple points and adjust their handles.
+
+- **Sculpt Along the Curve:** Once you're happy with the curve, **left-click while still holding Ctrl to apply the curve to your sculpting**.
+
+You can refine the curve further by:
+
+- **Editing Points:** Select points by left-clicking and move with G or adjust handles by right-clicking and dragging.
+
+- **Adding/Removing Points:** Add points by Ctrl + clicking and remove them by Shift + Ctrl + clicking.
+
+### Metaballs and geometry nodes
+
+#### Workaround
+
+**Metaballs are NOT “officially” supported by GN. But there is workarounds**
+
+First of all, we need to create a **Mesh** object, but it should be empty:
+
+- Add an empty Mesh
+
+- Rename it as BaseGeo
+
+- Add Metaball > Ball and make it a child of BaseGeo
+
+- Select BaseGeo > Go to Object Properties > Instancing > Enable Vertices
+
+- With BaseGeo selected, add a Geometry Nodes Modifier—this will display the Group Input and Group Output
+
+Now, for the setup in Geometry Nodes:
+
+- Mesh Line → Connect it directly to Group Output → And voilà! The Metaball is now instanced along the line.
+
+- You can replace it with a Cube > Set Size to 2m, and the same happens—the Metaballs behave as expected.
+
+By selecting the Metaball, you can adjust its resolution, scale, etc.
+
+If you select BaseGeo, go to Object Properties > Instancing > Vertices, and disable Instancing in the Viewport, the Cube added in Geometry Nodes will disappear.
+
+Then, you can go back to Geometry Nodes, adjust the Cube’s size or change the number of vertices.
+
+#### Metaball Instances not displaying in Render using Geometry Nodes?
+
+[Thread in Blender Exchange](https://blender.stackexchange.com/questions/272588/metaball-instances-not-displaying-in-render-using-geometry-nodes/294616#294616)
+
+Export an image sequence, this way blender updates the metaballs and shows them.
+
+If you animated the metaballs don't worry if they don't show up in a single image render, render the whole animation and they will be there.
+
+One thing: in the first frame the metaballs don't show up, so you need to render out an additional frame before the first frame, so change the start frame from 1 to 0, and then delete the exported 0th frame bc that's blank.
+
+If you want to make a still image, render out two frames as an animation and save the one that has the metaballs in it.
+
+## FUR
+
+### To transfer fur from a Sphere to a Cube object:
+
+- Select cube
+
+- Open add menu ->curve -> fur
+
+- Select the cube fur and then shift select the sphere fur
+
+- Hit Ctrl +L -> Copy Modifiers
+
+- Then select Cube fur -> Modifier Section -> interpolate Hair Curves -> Surface and then change it from sphere to cube
+
+### To change length of quick fur
+
+Add the "Trim hair curves" modifier to the existing hair.
+
+Now you get an option to adjust the length.
+
+BTW: when you first create the "Fur" if you untick "Apply Hair Guides" in the quick fur menu, then you could modify these options in the modifiers tab after the quick menu disappears.
+
+### To comb fur
+
+Use that **Comb** brush in combination with **Puff** (the opposite)
+
+You can disable all GN fur modifiers to see only the Curve Guides.
+
+Reduce Strength to 50% (generally speaking, do this with all brushes) and try Projected instead of Sphere.
+
+Change Radius with **“F”**
+
+### Apply fur in a small area
+
+To apply fur (and curve guides) in a small area of an object only
+
+No matter I only want my final Fur in some a small portion of polygons (achieved via Vertex/Weight Group mask), Blender always cover my entire object with the Base Curve Profiles. I mean: not the final fur, but the original curve splines to serve as guides for my fur. And what if I only this fur covering just a 6x6 faces matrix inside my sphere? (not the whole object)
+
+Best solution AFAIK to economize the curve-guide amount and concentrate in the desired area only:
+
+Select your desired small amount of faces to receive fur (and a bit extra boundary, for security)
+
+Press “P” to separate into another object, temporarily.
+
+RMB > Add > Curve > Fur to create Fur here
+
+Join and merge again both object.
+
+Great advantage: **Curve Guides** will be only in the desired small patch of faces (and not in the whole object)
+
+Then, even is the final fur appears in the whole object (once we join both objects), we can add an extra Vertex Map Group to determine where fur must be added, through Curves > Modifiers > Interpolate hair Curves > Density Mask > Our Vertex Map Group . Again: that small patch of faces.
+
+### To pass surface material to fur material
+
+Check my setup project **“Pass Surface material to Fur Material - ETR”** inside ”Setups_Tips_Tricks”
+
+Basically, use an Attribute node to catch **“surface_uv_coordinate”** and pass this to Principled Hair BSDF, using an intermediate common mapping Group to contain the common material for Surface and Fur
+
+## GREASE PENCIL
+
+**Tip for a Grease Pencil stroke:** set the 3D cursor to your vertex by selecting it and then using **Shift+S** and then Cursor -> Selection and then read the 3D cursor position in the View panel, View Properties.
+
+To change Radius for any GP stroke (or selected GP vert) use **Alt-S**. Like in radius for Curves
+
+[Applying gradient as stroke is drawn (Grease Pencil, Blender) - YouTube](https://www.youtube.com/watch?v=0-zqwUTNEUI)
 
 ## FONTS
 
 [Text - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/texts/index.html)
 
-### Fonts in blender – how they work
+### Fonts in Blender – how they work
 
 Blender does **not** use the operating system’s font registry (unlike Adobe applications).
 Fonts must be **explicitly loaded into each .blend file**.
@@ -908,238 +1713,143 @@ For asset management, keep your project fonts in a dedicated folder such as:
 
 Then load them into Blender so they become embedded in the project file.
 
-## PHYSICS
+## ANIMATION
 
-[Particle System Panel - Blender Manual](https://docs.blender.org/manual/en/latest/physics/particles/particle_system_panel.html)
+### QUICK TIPS
 
-[Change Particles Size Over Lifetime - YouTube Tutorial](https://www.youtube.com/watch?v=DhTd5Hhaahk)
+#### One the best Blender shortcuts combo:
 
-### Use a collision object to kill particles outside a mesh
+**A → Alt-G-R-S**
 
-**Goal:** Only keep particles inside a given mesh (e.g. a cube or sphere… or a bottle of wine), and remove any that go outside.
+This is: Select All, and then rest all Locations and Rotations to 0.0 and Scale to 1.0
 
-1. Create your emitter
-	- Add a Plane or any mesh to emit particles.
-	- Set up your Particle System (emit from Face, Render as Object, etc).
+>NOTE: apply with caution, of course. Only if this is really what you want to do…
 
-2. Create the containment mesh
-	- Add a Sphere or Cube (let’s say it’s a Cube) that defines the allowed volume.
-	- Scale and position it as needed so particles should stay inside this mesh.
+#### Control behavior after a given keyframe
 
-3. Enable Collision on the Cube
-	- Select the Cube.
-	- Go to the Physics tab > Collision.
-	- Check "Kill Particles".
-	- Important: This will kill particles that collide with the mesh.
-	- But in our case, we want to reverse that logic.
+Channel > **Extrapolation** Mode > Constant / Linear / Cyclic **Shift-E**
 
-#### Workaround Trick to Invert Behavior:
+#### Using the \#frame tag
 
-To kill particles that go outside the cube instead of those that hit it from the outside > Invert Normals (for closed meshes)
+Write *\#frame* in any parameter to control that with time. Or, for example, *\#frame\*0.1*, or *\#sin(frame\*0.1)*
 
-- Enter Edit Mode on the Cube.
+Then, open the Drivers Editor to full access.
 
-- Select all (A), then press Alt+N → Flip normals.
+### Switch Cameras along animation
 
-Now particles inside the mesh won’t be killed, but particles that exit (collide with the inverted surface) will be killed.
+**To switch Cameras along animation use “Bind Cameras to Markers”**
 
-Blender’s particle collision treats the outside of a mesh as the "colliding" surface. Flipping normals makes the "inside" act as the "outer" side.
+- Select the object to become the active camera and select a marker to bind the active camera to. Marker > Bind Camera to Marker
 
-#### Notes & Caveats:
+**Or even better workflow:**
 
-- The collision detection isn’t mathematically perfect for very fast particles, so you may need to adjust substeps (under Physics > Particle settings > Integration).
+- You don't even need to create marker nor setting active camera. Just select the camera in the outliner, hit **Cmd/Ctrl-B** (over the Timeline at a given frame) and marker with selected camera will be created automatically.
 
-- This only works well for closed meshes like cubes, spheres, etc.
+	- **NOTE:** works only in *Dope Sheet Editor* or *Timeline*, not with Graph Editor - **Why?**
 
-- If your particles have no velocity, or they spawn already outside the cube, this method may not stop them immediately. Consider adding a Force Field (e.g., Turbulence or Drag) to push them and make them interact.
+### View in Graph Editor tip
 
-### Liquids
+Map the new ''View in Graph Editor" to a hotkey to quickly find your curves
 
-[Introduction to Fluids (Liquid & Gas) - Blender Manual](https://docs.blender.org/manual/en/latest/physics/fluid/introduction.html)
+[ Tweet with animated gif](https://twitter.com/RamenLook/status/1781036280681501052)
 
-[Liquid Settings - Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/liquid/index.html)
+1) open up prefs
 
-[Flow - Blender Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/flow.html)
+2) go to keymap -> user interface, hit "add new"
 
-[Common Mantaflow Problems & How to Fix Them! - YouTube](https://www.youtube.com/watch?v=2O0QcLpAxV4) - Downloaded, very interesting tips and tricks.
+3) search graph editor and select
 
-#### Add liquid to fill volumes - Basic steps
+4) assign hotkey (i use F) and turn isolate on
 
-- Add any object like a Sphere
+### How to add keyframes for multiple objects at once
 
-- Select Sphere in Object Mode > Object > Quick Effects > Quick Liquid
+Several options:
 
-- This will create a Liquid Domain, a box bigger than your Sphere, with a small cube at bottom corner
+[Keyframe selected — Blender Extensions](https://extensions.blender.org/add-ons/keyframe-selected/) - Free, installed
 
-- Press Play: you will see the animation of particles moving from Sphere to the bottom or our cubic Liquid Domain
+[Key Selected Objects - Blastframe](https://blastframe.com/product/key-selected-objects/) - Add-on *$10* (a bit expensive for such a basic, simple need…Maybe create my own add-on for this)
 
-- Select the Liquid Domain and go to Physics Tab: you can disable Liquid (particles) or Mesh
+[How to add keyframes for multiple objects at once - Blender Stack Exchange](https://blender.stackexchange.com/questions/1621/how-to-add-keyframes-for-multiple-objects-at-once)
 
-#### To fill our Liquid Domain with a constant flow of liquid coming from Sphere:
+For things like Location, Rotation, Scale… press **K** to Insert Keyframe for selected objects.
 
-- Move the Liquid Domain to place bottom at Z=0
+### Linked Animation datablocks:
 
-- Move the Sphere to up, while inside the Liquid Domain.
+For creating the same animation on all objects, you can animate just the active object and then link the action to the rest of the selection:
 
-Play again to check all remains working properly.
+Object → Make Links… (Cmd/Ctrl+L) → Animation Data.
 
-- Select Sphere > Physics > Flow Behavior > Change from Geometry to Inflow.
+### Clean Apply Modifiers for F-Curves
 
-- Select the Liquid Domain > Physics > Cache > Change Type from Replay to Modular and Enable Resumable.
+How to get a clean Apply Modifiers for F-Curves in Graph Editor
 
-- Select the Liquid Domain > Physics > Settings > Bake Data
+1. Select channel
 
-Play to see the resulting liquid-particle animation.
+2. Channel > Bake Channel (choose Linear in bottom Option if necessary)
 
-Select the Liquid Domain > Physics > Mesh > Bake mesh
+3. Channel > Simplify F-Curves (usually you need to put your mousse over bottom Options “Distance Errors”, leaving it as zero)
 
-You can now disable Liquid to hide particles and show only animated Mesh (but remember to enable again, if further simulations are created!)
+4. RMB > Interpolation Mode > Linear (if necessary)
 
-- You can scale Sphere to be smaller.
+### Tip for animated cameras aka “local cameras”
 
-- Free Mesh and Free Data to remove stored cache.
+Doing a scene animation is very usual to have **Cam1**, **Cam2**, **Cam3**… being used and changing on timeline (using Cmd/Ctrl-B to create Camera-Markers)
 
-- Bake Data and Bake Mesh to see new results.
+But sometimes we need to see or animated items through a different camera (say “**CamTest**” or “**CamHead**”) not through the final to-render cameras
 
-To Scale both Liquid Domain or Mesh source use always Object Mode, then Apply Scale with **Cmd/Ctrl-A > Scale**
+On these cases is very useful to use the **N-Panel > View > View > Local Camera** feature
 
-#### To fill any custom geometry (like a bottle, cup or glass):
+>But important: *remember to disable this once no longer is needed!!!*
 
-- Create the object, with a thickness (you can use Solidify modifier)
+### Visualize motion paths
 
-- Put the object completely inside the Liquid Domain (resize this if necessary)
+[Motion Paths - Blender Manual](https://docs.blender.org/manual/en/latest/animation/motion_paths.html)
 
-- Select the cup > Physics > Press on Fluid Button > Type > Effector
+The Motion Paths tool allows you to visualize the motion of points as paths over a series of frames. These points can be object origins and bone joints.
 
-- Generate a new data cache
+To create or remove motion paths, it is necessary to first select the bones. Then:
 
-- Play with cup > Physics > Surface Thickness if system does not recognize thickness (increase to something like 0.5 to start). Alternately you can use a thicker object just for the simulation, instead of final rendered thin cup…
+- To show the paths (or update them, if needed), click on the Calculate Path button.
 
-- And also, you can use Boolean to remove extra volume from Liquid.
+- To hide the paths, click on the Clear Paths button.
 
-- Use Smooth and Weighted Normal modifiers to smooth resulting surface.
+Remember that only selected bones and their paths are affected by these actions!
 
-#### Tips:
+#### Tech Stuff on Motion Paths
 
-If you change animation duration, from 250 to 150, remember also to change it at Physics > Cache
+Motion Paths in Blender (the ones you see when you enable them for bones or objects in Pose Mode or Object Mode) are not stored as geometry, nor as Grease Pencil or Annotation data.
 
-Physics > Settings > **Time Scale** will create a slow motion
+They are purely a viewport visualization, computed on the fly and drawn by Blender’s internal drawing system (part of the GPU module).
 
-Physics > Settings > **Resolution Divisions** will create a finer-detail simulation, both for liquid-particles and for resulting mesh (change from 32 to 48 for example)
+These are not regular datablocks (like Meshes, Curves, or GPencil objects).
 
-**Upres Factor** is the factor by which to resolve the resolution of the mesh. x2 means it’s double resolution than Resolution Divisions (x1 gives greater polys, x3 smaller)
+They live in memory only — they’re generated, displayed, and discarded as needed.
 
-**Particle Radius** ishow much area is covered by a particle and thus determines how much area around it can be considered as liquid. A greater radius will let particles cover more area.
+Motion Paths are:
 
-- Leaving a default 2 will inflate a bit the resulting mesh
+- Computed from evaluated animation data
 
-- Leaving 1 will create a mesh more similar to the original volume occupied by particles BUT it will create holes easily
+- Stored temporarily in RAM (not in the .blend)
 
-Generally speaking: use a low Resolution Divisions (32-48) to design your animation, then increase to 64-96-128 or even 256 for final detailed result (will increase calculation times a lot… but it’s necessary)
+- Rendered directly via GPU API (no object, no mesh, no grease pencil)
 
-**Speed Vectors** creates a velocity Attribute which records the velocity of each vertex per frame. These will be used (automatically) when rendering with motion blur enabled
-
-For better final result add a Smooth modifier, with Factor 1
-
----
-
-**Al these tips are from these tutorials:**
-
-[Water Filling Invisible Volume [Blender Tutorial]](https://www.youtube.com/watch?v=SjvDmf4ovv4) (downloaded)
-
-[Fill a Cup with Water in Blender 3D! - YouTube](https://www.youtube.com/watch?v=GDTncMGdLWs) (similar, but a good complement)
-
-[Fill a bottle with liquid - Blender Stack Exchange](https://blender.stackexchange.com/questions/170112/i-am-trying-to-fill-a-bottle-with-liquid)
-
-[Fill any Object with Fluid in Blender [Mantaflow] | English - YouTube](https://www.youtube.com/watch?v=3ud6Hozy0vw)
-
-## GREASE PENCIL
-
-**Tip for a Grease Pencil stroke:** set the 3D cursor to your vertex by selecting it and then using **Shift+S** and then Cursor -> Selection and then read the 3D cursor position in the View panel, View Properties.
-
-To change Radius for any GP stroke (or selected GP vert) use **Alt-S**. Like in radius for Curves
-
-[Applying gradient as stroke is drawn (Grease Pencil, Blender) - YouTube](https://www.youtube.com/watch?v=0-zqwUTNEUI)
-
-
-## COLLECTIONS, HIERARCHY & OUTLINER
-
-### About collections and hierarchies with common parents but uncommon siblings
-
-#### Strange situation for a Blender newbie
-
-Imagine this scene in Blender
-
-- Collection 1 with these items: a parent Empty with 2 objects: a Cube and a Sphere
-
-- Collection 2 with these items: the same parent Empty with same objects: a Cube and a Sphere
-
-This is: initially, the Empty belongs to two collections, 1 and 2 and also the children, Cube and Sphere.
-
-Now imagine that we remove the Cube from Collection 1 and also remove the Sphere from Collection 2
-
-OK, now all works as expected, but Cube still appears **greyed** under Empty inside Collection 1
-
-And, on the other side, the Sphere still appears **greyed** under Empty inside Collection 2
-
-(and in both cases, without the eye and camera icons for visibility, and also without the data)
-
-This seems like a strange behavior. But it's complete valid, inside Blender, because **the same Object or Empty can be inside two different Collections or even inside more!**
-
-#### Longer explanation
-
-**In Blender, hierarchy (parent–child) and collections are two separate systems.**
-
-When you parent objects under an Empty, the Outliner will always show the child objects indented under the parent — in every collection where the parent appears.
-
-If one of those children does not actually belong to that collection, Blender shows it there but greyed out. That’s Blender’s way of saying:
-
->“This object is part of the parent’s hierarchy, but it does not belong to this collection.”
-
-The absence of the eye/camera icons and datablock link is also expected — because in that collection, the object has no membership.
-
-You can’t make it disappear completely from the Outliner under that parent, unless you either:
-
-Break the parent–child relationship (so the child isn’t forced to display under the parent in collections where it doesn’t belong), or
-
-Unlink the parent from one of the collections (so the whole parent/child group isn’t duplicated in multiple collections).
-
-#### Conclusion:
-
-**It’s not a bug, it’s just how Blender’s Outliner works.** Greyed-out children are Blender’s way of making sure you can still “see” the hierarchy, even if collection membership doesn’t match. If you want a perfectly “clean” collection listing (no greyed entries), the only way is to avoid parenting across collections, or to restructure your collections so each parent–child set only lives in one collection.
-
-### To move a complete hierarchy from one Collection to another
-
-Select parent / RMB > Select Hierarchy / Move.
-
-We can also select the parent, Shift-G, and then in the popup select “Extend”.
-
-### TIP: different 3D views can show different Collections
-
-Just go to N panel > View > Collections and enable Local Collections to also decide there which collection is visible and which not for that particular view
-
-### Vertex Parenting Feature
-
-NOTE: we can select any object (mesh, camera, light…), then a second mesh object (to make this one ACTIVE), change to Edit mode, select a SINGLE VERT in the mesh object, and then, with Cmd/Ctrl-P we define a “Vertex Parent”. Optionally we can also select 3 Vertices, instead of 1 (but not 2).
-
-### Hide in Viewport
-
-[Hide in Viewport, a crappy Blender default. How to fix it. - YouTube](https://www.youtube.com/watch?v=cL2680MYc0M)
-
-- Difference between Hide in Viewport and Disable in Viewport
-
-- An awesome [little addon](https://github.com/SuperFLEB/BlenderEditCollectionAddon) called Edit Instanced Collection.
-
-### Scene vs Layer vs Collection
-[What's the difference between Scene, Layer, and Collection?](https://blenderartists.org/t/whats-the-difference-between-scene-layer-and-collection/1185270)
-
-## WEIGHT
-
-### How do I reset all weights in Blender?
-
-Go into edit mode. Select all vertices. Hit **Ctrl-G** to bring up vertex group specials and select “remove from all”
+So, motion paths are ephemeral: they exist only in memory, like a viewport helper, not as a datablock you can save or link
 
 ## RIGGING
+
+### QUICK TIPS
+
+#### Move Parent without affecting Children
+
+Transformations can be limited to affect only the parents. The setting can be found in the N Panel > Tool > Options.
+
+#### Copy & Paste Global PSR Transforms
+
+Use “Copy Global Transforms” add-on, located in 3D Viewport > N-panel > Animation tab.
+
+#### To Fix Roll on Bones
+
+To Fix Roll on Bones and get a nice overall rotation around longitudinal bone Y use the command **Shift-N** in Edit Mode. **NOTE: Better to do this before creating the IKs**
 
 ### Copy & Paste Bone Constraints
 
@@ -1743,1037 +2453,156 @@ Use two layers of bones:
 
 Bone position is not just visual — it defines the actual pivot and affects the mechanics. Adjusting it changes the system’s behavior, not just its appearance.
 
-### RIGGING - QUICK TIPS
+## WEIGHT
 
-#### Move Parent without affecting Children
+### How do I reset all weights in Blender?
 
-Transformations can be limited to affect only the parents. The setting can be found in the N Panel > Tool > Options.
+Go into edit mode. Select all vertices. Hit **Ctrl-G** to bring up vertex group specials and select “remove from all”
 
-#### Copy & Paste Global PSR Transforms
+## PHYSICS
 
-Use “Copy Global Transforms” add-on, located in 3D Viewport > N-panel > Animation tab.
+[Particle System Panel - Blender Manual](https://docs.blender.org/manual/en/latest/physics/particles/particle_system_panel.html)
 
-#### To Fix Roll on Bones
+[Change Particles Size Over Lifetime - YouTube Tutorial](https://www.youtube.com/watch?v=DhTd5Hhaahk)
 
-To Fix Roll on Bones and get a nice overall rotation around longitudinal bone Y use the command **Shift-N** in Edit Mode. **NOTE: Better to do this before creating the IKs**
+### Use a collision object to kill particles outside a mesh
 
-### RIGGING - LINKS
+**Goal:** Only keep particles inside a given mesh (e.g. a cube or sphere… or a bottle of wine), and remove any that go outside.
 
-[Pose Library - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/animation/armatures/posing/editing/pose_library.html)
+1. Create your emitter
+	- Add a Plane or any mesh to emit particles.
+	- Set up your Particle System (emit from Face, Render as Object, etc).
+
+2. Create the containment mesh
+	- Add a Sphere or Cube (let’s say it’s a Cube) that defines the allowed volume.
+	- Scale and position it as needed so particles should stay inside this mesh.
+
+3. Enable Collision on the Cube
+	- Select the Cube.
+	- Go to the Physics tab > Collision.
+	- Check "Kill Particles".
+	- Important: This will kill particles that collide with the mesh.
+	- But in our case, we want to reverse that logic.
+
+#### Workaround Trick to Invert Behavior:
+
+To kill particles that go outside the cube instead of those that hit it from the outside > Invert Normals (for closed meshes)
+
+- Enter Edit Mode on the Cube.
+
+- Select all (A), then press Alt+N → Flip normals.
+
+Now particles inside the mesh won’t be killed, but particles that exit (collide with the inverted surface) will be killed.
+
+Blender’s particle collision treats the outside of a mesh as the "colliding" surface. Flipping normals makes the "inside" act as the "outer" side.
+
+#### Notes & Caveats:
+
+- The collision detection isn’t mathematically perfect for very fast particles, so you may need to adjust substeps (under Physics > Particle settings > Integration).
+
+- This only works well for closed meshes like cubes, spheres, etc.
+
+- If your particles have no velocity, or they spawn already outside the cube, this method may not stop them immediately. Consider adding a Force Field (e.g., Turbulence or Drag) to push them and make them interact.
+
+### Liquids
+
+[Introduction to Fluids (Liquid & Gas) - Blender Manual](https://docs.blender.org/manual/en/latest/physics/fluid/introduction.html)
+
+[Liquid Settings - Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/liquid/index.html)
+
+[Flow - Blender Manual](https://docs.blender.org/manual/en/latest/physics/fluid/type/flow.html)
+
+[Common Mantaflow Problems & How to Fix Them! - YouTube](https://www.youtube.com/watch?v=2O0QcLpAxV4) - Downloaded, very interesting tips and tricks.
+
+#### Add liquid to fill volumes - Basic steps
+
+- Add any object like a Sphere
+
+- Select Sphere in Object Mode > Object > Quick Effects > Quick Liquid
+
+- This will create a Liquid Domain, a box bigger than your Sphere, with a small cube at bottom corner
+
+- Press Play: you will see the animation of particles moving from Sphere to the bottom or our cubic Liquid Domain
+
+- Select the Liquid Domain and go to Physics Tab: you can disable Liquid (particles) or Mesh
+
+#### To fill our Liquid Domain with a constant flow of liquid coming from Sphere:
+
+- Move the Liquid Domain to place bottom at Z=0
+
+- Move the Sphere to up, while inside the Liquid Domain.
+
+Play again to check all remains working properly.
+
+- Select Sphere > Physics > Flow Behavior > Change from Geometry to Inflow.
+
+- Select the Liquid Domain > Physics > Cache > Change Type from Replay to Modular and Enable Resumable.
+
+- Select the Liquid Domain > Physics > Settings > Bake Data
+
+Play to see the resulting liquid-particle animation.
+
+Select the Liquid Domain > Physics > Mesh > Bake mesh
+
+You can now disable Liquid to hide particles and show only animated Mesh (but remember to enable again, if further simulations are created!)
+
+- You can scale Sphere to be smaller.
+
+- Free Mesh and Free Data to remove stored cache.
+
+- Bake Data and Bake Mesh to see new results.
+
+To Scale both Liquid Domain or Mesh source use always Object Mode, then Apply Scale with **Cmd/Ctrl-A > Scale**
+
+#### To fill any custom geometry (like a bottle, cup or glass):
+
+- Create the object, with a thickness (you can use Solidify modifier)
+
+- Put the object completely inside the Liquid Domain (resize this if necessary)
+
+- Select the cup > Physics > Press on Fluid Button > Type > Effector
+
+- Generate a new data cache
+
+- Play with cup > Physics > Surface Thickness if system does not recognize thickness (increase to something like 0.5 to start). Alternately you can use a thicker object just for the simulation, instead of final rendered thin cup…
+
+- And also, you can use Boolean to remove extra volume from Liquid.
+
+- Use Smooth and Weighted Normal modifiers to smooth resulting surface.
+
+#### Tips:
+
+If you change animation duration, from 250 to 150, remember also to change it at Physics > Cache
+
+Physics > Settings > **Time Scale** will create a slow motion
+
+Physics > Settings > **Resolution Divisions** will create a finer-detail simulation, both for liquid-particles and for resulting mesh (change from 32 to 48 for example)
+
+**Upres Factor** is the factor by which to resolve the resolution of the mesh. x2 means it’s double resolution than Resolution Divisions (x1 gives greater polys, x3 smaller)
+
+**Particle Radius** ishow much area is covered by a particle and thus determines how much area around it can be considered as liquid. A greater radius will let particles cover more area.
+
+- Leaving a default 2 will inflate a bit the resulting mesh
+
+- Leaving 1 will create a mesh more similar to the original volume occupied by particles BUT it will create holes easily
+
+Generally speaking: use a low Resolution Divisions (32-48) to design your animation, then increase to 64-96-128 or even 256 for final detailed result (will increase calculation times a lot… but it’s necessary)
+
+**Speed Vectors** creates a velocity Attribute which records the velocity of each vertex per frame. These will be used (automatically) when rendering with motion blur enabled
+
+For better final result add a Smooth modifier, with Factor 1
 
 ---
 
-[Rigify - Blender 4.4 Manual](https://docs.blender.org/manual/en/latest/addons/rigging/rigify/index.html) - For the moment I prefer to have it **disabled** and do all manually.
+**Al these tips are from these tutorials:**
 
-Rigify helps automate the creation of character rigs. It is based around a building-block approach, where you build complete rigs out of smaller rig parts (e.g. arms, legs, spines, fingers…)
+[Water Filling Invisible Volume [Blender Tutorial]](https://www.youtube.com/watch?v=SjvDmf4ovv4) (downloaded)
 
----
+[Fill a Cup with Water in Blender 3D! - YouTube](https://www.youtube.com/watch?v=GDTncMGdLWs) (similar, but a good complement)
 
-[richstubbsanimation - YouTube](https://www.youtube.com/@richstubbsanimation) - Lots of GREAT tutorials on rigging here. Visit also the shop with free assets: [Buy Rich a Coffee](https://ko-fi.com/richstubbsanimation/shop)
+[Fill a bottle with liquid - Blender Stack Exchange](https://blender.stackexchange.com/questions/170112/i-am-trying-to-fill-a-bottle-with-liquid)
 
-[How to Quickly Rig IK FK in Blender (For Beginners)](https://www.youtube.com/watch?v=xEnu_EsnzjI) - *Downloaded*
-
-[Setting Up an IK Arm Rig](https://www.youtube.com/watch?v=vZaNZhAoMts&t=0s)
-
-[The Secret to Preserve Volume in Blender](https://www.youtube.com/watch?v=_5H-vXYotUU)
-
-[Simple IK Solver - Tutorial for Articulating Single Plane Mechanics with Geometry Nodes](https://www.youtube.com/watch?v=kmFt4-SkKIo)
-
-[Spline IK Constraint - Blender 4.4 Manual](https://docs.blender.org/manual/en/latest/animation/constraints/tracking/spline_ik.html)
-
-[The Easiest Way To Rig Creatures In Blender (For Beginners) - YouTube](https://www.youtube.com/watch?v=rOcNY00Mv1I) - Using Rigify
-
-[DemNikoArt - YouTube](https://www.youtube.com/DemNikoArt) - Tutorials on mechanical rigging
-
-- [Mechanical Rigging - A Blender Tutorial - YouTube](https://www.youtube.com/watch?v=nyC57_HN6B0) - How to set up a rather complex rig for a robot hand
-
-[Level Pixel Level - YouTube](https://www.youtube.com/@LevelPixelLevel) - Fantastic tutorials on mechanical riggins
-
-- [Level Pixel Level](https://levelpixellevel.gumroad.com/) - Files with free examples
-
-## UVS
-
-### Problems renaming UV maps
-
-If a given UV Map for an object hast a name like **“UVMap.001”** and you can not simple rename to **“UVMap”**, try this:
-
-- **Object > Relations > Make Local > All**
-
-**OR ALSO THIS** (probably even better):
-
-- Go to **Data > Attributes** and search for an existent (not used) “UVMap”, if any, delete and create your new “UVMap” in **Data > UV Maps**.
-
-
-### Rectify UVs
-
-**“Vanilla” method:**
-
-Select a polygon that is already “almost” perfectly orthogonal. If necessary, rotate the entire UV island so that it is close to being orthogonal.
-
-Make sure that this polygon is the ACTIVE polygon, so that it has been selected last also in 3D (it is not enough to select it only in UVs).
-
-Use RMB with its 4 edges to align them horizontally and vertically.
-
-Move to faces, select all (A), RMB > Follow Active Quads.
-
-In addition to that:
-
-[Using pin and relax is a great way to straighten a lot of UV layouts in Blender without plugins / X](https://twitter.com/kasperarnklit/status/1788543991668949285)
-
-**ALSO:** various installed add-ons have great dedicated tools for this.
-
-### Center selected UVs in the middle
-
-Or in other places we need:
-
-Enable built-in Add-on Magic UV. Now, there is an easy option to align the Cursor to the center of UV space:
-
-1. In the menu bar go to UV, at the bottom section of the dropdown menu choose "Align UV cursor", then choose "Center".
-
-2. Select the UV island you want to center and press Shift + S to display the cursor wheel menu and choose "Selected to Cursor (Offset)".
-
-You can also use the UV Position (UV Vertex XY) in the N menu.
-
-### Pack Islands Tip
-
-It’s important to have enough space (Margin) between UV Islands to avoid visual artefacts connected with texture filtering in game engine renders. Here are suggested Margin values to use for different size textures:
-
-256 — **2px**
-
-512 — **4px**
-
-1024 — **8px**
-
-2048 — **16px**
-
-4096 — **32px**
-
-8192 — **64px**
-
-### How to avoid UV stretching after subdivision
-
-With or without bevels:
-
-In a model like a primitive cube with bevels and subdivision is important to have each face separated away from the others.
-
-TIP: while in SYNC mode OFF, select faces, press “Y” (Rip) and then, immediately move away a bit. Repack UVs.
-
-In the Subdivision Modifier, change UV Smooth from **“Keep Boundaries”** to **“Keep Corners”**
-
-[Thanks for BlenderBob for the tip!](https://x.com/robertrioux/status/1994060622833516762?s=12)
-
-### Match UVs in two objects
-
-With same meshes bur different UV maps:
-
-Caution: it’s necessary that both objects have not only the same components (verts, edges and faces) but also the **same indices**. This is: the same TOPOLOGY. Otherwise this will create weak UVs
-
-Select object B to receive UVs from the other A
-
-- Add a **Data Transfer** Modifier
-
-- Put in Source the other object A (to receive UVs from)
-
-- Enable “Face Corner Data”
-
-- Enable “UVs” tab
-
-- Change Mapping to “Topology”
-
-- UVs will transfer from A to B
-
-- Now you can apply Modifier and Join if necessary
-
-UPDATE -  Question: **How to copy UVs from one object to another with the same topology but different vert ID?** ([source X thread](https://x.com/henningsanden/status/1991479453399363783))
-
-ANSWERS:
-
-- Select active object and other - Transfer Mesh Data (Ctrl + L). Or Data Transfer modifier
-
-- Separate them into two different objects and use the data transfer modifier targeting the uvs
-
-### UVS - QUICK TIPS
-
-#### Stack identical shell islands
-
-Just select first, then second island, and make a Cmd/Ctrl-C, Cmd/Ctrl-V
-
-#### Caution with pinned vertices
-
-**IMPORTANT:** take always a second look to UVs in POINT mode to **detect if vertex are in RED (pinned)**, specially before proceed to Packing, using tools like UVPackmaster.
-
-#### Flip or adjust the mesh in general while keeping the image texture static
-
-While in **Edit** mode, click on **Options** just below the 'Viewport Shading' modes on the top right corner, then click on **Correct Face Attributes**. Now when you scale the mesh on the X-axis by -1, it will flip the mesh while keeping the image texture in place.
-
-#### How to convert UV to mesh in blender
-
-[Thread in Blender Exchange](https://blender.stackexchange.com/questions/231662/how-to-convert-uv-to-mesh-in-blender) - See Update for Blender 3.2 and up.
-
-#### A UV Unwrapping Guide
-
-[Blog — Blender Studio](https://studio.blender.org/blog/a-uv-unwrapping-guide/) - Collection of advice for specific cases you might need a UV map for and how to unwrap your UV maps.
-
-#### Packing UV Maps for Production
-
-[Blog — Blender Studio](https://studio.blender.org/blog/packing-uv-maps/) - All about packing them together into a useful arrangement. You could pack all of them into a single 1:1 UV tile but there are more powerful tools at your disposal.
-
-### UVS - LINKS:
-
-[Zen UV for Blender - 10 Tips to Transform UVs like a Pro - YouTube](https://www.youtube.com/watch?v=_Zp1mLsV_ao) — *Very good*
-
-[Per object Uv projection in camera view. Blender Geometry nodes](https://x.com/f_rimasson/status/2035444232517775662?s=12)
-
-## SCULPTING
-
-### How to sculpt with curves:
-
-- **Enable Dynamic Topology** (optional): If you want more detail on your mesh, enable Dynamic Topology (found in the Sculpt mode's header).
-
-- **Select the Brush:** Choose a sculpting brush like the "Snake Hook" brush, as it works well with curves.
-
-- **Change Stroke Method:** Go to the Stroke panel and change the Stroke Method to "Curve".
-
-- **Draw the Curve:** Hold down **Ctrl** and **right-click-drag** to create points and handles, forming a bezier curve. You can add multiple points and adjust their handles.
-
-- **Sculpt Along the Curve:** Once you're happy with the curve, **left-click while still holding Ctrl to apply the curve to your sculpting**.
-
-You can refine the curve further by:
-
-- **Editing Points:** Select points by left-clicking and move with G or adjust handles by right-clicking and dragging.
-
-- **Adding/Removing Points:** Add points by Ctrl + clicking and remove them by Shift + Ctrl + clicking.
-
-### Metaballs and geometry nodes
-
-#### Workaround
-
-**Metaballs are NOT “officially” supported by GN. But there is workarounds**
-
-First of all, we need to create a **Mesh** object, but it should be empty:
-
-- Add an empty Mesh
-
-- Rename it as BaseGeo
-
-- Add Metaball > Ball and make it a child of BaseGeo
-
-- Select BaseGeo > Go to Object Properties > Instancing > Enable Vertices
-
-- With BaseGeo selected, add a Geometry Nodes Modifier—this will display the Group Input and Group Output
-
-Now, for the setup in Geometry Nodes:
-
-- Mesh Line → Connect it directly to Group Output → And voilà! The Metaball is now instanced along the line.
-
-- You can replace it with a Cube > Set Size to 2m, and the same happens—the Metaballs behave as expected.
-
-By selecting the Metaball, you can adjust its resolution, scale, etc.
-
-If you select BaseGeo, go to Object Properties > Instancing > Vertices, and disable Instancing in the Viewport, the Cube added in Geometry Nodes will disappear.
-
-Then, you can go back to Geometry Nodes, adjust the Cube’s size or change the number of vertices.
-
-#### Metaball Instances not displaying in Render using Geometry Nodes?
-
-[Thread in Blender Exchange](https://blender.stackexchange.com/questions/272588/metaball-instances-not-displaying-in-render-using-geometry-nodes/294616#294616)
-
-Export an image sequence, this way blender updates the metaballs and shows them.
-
-If you animated the metaballs don't worry if they don't show up in a single image render, render the whole animation and they will be there.
-
-One thing: in the first frame the metaballs don't show up, so you need to render out an additional frame before the first frame, so change the start frame from 1 to 0, and then delete the exported 0th frame bc that's blank.
-
-If you want to make a still image, render out two frames as an animation and save the one that has the metaballs in it.
-
-### SCULPTING - QUICK TIPS
-#### Add details to a Shape key using Sculpt
-
-To add details to a Shape key using Sculpt brushes, be sure to change your Value slider for the Shape Key to 1.0 instead of 0.0
-
-### SCULPTING - LINKS
-
-[Improve Sculpting Performance Instantly | Blender Secrets - YouTube](https://www.youtube.com/watch?v=j-GQDMypLDI)
-
-[Perfect displacement with Low Poly meshes](https://www.youtube.com/watch?v=WB2JYYpFwW8)
-
-[Gabor Texture In Blender 4.3](https://80.lv/articles/check-out-updated-gabor-noise-node-in-blender-4-3/) - Gabor noise in Blender 4.3 looks really promising for quickly creating some sick stylized shapes
-
-[The Complete Guide to Cloth Simulations in Blender](https://www.youtube.com/watch?v=WV8uv5fZub0)
-
-[Sculpting sharp corners perfectly can be tricky, but the Curve Stroke Method is the solution](https://x.com/janvandenhemel/status/2071307276472775027?s=66)
-
-## PAINTING
-
-[You can fix this annoying issue with one click and save yourself many hours of retexturing](https://x.com/mvjagaimo/status/1910379677832872196?s=12) - Fix issue painting at border of an object
-
-[How to make Basic Sculpt and Texture Paint in Blender -- Using Ucupaint, Auto Reload & Krita](https://www.youtube.com/watch?v=96ppCrgb2JI)
-
-[Texture Painting in Blender Made Simple](https://www.youtube.com/watch?v=V-u6S64ym38)
-
-[Paint panel cuts directly on your Normal map with UcuPaint](https://preview.mailerlite.com/j1h1h2i3i9/3045358746227186278/j5l3/)
-
-## FUR
-
-### To transfer fur from a Sphere to a Cube object:
-
-- Select cube
-
-- Open add menu ->curve -> fur
-
-- Select the cube fur and then shift select the sphere fur
-
-- Hit Ctrl +L -> Copy Modifiers
-
-- Then select Cube fur -> Modifier Section -> interpolate Hair Curves -> Surface and then change it from sphere to cube
-
-### To change length of quick fur
-
-Add the "Trim hair curves" modifier to the existing hair.
-
-Now you get an option to adjust the length.
-
-BTW: when you first create the "Fur" if you untick "Apply Hair Guides" in the quick fur menu, then you could modify these options in the modifiers tab after the quick menu disappears.
-
-### To comb fur
-
-Use that **Comb** brush in combination with **Puff** (the opposite)
-
-You can disable all GN fur modifiers to see only the Curve Guides.
-
-Reduce Strength to 50% (generally speaking, do this with all brushes) and try Projected instead of Sphere.
-
-Change Radius with **“F”**
-
-### Apply fur in a small area
-
-To apply fur (and curve guides) in a small area of an object only
-
-No matter I only want my final Fur in some a small portion of polygons (achieved via Vertex/Weight Group mask), Blender always cover my entire object with the Base Curve Profiles. I mean: not the final fur, but the original curve splines to serve as guides for my fur. And what if I only this fur covering just a 6x6 faces matrix inside my sphere? (not the whole object)
-
-Best solution AFAIK to economize the curve-guide amount and concentrate in the desired area only:
-
-Select your desired small amount of faces to receive fur (and a bit extra boundary, for security)
-
-Press “P” to separate into another object, temporarily.
-
-RMB > Add > Curve > Fur to create Fur here
-
-Join and merge again both object.
-
-Great advantage: **Curve Guides** will be only in the desired small patch of faces (and not in the whole object)
-
-Then, even is the final fur appears in the whole object (once we join both objects), we can add an extra Vertex Map Group to determine where fur must be added, through Curves > Modifiers > Interpolate hair Curves > Density Mask > Our Vertex Map Group . Again: that small patch of faces.
-
-### To pass surface material to fur material
-
-Check my setup project **“Pass Surface material to Fur Material - ETR”** inside ”Setups_Tips_Tricks”
-
-Basically, use an Attribute node to catch **“surface_uv_coordinate”** and pass this to Principled Hair BSDF, using an intermediate common mapping Group to contain the common material for Surface and Fur
-
-### FUR - LINKS
-
-[Hair Nodes - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/hair/index.html) (this is the NEW system, based on Geometry Nodes. USE THIS)
-
-[Hair - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/physics/particles/hair/index.html) (this is the OLD system)
-
-[Hair Simulation: From Cosmos Laundromat to Geometry Nodes — Blender Conference 2025 - YouTube](https://www.youtube.com/watch?v=sfUDDKSx-1c)
-
-[Hair Rendering Secret: Make Your Hair Softer!](https://x.com/vfxgrace/status/2005975413609406723?s=12)
-
-## NODES
-
-
->Important, for blender 5.1 and up: *Node tools from previous versions must be opened and saved with 5.1*
-
----
-
-### Notes on “set curve radius” in blender 4.5!
-
-We no more need the Set Curve Radius node in Blender 4.5 Use the scale parameter in Curve to Mesh which is new in 4.5
-
-Set Curve Radius is there so old files keep working. When you open a file from previous blender that had set curve radius, the named attribute and switch node are created automatically in 4.5
-
-(if we connect a Radius node to the Scale input in Curve to Mesh, then, our Set Curve Radius would work like before, but this is completely unnecessary and convoluted. Use the scale parameter in Curve to Mesh
-
-[Blender 4.5 LTS: Geometry Nodes Changes](https://developer.blender.org/docs/release_notes/4.5/geometry_nodes/)
-
-### Also, about the “use radius” setting in the bounding box node in 4.5
-
-Other change that may cause confusion is the new "Use Radius" setting in the Bounding Box node. It is enabled by default. So the default Bezier curve gives about twice as big BB than without radius.
-
-[#143080 - Bounding Box incompatibility with version 4.5 - blender - Blender Projects](https://projects.blender.org/blender/blender/issues/143080)
-
-
-### Tips by Kimmo on Random Value & Repeat Zone
-
-Random Value outputs a **Field** by default. If we need **single value**:
-
-Link a Integer node to ID input, so it will be single Random value, not a field.
-
-If you want to have own random value for each iteration, use the Iteration output from the random node as a Group. And remove that link that goes in the Repeat node.
-
-You can also remove the link if you want to use single Random value for all iterations, there are no need to wire that through Repeat node. You can plug the random value straight to the Math Multiply node
-
----
-
-### Switch Geometry singular boolean limitation
-
-A **Switch (Geometry)** could only handle a *singular boolean value and not a field*. For that reason, for nodes like **Is Spline Cyclic** you'd have to pull out the value from a specific spline via Sample Index. If you're only dealing with one spline, then it should be the 0th one.
-
-[Link at Discord](https://discord.com/channels/314131871376080906/734779545454116918/1332674634973315072) - More, related: [Is there a way to connect a field Boolean output to a geometry switch node?](https://blender.stackexchange.com/questions/296335/is-there-a-way-to-connect-a-field-boolean-output-to-a-geometry-switch-node/296337#296337)
-
-
-### Automatic (or not) Domain Conversions in GN
-
-**Advice by Quackers:**
-
-Blender does domain conversions implicitly, if you plug a Face attribute into a node that's set to Edge, it'll do the conversion.
-
-But for fields that exist in multiple domains (Position, Normal, etc.), you could also explicitly specify a domain using Evaluate on Domain
-
-How it works is that everything before the Evaluate on Domain is computed per Face, before it gets converted and transferred to the Edge domain.
-
-When converting fields across domains, two things can happen:
-
-• If the conversion is from a domain to another domain it's composed of. (i.e. a Face -> Face Corner conversion):
-
-- It'll just copy the Face values to every Face Corner that belongs to that Face.
-
-• If it's the other way around. (i.e. Face Corner -> Face):
-
-- The Face gets the average value of all the Face Corners that belong to it.
-
-All this is for fields that aren't Boolean.
-
-For **booleans**, the behavior is slightly different.
-
-It's outlined by this table in the Blender documentation: [Attributes - Blender 5.0 Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html#boolean-domain-interpolation)
-
-### On “Separate Geometry on Instances”
-
-When you use **Separate Geometry on Instances**, the selection and inverted become **two different geometry sets**. So you can safely flip one without affecting the other.
-
-GN is smart enough to not do that if nothing is changed between the two
-
-But otherwise they become distinct sets of instances.
-
-Thank god for the 4.3 spreadsheet for just making this visible, this used to be just something you mentally tracked
-
-[ [More context in Discord](https://discord.com/channels/314131871376080906/734779545454116918/1370385684568739960) ]
-
-
-### Create Custom Nodes and store as Assets
-
-**Step by Step to create Custom Nodes and store as Assets for future use**
-
-Group your Node Tree using Cmd/Ctrl-G
-
-Inside the internal Node Tree > N panel:
-
-- Group > Group > Rename your Group (ie: “Curve to Ribbon”)
-
-- Group > Usage > Enable Modifier (if you want it to use so)
-
-Return back to the general Geometry Node Tree. Save the present Node Tree (containing your recently create Group) something clever, like “YourName Nodes” (ie: ETR Nodes)
-
-In the Node Tree leave only the Group, isolated (not connected) and a Group Input connected to a Group Output.
-
-All your other future groups will live here, unconnected.
-
-Remove ALL in your document except the current mesh. Leave there some very basic stuff, like a single Plane.
-
-Go to Display Mode > Blender File > Node Groups
-
-You will see your “YourName Nodes” (ie: ETR Nodes) and the existent Groups (ie: “Curve to Ribbon”)
-
-RMB on your most recently created group and Mark as Asset
-
-Create a Panel with the Asset Browser. Your recently created item will live in the “Unassigned” Library.
-
-If it's your first custom node, **change view from “All libraries” to “Current File”**, press the “+” symbol to create a new Catalog (ie: “Eterea”) and you can also add a sub-catalog inside (ie: “Curves”)
-
-Move your recently created asset from “Unassigned” to “Curves” sub-catalog.
-
-Press N here (or use the small Gear) to open local side panel and add a Preview Icon previously stored as PNG or JPG (something as 256x256 is enough)
-
-Save your Blender document, something like this:
-
-`/Users/cristobal/Library/Application Support/Blender/VERSION/nodes/eterea/etr_nodes_source.blend`
-
-(change to your needs)
-
-Also press the small floppy disk at side of Catalog. This will save a “blender_assets.cats.txt” side by side with your .blend file.
-
-You will end with an almost empty document, containing only a single mesh item (it doesn't matter: something like a plane or a single vert)
-
-And you will put all your future Groups there.
-
-Now, no matter you have any other open document, you can look inside All Libraries, and an “Eterea” & “Curves” catalog and sub-catalog should appear.
-
-And also a new submenu inside Add Modifier > Eterea > Curves > Curve to Ribbon (or whatever nomenclature you use
-
-### On Capture Attributes and Evaluate on Domain
-
-Interesting comments by **Quackers** user on Discord: [Discord Link](https://discord.com/channels/314131871376080906/734779545454116918/1333794271307759677)
-
-Every geometry operation in GN has an inherent domain, ie. **Set Position** is inherently a **Point** domain operation.
-
-This is important because it informs everything in your tree that doesn't have an explicit domain, which in this case is the chunk with the Random Value node.
-
-Blender doesn't see an explicit domain being set and assumes you want to randomize per point.
-
-**Evaluate on Domain** is how you explicitly specify the domain of whatever's plugged to it, so setting it to **Face** allowed the randomization to be done per face instead of per point. (It's worth to note the effect of **Evaluate on Domain** is backwards, not forwards, **Set Position** is still a **Point** operation, but how much those points are offset by is random per Face)
-
-As for why changing the domain of **Capture Attribute** doesn't do anything here, that's because going from **Point/Edge** to **Face** has an effect of averaging the field.
-
-Coincidentally, the **Face** position is defined as the average position of all points of that face.
-
-So capturing the face position has the same result as capturing the point positions and averaging them via domain conversion.
-
-### On Repeat and For Each Zones
-
-Interesting comments by **Quackers** about Repeat / For Each Zones. **In short: is better to avoid these options and using Fields, when possible.**
-
-[Fields](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/fields.html) can have different values per geometry element (per point, edge, spline, etc.)
-
-A lot of people starting out in GN would gravitate to doing things one at a time either via Repeat/For Each. But a lot of use cases can be done with a "create all the geometry you need > apply the operation in one go with fields", which is often the simpler & more performant way to go about GN.
-
-To clarify this further with an example, say I have multiple splines that I wanna rotate randomly.
-
-You could do it with the For Each Zone, but this is unnecessary, as both Set Position and Random Value support fields:
-
-So you can do this directly. Adding a zone here just adds extra links you have to make.
-
-For more complex use-cases, doing it via fields might not be as straightforward but reasoning about them get easier with familiarity.
-
-The main thing there is the performance cost when you increase the iteration count.
-
-A lot of that is as Erin explained, where each iteration has to wait for the previous iteration to finish, so there's a cap to how fast it could be.
-
-Performance-wise, it's a good rule of thumb to avoid Repeat Zone whenever possible. It's pretty much only necessary if what you're computing cannot be done directly and instead uses an iterative approach.
-
-Here's a performance comparison I did (Quackers) where the idea was just to generate a ton of circles with different radii and resolution: [Discord Link](https://discord.com/channels/314131871376080906/734779371549753364/1297386822329958471)
-
-- Field Based: **5.2 ms** / For Each Based: **84 ms**
-
-Another comparison by Quackers: [Discord Link](https://discord.com/channels/314131871376080906/734779371549753364/1297387800521474069)
-
-- Field Based: **4.04 ms** / For Each: **399 ms** / Repeat Zone: **53 s**
-
----
-
-Also, related with this, from Quackers, [comment on Twitter/X](https://x.com/quackarooners/status/1888913461134123302) **about the FOR-EACH feature**:
-
-The For-Each isn't actually always needed, even if you want to modify things on a “per component” way.
-
-EXAMPLE: as both Set Curve Radius and Trim Curve support field inputs (diamond sockets) you can plug values derived from Index directly without any issues.
-
-Just replace the For Each's Element output w/ the base geometry, and the Index output w/ the Index node.
-
-To just add a bit of what the For-Each is usually needed for: **it's for applying fields on nodes that only support CONSTANTS (circle sockets)**.
-
-Notice how fields turn into constants when they go inside the zone, and vice versa when going out of them.
-
-What makes constants and fields different and incompatible is a longer technical discussion. 😅
-
-But yeah, using For-Each to make these two play together is a good rule-of-thumb to remember.
-
-### On Set Materials and Instances
-
-Interesting comments and considerations by **Quackers** about Set Materials and Instances:
-
-(and why it’s necessary to separate instances to assign different Materials)
-
-Keep in mind that instances acts as containers for other geometry types.
-
-Set Material isn't acting on the instances but rather the mesh those instances point to.
-
-And keep in mind that the same geometry data could be shared by multiple instances.
-
-If you have 8 instances of the same cube data, when I set the material on this cube data, it will always have the same result for all instances because a.) it does not have access to the instance index so that'll always be 0.000, and b.) all instances shared the same geometry data.
-
-When you split the instances to separate groups and assign different materials to them, GN creates a separate copy of the geometry data for each branch and is able to do different things to them.
-
-Note how the spreadsheet will list two geometry sets, one with some instances and another with others. Instead of one geometry set with all instances, like before the separate operation.
-
-Also: Evaluate on Domain and Evaluate at Index won't work. You could think of there being a barrier between "instance data" and "geometry data", meaning you can't really mix both.
-
-Like if it's an instance operation (Translate, Rotate, Scale Instances, etc.) it won't have access to geometry data and vice versa for geometry operations (Set Position, Set Material, Set Curve Resolution, etc.)
-
-The exception to that is For-Each, as whatever field you plug into it turns into a constant.
-
-And everything can access constants, so using a For-Each is typically how you get around that limitation.
-
-### Sample vs Evaluate vs Capture Attribute
-
-- If a node's name starts with **Sample**, it's for getting data from other meshes.
-
-- If it starts with **Evaluate**, it's for getting the data from whatever's the current mesh.
-
-These nodes serve the same function of getting the value at a specific index, but you'd ideally use them for different purposes.
-
-- **Capture Attribute** doesn't sample attributes, it stores them.
-
-"Sampling", in the context of geonodes means transferring a field's values from one geometry to another.
-
-**Fields** are computed in context of the current geometry, capturing them allows you to get a field's value at a specific part of the nodetree and use it later down the line.
-
-These values persist even when converting the geometry, which is largely what makes them useful to have in node trees.
-
-In contrast, sampling may require you to manipulate indices yourself should the source and target geometry be different.
-
-### Remap Ranges, maintain 0
-
-If a range of values is -100/100 and we want to remap them to -20/50 while 0=0 on both maps we have to break the range into: -100/0 to -20/0 and 0/100 to 0/50 and write the driver like this:
-
-(Linear interpolation for negative side formula) * (x<0) + (Linear interpolation for positive side formula) * (x>=0)
-
-If you have multiple domains, just have to break it more (like color ramp thingy)
-
-### Compute a Noise as a Single Value instead of a Field
-
-- Add a Scene Time node
-
-- Use the Seconds output.
-
-- Add a Noise Texture node
-
-- Set it to 4D
-
-- Set W = Time
-
-#### And for Vectors?
-
-Here comes the trick: For the Vector, use (0, 0, 0) — just a dummy fixed point.
-
-This way, it outputs a single scalar value.
-
-Optionally: Use Map Range to convert from [0,1] to [-1,1]
-
-Plug this into a single value input (like a Bend) — now it’s not a field, just a float.
-
-### Noise Texture lacks seed. Hack
-
-Unlike the Random Value node, the **Noise Texture** node doesn’t have a direct Seed input.
-
-But! You can absolutely generate different results by varying the inputs that influence the noise:
-
-- Option 1: Use different Vector Inputs (or offset by a constant)
-
-- Option 2: Use W in 4D Noise as a Seed
-
-### Special technique by Erindale
-
-[Supercharge Your Geometry Nodes Workflow - Blender Tutorial - YouTube](https://www.youtube.com/watch?v=xBM4BPpfbUg) - *Downloaded*
-
-I'm going to show you my special technique that opens the door to infinitely more complex, more integrated procedural workflows in Blender. Super easy to do. Super effective.
-
-### Tip to hide node groups from lists and menus
-
-Like all data-blocks, node groups with names that start with “.” are normally hidden from lists and menus and can only be accessed through search. This can be useful for node asset authors to hide their internal sub-groups from the final user.
-
-### Understanding Append, Link and Pack in blender asset libraries
-
-When adding a custom Node Group from an Asset Library, Blender offers three different import methods: **Append**, **Link** and **Pack**. Although they may appear similar at first, they behave very differently internally.
-
-#### Append
-
-**Append** is the simplest case. Blender creates a complete copy of the Node Group inside the current .blend file.
-
-From that point on:
-
-- the Node Group becomes a l**ocal datablock;**
-
-- it has no remaining relationship with the original Asset Library;
-
-- it is fully editable;
-
-- it appears under:
-
-```
-Current File
-    Node Groups
-```
-
-If the original Asset Library is later deleted or moved, nothing happens. The scene still contains its own independent copy of the Node Group.
-
-#### Link
-
-With **Link**, Blender does **not** copy the Node Group into the scene. Instead, the .blend file simply stores a reference similar to:
-
-```
-This Node Group is located in:
-/Users/.../etr_nodes.blend
-Node Groups
-    Thickness - Stepped
-```
-
-Whenever the scene is opened, Blender loads that Node Group directly from the external library.
-
-If the library file is missing, renamed or moved, the link breaks because the data never existed inside the scene itself.
-
-#### Pack
-
-This is the most confusing—and most interesting—case. **Pack is not a third type of import.**
-
-Internally, the Node Group **remains a linked library datablock.**
-
-The difference is that Blender embeds a copy of the external library inside the current .blend file.
-
-Conceptually, the file now looks something like this:
-
-```
-MyScene.blend
-
-    Scene
-    Objects
-    Materials
-
-    Embedded Library
-        etr_nodes.blend
-
-            Thickness - Stepped
-            Noise
-            Curve Width
-            ...
-```
-
-The library still exists as a library… but it now lives **inside the .blend file itself.**
-
-Because of this, Blender no longer needs to access the original file on disk.
-
-#### Why does the outliner still show the original library path?
-
-This is the part that usually causes confusion.
-
-Even after packing, the Node Group is **still a Library datablock**, not a local one.
-
-Blender preserves the original library information as metadata, including its original path, for example:
-
-```
-Library:
-
-/Library/Application Support/Blender/5.2/nodes/Eterea/etr_nodes.blend
-```
-
-This information is retained only to identify the asset's origin. It is not necessarily used to load the data anymore.
-
-In other words, the displayed path becomes historical information rather than an active dependency.
-
-#### Why does the scene still work after deleting the asset library?
-
-Suppose you perform the following test:
-
-1. Add the Node Group using Pack.
-
-2. Save the scene.
-
-3. Close Blender.
-
-4. Delete the original Asset Library.
-
-5. Reopen the scene.
-
-Everything still works. This proves that Blender is **not** reading the Node Group from the deleted library.
-
-Instead, it loads the embedded copy stored inside the .blend file.
-
-The original path shown in the Outliner is simply the asset's recorded origin.
-
-#### Why doesn't the node group appear under "current file → node groups"?
-
-Because it is **not** a local datablock. Its internal type is still a **Library datablock,** even though the library itself has been embedded into the .blend.
-
-Conceptually:
-
-```
-Append
-Node Group
-    Local datablock
-
-Pack
-Node Group
-    Library datablock
-        ↓
-Library stored inside the .blend file
-```
-
-This distinction explains why the Outliner continues to display the Node Group under the embedded library instead of under **Current File → Node Groups**.
-
-#### A useful analogy
-
-Imagine you have a book.
-
-**Append**
-
-You photocopy one chapter and glue it into your notebook.
-
-The chapter is now completely independent.
-
-You can edit it freely, and the original book is no longer needed.
-
-**Link**
-
-You simply write a note in your notebook that says:
-
->"Read Chapter 8 from the book on the shelf."
-
-If someone removes the book, your note still exists—but the chapter is no longer accessible.
-
-**Pack**
-
-You place the entire book inside a compartment attached to your notebook.
-
-The book's cover still says:
-
->"Central Library"
-
-even if that library no longer exists.
-
-Whenever you open your notebook, the book is already inside it.
-
-That is essentially what Blender does with a packed library.
-
-#### An elegant detail
-
-One particularly elegant aspect of **Pack** is that Blender preserves the identity of the original library.
-
-Because it still knows where the asset originally came from, Blender can later **Unpack** the library and restore it as an external dependency if desired.
-
-If packing had converted the Node Group into a local datablock (as **Append** does), that library identity would be lost, making such an operation impossible.
-
-In other words:
-
-**Append** converts the asset into local data.
-
-**Link** keeps the asset external.
-
-**Pack** keeps the asset as a linked library while embedding that library inside the .blend file.
-
-This subtle distinction explains why packed assets behave like linked data in the Outliner while remaining completely self-contained and functional, even if the original Asset Library has been deleted.
-
-### Node tools
-
-[Node-Based Tools - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/tools.html)
-
-[Node Tools in Blender 4.0 — Blender Developers Blog](https://code.blender.org/2023/10/node-tools/) - Introduction
-
-[How to use Node Tools in Blender 4.0](https://www.youtube.com/watch?v=rU_j1Jw3ev4) - Developer Hans Goudey walks us through the Node Tools system
-
-[Introduction to Node Tools in Blender 4.0](https://www.youtube.com/watch?v=Y8Udi1AkdGY) - Short (10m) and concise. With an example.
-
-### Steps to create a node tool
-
-Switch to TOOLS (be sure to check N panel > Group > Properties > Enabled TOOL (not Modifier)
-
-Once we created a new Node Tool a new icon appears just right after UV menu (a “document” icon) menu with our Tool, to be applied.
-
-Be sure to generate data that is same type than existing geo (ie: curves, or meshes…)
-
-Use Group Inputs to expose parameters that will be accessed through bottom tool options panel.
-
-### NODES - QUICK TIPS
-
-#### Multi-line text on Frames:
-
-When you need to display more comprehensive text, frame nodes can display the contents of a **text data-block**. This is read-only, so you will need to use the Text Editor (Shift-F11) to modify the contents.
-
-#### Way to retype “-inf” and “inf”
-
-Way to **retype “-inf” and “inf”** once we have clicked on these fields: write **-4e44** and **4e44**
-
-#### Interesting tip on For-Each feature, by Ilir Beqiri:
-
-[Using the newly added For Each Element node I'm instancing a unique text block on each vertex. Drag the points around in edit mode to position the text](https://x.com/ilirbeqiri/status/1846887190736863381)
-
-### NODES - LINKS
-
-[All about SOCKETS - ALL THE NODES | Blender Geometry Nodes - YouTube](https://www.youtube.com/watch?v=HLMRM8_80cQ)
-
-[Attributes - Blender Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html) - All about Attributes, including the names for the default ones
-
-[ALL 300+ Geometry Nodes in Blender](https://www.youtube.com/watch?v=Y0zAZnbBcQU) (4.3) - Outdated, but can be useful for a lot of nodes, as a QUICK and FAST review.
-
-[All models can be 1 face - YouTube](https://www.youtube.com/watch?v=Cxr0neZ3Psg)
-
-[Alternative to Instancing in Blender](https://www.youtube.com/watch?v=75NVQzmbZ9w) - By Redjam9 - Use the For Each Element Zone in geometry nodes **to get a unique object for each copy**
-
-[Animating a Wave Front with Simulation Zone](https://www.youtube.com/watch?v=0sVu0qpeUyg) - How to use the Simulation Zone in order to animate a wave front in Blender 4.4 and up
-
-[Attributes - Blender 4.3 Manual](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/attributes_reference.html) - Important to understand **Attribute Domains** and **Boolean Domain Interpolation**
-
-[Camera Control with Geometry Nodes](https://www.youtube.com/watch?v=JX3iCOMMzfM) - how to use the new Geometry Attribute constraint in Blender 5.0 to control the camera
-
-[Can't find the node! Which node is available in which Blender version? - Blender Stack Exchange](https://blender.stackexchange.com/questions/273541/cant-find-the-node-which-node-is-available-in-which-blender-version/273542#273542)
-
-[Cloth simulation with Geometry Nodes](https://www.youtube.com/watch?v=81vfj1Ui-bc) - Tutorial and link to scene ($10), by Seanterelle
-
-[Control ANYTHING with Geometry Nodes](https://www.youtube.com/watch?v=h4BTgkdHd30) - By Erindale
-
-[Control and animate growing structures (like opening flowers) using Geometry Nodes by Cartesian Caramel](https://x.com/genesis_2303/status/1838629568011198574?s=12)
-
-[Cosmology with Geometry Nodes](https://www.blender.org/user-stories/cosmology-with-geometry-nodes/) - And also: [How-to use Blender's geometry nodes for visualizing CMB | MH Jamshidi](https://jamshidi3d.github.io/posts/cmb_in_geometry_nodes/)
-
-[Create Wires With Blender Geometry Nodes](https://www.youtube.com/watch?v=Uf_v3RE4F_Y) - 3 methods, each with its own advantages and disadvantages: Proximity / Transfer position / Raycast
-
-[Creating Procedural Hexagons with Blender's Shader Nodes](https://www.youtube.com/watch?v=PZqXoKPvZ2s) - Why the nodes are set up the way they are - Linear algebra and trigonometry
-
-[Cumulative Trim Curve](https://x.com/quackarooners/status/1889651336595030283) by Quackers - Instead of trimming curves simultaneously, it trims them one after another. Useful for "drawing" text or svgs.
-
-[Curve to Mesh in Reverse](https://www.youtube.com/watch?v=RFsugiNrDXg) - Create central curves from elongated meshes
-
-[Curve to Mesh with UVs in Blender](https://blender.stackexchange.com/questions/258246/curve-to-mesh-with-uvs-in-blender-3-x/323324#323324) - Interesting topic with lots of tips and info
-
-[Delaunay Triangulation using GN](https://www.youtube.com/watch?v=HyW54cI8Qdo) - Tutorial and link to scene, by Seanterelle
-
-[Distance to edge circle packing ](https://x.com/higgsasxyz/status/1841861413213470896)circle packing. Show setup of nodes. I think it is already implemented in the latest versions.
-
-[Easy Edge Mask in Eevee](https://www.youtube.com/watch?v=U6uker9RDwg) - Give your Eevee renders that extra pop with a non-destructive edge mask
-
-[Edge Loops / Face Loops in Geometry Nodes](https://discord.com/channels/314131871376080906/1233474640723185684) - (Discord link) - An interesting threat started by Shmuel The Noder in erindale.xyz Discord
-
-[Even (or constant) radius tip on curves in Geometry nodes - Blender tutorial ENG](https://www.youtube.com/watch?v=3OSPdpVZ76E) - There is a custom node by Higgsas for this, but a tutorial with the maths behind is also welcome
-
-[Fix UVmap on profile curve in Geometry nodes](https://www.youtube.com/watch?v=t1WDulM7wBU) - **Not** the typical trim along sweep method
-
-[Fixing / moving indexes around curve to fix loft / bridge between curves using geometry nodes - Blender Stack Exchange](https://blender.stackexchange.com/questions/326795/fixing-moving-indexes-around-curve-to-fix-loft-bridge-between-curves-using-g/326844#326844)
-
-[Flip indices in curves](https://www.youtube.com/watch?v=TTgtrqO1llw&t=692s) - Goes to 11:32 in this video tutorial by Erindale - NOTE: is not about “reversing” indices, but FLIPPING them (X/Y) for a loft curves operation
-
-[Fluid Simulation via Vertex Animation Textures](https://www.youtube.com/watch?v=xoLxKinzBwI) - two experimental techniques for encoding fluid simulation into Vertex Animation Textures using OpenVAT
-
-[Geometry Nodes Overview Documentation](https://geometry-nodes-overview.docs.quellenform.at/en/latest/) - A complete list of all Geometry Nodes that have been added to Blender over time. This is maintained by **Stephan Kellermayr**. *A great resource!*
-
-[Geonodes: which is faster, Set Position or Transform node?](https://blender.stackexchange.com/questions/297620/geonodes-which-is-faster-set-position-or-transform-node)
-
-[Get edge seams from UV islands in Geometry Nodes](https://blender.stackexchange.com/questions/302193/get-edge-seams-from-uv-islands-in-geometry-nodes) (method recommended by Kimmo)
-
-[Handy use of dot product](https://x.com/spaghetmen0t/status/1944787208709280198?s=12)
-
-[Hexagonal Sci Fi Shield with Hit Effects | Blender Geometry Nodes Tutorial](https://www.youtube.com/watch?v=1znotkH7y78) - Recommended for [this work](https://x.com/ryanlykos/status/1992744835858755864?s=12) by Ryan Lykos
-
-[How make the noodles see-through the nodes](https://x.com/cmzw_/status/1865775793994928432?s=12)
-
-[How to Actually Use Align Euler to Vector in Blender's Geometry Nodes](https://www.youtube.com/watch?v=IQdT5kACMQc) - 'Align Euler to Vector' node is one that we end up needing a lot, but it's not very intuitive.
-
-[How to create proper UV Maps with Geometry Nodes in Blender](https://www.youtube.com/watch?v=Ubeot7lIvTM)
-
-[How to Easily Import Node Groups in Blender](https://www.youtube.com/watch?v=URoA-cI8vLs)
-
-[How to fill mesh polys in Geometry Nodes](https://blender.stackexchange.com/questions/327708/fill-mesh-polys-in-geometry-nodes) - Answer with screen-captured nodes also includes the .blend file
-
-[How to read geonodes](https://blender.stackexchange.com/questions/251292/combine-two-position-nodes-from-different-mesh-primitives-inside-a-geometry-node/251310#251310) - Interesting explanation by Etherlorde (Markus von Broady)
-
-[How to subdivide triangles into four triangles with Geometry Nodes? - Blender Stack Exchange](https://blender.stackexchange.com/questions/291926/how-to-subdivide-triangles-into-four-triangles-with-geometry-nodes/291928#291928)
-
-[How to Use Texture Paint as Selection in Blender Geometry Nodes](https://www.youtube.com/watch?v=Plb3knwqts8)
-
-[Implementing shape keys in Geometry Nodes](https://www.youtube.com/watch?v=0awxRsDK2uc) - Shape Keys = Morph States
-
-[Inflated Text](https://www.youtube.com/watch?v=z11px5n6hc0) - Tutorial and link to scene ($10), by Seanterelle
-
-[Loft Curves Properly - Geometry Nodes in Blender 3.6](https://www.youtube.com/watch?v=TTgtrqO1llw&t=692s) - By Erindale - Link goes directly to **Flipping Indices** (if running right to left, to reorder them to run bottom to top... 0,1,2,3, then 4,5,6,7 etc)
-
-[Looping 3D Noise Textures - Geometry Nodes](https://www.youtube.com/watch?v=6r8Dsqwp_u0) - An easy and simple method to loop the animation of 3D Noise Textures by Ilir Beqiri
-
-[Make a Simple Sticky Objects Simulation](https://www.youtube.com/watch?v=VdM2slY__s8) - To download go to [Make a Simple Sticky Objects Simulation NodeGroups](https://alexandrealbisser.gumroad.com/l/StickySimulation)
-
-[Making Trail effect is easier now in Blender](https://www.youtube.com/watch?v=Ir1qGy5ycdA)
-
-[Making UV Maps in Geometry Nodes](https://www.youtube.com/watch?v=549UXbGAw-k)
-
-[MFGD - Intro to Matrices](https://www.youtube.com/playlist?list=PLW3Zl3wyJwWNQjMz941uyOIq3Nw6bcDYC) - Math for Game Developers
-
-[Matrix Nodes in Blender 4.2](https://www.youtube.com/watch?v=9qOKu5BW9NE) - The basics behind matrices and how they are used to make transformations in Blender
-
-[Modifying and Saving Asset in Library file turn Packets assets to Linked Assets in files that use those Assets](https://projects.blender.org/blender/blender/issues/157303) - **Caution with this BUG REPORT BY KIMMO on Blender 5.x**
-
-[More on the same topic, unbending leaves, using nodes by Higgas and Bradley (see screencaptures)](https://x.com/genesis_2303/status/1838859160324022737?s=12)
-
-[Introducing multi-line text into Geometry Nodes](https://x.com/ilirbeqiri/status/1986404932183118209?s=66) - Tip by Ilir Beqiri, and also an alternative by Kimmo.
-
-[Neuron or coral fractal structures using the shortest edge path node](https://www.youtube.com/watch?v=nXCSMO4iioA) - learn to create procedural growing fractal tree-like shapes - Custom node available [here](https://straycreations.gumroad.com/l/neuronfractal) ($2)
-
-[New FOR EACH in Blender 4.3 Explanied](https://www.youtube.com/watch?v=zQTTJv0zF8w)
-
-[New Socket Shapes — Blender Developers Blog](https://code.blender.org/2025/08/new-socket-shapes/)
-
-[Node Parts - Blender Manual](https://docs.blender.org/manual/en/latest/interface/controls/nodes/parts.html) - Sockets Colors - Valid Conversions
-
-[Obj node caching](https://x.com/quackarooners/status/1919822118625108117?s=12) - (**for 4.5**) - Great tips for OBJ animation sequences - Read response by Quackers: “You can even squeeze out a lot more performance out of this by not importing an OBJ for every point. Instead, you can use as many points as the sequence length, load all OBJs, and use Instance on Points. Pretty much an 80x speedup for 39k”
-
-[How to Fracture Anything with Blender 3.0 and Geometrynodes!](https://www.youtube.com/watch?v=keKDABQfxQU) - Great tutorial by Cartesian Caramel
-
-[How to make an Organic Vein / Neurons system](https://blender.stackexchange.com/questions/321735/geometry-nodes-how-can-i-make-an-organic-vein-system/) - Write tutorial by Etherlorde, with .BLEND file.
-
-[Particle Flow Animation Loop](https://www.youtube.com/watch?v=eBNolzjnHtE) - Set up the particles, animate the particles in looping animation using a noise pattern, use textures to color the particles
-
-[Particle flow on Curve](https://www.youtube.com/watch?v=8RYW4s2i0E8) - Procedural modifier that will allow you to have any object/particle flow along a curve in a simple geo nodes setup
-
-[Photoreal Ocean Simulation in Blender](https://www.youtube.com/watch?v=ok1ViHVcXYs) - Tips and tricks to create photoreal ocean simulations using Flip Fluids addon. Enhance simulation with GN, create realistic ocean and foam shaders, and choose the right lighting
-
-[Pixels dissolve effect with Geometry Nodes in Blender - Tutorial](https://www.youtube.com/watch?v=14Vr-Waaazk) - Recommended for [this work](https://x.com/ryanlykos/status/1992744835858755864?s=12) by Ryan Lykos
-
-[Plexus Effect Done Right](https://www.youtube.com/watch?v=JJ3WzvRICSE) (using Fields) - Great tutorial by the master Ilir Beqiri - File downloaded and to be converter to Node Group ASAP
-
-[Procedural Adaptive Subdivision with curves in Geometry nodes](https://www.youtube.com/watch?v=rP6mujoskmw) - Free Tutorial - But also nodes available in Gumroad (*$2*)
-
-[Procedural scales with flow control](https://www.youtube.com/watch?v=_MDgKb-l7nk) - How to procedurally create **scales** on an object with geometry nodes and use a **hair system** to help controlling their orientation
-
-[Procedural shrinkwrap modifier for curves](https://www.youtube.com/watch?v=xAlagQT5k04) - Also: Discussion on Discord Erindale.XYZ on [how I can control the tilt of the curve based on the normal of the mesh](https://discord.com/channels/314131871376080906/734779545454116918/1349725514499100682)
-
-[Procedural Straight Skeleton in Geometry nodes](https://www.youtube.com/watch?v=Q3wvJJKLxaw) - Useful for roof generator or similar needs - [Nodes in Gumroad](https://andreaciani85.gumroad.com/l/qjqhqr) *$2*
-
-[Progress on a new Bevel Geometry Node](https://www.youtube.com/watch?v=16dpUQ57Xv8) - Work has begun on a remake of Bevel as a Geometry Node. As well as rewriting in C++ for better future maintainability…
-
-[Recursive Subdivision Tutorial](https://www.youtube.com/watch?v=PgZrIToTdJE) - By Bradley - Custom Nodes available free at description
-
-[Rig with Geometry Nodes? Using a node tree to drive an armature in Blender](https://www.youtube.com/watch?v=enzcwSTX5YU)
-
-[Road generator with GN and SDS solving T intersections](https://www.youtube.com/watch?v=6Dbb-pOz3us&t=548s) - To study and check if this can be useful for non-ribbon modeling (something like tree branches)
-
-[Rock Waterfall in Blender – No Rigid Bodies, Just Geo Nodes](https://www.youtube.com/watch?v=OfHgxVN-2iA) - all done with curves, randomness, ping pong math, and instancing.
-
-[Self-Wrapping Ribbons with Geometry Nodes | Blender 3.1 Tutorial - YouTube](https://www.youtube.com/watch?v=8KbNJMS9vR4)
-
-[Selectively join points using geometry nodes](https://blender.stackexchange.com/questions/253173/selectively-join-points-using-geometry-nodes/293797#293797) - Find the nearest point (BTW, there's a special node coming to find nearest element not counting self), but also multiple nearest points
-
-[Set Material Index Tutorial](https://www.youtube.com/watch?v=rkE_di1GagY) - A curious (and different) way to apply Materials in Geometry Nodes using **Set Material Index**
-
-[Simple setup to grow Face selection by Khellstr](https://x.com/khellstr3d/status/1888878408983081432) - See response by Quackers explaining WHY this occurs.
-
-[Snow Crystal Growth Simulation](https://x.com/higgsasxyz/status/1865421595482689621?s=12) - Video + Screen captures for setup
-
-[Sorting Vertices Tips and Tricks](https://www.youtube.com/watch?v=v-X02qFTF0Y) - How to sort elements to control how the geometry is processed, how to reorder with your own logic, and how to specify multiple sort criteria
-
-[Supercharge Your Geometry Nodes Workflow](https://www.youtube.com/watch?v=xBM4BPpfbUg) - Great technique by Erindale to control inputs/values in different objects/GN with a common “external” setting.
-
-[Texture Coordinates in Geometry Nodes](https://blenderartists.org/t/texture-coordinates-in-geometry-nodes/1519653) - Interesting discussion on this topic in BlenderArtists.org
-
-[The "Evil" Domain Node | Curious Blends](https://curiousblends.blogspot.com/2023/11/the-evil-domain-node.html) - **Evaluate on Domain** - Some other interesting topics on Geometry Nodes here…
-
-- [The "Evil" Domain Node (continued) | Curious Blends](https://curiousblends.blogspot.com/2023/11/the-evil-domain-node-continued.html)
-
-[The perfect IK rig in Blender?](https://www.youtube.com/watch?v=JBIdruWylDQ)
-
-[The Secret CGI of Leaves](https://www.youtube.com/watch?v=lU0jplEoFoU)
-
-[Transfer an image texture from Geometry Nodes into Materials](https://blender.stackexchange.com/questions/260251/how-do-i-transfer-an-image-texture-from-geometry-nodes-into-materials)
-
-[Transferring normals from one mesh to another allows smooth transitions between objects, very useful for environment creation](https://x.com/thomas__marcos/status/1916148689061429339?s=12) - Small video and screen-capture with nodes
-
-[Trick for stable points on deformed meshes](https://x.com/mattercg/status/2069129029085519907?s=66)
-
-[Using empties as controllers is a powerful feature in blender 5.2](https://x.com/fares51364668/status/2080264108650238040?s=66) - See second tweet for a screen capture with nodes
-
-[Using Repeat Zone to "automatically" select 4 curves for patches (patch group is from the Higgas Nodes)](https://x.com/khellstr3d/status/1864443182903124366?s=12) - By Kimmo
-
-[Volume Cube](https://www.youtube.com/watch?v=jhegSFPA03I) - Interesting tips using Smooth Minimum combined with Volume Cube to create blend transitions between objects
-
-[Voronoi Fracture with Dual Mesh Node](https://www.youtube.com/watch?v=a6oMMzRBIfo) - Interesting tutorial by Bradley
-
-[Workflow for interesting generative graphics in a processing or cavalry style](https://x.com/redjam_9/status/1860665259125887212?s=12) - Doing 2d mograph using the new 4.3 Grease Pencil and Geometry Nodes - Node graph in reply
+[Fill any Object with Fluid in Blender [Mantaflow] | English - YouTube](https://www.youtube.com/watch?v=3ud6Hozy0vw)
 
 ## SHADING & LIGHTING
 
@@ -2782,6 +2611,32 @@ Way to **retype “-inf” and “inf”** once we have clicked on these fields:
 [Principled BSDF - Blender Manual](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html)
 
 ---
+
+### QUICK TIPS
+
+#### Reload all textures
+
+“Force” and reload all textures Press Alt+R with the mouse cursor over the Shader Editor and Blender will re-load all the textures.
+
+#### Which objects use certain material?
+
+**To find out on which objects in our scene a certain Material is applied**: go to the “Material” tab, click on the small arrow to the right of the list (even if it is blank) and choose “Select by Material”.
+
+#### To make a material fully transparent depending on surface normals:
+
+Material Properties > Settings > Surface > Enable Camera Backface Culling
+
+#### Use “Non-Color” for Normal maps
+
+**IMPORTANT:** for **Normal Maps** change the Color Space from sRGB (or whatever) to **Non-Color**
+
+ALSO: After setting the Color Space to Non-Color, don’t forget to plug the normal map through a **Normal Map** node (not directly into a shader's Normal input). That node interprets the RGB data as a vector. CAUTION: **Normal Map** node (not a simple “Normal” node)
+
+#### Fix Normal Maps ready for DirectX
+
+If we perceive some strange artifact in Normal Maps, it can be because it’s DirectX-Ready. To fix normal maps ready for DirectX to be used with OpenGL, just **invert the Green channel**.
+
+Use a Separate Color > Invert Green > Combine Color Again
 
 ### How to override all materials
 
@@ -3186,9 +3041,7 @@ To apply different maps (or even materials) to FRONT and BACK side of a surface,
 
 Create both materials inside a single material with 2 shaders (Principled BSDF or other), then use Mix Shader an add a Geometry Node (inside Shader Editor), connecting the “Backfacing” socket to the Fac one in the Mix Shader. There is an **“Apply different maps to front and back of a plane”** sample saved in my files.
 
----
-
-### CAUTION with Bump node in Blender 4.4 and up!!!
+### Caution with Bump node in Blender 4.4 and up!!!
 
 The new “Filter Width” could ruin your renders if you use the default 0.1 value.
 
@@ -3604,202 +3457,6 @@ This was applied on my scene with the Grapes for [Brocard animation](https://ete
 
 - Physically accurate and free of artifacts.
 
-### SHADING & LIGHTING - QUICK TIPS
-
-#### Reload all textures
-
-“Force” and reload all textures Press Alt+R with the mouse cursor over the Shader Editor and Blender will re-load all the textures.
-
-#### Which objects use certain material?
-
-**To find out on which objects in our scene a certain Material is applied**: go to the “Material” tab, click on the small arrow to the right of the list (even if it is blank) and choose “Select by Material”.
-
-#### To make a material fully transparent depending on surface normals:
-
-Material Properties > Settings > Surface > Enable Camera Backface Culling
-
-#### Use “Non-Color” for Normal maps
-
-**IMPORTANT:** for **Normal Maps** change the Color Space from sRGB (or whatever) to **Non-Color**
-
-ALSO: After setting the Color Space to Non-Color, don’t forget to plug the normal map through a **Normal Map** node (not directly into a shader's Normal input). That node interprets the RGB data as a vector. CAUTION: **Normal Map** node (not a simple “Normal” node)
-
-#### Fix Normal Maps ready for DirectX
-
-If we perceive some strange artifact in Normal Maps, it can be because it’s DirectX-Ready. To fix normal maps ready for DirectX to be used with OpenGL, just **invert the Green channel**.
-
-Use a Separate Color > Invert Green > Combine Color Again
-
-### SHADING & LIGHTING - LINKS
-
-[32 procedural textures that use the Wave node in Blender](https://www.youtube.com/watch?v=_Ewq6e-HSWE) by Sam Bowman - I usually do all this kind of stuff with Substance Designer - Interesting to have a Blender perspective
-
-[8+ Blender Lighting Tips to Improve Your Renders](https://www.youtube.com/watch?v=Sfi5IiV-s6U)
-
-[A way to use logic operators in Blender Shader nodes?](https://blender.stackexchange.com/questions/161370/is-there-a-way-to-use-logic-operators-in-blender-shader-nodes)
-
-[And did you use cycles experimental adaptive subdiv for better displacement here?](https://x.com/HogneeDZN/status/1810822352172630304) >>> YES
-
-[Animated “paint on” effect](https://x.com/cgboost/status/1925827307291197459?s=12) - Small 1min tutorial
-
-[Anisotropy in Blender 4.3 - YouTube](https://www.youtube.com/watch?v=7HeDHWsotkk) by Christopher 3D
-
-[Array Lights in Blender - Simple Trick](https://www.youtube.com/shorts/ZObhhlkRcOU)
-
-[Better Fur, Hair, and Anime shaders](https://www.youtube.com/watch?v=DptPx8sY7Bg)
-
-[Bevel Shader TIP onCycles](https://x.com/pitiwazou/status/1912802347505377501)
-
-[Bevel Shader - Another way is to use Geometry Nodes. It's much simpler and works with one shader per object](https://x.com/pitiwazou/status/1912802347505377501)
-
-[Blender: How to Rotate HDRI / Environment Texture](https://www.youtube.com/watch?v=LB1_Ls1qkEg)
-
-[Bumps are determined by distance, not by strength](https://x.com/ilyassel_/status/1836924290119389213?s=12)
-
-[Cleaning the table leaves wipe streaks](https://x.com/ilyassel_/status/1837224975708631348?s=12)
-
-[Color Management - Blender Developer Documentation](https://developer.blender.org/docs/release_notes/4.0/color_management/) - The AgX view transform has been added, and replaces Filmic as the default in new files. This view transform provides better color handling in over-exposed areas compared to Filmic.
-
-[Control a Color Ramp Gradient Outside of a Node Group](https://www.youtube.com/watch?v=WaDkMP5ruh4) - Another similar tutorial: [FULLY Control a color ramp outside a node group in Blender - YouTube](https://www.youtube.com/watch?v=IoBOtar9REQ)
-
-[Control the Material of Instances in Blender Geometry Nodes](https://www.youtube.com/watch?v=v52W39yvkjs) - Tutorial by Kimmo
-
-[Displacement Maps in Blender](https://3dmodels.org/blog/displacement-maps-in-blender-tutorial/)
-
-[Displacement in real time (for Blender 4.5)](https://x.com/ilyassel_/status/1904689949598773376) - Test by Ilyasse - See node tree on same thread
-
-[Doing Surface Imperfections Right | Vray, Cycles, Arnold…](https://www.youtube.com/watch?v=OW4L0vdo_e4)
-
-[Eevee Fake Translucency Trick](https://www.creativeshrimp.com/eevee-fake-translucency-trick.html)
-
-[EEVEE refraction trick](https://x.com/thecgcy/status/1965766479070351544?s=12) - By The CGCY combining shader and compositing nodes, including Cryptomatte (screen-capture saved in my Setups_Tips_Tricks folder)
-
-[Fix for some ugly normal map issues in Blender](https://x.com/gleb_alexandrov/status/1954874961350345156?s=12)
-
-[Forgotten Metal Knowledge](https://www.youtube.com/watch?v=r3bkGPobpTw) - Tutorial on how to create better and more complex and realistic metals
-
-[Get realistic lights with IES textures](https://x.com/ilyassel_/status/1841121588516630779?s=12) - [IES-Library: Browse](https://ieslibrary.com/browse) - [IES Downloads](https://www.acuitybrands.com/resources/technical-resources/ies-downloads)
-
-[Glittering or “brilli-brilli” effect](https://x.com/ilyassel_/status/1838645096465437126?s=12)
-
-[Hacked procedure to get blur using Shading Nodes](https://x.com/cmzw_/status/1855479571468222495) (see second post doing it horizontally first then vertical) - **Needed Blender 4.4**
-
-[Had never thought of using this technique for RGB](https://x.com/ilyassel_/status/1840179992581263454?s=12)
-
-[How to Bake Perfect Normals in Blender](https://www.youtube.com/watch?v=0r-cGjVKvGw) - Blender tutorial showing you how to bake a normal map from a high poly model, to a low poly mode (includes starter file)
-
-[How to Blur a Texture in Blender](https://www.artstation.com/blogs/bjayers/zBNW/how-to-blur-a-texture-in-blender) (fake & noisy blur, really) - [Another technique, also fake and blur](https://www.youtube.com/watch?v=Ci2FDxsUjyQ)
-
-[How To Combine Normal Maps Correctly (Adding Texture Detail, Blender Tutorial)](https://www.youtube.com/watch?v=S9sz00l3FqQ)
-
-[How to create and access custom Node Groups in all your Blender Projects](https://www.youtube.com/watch?v=HzFUeOfCJzo)
-
-[How to easily make a Wireframe in Blender in 1 Minute](https://www.youtube.com/watch?v=38ZC9BnN24U)
-
-[How to make beautiful water shaders in blender](https://www.youtube.com/watch?v=v8LdfvwDKVY)
-
-[How to Use Light Groups in Blender](https://www.youtube.com/watch?v=Op73b27ng5g)
-
-[Is there an alternative to Random per Island for EEVEE?](https://blender.stackexchange.com/questions/258449/is-there-an-alternative-to-random-per-island-for-eevee)
-
-[It's easier when math does the work (great glow or bloom effect)](https://x.com/ilyassel_/status/1840062360683499730?s=12)
-
-[Keep the texture scale consistent when scaling stuff in Object Mode](https://x.com/quackarooners/status/1838162856019104106)
-
-[Keyframe DESIGNER exposed parameters using the Substance add-on in your DCC of choice](https://www.instagram.com/p/DEVEBzxu6EG/) - Here Wes McDermott uses Cinema4D add-on, but this should be also possible with Blender add-on -> TO TEST
-
-[Make CG Smudges better using this simple trick](https://x.com/sai_charan_md/status/2065421169927618938?s=66) - With direcional light smearing (anisotropy)
-
-[Metallic BSDF node is underrated. Here is how you can use it!](https://x.com/sai_charan_md/status/2071982972216225864?s=66)
-
-[Mixing Materials](https://x.com/ilyassel_/status/1810814622787637666?s=12) (terrains) - View entire thread
-
-[My New FAVORITE Shading Technique](https://www.youtube.com/watch?v=8MTj9BrYGE4) - techniques for subsurface scattering and transmission using geometry proximity
-
-[Nebula Setup with Stars Made in Blender Using Raymarching](https://80.lv/articles/dreamy-nebula-setup-created-in-blender-using-raymarching)
-
-[Normal maps - DirectX vs OpenGL: what's the difference?](https://x.com/cgcookie/status/1923022306143567948?s=61)
-
-[Realistic Gaussian beams in Blender - Part 1 (Creating the shader) - This video will show how to build a volumetric shader that plots the intensity distribution equation for Gaussian beams. ](https://www.youtube.com/watch?v=JVWi-ji-C1Q)
-
-[Realistic Gaussian beams in Blender - Part 2 (Asset overview)](https://www.youtube.com/watch?v=15NtAyWRybE) - How to get started using the procedural Gaussian beam shader, which you can download from my Gumroad for free.
-
-[Save a node group for later use ](https://blender.stackexchange.com/questions/270632/how-can-i-save-a-node-group-for-later-use-without-going-through-a-blend-file) (various methods, for all Geometry Nodes, Shading Editor, Compositor)
-
-[Separate the background image and the actual lighting from an HDRi environment in Blender - It works in both EEVEE and Cycles, just use the Light Path - is Camera Ray output as a mix factor between 2 hdri's. #b3d https://t.co/OXW2usvvVT" / X](https://x.com/gleb_alexandrov/status/2035646803169673443?s=12)
-
-[Shader based welding](https://x.com/jessemiettinen/status/1839391552424247355?s=12) (screenshots to recreate it)
-
-[Shader based welding](https://blenderesse.gumroad.com/l/weld) (to buy, $1)
-
-[Shader Control with Geometry Nodes](https://www.youtube.com/watch?v=TpDV1DbY434)
-
-[Shampoo Bottle Part 3, UV mapping, texturing, lighting, & rendering - YouTube](https://www.youtube.com/watch?v=LFFvBn2NaG0) (DOWNLOADED) In the final part he gives very good advice on lighting and shading (changing parameters).
-
-[Should You Micro-fillet? (Plasticity 3d)](https://www.youtube.com/watch?v=pB0dBXNcnXg) - Go to the part about how to use the Bevel Shade in Blender
-
-[Small tip, link textures. They are amazing in Blender](https://x.com/ilyassel_/status/1757940287614206030?s=12)
-
-[Smart materials in ucupaint | passivestar](https://passivestar.xyz/posts/procedural-materials-in-ucupaint/) - For UCUPAINT add-on (not installed… yet)
-
-[Surface Imperfections Right | Vray, Cycles, Arnold…](https://www.youtube.com/watch?v=OW4L0vdo_e4) - How to improve the "Roughness variation" workflow to add surface imperfection by taking inspiration from real phenomenons
-
-- [Original thread in X with some ideas about how to transfer this to Blender](https://x.com/PrismalDesign/status/1990710691402297388)
-
-[Switch Node for Blender Materials - Support / Materials and Textures](https://blenderartists.org/t/switch-node-for-blender-materials/1487587)
-
-[Texture Coordinates in Geometry Nodes](https://blenderartists.org/t/texture-coordinates-in-geometry-nodes/1519653) - Interesting discussion on this topic in BlenderArtists.org
-
-[Textures Don’t Work on Curves—How to Fix It](https://www.youtube.com/watch?v=b-scwnmZ79o&t=249s) - If you need to add procedural textures to curves in Blender and want said textures to conform to the form of the curve even while animated
-
-[The easiest way to render wireframe](https://www.youtube.com/watch?v=FdjJzOM9DkI)
-
-[The viewport can shine since 4.2](https://x.com/ilyassel_/status/1840456560637575178?s=12)
-
-[The RIGHT Way to do Edge Wear (in Cycles!)](https://www.youtube.com/watch?v=EQ149bMtKRA)
-
-[Those slightly clammy hands left their mark](https://x.com/ilyassel_/status/1840722031823741034?s=12) (trace left by fingers on a cell phone screen)
-
-[Tip for adding clouds and fog using black and white decals](https://x.com/ilyassel_/status/1835763374094754242?s=12)
-
-[Use object viewport display color to assign different colors to the same material shader applied to different objects](https://x.com/cgboost/status/1958076068809637917?s=12)
-
-[Using Ray Portal Plane](https://x.com/cmzw_/status/1989270791058583994?s=66) - By Celestialmaze
-
-[Using voronoi Texture to create a TV screen](https://x.com/ilyassel_/status/1838264878189924483?s=12)
-
----
-
-#### Various links on edge masks
-
-[How to Make an Edge Mask](https://www.youtube.com/watch?v=hEbvGHceid4) - Basic setup
-
-[How to use EDGE MASKS in Blender](https://www.youtube.com/watch?v=yZku65ONVOw) - A bit more advanced and pretty good
-
-[Blender Secrets - Eevee Edge Wear](https://www.youtube.com/watch?v=2stkQE0buqA) - Alternate method
-
-[Blender Let's Build Create an Outer Edge Mask Node](https://www.youtube.com/watch?v=Jqm0g02F85M) - Alternate method for inner and outer edges
-
-[Better Edge Masks in Blender - Procedural Texturing](https://www.youtube.com/watch?v=Aa8gf1pwb4E) - Learn how to use the bevel node, and dot product vector math node in Blender, for perfect edge masks.
-
-[Edge Masks - Blender Smart Materials](https://alaaeldien.gumroad.com/l/lzqZZF) - 12 Mask Group To be Used for masking Materials - *FREE* (or donate)
-
-[Edges are crucial for realism](https://x.com/ilyassel_/status/1839034573537292693?s=12)
-
-[Edging when doing texturing using Ucupaint addon](https://x.com/passivestar_/status/1837877883383025767?s=12) (metal effect on the edges of painted objects)
-
----
-
-#### Add decals and logos
-
-[Adding Decals And Logos To 3D Models (two ways)](https://www.youtube.com/watch?v=UBBx-kZcmzI)
-
-[How To Add Decals Without Shrinkwrap Modifier in Blender](https://www.youtube.com/watch?v=RTyxITv6Qr4)
-
-[How to add DECALS and LOGOS](https://www.youtube.com/watch?v=LQExGvs_rRQ) (DOWNLOADED)
-
-[The correct way to make decals in Blender (NO SHRINKWRAP) - YouTube](https://www.youtube.com/watch?v=rUP8aAG4AQ8) (DOWNLOADED)
-
 ## CAMERAS
 
 ### Local Cameras
@@ -3994,178 +3651,13 @@ Lowering F-Stop below physical limits is acceptable when:
 
 NOTE: I think that recent version can handle and solve this problem - *To investigate*
 
-### CAMERAS - LINKS
-
-[Achieving True Photorealism With Lens Simulation](https://www.youtube.com/watch?v=jT9LWq279OI)
-
-[Simulated Anamorphic Lens in Blender (preview)](https://www.youtube.com/watch?v=1nb78pP-2RE)
-
-[Lenses. How to use them properly in Blender](https://www.youtube.com/watch?v=_AXwPrkWuMo&t=12s)
-
-## ANIMATION
-
-### Switch Cameras along animation
-
-**To switch Cameras along animation use “Bind Cameras to Markers”**
-
-- Select the object to become the active camera and select a marker to bind the active camera to. Marker > Bind Camera to Marker
-
-**Or even better workflow:**
-
-- You don't even need to create marker nor setting active camera. Just select the camera in the outliner, hit **Cmd/Ctrl-B** (over the Timeline at a given frame) and marker with selected camera will be created automatically.
-
-	- **NOTE:** works only in *Dope Sheet Editor* or *Timeline*, not with Graph Editor - **Why?**
-
-### View in Graph Editor tip
-
-Map the new ''View in Graph Editor" to a hotkey to quickly find your curves
-
-[ Tweet with animated gif](https://twitter.com/RamenLook/status/1781036280681501052)
-
-1) open up prefs
-
-2) go to keymap -> user interface, hit "add new"
-
-3) search graph editor and select
-
-4) assign hotkey (i use F) and turn isolate on
-
-### How to add keyframes for multiple objects at once
-
-Several options:
-
-[Keyframe selected — Blender Extensions](https://extensions.blender.org/add-ons/keyframe-selected/) - Free, installed
-
-[Key Selected Objects - Blastframe](https://blastframe.com/product/key-selected-objects/) - Add-on *$10* (a bit expensive for such a basic, simple need…Maybe create my own add-on for this)
-
-[How to add keyframes for multiple objects at once - Blender Stack Exchange](https://blender.stackexchange.com/questions/1621/how-to-add-keyframes-for-multiple-objects-at-once)
-
-For things like Location, Rotation, Scale… press **K** to Insert Keyframe for selected objects.
-
-### Linked Animation datablocks:
-
-For creating the same animation on all objects, you can animate just the active object and then link the action to the rest of the selection:
-
-Object → Make Links… (Cmd/Ctrl+L) → Animation Data.
-
-### Clean Apply Modifiers for F-Curves
-
-How to get a clean Apply Modifiers for F-Curves in Graph Editor
-
-1. Select channel
-
-2. Channel > Bake Channel (choose Linear in bottom Option if necessary)
-
-3. Channel > Simplify F-Curves (usually you need to put your mousse over bottom Options “Distance Errors”, leaving it as zero)
-
-4. RMB > Interpolation Mode > Linear (if necessary)
-
-### Tip for animated cameras aka “local cameras”
-
-Doing a scene animation is very usual to have **Cam1**, **Cam2**, **Cam3**… being used and changing on timeline (using Cmd/Ctrl-B to create Camera-Markers)
-
-But sometimes we need to see or animated items through a different camera (say “**CamTest**” or “**CamHead**”) not through the final to-render cameras
-
-On these cases is very useful to use the **N-Panel > View > View > Local Camera** feature
-
->But important: *remember to disable this once no longer is needed!!!*
-
-### Visualize motion paths
-
-[Motion Paths - Blender Manual](https://docs.blender.org/manual/en/latest/animation/motion_paths.html)
-
-The Motion Paths tool allows you to visualize the motion of points as paths over a series of frames. These points can be object origins and bone joints.
-
-To create or remove motion paths, it is necessary to first select the bones. Then:
-
-- To show the paths (or update them, if needed), click on the Calculate Path button.
-
-- To hide the paths, click on the Clear Paths button.
-
-Remember that only selected bones and their paths are affected by these actions!
-
-#### Tech Stuff on Motion Paths
-
-Motion Paths in Blender (the ones you see when you enable them for bones or objects in Pose Mode or Object Mode) are not stored as geometry, nor as Grease Pencil or Annotation data.
-
-They are purely a viewport visualization, computed on the fly and drawn by Blender’s internal drawing system (part of the GPU module).
-
-These are not regular datablocks (like Meshes, Curves, or GPencil objects).
-
-They live in memory only — they’re generated, displayed, and discarded as needed.
-
-Motion Paths are:
-
-- Computed from evaluated animation data
-
-- Stored temporarily in RAM (not in the .blend)
-
-- Rendered directly via GPU API (no object, no mesh, no grease pencil)
-
-So, motion paths are ephemeral: they exist only in memory, like a viewport helper, not as a datablock you can save or link
-
-### ANIMATION - QUICK TIPS
-
-#### One the best Blender shortcuts combo:
-
-**A → Alt-G-R-S**
-
-This is: Select All, and then rest all Locations and Rotations to 0.0 and Scale to 1.0
-
->NOTE: apply with caution, of course. Only if this is really what you want to do…
-
-#### Control behavior after a given keyframe
-
-Channel > **Extrapolation** Mode > Constant / Linear / Cyclic **Shift-E**
-
-#### Using the \#frame tag
-
-Write *\#frame* in any parameter to control that with time. Or, for example, *\#frame\*0.1*, or *\#sin(frame\*0.1)*
-
-Then, open the Drivers Editor to full access.
-
-### ANIMATION - LINKS
-
-[Animate Algebra formulas and equations with multiple steps](https://www.youtube.com/watch?v=MX90CkWzRtA) - Using the Typst importer extension [https://extensions.blender.org/add-on](https://extensions.blender.org/add-ons/typst-importer/), here's how to animate algebra in Blender.
-
-[Find Lost Keyframes In Blender - YouTube](https://www.youtube.com/watch?v=zx-xcJlw5Ss)
-
-[The 'Child Of' Constraint Demystified](https://www.youtube.com/watch?v=ul6dDAOc7zY)
-
-[Driver Expressions for Animations in Blender](https://www.youtube.com/watch?v=9cX9GKry9ns) - by Passivestar - How driver expressions can be used for quickly animating stuff
-
-[Every Rigid Body Constraint Exampled in 10 Minutes](https://www.youtube.com/watch?v=6BALmm_uN-c)
-
-[Film emulation in the viewport compositor](https://www.youtube.com/watch?v=1DHL3nCoIhk)
-
-[Rigging switchable parents and equipment slots in Blender - YouTube](https://www.youtube.com/watch?v=L0yWGPPEI1Q)
-
-[WHY ARE CONSTRAINTS SO HARD? - Child Of Constraint Explained!](https://www.youtube.com/watch?v=zjz_9v29Rmk)
-
-[You can use 1 camera per viewport](https://x.com/ilyassel_/status/1792710213914763577?s=12) - This is how
-
-[How to sync animation to music in blender](https://www.youtube.com/watch?v=eFWN3x84NcU)
-
-Using the new PORTAL node (in 4.2) - [Not just duplicate the scene, ray portal can also make it fractal](https://twitter.com/chiu_hans/status/1789287820697506234?s=12)
-
----
-
-## --- CONTINUE HERE WITH CLEANUP ---
----
-
 ## PREVIEWS & RENDER
 
-[Principled BSDF - Blender 4.2 Manual](https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html)
-
-[File Paths - Blender 4.5 LTS Manual](https://docs.blender.org/manual/en/latest/files/file_paths.html#path-templates) - **variables** are currently available in template expressions
-
----
+### Read metadata en renders
 
 **To read all Metadata included on a rendered image**, use **XnViewMO** free app. It shows all PNG text chunks, not just the standard EXIF/XMP
 
 You can open any render, hit *Info → Properties → PNG → Text*, and boom: RenderTime, Scene, Frame, Camera… exactly like in Blender’s Image Editor.
-
----
 
 ### Render region
 
@@ -4177,155 +3669,147 @@ Crop: Check **"Crop to Render Region"** in the Output Properties to render only 
 
 Clear: Press **Cmd-Alt-B** to remove the render region.
 
----
+### Viewport render
 
-### Wireframe render
+To render viewport open-gl aka playblasts, for animatics: [Viewport Render - Blender Manual](https://docs.blender.org/manual/en/latest/editors/3dview/viewport_render.html)
 
-[Create Wireframe Renders In Blender - 3 Quick And Easy Methods | Gachoki Studios](https://gachoki.com/create-wireframe-renders-in-blender/) (start here. Method 2 or 3)
+- Deselect all (because selections appear on playblast renders)
 
-[3 easy ways to render Wireframe in Blender 4.2 - YouTube](https://www.youtube.com/watch?v=AS867TnAaT0)
+- Give a **Name to the Current Scene** (same that Filename) going to **Outliner > Scenes -** *Go back to Outliner View*
 
-[Easy Ways to Create Wireframe Renders in Blender (2025) | Blender Render farm](https://irendering.net/easy-ways-to-create-wireframe-renders-in-blender-2025/)
-
----
-
-**TO RENDER VIEWPORT OPEN-GL aka PLAYBLASTS, FOR ANIMATICS**
-
-[Viewport Render - Blender Manual](https://docs.blender.org/manual/en/latest/editors/3dview/viewport_render.html)
-
-**CAUTION: DESELECT ALL** (because selections appear on playblast renders)
-
-Give a **Name to the Current Scene** (same that Filename) going to **Outliner > Scenes -** *Go back to Outliner View*
-
-Go to **Geometry Nodes Workspace**
-
-Change Object **Color Random**
-
-Hide **3D Cursor, Origins, Grid & Axis -** *Enable later*
-
-Enable **Wireframe 0.5 to 0.8 opacity**
-
-Enable **Cavity > Both**
-
-Hide **Cameras, Lights & Controls -** *Enable later*
-
-Optional: Temporarily **increase Viewport SDS** for needed objects **-** *Return back to original later*
-
-Resolution (**3840 x 2160**)
-
-Frame Rate (**24**)
-
-Frame Start & End for **each camera** - *Go back to Whole Frame Range later*
-
-Output Path (To avoid saving at hidden /tmp/ folder) - Example: **“Soil_Cam_01_”** - *REVISE AT WIN*
-
-Media Type **Video -** *Go back to Image > PNG or EXR later*
-
-Encoding > Container > **MPEG-4**
-
-Output Quality to **High Quality**
-
-For Metadata, enable only: **Frame, Frame Range, Camera & Scene**
-
-Enable Output > Metadata > **Burn Into Image -** *Disable later*
-
-Font Size to **48 px**
-
-3D Viewport > View > **Render Playblast** (also at Quick Menu)
+- Go to **Geometry Nodes Workspace**
 
 ---
 
-**Fix Pink/Purple Blender Missing Textures Issue (and Missing Files in general):**
+- Change Object **Color Random**
 
-**FIRST: To get a Report with all missing files:**
+- Hide **3D Cursor, Origins, Grid & Axis -** *Enable later*
 
-File > External Data > Report Missing Files (prepare an Info viewport to read all)
+- Enable **Wireframe 0.5 to 0.8 opacity**
 
-**SECOND: To Find/Locate all those missing files:**
+- Enable **Cavity > Both**
 
-File > External Data > Find Missing Files > Locate main folder with maps
+- Hide **Cameras, Lights & Controls -** *Enable later*
+
+- Optional: Temporarily **increase Viewport SDS** for needed objects **-** *Return back to original later*
 
 ---
 
-**DISABLE BACKGROUND FROM CAMERA / Transparent or solid color**
+- Resolution (**3840 x 2160**)
 
-EEVEE/CYCLES - Render Tab > Film > Enable “Transparent”.
+- Frame Rate (**24**)
 
-ALSO, ONLY IN CYCLES - World Tab > Ray Visibility > Disable Camera
+- Frame Start & End for **each camera** - *Go back to Whole Frame Range later*
+
+- Output Path (To avoid saving at hidden /tmp/ folder) - Example: **“Soil_Cam_01_”** - *REVISE AT WIN*
+
+- Media Type **Video -** *Go back to Image > PNG or EXR later*
+
+- Encoding > Container > **MPEG-4**
+
+- Output Quality to **High Quality**
+
+---
+
+- For Metadata, enable only: **Frame, Frame Range, Camera & Scene**
+
+- Enable Output > Metadata > **Burn Into Image -** *Disable later*
+
+- Font Size to **48 px**
+
+- 3D Viewport > View > **Render Playblast** (also at Quick Menu)
+
+### Fix Pink/Purple Blender Missing Textures Issue
+
+And for Missing Files in general:
+
+1. To get a Report with all missing files:
+
+	- File > External Data > Report Missing Files (prepare an Info viewport to read all)
+
+2. To Find/Locate all those missing files:
+
+	- File > External Data > Find Missing Files > Locate main folder with maps
+
+---
+
+### Disable background from camera
+
+For transparent or solid color
+
+- EEVEE/CYCLES - Render Tab > Film > Enable “Transparent”.
+
+- ALSO, ONLY IN CYCLES - World Tab > Ray Visibility > Disable Camera
 
 That gives you a transparent background.
 
----
+#### And what if you just want some flat color instead?
 
-### And what if you just want some flat color instead?
+- Disable the Render > Film > Transparent (if that was enabled)
 
-Disable the Render > Film > Transparent (if that was enabled)
+- Go to the Shader window, and as shader type choose "World".
 
-Go to the Shader window, and as shader type choose "World".
-
-Use the Light Path node as a factor between the HDRI Background and an RGB Background color. Use the "Is Camera Ray" output.
+- Use the Light Path node as a factor between the HDRI Background and an RGB Background color. Use the "Is Camera Ray" output.
 
 [Blender Secrets - Use HDRI only for foregrounds - YouTube](https://www.youtube.com/watch?v=vkJByvYAfzI)
 
-**Or also: a GRADIENT background:**
+- Or also: a GRADIENT background:
 
 [How-to have color accurate gradient backgrounds or pure white backgrounds](https://x.com/multimicah/status/2078196629296107978)
 
----
+### To hide objects, Transparent background, 2 layers… etc 
 
-**To hide or disable an object from appear on camera** (but affect reflections or shadows)
+#### To hide or disable an object from appear on camera 
 
-Object Properties > Visibility > Ray Visibility > Disable Camera
+But affect reflections or shadows:
+
+- Object Properties > Visibility > Ray Visibility > Disable Camera
 
 Note that there is also a Disable Shadows there.
 
----
+#### To render an Object (or Collection) with shadows on a transparent background (Cycles only)
 
-**To render an Object (or Collection) with shadows on a transparent background (Cycles only)**
+- Set Render Engine to **Cycles**
 
-Set Render Engine to **Cycles**
+- Still in Render Properties, scroll to the Film section, and Set **Film** to **Transparent**. This makes everything except visible objects (and shadows from shadow catchers) transparent.
 
-Still in Render Properties, scroll to the Film section, and Set **Film** to **Transparent**. This makes everything except visible objects (and shadows from shadow catchers) transparent.
-
-Select your Floor object. Go to the Object Properties tab, Scroll down to **Visibility** > **Enable Shadow Catcher**.
+- Select your Floor object. Go to the Object Properties tab, Scroll down to **Visibility** > **Enable Shadow Catcher**.
 
 When you render now, object will be there and the background will be transparent, and only shadows will appear where the floor was.
 
----
+#### To render two separate layers:
 
-**To render two separate layers:**
+This is:
 
-- • Objects with full transparent background (and no shadows)
+1. First layer with with objects with full transparent background (and no shadows)
 
-- • Only the floor shadows
+2. Second layer with only the floor shadows
 
-Set **Film** to **Transparent**
+- Set **Film** to **Transparent**
 
-Put all your Objects into a Collection and your Floor into another Collection
+- Put all your Objects into a Collection and your Floor into another Collection
 
-Go to the Outliner
+- Go to the Outliner
 
-Right-click your Floor Collection in the Outliner > View Layer > **Set Indirect Only**
+- Right-click your Floor Collection in the Outliner > View Layer > **Set Indirect Only**
 
-- This makes them not visible to the camera, but they can still affect shadows, reflections, etc.
+	- This makes them not visible to the camera, but they can still affect shadows, reflections, etc.
 
-To disable this effect: View Layer > **Clear Indirect Only**
+- To disable this effect: View Layer > **Clear Indirect Only**
 
----
+#### To get Shadow only over pure white, instead of transparent,
 
-**To get Shadow only over pure white, instead of transparent, we can use Compositing Nodes:**
+We can use **Compositing Nodes**:
 
-2 Methods:
+Two methods:
 
-Render Layers - Image output > Alpha Over Node (top layer, this is bottom input) > Composite
+- A. Render Layers - Image output > Alpha Over Node (top layer, this is bottom input) > Composite
 
-- or
+or
 
-Render Layers - Alpha output > Invert Color > Composite
+- B. Render Layers - Alpha output > Invert Color > Composite
 
----
-
-**To See & Control Depth of Field**
+### To See & Control Depth of Field
 
 1. Select Camera > Cam Data > Enable Depth of Field
 
@@ -4339,207 +3823,210 @@ Play with Focus Distance and Aperture Settings, specially F-Stop & Blades
 
 - [What is f-stop on a camera? | F-stop photography | Adobe](https://www.adobe.com/creativecloud/photography/discover/f-stop.html)
 
----
+### Different environments for reflections and background
 
-**How to have an Environment A for reflections & Environment B for the camera background**
+How to have an Environment A for reflections & Environment B for the camera background?
 
 Use the Light Path trick:
 
-[Blender Eevee - Removing Background in Eevee - YouTube](https://www.youtube.com/watch?v=CUKxtvmY2pk)
+- [Blender Eevee - Removing Background in Eevee - YouTube](https://www.youtube.com/watch?v=CUKxtvmY2pk)
 
-[Is there a way to have a separate HDRI for reflections/background using Eevee? - Support / Lighting and Rendering - Blender Artists Community](https://blenderartists.org/t/is-there-a-way-to-have-a-separate-hdri-for-reflections-background-using-eevee/1185932)
+- [Is there a way to have a separate HDRI for reflections/background using Eevee? - Support / Lighting and Rendering - Blender Artists Community](https://blenderartists.org/t/is-there-a-way-to-have-a-separate-hdri-for-reflections-background-using-eevee/1185932)
 
-[Cycles - Use an HDRI for reflections only, and not have its light affect the scene](https://blender.stackexchange.com/questions/178080/can-i-use-an-hdri-for-reflections-only-and-not-have-its-light-affect-the-scene)
+- [Cycles - Use an HDRI for reflections only, and not have its light affect the scene](https://blender.stackexchange.com/questions/178080/can-i-use-an-hdri-for-reflections-only-and-not-have-its-light-affect-the-scene)
 
----
+### Tips for fast cycles rendering
 
-**TIPS FOR FAST CYCLES RENDERING (compiled from different sources)**
+*Compiled from different sources*
 
 First of all: launch a first test render with all settings at default.
 
 Then, apply these changes to check if speed is increased, but also if quality is not compromised too much.
 
-In any case: check all this by yourself.
+IN ANY CASE: CHECK ALL THIS BY YOURSELF.
 
-Preferences > System > Cycles Render Devices > OptiX, **Enable GPU** / **Disable CPU**
+- Preferences > System > Cycles Render Devices > OptiX, **Enable GPU** / **Disable CPU**
 
-Render > Device > **Enable GPU Compute** *(important to enable this every single time, at first time opening in PC coming from Mac)*
+- Render > Device > **Enable GPU Compute** -  *Important to enable this every single time, at first time opening in PC coming from Mac*
 
-*IMPORTANT: check RGBA or RGB* depending on if you need or not the alpha or background transparency in PNGs. Caution: for some reason, even if using RGB (and not RGBA) images seems to have a transparent background in still frames render checks, in the final render window, but alpha is NOT there if just using RGB.
+- *Important: check if RGBA or RGB* depending on if you need or not the alpha or background transparency in PNGs. Caution: for some reason, even if using RGB (and not RGBA) images seems to have a transparent background in still frames render checks, in the final render window, but alpha is NOT there if just using RGB.
 
-**TESTED: To decrease rendering time at 4K or 6K** (this decreased time from **17m** to **6m** for my Brocard Animation Soil Cam 1, without apparent drawback - Also very useful for Mondo)
+#### TESTED: To decrease rendering time at 4K or 6K
 
-Render > Sampling > Render > Noise Threshold > from 0.01 to **0.025** or even **0.05** or **0.1 - Double check this comparing zooms on various tests VS render time**
+- This decreased time from **17m** to **6m** for my Brocard Animation Soil Cam 1, without apparent drawback - Also very useful for Mondo
 
-Render > Sampling > Render > Max Samples from 4096 to **1024**
+- Render > Sampling > Render > Noise Threshold > from 0.01 to **0.025** or even **0.05** or **0.1 - Double check this comparing zooms on various tests VS render time**
 
-Render > Sampling > Render > Denoise > **Use GPU**
+- Render > Sampling > Render > Max Samples from 4096 to **1024**
 
-Render > Performance > Memory > Tile Size: from 2048 to 128, **256** or 512
+- Render > Sampling > Render > Denoise > **Use GPU**
 
-**TESTED: For scenes with real displacements**
+- Render > Performance > Memory > Tile Size: from 2048 to 128, **256** or 512
 
-To avoid possible OPTIX_ERROR_INVALID_VALUE at **4K** render (coming because Displacement)
+#### TESTED: For scenes with real displacements
 
-Render > Subdivision > Dicing Rate Render from 1 to **2** or even **4 or 5** for animated displacements
+- To avoid possible OPTIX_ERROR_INVALID_VALUE at **4K** render (coming because Displacement)
 
-Render > Subdivision > Max Subdivision from 12 to **8** or even **6 or 5** for animated displacements
+- Render > Subdivision > Dicing Rate Render from 1 to **2** or even **4 or 5** for animated displacements
 
-**MORE tips to decrease render time:**
+- Render > Subdivision > Max Subdivision from 12 to **8** or even **6 or 5** for animated displacements
 
-Render > Sampling > Render > **Turn ON Denoise** (try options)
+#### MORE tips to decrease render time:
 
-Render > Sampling > Lights > **Disable Light Tree**
+- Render > Sampling > Render > **Turn ON Denoise** (try options)
 
-Render > Light Paths > Max Bounces > **from 12 to 1/8**
+- Render > Sampling > Lights > **Disable Light Tree**
 
-Render > Light Paths > Caustics > **Disable Reflective & Refractive Caustics** (if not necessary)
+- Render > Light Paths > Max Bounces > **from 12 to 1/8**
 
-Render > Performance > Final Render > **Enable Persistent Data** (NOT with modified topology)
+- Render > Light Paths > Caustics > **Disable Reflective & Refractive Caustics** (if not necessary)
 
-Render > Film > Pixel Filter > **Width from 1.5 px to 1.0 px**
+- Render > Performance > Final Render > **Enable Persistent Data** (NOT with modified topology)
 
-Render half or quarter frames and use [Flowframes - Fast Video Interpolation](https://nmkd.itch.io/flowframes)
+- Render > Film > Pixel Filter > **Width from 1.5 px to 1.0 px**
 
----
+- Render half or quarter frames and use [Flowframes - Fast Video Interpolation](https://nmkd.itch.io/flowframes)
 
-**MORE CYCLES SETTINGS TO CONSIDER AT 4K (***TO BE CHECKED***)** - BY CHAT GPT
+### More Cycles settings to consider at 4k
 
-### 1. light paths
+By Chat GPT - *To be checked*
+
+#### Light paths
 
 Reducing path complexity has one of the biggest impacts on render time, especially at high resolutions.
 
 Recommended changes:
 
-**Max Bounces:** Lower from the default 12 to 8 (or even 6 for many indoor scenes).
+- **Max Bounces:** Lower from the default 12 to 8 (or even 6 for many indoor scenes).
 
-**Diffuse / Glossy / Transmission Bounces:** Lower to 3 (default is 4).
+- **Diffuse / Glossy / Transmission Bounces:** Lower to 3 (default is 4).
 
-**Transparent Max Bounces:** Lower from 8 to 4.
+- **Transparent Max Bounces:** Lower from 8 to 4.
 
-**Volume Bounces:** Lower to 0–1 unless you really need volumetrics.
+- **Volume Bounces:** Lower to 0–1 unless you really need volumetrics.
 
-**Clamping:**
+- **Clamping:**
 
-- **Indirect Clamp:** Set to 1.0 or 1.5 (prevents fireflies, stabilizes sampling).
+	- **Indirect Clamp:** Set to 1.0 or 1.5 (prevents fireflies, stabilizes sampling).
 
-- Leave **Direct Clamp** at 0.0 unless you see sparkle artifacts.
+	- Leave **Direct Clamp** at 0.0 unless you see sparkle artifacts.
 
 These changes usually produce very similar visual quality while cutting noise early.
 
-### 2. performance panel
+#### Performance panel
 
 These settings affect how efficiently Cycles uses your GPU/CPU.
 
-**Tile Size (GPU + OptiX):**
+##### Tile Size (GPU + OptiX):
 
-For modern GPUs (RTX cards), set Render > Performance > Tiles to 256 × 256.
+- For modern GPUs (RTX cards), set Render > Performance > Tiles to 256 × 256.
 
 (OptiX likes larger tiles than CUDA did.)
 
-**Persistent Data:**
+##### Persistent Data:
 
-Enable Render > Performance > Persistent Data.
+- Enable Render > Performance > Persistent Data.
 
-Significantly reduces rebuild time when rendering multiple frames, but also helps somewhat for single large frames (4K) with heavy geometry.
+- Significantly reduces rebuild time when rendering multiple frames, but also helps somewhat for single large frames (4K) with heavy geometry.
 
-**Use Spatial Splits (CPU only, if you ever use CPU rendering):**
+##### Use Spatial Splits (CPU only, if you ever use CPU rendering):
 
-Keep enabled. Improves BVH efficiency at the cost of pre-processing time.
+- Keep enabled. Improves BVH efficiency at the cost of pre-processing time.
 
-### 3. film settings
+#### Film settings
 
-**Transparent Background:**
+##### Transparent Background:
 
-If your scene does not need Transparent Film, disable it.
+- If your scene does not need Transparent Film, disable it.
 
-Alpha processing adds overhead (small but measurable at 4K).
+- Alpha processing adds overhead (small but measurable at 4K).
 
-**Pixel Filter:**
+##### Pixel Filter:
 
-If you use Gaussian, consider switching to Blackman-Harris (the default) or even Box with size 0.5–0.75 for slightly sharper renders and lower filtering cost.
+- If you use Gaussian, consider switching to Blackman-Harris (the default) or even Box with size 0.5–0.75 for slightly sharper renders and lower filtering cost.
 
-### 4. cycles sampling (additional considerations)
+#### Cycles sampling (additional considerations)
 
 You already adjusted Max Samples and Noise Threshold. A few small adjustments:
 
-**Min Samples:**
+##### Min Samples:
 
-Set Min Samples to 0 (default is fine).
+- Set Min Samples to 0 (default is fine).
 
-At 4K the adaptive sampler converges faster; forcing minimum samples only wastes time.
+- At 4K the adaptive sampler converges faster; forcing minimum samples only wastes time.
 
-**Scrambling Distance (Advanced settings):**
+##### Scrambling Distance (Advanced settings):
 
-Increase Scrambling Distance to 1.0 (default 0.0) to push more approximate sampling.
+- Increase Scrambling Distance to 1.0 (default 0.0) to push more approximate sampling.
 
-This reduces noise substantially at high resolutions with almost invisible quality loss.
+- This reduces noise substantially at high resolutions with almost invisible quality loss.
 
-Works best under OptiX.
+- Works best under OptiX.
 
-**Blur Glossy:**
+##### Blur Glossy:
 
-Set 0.1–0.2 if you have a lot of micro-faceted reflections.
+- Set 0.1–0.2 if you have a lot of micro-faceted reflections.
 
-It softens ultra-sharp highlights a little, which is physically reasonable and reduces noise.
+- It softens ultra-sharp highlights a little, which is physically reasonable and reduces noise.
 
-### 5. shadow caustics / caustics
+#### Shadow caustics / caustics
 
 Only enable caustics if absolutely required.
 
 **Disable entirely:**
 
-Render > Light Paths > Caustics: Off
+- Render > Light Paths > Caustics: Off
 
-This alone can cut render times dramatically in scenes with glass or water.
+- This alone can cut render times dramatically in scenes with glass or water.
 
-### 6. volumes (if applicable)
+#### Volumes (if applicable)
 
 If your scene includes fog, smoke, or volume lights:
 
-Volumetric Tile Size: set to 2 px instead of 1 px.
+- Volumetric Tile Size: set to 2 px instead of 1 px.
 
-Step Rate: increase slightly (e.g., 0.1–0.2).
-These changes have almost no visual impact at 4K unless the volume is hero-quality.
+- Step Rate: increase slightly (e.g., 0.1–0.2).
+- These changes have almost no visual impact at 4K unless the volume is hero-quality.
 
-### Typical “4k-optimized” configuration (safe baseline)
+#### Typical “4k-optimized” configuration (safe baseline)
 
 To give you a concrete benchmark, this is a safe but efficient setup I often recommend for 4K Cycles:
 
-Max Samples: 800–1200
+- Max Samples: 800–1200
 
-Noise Threshold: 0.02–0.03
+- Noise Threshold: 0.02–0.03
 
-Max Bounces: 8
+- Max Bounces: 8
 
-Diffuse/Glossy/Transmission: 3
+- Diffuse/Glossy/Transmission: 3
 
-Transparent: 4
+- Transparent: 4
 
-Volume: 0–1
+- Volume: 0–1
 
-Indirect Clamp: 1.0
+- Indirect Clamp: 1.0
 
-Tiles: 256×256 (GPU OptiX)
+- Tiles: 256×256 (GPU OptiX)
 
-Persistent Data: ON
+- Persistent Data: ON
 
-Caustics: OFF
+- Caustics: OFF
 
-Dicing Rate Render: 2 (or 3 if displacement is modest)
+- Dicing Rate Render: 2 (or 3 if displacement is modest)
 
-Max Subdivision: 8
+- Max Subdivision: 8
 
-Scrambling Distance: 1.0
+- Scrambling Distance: 1.0
 
----
+### Tips for Displacements combined with Animated Deformations in 4k
 
-**TIPS FOR DISPLACEMENTS COMBINED WITH ANIMATED DEFORMATIONS IN 4K** - BY CHAT GPT
+By Chat GPT
 
 To avoid errors like:
-*“Failed to build OptiX acceleration structure” & “System is out of GPU and shared host memory”*
 
-SUCCESSFULLY APPLIED:
+`“Failed to build OptiX acceleration structure” & “System is out of GPU and shared host memory”`
+
+#### Successfully applied:
 
 • Render > Subdivision > Dicing Rate (Render): from 2 to 5 (originally 1)
 
@@ -4547,117 +4034,115 @@ SUCCESSFULLY APPLIED:
 
 • Render > Performance > Tile Size: from 2048 to 512
 
-COMPLETE TIPS BY CHAT GPT:
+#### Complete tips by Chat GPT:
 
-**1. Increase the Render Dicing Rate**
+##### 1. Increase the Render Dicing Rate
 
 You already raised it from 1 to 2, but this is still relatively fine for 4K rendering with deforming displacement.
 
-Try Render > Subdivision > Dicing Rate (Render): 3 or even 4 or 5
+- Try Render > Subdivision > Dicing Rate (Render): 3 or even 4 or 5
 
 Visual impact: very low for rocky or irregular ground, but it drastically reduces generated micro-geometry.
 
 This is the most effective and first recommended action.
 
-**2. Lower the Maximum Subdivision Level**
+##### 2. Lower the Maximum Subdivision Level
 
 If the displacement deformation becomes intense at frame 146, Cycles may try to subdivide more deeply to capture those folds.
 
-Try Render > Subdivision > Max Subdivision: from 8 down to 6 or even 5
+- Try Render > Subdivision > Max Subdivision: from 8 down to 6 or even 5
 
 Usually no visible difference on rough ground, but significantly reduces geometry spikes.
 
-**3. Reduce the Displacement Bound (if used)**
+##### 3. Reduce the Displacement Bound (if used)
 
 Cycles uses a “displacement bound” to estimate how far surfaces may move. If set too high, it forces more subdivision to avoid clipping.
 
 If you are using Displacement Only or Displacement + Bump:
 
-Try Material > Settings > Displacement Scale: slightly lower
+- Try Material > Settings > Displacement Scale: slightly lower
 
-Material > Settings > Displacement Bound: reduce modestly (e.g., from 0.5 to 0.3)
+- Material > Settings > Displacement Bound: reduce modestly (e.g., from 0.5 to 0.3)
 
 This helps prevent extreme micro-subdivision bursts during deformation.
 
-**4. Switch the Material to “Bump Only” for Those Frames**
+##### 4. Switch the Material to “Bump Only” for Those Frames
 
 If visually acceptable, this eliminates real micro-displacement during the problematic moments.
 
-Material > Settings > Displacement:
+- Material > Settings > Displacement:
 
-Bump Only (you can keyframe this if needed only for frames 146–150, etc.)
+- Bump Only (you can keyframe this if needed only for frames 146–150, etc.)
 
 High visual fidelity is usually preserved (90–95%) with drastically lower memory usage.
 
-**5. Check Any Geometry Nodes Increasing Mesh Density**
+##### 5. Check Any Geometry Nodes Increasing Mesh Density
 
 Even though you have only a few stones, verify:
 
-Any Subdivision Surface nodes in GN: lower the Render level.
+- Any Subdivision Surface nodes in GN: lower the Render level.
 
-If using Volume to Mesh: reduce voxel density.
+- If using Volume to Mesh: reduce voxel density.
 
-If multiple meshes are joined, ensure none becomes overly dense on that specific frame.
+- If multiple meshes are joined, ensure none becomes overly dense on that specific frame.
 
-**6. Use Smaller Render Tiles**
+##### 6. Use Smaller Render Tiles
 
 In 4K scenes with heavy displacement, memory spikes can be reduced by manually setting tile size:
 
-Render Properties > Performance:
+- Render Properties > Performance:
 
-Tile Size: 128 or even 64 (finally used 512)
+- Tile Size: 128 or even 64 (finally used 512)
 
 This does not reduce geometry but reduces memory pressure during BVH construction.
 
-**7. Disable “Spatial Splits”**
+##### 7. Disable “Spatial Splits”
 
 Turning this off sometimes reduces memory consumption for scenes with extreme micro-displacement.
 
-Render > Performance > Acceleration Structure:
+- Render > Performance > Acceleration Structure:
 
-Disable Spatial Splits
+- Disable Spatial Splits
 
 Minimal impact on speed, but can lower memory usage.
 
-**Recommended Order of Application**
+##### Recommended Order of Application
 
-Increase Dicing Rate to 3 or 4
+1. Increase Dicing Rate to 3 or 4
 
-Reduce Max Subdivision to 6
+2. Reduce Max Subdivision to 6
 
-Use Tile Size = 128
+3. Use Tile Size = 128
 
-Disable Spatial Splits
+4. Disable Spatial Splits
 
-Material adjustments if needed:
+5. Material adjustments if needed:
 
-– Lower Displacement Scale slightly
+	- Lower Displacement Scale slightly
 
-– Or temporarily use “Bump Only” during heavy deformation frames
+	- Or temporarily use “Bump Only” during heavy deformation frames
 
 In almost all OptiX memory failures caused by displacement, raising the dicing rate solves the issue.
 
----
-
 ### Tips to get better renderings with eevee
 
-**Enable High-Quality Settings (Render Properties)**
+#### Enable High-Quality Settings (Render Properties)
 
-Render → Sampling
+##### Render → Sampling
 
 - Increase Render Samples to at least 64–128 (more if needed).
 
 - Enable Viewport Denoising (if previewing interactively).
 
-Enable Ambient Occlusion
+##### Enable Ambient Occlusion
 
 - Increase Distance to match your scene scale.
 
 - Use Bent Normals and Only Local for more realistic contact shadows.
 
-Enable Screen Space Reflections
+##### Enable Screen Space Reflections
 
-- Turn on:
+Turn on:
 
 - Refraction
 
@@ -4669,13 +4154,13 @@ Enable Screen Space Reflections
 
 - Enable Screen Space Global Illumination (SSGI) if available (Blender 3.5+)
 
-Enable Soft Shadows
+##### Enable Soft Shadows
 
 - Increase Cube Size and Cascade Size to 2048 or higher for crisper shadows
 
 - Set Bias carefully (too low = artifacts; too high = floating shadows)
 
-Indirect Lighting (GI)
+##### Indirect Lighting (GI)
 
 - Bake Irradiance Volume or Reflection Cubemap probes manually
 
@@ -4683,23 +4168,23 @@ Indirect Lighting (GI)
 
 - Don’t forget to rebake after changes to geometry or lighting
 
-Volumetrics (if used)
+##### Volumetrics (if used)
 
 - Lower Tile Size for better quality
 
 - Increase Samples for smoother fog/smoke
 
-**Lighting Tips (to Mimic Cycles More Closely)**
+#### Lighting Tips (to Mimic Cycles More Closely)
 
-Use Area Lights or Sun Lamp (not Point unless needed)
+- Use Area Lights or Sun Lamp (not Point unless needed)
 
-Enable Contact Shadows per light for more realism
+- Enable Contact Shadows per light for more realism
 
-Simulate bounce light manually with extra subtle fill lights (EEVEE doesn’t do real GI unless using SSGI or baked probes)
+- Simulate bounce light manually with extra subtle fill lights (EEVEE doesn’t do real GI unless using SSGI or baked probes)
 
-Use color-accurate HDRIs and enable Screen Space Reflections + Irradiance Volumes
+- Use color-accurate HDRIs and enable Screen Space Reflections + Irradiance Volumes
 
-**Materials & Transparency**
+#### Materials & Transparency
 
 In Material Settings:
 
@@ -4709,7 +4194,7 @@ In Material Settings:
 
 - Use Clearcoat, Subsurface Scattering, and Sheen sparingly (not all are perfect in EEVEE)
 
-**Advanced**
+#### Advanced
 
 Screen Space Global Illumination (SSGI): A newer feature that simulates bounce lighting similar to Cycles. Works best with:
 
@@ -4717,11 +4202,11 @@ Screen Space Global Illumination (SSGI): A newer feature that simulates bounce l
 
 - Proper indirect lighting setup
 
----
+### EEVEE viewport vsF12 render
 
-### Eevee viewport vs f12 render: what shares and what doesn't
+What is shared and what doesn't
 
-**Shared between Viewport and F12 Render:**
+#### Shared between Viewport and F12 Render:
 
 Most of the Render Settings (in the Render Properties tab) apply to both the interactive viewport render (Z key → Rendered, or Shift+Z) and the F12 render.
 
@@ -4745,7 +4230,7 @@ So when you tweak these:
 
 All of these affect both the viewport and F12.
 
-**Not shared or handled differently:**
+#### Not shared or handled differently:
 
 Some settings or behaviors can differ between viewport and F12:
 
@@ -4753,9 +4238,9 @@ Viewport Sampling: Viewport samples are often lower than Render samples
 
 - Go to:
 
-- Render Properties → Sampling → Viewport
+	- Render Properties → Sampling → Viewport
 
-- Increase this if your interactive render is noisy.
+	- Increase this if your interactive render is noisy.
 
 Viewport Denoising must be enabled separately:
 
@@ -4765,23 +4250,25 @@ Overlays and Display Settings: The viewport might show things like wireframes, o
 
 Material and Lighting Preview Modes (Z key): Make sure you’re in Rendered mode (not Material Preview), which uses EEVEE with your actual render settings, not the simplified lookdev setup.
 
----
+### To see channels in Cycles in the viewport or render
 
-### To see any channel (roughness, metallic, etc.) while rendering in cycles in the viewport or render
+To see any channel (roughness, metallic, etc.) while rendering in cycles in the viewport or render
 
-**1. Direct in the Shader (most flexible)**
+#### 1. Direct in the Shader (most flexible)
 
-In your material, plug the property you want (Roughness) into the Material Output → Surface through an Emission node.
+- In your material, plug the property you want (Roughness) into the Material Output → Surface through an Emission node.
 
-Roughness > Emission Color > Material Output
+- Roughness > Emission Color > Material Output
 
 This will render the scene in grayscale corresponding to that channel. It updates in real-time with Cycles interactive rendering.
 
 Advantage: Works with any attribute, not just those Blender exposes as passes.
 
-**2. Using Render Passes (if you need to export)**
+#### 2. Using Render Passes (if you need to export)
 
-Blender has built-in Render Passes (Properties > View Layer > Passes).
+Blender has built-in Render Passes:
+
+- Properties > View Layer > Passes
 
 But note: Metallic and Roughness are not included as standard passes.
 
@@ -4789,15 +4276,15 @@ You only get things like Diffuse Color, Glossy Color, Normal, Z, etc.
 
 So this won’t help for Roughness unless you bake it or use method 1.
 
-**3. Shader AOVs (custom passes)**
+#### 3. Shader AOVs (custom passes)
 
 If you want something cleaner than rewiring the shader:
 
-In Properties > View Layer > Passes > Shader AOVs, add a new AOV (name it “roughness”).
+- In Properties > View Layer > Passes > Shader AOVs, add a new AOV (name it “roughness”).
 
-In your shader, connect Roughness into an AOV Output node.
+- In your shader, connect Roughness into an AOV Output node.
 
-Now you can render normally, but in the Render View (Image Editor) you can pick your custom pass.
+- Now you can render normally, but in the Render View (Image Editor) you can pick your custom pass.
 
 Still gives you the full 3D render, but isolating the property.
 
@@ -4805,15 +4292,13 @@ For pure interactive study in viewport Method 1 (Emission trick) is the fastest 
 
 For analysis + final export of that pass Method 3 (Shader AOVs) is the clean way.
 
----
+### Motion blur artifacts with animated Geometry Nodes
 
-**MOTION BLUR ARTIFACTS WITH ANIMATED GEOMETRY NODES - Causes and Practical Solutions**
+Causes and Practical Solutions for things like the artifacts and glitches appearing on rendering my vines growing in Brocard animation.
 
-Like the artifacts and glitches appearing on rendering my vines growing in Brocard animation.
+*TIP: My quick and fast solution was to add a very small and subtle NOISE to the Factor animated parameter for growing.*
 
-*My quick and fast solution was to add a very small and subtle NOISE to the Factor animated parameter for growing.*
-
-**What is actually happening**
+#### What is actually happening
 
 When Motion Blur is enabled, Blender does not render a single static frame.
 
@@ -4821,129 +4306,129 @@ Instead, it evaluates the scene at multiple sub-frames before and after the curr
 
 In this case:
 
-The vine is animated using Geometry Nodes
+- The vine is animated using Geometry Nodes
 
-The animation is driven by a 0–1 growth factor
+- The animation is driven by a 0–1 growth factor
 
-The geometry is not temporally continuous
+- The geometry is not temporally continuous
 
-- segments appear / disappear
+	- segments appear / disappear
 
-- curve length changes abruptly
+	- curve length changes abruptly
 
-- thresholds, compares, clamps, resampling, etc.
+	- thresholds, compares, clamps, resampling, etc.
 
 At a specific sub-frame (e.g. 461.95 or 462.05), Blender evaluates a geometry state that is topologically incompatible with the main frame.
 
 Motion Blur then interpolates between two incompatible geometries, producing:
 
-triangular streaks
+- Triangular streaks
 
-translucent fan-shaped surfaces
+- Translucent fan-shaped surfaces
 
-random-looking “glitches”
+- Random-looking “glitches”
 
 That is why:
 
-frame 462 fails
+- Frame 462 fails
 
-frames 461 and 463 are perfectly clean
+- Frames 461 and 463 are perfectly clean
 
-changing the factor from 0.871 to 0.872 fixes the issue
+- Changing the factor from 0.871 to 0.872 fixes the issue
 
 This is a classic Motion Blur + procedural animation interaction.
 
-**Why it only affects the vine**
+#### Why it only affects the vine
 
 The vine is the only object that meets all three risk conditions:
 
-Geometry Nodes evaluated per frame
+- Geometry Nodes evaluated per frame
 
-Animation driven by a scalar factor
+- Animation driven by a scalar factor
 
-Effective topology changes over time
+- Effective topology changes over time
 
 Other objects are either static, transform-only, or deforming without changing connectivity — all of which are Motion Blur–safe.
 
-**Solutions (from best practice to fastest workaround)**
+#### Solutions (from best practice to fastest workaround)
 
-**1. Enforce temporal continuity in Geometry Nodes (best practice)**
+##### 1. Enforce temporal continuity in Geometry Nodes (best practice)
 
-Avoid hard thresholds on animated values.
+**Avoid hard thresholds on animated values.**
 
 Do not do:
 
-if (factor > X) → geometry appears
+>if (factor > X) → geometry appears
 
 Instead:
 
-Keep geometry always present
+- Keep geometry always present
 
-Animate:
+- Animate:
 
-- scale
+	- Scale
 
-- radius
+	- Radius
 
-- offset
+	- Offset
 
-- visibility via smooth falloffs
+	- Visibility via smooth falloffs
 
-Replace:
+- Replace:
 
-Compare
+	- Compare
 
-Greater Than
+	- Greater Than
 
-Less Than
+	- Less Than
 
-With:
+- With:
 
-Smoothstep
+	- Smoothstep
 
-Map Range with soft transitions
+	- Map Range with soft transitions
 
-For curve growth:
+- For curve growth:
 
-Keep the full curve alive at all times
+	- Keep the full curve alive at all times
 
-Control only trim or thickness smoothly
+	- Control only trim or thickness smoothly
 
-Ensure Resample Curve point count does not change over time
+	- Ensure Resample Curve point count does not change over time
 
-**2. Bake the animated geometry (very robust)**
+##### 2. Bake the animated geometry (very robust)
 
 If the animation is final:
 
-Duplicate the vine object
+- Duplicate the vine object
 
-For each frame:
+- For each frame:
 
-- Object > Apply > Visual Geometry to Mesh
+	- Object > Apply > Visual Geometry to Mesh
 
-Use the baked version only for final rendering
+- Use the baked version only for final rendering
 
 This produces frame-by-frame stable geometry that Motion Blur can interpolate safely.
 
-**3. Reduce Motion Blur shutter length**
+##### 3. Reduce Motion Blur shutter length
 
-Lower the Shutter value (e.g. from 0.5 to 0.2).
+- Lower the Shutter value (e.g. from 0.5 to 0.2).
 
 This reduces the temporal window of sub-frame evaluation and often avoids crossing critical growth thresholds.
 
-**4. Disable Motion Blur only for the vine**
+##### 4. Disable Motion Blur only for the vine
 
-Render the vine in a separate collection or render layer with Motion Blur disabled, then composite it back.
+- Render the vine in a separate collection or render layer with Motion Blur disabled, then composite it back.
 
 This is a very common production solution when an asset is not Motion Blur–safe.
 
-**5. Temporal offset hack (fastest workaround)**
+##### 5. Temporal offset hack (fastest workaround)
 
 Instead of animating the factor directly:
 
 - factor = animated_factor(frame - 0.25)
 
-Or simply add a tiny offset:
+Simply add a tiny offset:
 
 - factor = animated_factor + 0.0005
 
@@ -4953,7 +4438,7 @@ It is a hack — but a perfectly acceptable one.
 
 *My quick and fast solution was to add a very small and subtle NOISE to the Factor animated parameter for growing.*
 
-**Why Blender does not “fix this automatically”**
+#### Why Blender does not “fix this automatically”
 
 Geometry Nodes do not guarantee temporal coherence.
 
@@ -4963,93 +4448,35 @@ From Blender’s point of view, this is not a bug but a known limitation of proc
 
 If you ever want to revisit this properly, the exact culprit node is always one of:
 
-hard comparisons
+- Hard comparisons
 
-topology-changing trims
+- Topology-changing trims
 
-resampling driven by an animated value
+- Resampling driven by an animated value
 
 But for now, your very small noise in factor animation fix is 100% reasonable and production-safe.
 
----
+### Render Specific Frames
 
-Render Specific Frames > **Ctrl-Shift-F12** *(using* [Loom Add-on](https://github.com/p2or/blender-loom)*) >>> Look add-on preferences*
+To render Specific Frames > **Ctrl-Shift-F12** *(using* [Loom Add-on](https://github.com/p2or/blender-loom)*) → Look add-on preferences*
 
----
+### Render “Un-Premultiplied” or “Straight alphas”
 
 Use Compositor Alpha Convert node to render “**Un-Premultiplied**” or **“Straight alphas”**
 
 [Alpha Convert Node - Blender 4.4 Manual](https://docs.blender.org/manual/en/latest/compositing/types/color/alpha_convert.html)
 
----
-
-**Render fast tutos:**
-
-[5 Tips for FASTER 3D Rendering (Blender Cycles) - YouTub](https://www.youtube.com/watch?v=4NX2ubz8GW8)*e* - (Downloaded) Not exactly tips to increase Cycles speed, but techniques like multilayer, light groups and so…
-
-[How to Render Faster In Blender Cycles - YouTube](https://www.youtube.com/watch?v=boMoTlnj9Mw) - (Downloaded) Not bad… Too much cats
-
-[The FASTEST Cycles Renders you can get in Blender! - YouTube](https://www.youtube.com/watch?v=Jv1vk8YWCsQ)
-
-[Realistic Shading in Blender Explained - YouTube](https://www.youtube.com/watch?v=bjr08a48VK0)
-
----
-
-**Optimization In Blender - 5 Chapters - VERY GOD TIPS, ADVICES AND OVERALL INFO**
-
-1. [Smaller, faster .blend files](https://www.youtube.com/watch?v=u_Kw7VqA0O8)
-
-2. [Open .blend files faster](https://www.youtube.com/watch?v=_pP9gkM3anc)
-
-3. [Make any Blender viewport smooth](https://www.youtube.com/watch?v=tyVnxy_7t6s) - THIS IS TOP NOTCH!
-
-4. [Level up your render skills in 10 mins | Advanced Cycles tutorial](https://www.youtube.com/watch?v=MzJ-w6Zmpco) - ALSO TOP NOTCH!
-
-5. [Why I never render PNG](https://www.youtube.com/watch?v=NxzMAYckaV4)
-
----
-
-**Custom Noise Reduction Tip**
-
-[3 Tips for better renderings in Blender 3.4 - YouTube](https://www.youtube.com/watch?v=Dpg0fcqIKhg) (2:20)
-
-WARNING, if you leave the “Use Nodes” checkbox activated in Compositing, you will have to deactivate it if you do not want to use it.
-
----
-
-**Optimizing Renders** > [Reducing Noise - Blender Manual](https://docs.blender.org/manual/en/latest/render/cycles/optimizations/reducing_noise.html)
-
-**Optimizing Renders** > [Shader Nodes - Blender Manual](https://docs.blender.org/manual/en/latest/render/cycles/optimizations/nodes.html)
-
----
-
-**Transparency**
-
-[How to Use Eevee Transparency in Blender 4.2 (Tutorial)](https://www.youtube.com/watch?v=Ti9s4OAe4uc) - GOOD, considering it's EEVEE
-
-[Realistic Eevee Glass Shader for Blender 4.2 (Tutorial)](https://www.youtube.com/watch?v=tHfAxAiT1zs) + LINK to [Realistic Eevee Glass Shader (Free Download)](https://ryankingart.gumroad.com/l/eevee-glass)
-
----
-
-[Burn into image: dynamic Note value](https://blender.stackexchange.com/questions/308588/burn-into-image-dynamic-note-value) (using Python)
-
-[Everything About Volumetrics](https://www.youtube.com/watch?v=A8KkY9zLbDI&t=7s) - Volumetric Settings, Volume Absorption, Volume Scattering, Emission, Mixing With Surface Shaders, Volumetrics with no render time
-
-[Render all render passes to files in Cycles](https://blender.stackexchange.com/questions/28740/how-can-i-render-all-render-passes-to-files-in-cycles) (see scene **Bose_023_PC.blend** > Compositing Tab)
-
-[How to Render Millions of Objects in Blender](https://www.youtube.com/watch?v=CQ9VmCN2EsE) - Using a combination of rigid body simulations, baking and displacement maps
-
-[How to Rendering Vibrant Colors with AgX in Blender using the Raw Workflow](https://www.youtube.com/watch?v=hS7uaTquwWc)
-
-[Free Sample | Eevee Lighting and Rendering Video Course • Creative Shrimp](https://www.creativeshrimp.com/free-sample-eevee-lighting) - Eevee settings for better HDRI Lighting and maximum realism **(downloaded)**
-
----
-
 ### Motion blur
 
-Just enable it at Render > Motion Blur. Leaving all by default does a pretty good job.
+Just enable it at **Render > Motion Blur.** Leaving all by default does a pretty really job.
 
-**DOUBT: It is worth segmenting for rendering with MB just those timeline areas where objects or camera goes fast?**
+#### It is worth segmenting for rendering with Motion Blur?
+
+##### QUESTION
+
+It is worth segmenting for rendering with MB just those timeline areas where objects or camera goes fast?
+
+##### ANSWER
 
 It’s not worth splitting the render just for that, because the impact of having Motion Blur enabled in “calm” frames is practically zero.
 
@@ -5067,25 +4494,15 @@ If you disable it, that object will render without motion blur, even if global M
 
 This is useful if you have some static background geometry, or objects where the blur is negligible, so Blender doesn’t bother calculating them.
 
----
+### Convert Blender's linear output to logarithmic
 
-**Convert Blender's linear output to logarithmic (Roberto's tip):**
+Roberto's tip
 
 Save the EXRs in ACEScg / Linear Rec.709 and then do a simple transformation in Davinci.
 
 Transform to ACES (which is the industry standard) and in DaVinci tell it that what goes in is ACES and that you want to see it in sRGB.
 
----
-
-**Very interesting tips about AgX and how to fine tune it** (thread)
-
-[Jonathan Lampel en X: "Some people's complaint about AgX in Blender is that it shifts the hues or desaturates the highlights too much. But that's completely controllable! Let's look at two examples. First, a room with a fully red light. What should that look like? Standard gives us this: https://t.co/CTc459EXTN" / X](https://x.com/jonlampel/status/1930430848844607925?s=12)
-
-NODE SETUP: [Jonathan Lampel en X: "Here are the nodes. All of this is going into Render Raw as easy adjustable sliders btw, so grab a copy if you find this useful: https://t.co/OenmMcSdrL https://t.co/qaNm2sSlfp" / X](https://x.com/JonLampel/status/1930430861423587782)
-
-Related product: [Render Raw - Color Correction & Effects - Superhive (formerly Blender Market)](https://superhivemarket.com/products/render-raw) - *$25*
-
----
+### Loading Render Kernels message at rendering
 
 **About that nasty** *“LOADING RENDER KERNELS (may take a few minutes the first time)”*
 
@@ -5107,11 +4524,9 @@ Reinstalling graphics card drivers, clearing the cache, or using a different ver
 
 RELATED: [Fix for slow "Loading render kernels" · Issue #200 · DLR-RM/BlenderProc](https://github.com/DLR-RM/BlenderProc/issues/200)
 
----
+#### Longer explanation by chatgpt
 
-### Longer explanation by chatgpt:
-
-What that message actually means
+##### What that message actually means
 
 That “Loading kernels…” message appears when Blender (using Cycles) is compiling the render kernels, which are small internal programs optimized for your computing device (CPU or GPU).
 
@@ -5119,7 +4534,7 @@ In other words:
 
 it’s building the low-level code that your GPU or CPU will use to perform ray tracing, shading, and other rendering calculations.
 
-**Why it takes so long the first time**
+##### Why it takes so long the first time
 
 The first time you use Cycles with a given Blender version, device (e.g., a new GPU or switching between CUDA / OptiX / HIP / Metal), or set of libraries, Blender needs to compile those kernels from scratch.
 
@@ -5131,212 +4546,62 @@ The render backend (OptiX tends to compile faster than CUDA, and Metal on macOS 
 
 The complexity of the Cycles code in that specific Blender version.
 
-**The good news: it only happens once (generally when you update Blender)**
+##### The good news: it only happens once (generally when you update Blender)
 
 Blender caches the compiled kernels on your system, usually in one of these folders:
 
-Windows:
+**Windows**:
 
-C:\Users\<your_username>\AppData\Roaming\Blender Foundation\Blender\<version>\cache\kernels
+`C:\Users\<your_username>\AppData\Roaming\Blender Foundation\Blender\<version>\cache\kernels`
 
-macOS:
+**macOS**:
 
-~/Library/Application Support/Blender/<version>/cache/kernels
+`~/Library/Application Support/Blender/VERSION/cache/kernels`
 
-Linux:
+**Linux**:
 
-~/.cache/blender/<version>/kernels
+`~/.cache/blender/VERSION/kernels`
 
 So the next time you render with the same version and device, it won’t need to compile again — the render will start immediately.
 
-**If it seems “frozen” for too long**
+##### If it seems “frozen” for too long
 
 It’s normal for the message to stay up for a few minutes, but if it never progresses, check the following:
 
-**Update your GPU drivers** (if you’re using GPU rendering).
-On macOS, this is handled by the system; on Windows or Linux, update NVIDIA/AMD drivers manually.
+- Update your GPU drivers (if you’re using GPU rendering).
+	- On macOS, this is handled by the system; on Windows or Linux, update NVIDIA/AMD drivers manually.
 
-**Check your render device in Preferences → System** (CPU, CUDA, OptiX, Metal, etc.).
-Sometimes switching the backend fixes the issue.
+- Check your render device in Preferences → System (CPU, CUDA, OptiX, Metal, etc.).
+	- Sometimes switching the backend fixes the issue.
 
-**Delete the kernel cache** (in case it’s corrupted).
-Simply remove the “cache/kernels” folder mentioned above and restart Blender.
+- Delete the kernel cache (in case it’s corrupted).
+	- Simply remove the “cache/kernels” folder mentioned above and restart Blender.
 
-**If you’re on macOS with Metal,** be aware that the very first compile can take a long time, especially after updating Blender — since it has to rebuild all Metal shaders.
+- If you’re on macOS with Metal, be aware that the very first compile can take a long time, especially after updating Blender — since it has to rebuild all Metal shaders.
 
-**In summary**
+##### In summary
 
-The message is normal and may take several minutes.
+- The message is normal and may take several minutes.
 
-It happens only the first time or after changing version/device.
+- It happens only the first time or after changing version/device.
 
-Blender is compiling render kernels (optimized Cycles code).
+- Blender is compiling render kernels (optimized Cycles code).
 
-You can clear the cache if it gets stuck or corrupted.
+- You can clear the cache if it gets stuck or corrupted.
 
----
+## SEQUENCER & COMPOSITOR
 
-[Tonemapping in Blender - Explained in Under 4 Minutes](https://www.youtube.com/watch?v=sXHuha-rQ5c) - By Richard Yot
+### Scene strips
 
-[Making user defined metadata texts by using python add-on in Blender VSE](https://www.youtube.com/watch?v=HOyyxzi5J6o)
-
-[My Secret Blender Render Settings](https://www.youtube.com/watch?v=LS1GRru7z_U) - how to quickly render cinematic animations in blender
-
-[Secret Cycles Denoising Feature!? Blender 3.5 - Speed up Renders](https://www.youtube.com/watch?v=NsR0UybO-PY)
-
----
-
-## DAVINCI RESOLVE AND BLENDER
-
-[DaVinci Resolve – Training | Blackmagic Design](https://www.blackmagicdesign.com/products/davinciresolve/training) - The official ones - CONTINUE HERE, nobody will know better this app!
-
-- Lots of LOG samples to download here, also!
-
-DaVinci for 3D artists
-
-[Blender to Resolve: a Freemium Video Course](https://creativeshrimp.gumroad.com/l/blender-to-resolve) - By Gleb Alexandrov AKA Creative Shrimp (mine!)
-
-[Davinci Resolve | ACES + EXR Workflow for 3D Artists](https://www.youtube.com/watch?v=qUbel17Jvcs)
-
-[How to export HDR videos for YouTube and Instagram](https://www.youtube.com/watch?v=9gLuGBYnjsg) - By the great Polyfjord
-
-According to Roberto, these two guys are great for Resolve:
-
-[Cullen Kelly - YouTube](https://www.youtube.com/@CullenKelly)
-
-[Darren Mostyn - YouTube](https://www.youtube.com/@DarrenMostyn)
-
-More:
-
-[Danny Gan - YouTube](https://www.youtube.com/@dannygan)
-
-[MasterClass — drew simms](https://www.drewsimms.com/master-class) - Davinci Resolve Master Class - *$150*
-
-### Log samples to download
-
-[Blackmagic Pocket Cinema Camera – Gallery | Blackmagic Design](https://www.blackmagicdesign.com/products/blackmagicpocketcinemacamera/gallery)
-
-[Sample RED Files](https://www.red.com/sample-r3d-files) (needs register, free, I think…)
-
-[ACES is now even more deeply integrated into Blender 5.2](https://x.com/thomasmarcoscom/status/2035640690462347717?s=12)
-
-## SEQUENCER + COMPOSITOR
-
----
-
-**INTERESTING TECHNIQUE** - [Scene Strip](https://docs.blender.org/manual/en/latest/video_editing/edit/montage/strips/scene.html)
+This is an interesting technique - [Scene Strip](https://docs.blender.org/manual/en/latest/video_editing/edit/montage/strips/scene.html)
 
 Scene strips are a way to insert the render output of another scene into your sequence. Instead of rendering out a video, then inserting the video file, you can insert the scene directly
 
 IMPORTANT: Scene strips cannot be used to reference the sequence’s own scene; a secondary scene must be used instead.
 
----
+### Export video + audio from Sequencer
 
 To export video + audio from Sequencer, I must choose Audio Codec > **AAC**. For some reason it doesn’t work with MP3 (to investigate)
-
----
-
-[Why Blender 4.4's Video Editor is Revolutionary](https://www.youtube.com/watch?v=9tWEsqIgeDY)
-
-[Intro to Blender 5.0 Sequencer - Alternative to Adobe Premiere?](https://www.youtube.com/watch?v=4s8nsGqgmbc)
-
-[Speed Up, Slow Down, Freeze Time, & Add Transitions in VSE](https://www.youtube.com/watch?v=TGAzRngLTwE)
-
-[Speed Control - Speed UP or Slow DOWN your VIDEO & AUDIO in Blender's VSE](https://www.youtube.com/watch?v=VqP1j87aeU4)
-
-[How to outline an object with the compositor](https://x.com/ilyassel_/status/2035761617204355251?s=12)
-
-[Making custom glare shapes in Blender's compositor](https://blenderartists.org/t/making-custom-glare-shapes-in-blenders-compositor/1524260) - Read the entire thread for great tips and resources
-
-[Temporal Glare: Real-Time Dynamic Simulation of the Scattering in the Human Eye (Eurographics 2009 Supplemental Video)](https://www.youtube.com/watch?v=5ewKMOodT1Y)
-
-[What is bloom? (And how is it simulated?)](https://www.youtube.com/watch?v=QWqb5Gewbx8)
-
-[Where is BLOOM in Blender 4 2](https://www.youtube.com/watch?v=bqmmKpeQ_rw)[ - Basically you have to go to the compositor and use the glare node (there was a more direct access before…)](https://www.youtube.com/watch?v=QWqb5Gewbx8)
-
-[Gaze Dependent Simulation of Light Perception in Virtual Reality](https://www.youtube.com/watch?v=FNkA-fYdPPE&t=229s)
-
-[Watercolor-like compositing in Blender - YouTube](https://www.youtube.com/watch?v=chfGe0aTDjs)
-
-[Depth, mist passes and depth of field in Blender, Nuke, Natron and Fusion](https://www.youtube.com/watch?v=4NI6yeVM4TM)
-
-[How to Use Light Groups in Blender](https://www.youtube.com/watch?v=Op73b27ng5g) - Light groups can be used to separate lighting in render and play with them in composition
-
-[ACES Doc – Léonel NGUYEN | Lighting – Compositing – Color Management |](https://nguyenleonel.wordpress.com/aces-doc/)
-
-[Amazing technique by Ilyasse to make things and environments grow from the ground using Compositor](https://x.com/ilyassel_/status/1972745323966808555?s=12) (see second post with node setup)
-
-[Start COMPOSITING in Blender 5.0 in 16 minutes | Blender Compositor Tutorial #b3d - YouTube](https://www.youtube.com/watch?v=kAWfjBKcgFc)
-
-## IMPORT / EXPORT
-
----
-
-To Append stuff in my **etr_dones.blend**, **mark as ASSETS both the Objects and/or the Nodes BEFORE appending**. Because sinde 5.x I detect a high amount of crashes when marking as Asset once the stuff is in that master file… It’s really strange…
-
----
-
-### Export to painter
-
-• Remember to create a **different Material** for each desired group of final maps.
-
-*• Check normals to find flipped faces, before exporting. Also, check overlapping UVs (mirror operations give both problems)*
-
-• Use the **Collection Tab > Exporters** inside the Properties panel, to export only the content of that Collection.
-
-• Add an **FBX** and parametrize it. **Include only Mesh** and **Disable Animation**.
-
-• Be sure that **“Apply Modifiers”** is active (it’s by default, usually)
-
-• Export two versions, LOW and HIGH, after changing the SDS viewport levels for all objects (use my add-on)
-
-• Define the File Path to be saved **side by side to our .blend** file *(for some reason —to further analysis— I can not store into another child directory…)*
-
-• Important to write the extension “**.fbx**”
-
-- //model_low.fbx
-
-- //model_high.fbx
-
----
-
-**Multiple UVsets to Painter**
-
-Substance Painter does not support multiple Uv sets.
-
-HACK / WORKAROUND: If you have multiple UVsets and you want them as separate materials in Painter, these are the steps you should take:
-
-In Blender, separate the objects According to your UVsets.
-
-Assign them individual materials, and name them also according to your UVsets
-
-Now if you export the FBX and import it into Painter, It will read the materials as different objects.
-
----
-
-**From Illustrator to Blender**
-
-Just hide layers what you don’t need and export as **.SVG** - All by default!
-
----
-
-**To Pack Resources to copy (and render) to another computer**
-
-First of all, *File > External Data > Report Missing Files / Find Missing Files*
-
-(Open and Info viewport to read persistent results)
-
-*Save As > Give another name*, example “MyFile_ToRender.blend”
-
-*File > External Data > Pack Resources*
-
-- This ensures all external data is safely embedded in the file
-
-Alternatively, if you want to extract the image maps to a separate folder
-
-*File > External Data > Unpack Resources*
-
-- *> Use files in current directory (create when necessary)*
 
 ## SCRIPTING & MATHS
 
@@ -5346,29 +4611,9 @@ Apart from pressing the Arrow, use **Alt-P** while Text Editor is in focus to ca
 
 If you want a Python .PY add-on to be a .ZIP you can just rename it to __init__.py and put it in a folder with the add-on name and then zip that and it can be installed
 
-For an add-on with 1500 lines of code like that you might split it into separate python files to make development more manageable
+For an add-on with 1500 lines of code like that you might split it into separate python files to make development more manageable.
 
-[Create an addon that uses multiple files](https://blenderartists.org/t/create-an-addon-that-uses-multiple-files/634670/2)
-
-[How to Convert Your One File Blender Addon to an Addon Package - Blender Market Documentation](https://support.blendermarket.com/article/296-how-to-convert-your-one-file-blender-addon-to-an-addon-package)
-
-[Create a Custom Blender Panel with less than 50 lines of Python code](https://www.youtube.com/watch?v=Qyy_6N3JV3k)
-
-- • [Final Code at GitHub](https://github.com/CGArtPython/blender_plus_python/blob/main/add-ons/simple_custom_panel/simple_custom_panel.py)
-
-- More interesting add-ons by same author, Victor Stepanov: [add-ons at main · CGArtPython](https://github.com/CGArtPython/blender_plus_python/tree/main/add-ons)
-
-- And also, more interesting YouTube video tutorials on scripting: [CG Python - YouTube](https://www.youtube.com/@CGPython)
-
-[The secret behind Blender’s tool icons - SVGs? PNGs? Nope. They're actual 3D models](https://x.com/cgcookie/status/1949505708937891927?s=12) - “X” Thread
-
-[A Comprehensive Overview of Gaussian Splatting | Towards Data Science](https://towardsdatascience.com/a-comprehensive-overview-of-gaussian-splatting-e7d570081362/#4cd8)
-
-[Creating custom icons for Blender toolbar](https://b3d.interplanety.org/en/creating-custom-icons-for-blender-toolbar/)
-
-[Fibonacci Lattices / Amit Sch](https://observablehq.com/@meetamit/fibonacci-lattices) - Interesting to translate Fibonacci distributions to Plane, Circle and Sphere
-
-[Algorithmic Trees / Amit Sch | Observable](https://observablehq.com/@meetamit/algo-trees) - Also, to create procedural trees
+---
 
 [Point, Line, Plane](https://paulbourke.net/geometry/pointlineplane/) - Various notes and algorithms dealing with points, lines, and planes by [Paul Burke](https://paulbourke.net/)
 
@@ -5390,19 +4635,6 @@ For an add-on with 1500 lines of code like that you might split it into separate
 
 - Equation of a line in polar coordinates
 
----
 
-**BEVEL V2 - Creating a new super-bevel node for Blender - Journey and work diary by Howard Trickey**
 
-Howard Trickey is a developer who likes 3D programming, and contributes to Blender in his free time, responsible for such things as Bevel and Boolean. His day job is as a Software Engineering Manager at Google.
-
-[#98674 - Bevel V2 - blender - Blender Projects](https://projects.blender.org/blender/blender/issues/98674)
-
-[Bevel notes - Documentos de Google](https://docs.google.com/document/d/1QXt5gJxB8I2UPFUpdwALfCAsRsS5OQMW8HrB5zoRXW0/edit?tab=t.0)
-
-[Bevel notes 2 - Documentos de Google](https://docs.google.com/document/d/1zFU7TfiJo3sByf5pTyDvZSICxFnFIYfXkM8gDAj3LJY/edit?tab=t.0#heading=h.dizf4f3cdyc1)
-
-[howardtrickey](https://sites.google.com/site/howardtrickey/home)
-
----
 

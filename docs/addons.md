@@ -2,13 +2,13 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 
 # ADD-ONS
 
+>This is a vast compilation with **add-ons, custom nodes and other resources**. Here I track what I have installed on my computers (a Mac for work and a WindowsPC for rendering) - I also save a link to other interesting stuff “to consider”, just in case that I need it in the future.
+
+> The emojis 🔴 or 🟠 means, pending to *INSTALL* or *UPDATE* on my Windows machine. I usually work on a daily basis on a Mac, using Win just for rendering.
+
+> *TO DO:* Install Blender **5.2** on my Windows Computer and update all add-ons and keymaps
+ 
 ## INSTALLED ADD-ONS
-
-### PENDING TASKS
-
-- *Install Blender 5.2.1 on my Windows Computer and update all add-ons and keymaps*
-
-> The emojis 🔴 or 🟠 means, *pending to INSTALL or UPDATE on my Windows machine*. I usually work on a daily basis on a Mac, using Win just for rendering.
 
 ### NATIVE - PREINSTALLED
 
