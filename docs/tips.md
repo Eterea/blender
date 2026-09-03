@@ -180,7 +180,7 @@ Answer:
 
 ### Avoid crashes marking as Assets
 
-To Append stuff in my **etr_dones.blend**, **mark as ASSETS both the Objects and/or the Nodes BEFORE appending**. Because since 5.x I detect a high amount of crashes when marking as Asset once the stuff is in that master file… It’s really strange…
+To Append stuff in my **etr_nodes.blend**, **mark as ASSETS both the Objects and/or the Nodes BEFORE appending**. Because since 5.x I detect a high amount of crashes when marking as Asset once the stuff is in that master file… It’s really strange…
 
 ### Export to painter
 
