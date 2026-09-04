@@ -28,6 +28,8 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 
 [Henning Sanden en X: "Whats your best tip for core modeling in Blender? No fancy addons, only old school box and poly modeling tips. Could be hotkeys, general techniques, etc"](https://twitter.com/henningsanden/status/1775479054407204923)
 
+[Host your Blender Assets on Github Pages](https://www.youtube.com/@jan-hendrik3) - By Jan-Hendrik Müller - Here's the [link](https://github.com/kolibril13/my-asset-remote) to the template on GitHub
+
 [How Blender Keymap Presets Works](https://discord.com/channels/267112699517861888/1276613499878903808/1312076163463643221) - *Discord link*, by Xen Wildman - Saved on disk
 
 [How To Install or Reset Blender (The Right Way)](https://www.youtube.com/watch?v=Y_DRWnWq2fI)
@@ -259,21 +261,13 @@ A great and generous master - Already knew this guy from the C4D times…
 
 [Seanterelle](https://seanterelle.gumroad.com/) - Blender animations - Finished scenes, ready to download and their respective tutorials on YT - *GREAT*
 
-- [Bubble Simulation](https://seanterelle.gumroad.com/l/bubble_simulation) - Finished scene, *$10*
+- [Bubble Simulation](https://www.youtube.com/watch?v=Z5eGxPoqfvA) - Fee Tutorial - [Finished scene](https://seanterelle.gumroad.com/l/bubble_simulation) - *$10*
 
-- [Bubble Simulation](https://www.youtube.com/watch?v=Z5eGxPoqfvA) - Fee Tutorial
+- [Delaunay Triangulation](https://www.youtube.com/watch?v=HyW54cI8Qdo) - Free Tutorial - [Finished scene](https://seanterelle.gumroad.com/l/delaunay_triangulation) - *$10*
 
-- [Delaunay Triangulation](https://seanterelle.gumroad.com/l/delaunay_triangulation) - Finished scene, *$10*
+-  [Inflated Text](https://www.youtube.com/watch?v=z11px5n6hc0) - Free Tutorial - [Finished scene](https://seanterelle.gumroad.com/l/inflated_text) - *$10*
 
-- [Delaunay Triangulation](https://www.youtube.com/watch?v=HyW54cI8Qdo) - Free Tutorial
-
-- [Inflated Text using Geometry Nodes](https://www.youtube.com/watch?v=z11px5n6hc0) - Free Tutorial
-
-- [Inflated Text](https://seanterelle.gumroad.com/l/inflated_text) - Finished scene, *$10*
-
-- [Loop Knit](https://seanterelle.gumroad.com/l/loop_knit) - Finished scene, *$10*
-
-- [Loop Knit](https://www.youtube.com/watch?v=lHSNui8lgyI) - Free Tutorial on weaving to create wool fabric - WONDERFUL, complex and powerful, based on a Houdini tutorial
+- [Loop Knit](https://www.youtube.com/watch?v=lHSNui8lgyI) - Free Tutorial on weaving to create wool fabric - WONDERFUL, complex and powerful, based on a Houdini tutorial - [Finished scene](https://seanterelle.gumroad.com/l/loop_knit) - *$10*
 
 ### Entagma
 
