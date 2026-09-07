@@ -91,3 +91,60 @@
 .md-nav__link--active, .md-nav__link:focus, .md-nav__link:hover {
   color: #FC9867 !important;
 }
+
+/* --- Collapsible "On this page" TOC ------------------------------------
+   Material for MkDocs has no built-in expand/collapse for nested TOC
+   entries; docs/javascripts/toc-collapse.js adds the toggle button and
+   this styles it as a rotating chevron, plus hides collapsed branches. */
+
+.md-nav--secondary .md-nav__item--collapsible {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.md-nav--secondary .md-nav__item--collapsible > .md-nav__link {
+  flex: 1 1 auto;
+}
+
+.md-nav--secondary .md-nav__item--collapsible > .md-nav {
+  flex: 1 0 100%;
+}
+
+.md-nav--secondary .md-nav__item--collapsed > .md-nav {
+  display: none;
+}
+
+.md-nav--secondary .md-nav__toc-toggle {
+  order: -1;
+  flex: 0 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  margin-top: 0.15rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+}
+
+.md-nav--secondary .md-nav__toc-toggle:hover {
+  color: #FC9867;
+}
+
+.md-nav--secondary .md-nav__toc-toggle::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent currentColor;
+  transition: transform 0.2s ease;
+}
+
+.md-nav--secondary .md-nav__item--collapsible:not(.md-nav__item--collapsed) > .md-nav__toc-toggle::before {
+  transform: rotate(90deg);
+}

@@ -25,11 +25,14 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/toc-collapse.js
+
 markdown_extensions:
   - toc:
       permalink: true
       title: On this page
-      toc_depth: 3
+      toc_depth: 5
   - tables
   - pymdownx.highlight:
       anchor_linenums: true
