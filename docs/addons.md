@@ -8,15 +8,15 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 
 > *TO DO:* Install Blender **5.2** on my Windows Computer and update all add-ons and keymaps
  
-## INSTALLED ADD-ONS
+## INSTALLED
 
-### NATIVE - PREINSTALLED
+### Preinstalled
 
 This is pre-installed in 5.x
 
 [Node Wrangler](https://docs.blender.org/manual/en/latest/addons/node/node_wrangler.html) - Use the panel in Sidebar of the node editor or press **Shift-W** to bring up the quick access menu
 
-### INSTALLED FROM EXT.BLENDER.ORG
+### Blender Extensions
 
 > [BLENDER EXTENSIONS](https://extensions.blender.org/) - Source for all this Blender Extensions - Install from Blender Preferences
 
@@ -121,7 +121,7 @@ This is pre-installed in 5.x
 [World Apply](https://extensions.blender.org/add-ons/world-apply/) - Sync viewport world (environment) settings with scene world settings
 
 [You Are Autosave](https://extensions.blender.org/add-ons/you-are-autosave/) - Show a red warning when you haven't saved in a while
-### THIRD PART - FREE
+### Third Part - Free
 
 #### Kushiro - Free
 
@@ -236,7 +236,7 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 
 > *(#N) Means connected, relative, very similar or even redundant pairs. To simplify…*
 
-### THIRD PART - PAID
+### Third Part - Paid
 
 #### KeKit
 
@@ -343,7 +343,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 [Shaders Plus - Caustics, Thin Film, Dispersion for Cycles & Eevee (v4)](https://superhivemarket.com/products/shadersplus) - Smouse - Shaders Plus v4 + Modules Bundle = *USD 35* - [Shaders Plus Docs](https://docs-shadersplus.crd.co/#docsmenu) - Allows you to achieve Real Time Caustics, Dispersion, and physically accurate Thin Film Interference Effects!
 [SIMPLE N-PANEL](https://chippwalters.gumroad.com/l/simple-n-panel) - *USD 10* - A new version for the free (and un-installed) [SIMPLE TABS](https://chippwalters.gumroad.com/l/simpletabs)
 [Quad Remesher](https://exoside.com/quadremesher/quadremesher-upgrade/) - By Exoside - *USD 30* > UPDATED “Indie Modo” > “Indie for all softwares”
-### CUSTOM NODES
+### Custom Nodes
 #### Paid Custom Nodes
 
 [Higgsas Blender Geometry Nodes Groups Toolset Pack](https://higgsas.gumroad.com/l/wrusot) - *USD 10* - [Manual 0.1 documentation](https://higgsas-geo-nodes-manual.readthedocs.io/en/latest/) - (Higgsas) Geometry Nodes Groups Blender 3.3/4.4 - Tutorials, Tips and Tricks at [Blender Artists Community.](https://blenderartists.org/t/higgsas-geometry-nodes-groups-blender-3-3-4-4/1351737)
@@ -381,7 +381,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 #### My Custom Nodes Directory
 
-> **My collection of custom nodes.** This is growing fast. Most of them are third part, other are mine. Here is my main Nodes directory folder names, located at: `/Users/cristobal/Library/Application Support/Blender/VERSION/nodes/`
+> **My collection of custom nodes, by others and by myself.** This is growing fast. Here is my main Nodes directory folder names, located at: `/Users/cristobal/Library/Application Support/Blender/VERSION/nodes/`
 
 **Shmuel**
 
@@ -468,7 +468,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 - G_Normals_01
 - G_Nodgroups_Library_01
 
-### MY OWN ADD-ONS AND NODES
+### My Add-ons & Nodes
 
 > **Finally! All these add-ons are already unified on a single kit, but:**
 
@@ -508,7 +508,9 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 > **Interesting resource:** [lunadigital/blender-addon-template: An empty template for Blender add-ons](https://github.com/lunadigital/blender-addon-template) - A boilerplate template to help you organize your Blender add-on code. You can even install and enable the template as-is, even though it doesn't do anything
 
-### DOWNLOADED - NOT INSTALLED
+### Only Downloaded
+
+>This is: downloaded, but not installed
 
 [CR Basic Brushpack for blender texture painting](https://omarfaruqtawsif.gumroad.com/l/zcpfq) - 6 customizable brushes along regular blender Brush
 
@@ -521,9 +523,9 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 [ClothFX - Payhip](https://payhip.com/b/5FPqR) - By AFX LAB - Blender Cloth Effects. Made simple & fast
 **Average Normal Move** - Shared by Rouven Miller in Discord. To move a face along normal and stop vertices at collision
 
-### UNINSTALLED
+### Uninstalled
 
-> **This is all my uninstalled add-ons, for different reasons:**
+> This is all my uninstalled add-ons, for different reasons:
 
 [Free Viewport Display](https://www.youtube.com/watch?v=LbbgdfHf42w) or “Mesh Display” - By Blender Bob - Substituted by the much better YT Tools by Taz-San
 
@@ -576,7 +578,7 @@ Custom Notes and Frame Tools - [Time Range Notes](https://www.youtube.com/watch?
 
 **etr\_match\_surface\_viewport** - Replaced by [Sync Material Viewport Color](https://extensions.blender.org/add-ons/sync-material-viewport-color/)
 
-## ADD-ONS TO CONSIDER
+## TO CONSIDER
 
 [Awesome-Blender: A curated list of awesome Blender addons, tools, tutorials; and 3D resources for everyone](https://github.com/agmmnn/awesome-blender) - Recommended by Javi Polo
 
@@ -600,31 +602,7 @@ Custom Notes and Frame Tools - [Time Range Notes](https://www.youtube.com/watch?
 
 [blendergpt.org](https://www.blendergpt.org/) - Not exactly an add-on, AFAIK. an advanced artificial intelligence program that creates 3D models from text or image prompts in ~20 seconds. It lets you synthesize fully textured meshes, then import directly to Blender with a shortcut or download the source files for use in any compatible software
 
-### TO CONSIDER BY KUSHIRO
-
-Several very interesting Add-ons to consider by [Kushiro](https://kushiro.gumroad.com/) 
-
-[Grid Modeler](https://kushiro.gumroad.com/l/VthLyO) - *USD 20*
-
-Lots are *FREE*:
-
-- [Quick Bridge](https://kushiro.gumroad.com/l/qignp?layout=profile)
-
-- [Curve Face Color](https://kushiro.gumroad.com/l/xwxst?layout=profile)
-
-- [Connect Face](https://kushiro.gumroad.com/l/connect_face?layout=profile)
-
-- [Simple Bend](https://kushiro.gumroad.com/l/ibyaq?layout=profile)
-
-- [Even Triangulation](https://kushiro.gumroad.com/l/jpjox?layout=profile)
-
-- [Safe Inset](https://kushiro.gumroad.com/l/iruis?layout=profile)
-
-- [Select Sim](https://kushiro.gumroad.com/l/smjsbe?layout=profile)
-
-- [Pixel Dot Drawer](https://kushiro.gumroad.com/l/pixel_dot_drawer) - for drawing pixel art in Blender's Texture Editor since Blender does not draw exact 1 x 1 pixel in Texture Editor
-
-### TO CONSIDER - FREE - AT EXT.BLENDER.ORG
+### Blender Extensions
 
 [3D Viewport Pie Menus](https://extensions.blender.org/add-ons/viewport-pie-menus/) - Various pie menus to speed up your workflow
 
@@ -684,6 +662,8 @@ Lots are *FREE*:
 
 [Measure and Scale](https://extensions.blender.org/add-ons/measure-and-scale/) - Measure between any two vertices and uniformly scale the entire object to match that measurement
 
+[Mesh Analysis Overlay](https://extensions.blender.org/approval-queue/mesh-analysis-overlay/) - Triangles, quads, n-gons, etc. of different color - Similar to Analyze Mesh and Check Toolbox (already installed). Maybe smarter, simpler & stronger?
+
 [Mio3 Copy Weight](https://extensions.blender.org/add-ons/mio3-copy-weight/) - Copy weights across different objects (not possible by default). It copies the weight of the last selected vertex to other selected vertices
 
 [Modifier List](https://extensions.blender.org/add-ons/modifier-list-fork/) - Enhanced UI layout for managing many modifiers with handy features to make the modifier workflow faster. Includes Edit Mesh Modifier
@@ -740,11 +720,33 @@ Lots are *FREE*:
 
 [Universal Multi Importer](https://extensions.blender.org/add-ons/universal-multi-importer/) - Import multiple files of different formats from the same import dialog, scan for files to import in a folder hierarchy
 
-#### Approval queue
+### Third Part - Free
 
-[Mesh Analysis Overlay](https://extensions.blender.org/approval-queue/mesh-analysis-overlay/) - Triangles, quads, n-gons, etc. of different color - Similar to Analyze Mesh and Check Toolbox (already installed). Maybe smarter, simpler & stronger?
+#### By Kushiro
 
-### TO CONSIDER - FREE - OTHERS
+Several very interesting Add-ons to consider by [Kushiro](https://kushiro.gumroad.com/) 
+
+[Grid Modeler](https://kushiro.gumroad.com/l/VthLyO) - *USD 20*
+
+Lots are *FREE*:
+
+- [Quick Bridge](https://kushiro.gumroad.com/l/qignp?layout=profile)
+
+- [Curve Face Color](https://kushiro.gumroad.com/l/xwxst?layout=profile)
+
+- [Connect Face](https://kushiro.gumroad.com/l/connect_face?layout=profile)
+
+- [Simple Bend](https://kushiro.gumroad.com/l/ibyaq?layout=profile)
+
+- [Even Triangulation](https://kushiro.gumroad.com/l/jpjox?layout=profile)
+
+- [Safe Inset](https://kushiro.gumroad.com/l/iruis?layout=profile)
+
+- [Select Sim](https://kushiro.gumroad.com/l/smjsbe?layout=profile)
+
+- [Pixel Dot Drawer](https://kushiro.gumroad.com/l/pixel_dot_drawer) - for drawing pixel art in Blender's Texture Editor since Blender does not draw exact 1 x 1 pixel in Texture Editor
+
+#### By Others
 
 [ActionRecorder](https://github.com/InamuraJIN/ActionRecorder) - Automatically records your workflow, allowing you to save a sequence of steps as a reusable macro. It automatically assigns the macro to a button for easy access.
 
@@ -888,11 +890,31 @@ Especially interesting by Johny Gizmo:
 
 [wiggle-2: Rewrite of blender-wiggle with new features and physics](https://github.com/shteeve3d/blender-wiggle-2) - To manage chains of bones, to easily setups tubes, chains, collisions, etc
 
-### TO CONSIDER - PAID
+### Third Part - Paid
+
+#### By Mark Kingsnorth aka Configurate
+
+[Conform Object](https://mark-kingsnorth.gumroad.com/l/conform-object) - *USD 12* - To project smaller objects onto a larger object surface in one direction.
+
+[Flowify for Blender](https://mark-kingsnorth.gumroad.com/l/flowify) - *USD 15* - To bend object to a surface that has evenly spaced 4 sided faces and 4 corners. A simple flat reference grid is used to guide the deformation
+
+[Mesh Materializer](https://mark-kingsnorth.gumroad.com/l/mesh-materializer) - *USD 15* - To wrap an object onto the surface of another object like a material, using a UV texture map as a guide
+
+[Curves To Mesh](https://mark-kingsnorth.gumroad.com/l/curves-to-mesh) - *USD 25* - Create and configure mesh surfaces from Bezier curves in Blender - Los GN de Highass tienen una tool para esto…
+
+#### By Gaffer
+
+[GitHub - gregzaal/Gaffer: A light-manager add-on for Blender](https://github.com/gregzaal/Gaffer) (trial, free, no limits, to try it out)
+
+[Gaffer - Light & HDRI Manager - Blender Market](https://blendermarket.com/products/gaffer-light-manager) (*USD 20*, if I am convinced and want to pay)
+
+[Gaffer update adds HDRI Favorites | Blender Secrets - YouTube](https://www.youtube.com/watch?v=OUHIBZJw6cI) (to see how it works)
+
 
 [3D Tree Growing Software - The Grove](https://www.thegrove3d.com/) *89-149 EUR* - A tree simulator
 
 [Amazing terrain creator addon](https://detectorpham.gumroad.com/l/ezzcx) - *USD 1* - [Generate 3D Maps EASIER with this ONE Simple Trick](https://www.youtube.com/watch?v=iSqP2WIQT9M)
+#### By Others
 
 [Align And Distribute](https://amanbairwal.gumroad.com/l/AlignAndDistribute) v3.0 *USD 7* - Really powerful and with all kind of options
 
@@ -1060,25 +1082,7 @@ Especially interesting by Johny Gizmo:
 
 [Zen Cage](https://sergeytyapkin.gumroad.com/l/zencage) - *USD 9* - Intuitive control over object transformations using a bounding box cage with interactive handles. Align, Fit, Distribute, Clamp, Array, Rotate, and Scale
 
-#### To Consider by Mark Kingsnorth aka Configurate
-
-[Conform Object](https://mark-kingsnorth.gumroad.com/l/conform-object) - *USD 12* - To project smaller objects onto a larger object surface in one direction.
-
-[Flowify for Blender](https://mark-kingsnorth.gumroad.com/l/flowify) - *USD 15* - To bend object to a surface that has evenly spaced 4 sided faces and 4 corners. A simple flat reference grid is used to guide the deformation
-
-[Mesh Materializer](https://mark-kingsnorth.gumroad.com/l/mesh-materializer) - *USD 15* - To wrap an object onto the surface of another object like a material, using a UV texture map as a guide
-
-[Curves To Mesh](https://mark-kingsnorth.gumroad.com/l/curves-to-mesh) - *USD 25* - Create and configure mesh surfaces from Bezier curves in Blender - Los GN de Highass tienen una tool para esto…
-
-#### To Consider by Gaffer
-
-[GitHub - gregzaal/Gaffer: A light-manager add-on for Blender](https://github.com/gregzaal/Gaffer) (trial, free, no limits, to try it out)
-
-[Gaffer - Light & HDRI Manager - Blender Market](https://blendermarket.com/products/gaffer-light-manager) (*USD 20*, if I am convinced and want to pay)
-
-[Gaffer update adds HDRI Favorites | Blender Secrets - YouTube](https://www.youtube.com/watch?v=OUHIBZJw6cI) (to see how it works)
-
-### TO CONSIDER - CUSTOM NODES
+### Custom Nodes
 
 #### Collections
 
@@ -1125,7 +1129,7 @@ Especially interesting by Johny Gizmo:
 [Easy Lens Flares for Blender Compositor](https://chrisfast.gumroad.com/l/easy-lens-flares) - *FREE* - Real time drag-and-drop lens flare solution for Blender using procedural techniques with the GPU
 [Fares 3D](https://knight3d.gumroad.com/) - *FREE*- Various interesting effects: Transform, Disintegration, Avoid Points Intersection, Gradients, Curls and 50 LOOPS.
 
-#### Custom tools or scenes
+#### Custom Tools or Scenes
 
 [Blender Geo Nodes: Platform Generator](https://leonardoambrosini.gumroad.com/l/xlpkw) - FREE demo - *5 eur full* (more to see how it is made, than to see how it is useful...)
 
@@ -1137,7 +1141,7 @@ Especially interesting by Johny Gizmo:
 
 [Alex Martinelli](https://sagado.gumroad.com/) - *FREE* - GREAT Procedural Assets for Blender - Procedural Crystal, L-Systems, Phyllotaxis, Differential Groth, Spiderwebs, Cellular Automata, Camera control & Animation, Recursive Subdivision, Flock Simulation
 
-### OTHER ASSETS & TOOLS
+### Other Assets & Tools
 
 [Awesome-Blender: A curated list of awesome Blender addons, tools, tutorials; and 3D resources for everyone.](https://github.com/agmmnn/awesome-blender)
 

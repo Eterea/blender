@@ -10,7 +10,7 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 
 ---
 
-## I HAVE MODIFIED THESE PREFERENCES
+## CUSTOM PREFERENCES
 
 **Interface** > Status Bar > Scene Statistics ON / *System Memory ON*
 
@@ -72,7 +72,7 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 - [Radium's Hotkey Graph](https://b3dkey.space/)
 - [Radium's Guide To Blender Hotkeys - Radium's Ko-fi Shop](https://ko-fi.com/s/f03814f636)
 
-## ADDED TO QUICK FAVORITES
+## QUICK FAVORITES
 
 *[ This is the “Q” menu ]*
 
@@ -197,7 +197,7 @@ Note that tools that only work in Edit mode only appear when we are in Edit mode
 - Batch Rename — **Cmd-F2** (Menu Edit)
 - Return to default value — **Backspace** (just put your mouse over a setting —not clicking— and press Backspace)
 
-## NAVIGATION, VIEW & CAMERAS
+## NAV, VIEW & CAMERAS
 
 - Toggle Single / 4 views — **Ctrl-Alt-Q**
 
@@ -652,7 +652,7 @@ For the “Zen Unwrap” command to work, you must be in UV Sync mode
 - Change Width — **Ctrl-F > LMB**
 - Select Bone for Paint — **Alt-RMB-Click** on bone
 
-## OUTLINER, COLLECTIONS & RELATIONS
+## OUTLINER & RELATIONS
 
 - Move to Collection — **M**
 

@@ -1118,7 +1118,7 @@ Related product: [Render Raw - Color Correction & Effects - Superhive (formerly 
 
 [Why Blender 4.4's Video Editor is Revolutionary](https://www.youtube.com/watch?v=9tWEsqIgeDY)
 
-## DAVINCI RESOLVE AND BLENDER
+##  BLENDER TO RESOLVE
 
 [DaVinci Resolve – Training | Blackmagic Design](https://www.blackmagicdesign.com/products/davinciresolve/training) - The official ones - CONTINUE HERE, nobody will know better this app!
 

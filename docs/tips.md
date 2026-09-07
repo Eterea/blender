@@ -300,7 +300,7 @@ for obj in selection:
         bm.free()
 ```
 
-## COLLECTIONS, HIERARCHY & OUTLINER
+## OUTLINER & HIERARCHY 
 
 ### About collections and hierarchies with common parents but uncommon siblings
 
@@ -374,7 +374,7 @@ NOTE: we can select any object (mesh, camera, light…), then a second mesh obje
 
 ## MODELING
 
-### QUICK TIPS
+### Quick Tips
 
 #### Triangles to Quads
 
@@ -802,7 +802,7 @@ Two methods:
 
 >*Important, for blender 5.1 and up:* Node tools from previous versions must be opened and saved with 5.1
 
-### QUICK TIPS
+### Quick Tips
 
 #### Multi-line text on Frames:
 
@@ -1298,7 +1298,7 @@ Use Group Inputs to expose parameters that will be accessed through bottom tool 
 
 ## UVS
 
-### QUICK TIPS
+### Quick Tips
 
 #### Stack identical shell islands
 
@@ -1424,7 +1424,7 @@ ANSWERS:
 
 ## CURVES
 
-### QUICK TIPS
+### Quick Tips
 
 #### Tip to Move an Object to another Target Object or Empty Position
 
@@ -1526,7 +1526,7 @@ if obj and obj.type == 'CURVE':
 
 ## SCULPTING
 
-### QUICK TIPS
+### Quick Tips
 
 #### Add details to a Shape key using Sculpt
 
@@ -1715,7 +1715,7 @@ Then load them into Blender so they become embedded in the project file.
 
 ## ANIMATION
 
-### QUICK TIPS
+### Quick Tips
 
 #### One the best Blender shortcuts combo:
 
@@ -1837,7 +1837,7 @@ So, motion paths are ephemeral: they exist only in memory, like a viewport helpe
 
 ## RIGGING
 
-### QUICK TIPS
+### Quick Tips
 
 #### Move Parent without affecting Children
 
@@ -2612,7 +2612,7 @@ For better final result add a Smooth modifier, with Factor 1
 
 ---
 
-### QUICK TIPS
+### Quick Tips
 
 #### Reload all textures
 
