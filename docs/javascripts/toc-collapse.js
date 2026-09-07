@@ -25,6 +25,16 @@
 
       item.classList.add("md-nav__item--collapsible", "md-nav__item--collapsed");
 
+      // The link normally carries its own top spacing (margin-top) to
+      // separate it from the previous entry. Once the toggle becomes a
+      // sibling flex item next to it, that margin only pushes the link
+      // down — not the toggle — so the two drift out of alignment. Move
+      // that spacing onto the row itself, and zero it on the link, so
+      // both the toggle and the link start from the same baseline.
+      var linkMarginTop = window.getComputedStyle(link).marginTop;
+      item.style.marginTop = linkMarginTop;
+      link.style.marginTop = "0";
+
       var toggle = document.createElement("button");
       toggle.type = "button";
       toggle.className = "md-nav__toc-toggle";

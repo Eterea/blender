@@ -122,7 +122,8 @@
   align-items: center;
   justify-content: center;
   width: 1rem;
-  margin-top: 0.15rem;
+  height: 1.3em;
+  margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
