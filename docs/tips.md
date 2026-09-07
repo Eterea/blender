@@ -3797,6 +3797,32 @@ This is:
 
 - To disable this effect: View Layer > **Clear Indirect Only**
 
+#### Specifically for my Mondo renders
+
+##### To render System Only with transparent background
+
+1. Select FLOOR Collection
+
+2. Outliner → View Layer → Set Indirect Only
+
+3. Render using F12 and Save (Be sure to use PNG / RGBA as format)
+
+4. Undo step 2 using Clear Indirect Only
+
+##### To render floor Shadows Only over a transparent background
+
+1. Select SYSTEM Collection
+
+2. Outliner → View Layer → Set Indirect Only
+
+3. Select FLOOR Object
+
+4. Object Properties → Visibility → Enable Shadow Catcher
+
+5. Render using F12 and Save (Be sure to use PNG / RGBA as format)
+
+6. Undo steps 2 and 4 using Clear Indirect Only and disabling Shadow Catcher for Floor
+
 #### To get Shadow only over pure white, instead of transparent,
 
 We can use **Compositing Nodes**:
