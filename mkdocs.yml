@@ -39,6 +39,10 @@ markdown_extensions:
   - md_in_html
   - attr_list
 
+copyright: >
+  © Cristóbal Vila — Content licensed under
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener">CC BY-NC-ND 4.0</a>
+
 nav:
   - Home: index.md
   - Add-ons: addons.md

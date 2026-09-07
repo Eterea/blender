@@ -100,11 +100,13 @@ This is pre-installed in 5.x
 
 [Rotor](https://extensions.blender.org/add-ons/rotor/) - advanced mirror tool. Press **ALT-X** or select active to l and pick the side you want to mirror along - [Rotor Documentation](https://rotor.ezelar.com/) - 🔴
 
-[rmKit](https://extensions.blender.org/add-ons/rmkit/) - advanced functionality for mesh editing, precision modeling, and material management - [rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/) **-** *TO STUDY + [ WIN UPDATE ]*
+[rmKit](https://extensions.blender.org/add-ons/rmkit/) - advanced functionality for mesh editing, precision modeling, and material management - [rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/) - 🟠
 
 [Save Selection](https://extensions.blender.org/add-ons/saveselection/) - Export selection to .blend file. File -> Export -> Save Selection (.blend) - 🟠
 
 [ShapeKeySwapper](https://extensions.blender.org/add-ons/shape-key-swapper-extension/) - swap vertex positions between the 0 and 1 values of the active shape key with a single click
+
+[Show Object/Data Users in Viewport](https://extensions.blender.org/add-ons/show-object-data-users-in-viewport/) - Display the number of users for the selected object in the viewport, right next to its name - *BUG: text size is extremely small on a retina screen. Fix using Claude and drop a note to author with fix* - 🔴
 
 [Simple Renaming](https://extensions.blender.org/add-ons/simple-renaming-panel/) - To batch rename objects and data in Blender quickly - [Overview - Documentation](https://weisl.github.io/renaming_overview/) - 🟠
 
@@ -125,7 +127,9 @@ This is pre-installed in 5.x
 
 [KUSHIRO](https://kushiro.gumroad.com/) - All his add-ons at Gumroad
 
-[Kushiro Tools](https://kushiro.gumroad.com/l/ikzrmy)[ - Free Collection](https://kushiro.gumroad.com/l/visualaxis) - A specific collection with his free tools. **Details**:
+[Curve Face Color](https://kushiro.gumroad.com/l/xwxst) - Tool for assigning color based on the face curvature, seam or marked sharp - Specially convenient to use in combination with QuadRemesher, as explained on this [tutorial](https://www.youtube.com/watch?v=Ut9A1WiGFgw) - 🔴
+
+[Kushiro Tools Kit](https://kushiro.gumroad.com/l/ikzrmy)[ - Free Collection](https://kushiro.gumroad.com/l/visualaxis) - A specific collection with a great part of his free tools. **Details**:
 
 - [Attach Align](https://kushiro.gumroad.com/l/iutJRq)
 
@@ -634,6 +638,8 @@ Lots are *FREE*:
 
 [Archimesh](https://extensions.blender.org/add-ons/archimesh/) - Generate rooms, doors, windows, and other architecture objects.
 
+[Atlas2Mesh](https://extensions.blender.org/add-ons/atlas2mesh/) - Turn a sprite atlas into real 3D mesh assets traced straight from the alpha channel
+
 [Attribute Sweep](https://extensions.blender.org/add-ons/attribute-sweep/) - lets you select and delete mesh attributes in batches. Select multiple mesh objects and scan them to see their removable attributes in one list
 
 [Auto Mirror](https://extensions.blender.org/add-ons/auto-mirror/) - Super fast cutting and mirroring for mesh
@@ -847,6 +853,8 @@ Especially interesting by Johny Gizmo:
 [roosterMAP/rmKit](https://github.com/roosterMAP/rmKit) - Variety of custom tools made by an ex-Modo user - There is a **Falloff Transform** for Move, Rotate and Scale - [rmKit Documetation — rmKit 0.1 documentation](https://rmkit.readthedocs.io/en/latest/)
 
 [Screen Space Global Illumination for Blender Eevee - Native and Addon versions](https://n0451.gumroad.com/l/PgyXc)
+
+[Sculpt Bridge Tool](https://superhivemarket.com/products/sculpt-bridge-tool/?ref=8235) - Create a bridge or punch a hole in a mesh with ease
 
 [Select by size (object mode)](https://x.com/blue_nile_3d/status/1830255709377990960) - Downloaded and saved, but not installed
 

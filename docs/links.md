@@ -125,6 +125,8 @@ And also, *great free resources* in his site:
 
 [Boolean modeling and SDS without ngons](https://x.com/FR3NKD/status/1902371952494338215) - Useful for non extremely complex shapes
 
+[Booleans to Subdivision Topology](https://www.youtube.com/watch?v=Ut9A1WiGFgw) - How to use Quad Remesher and Curve Face Color add-ons for hard surface
+
 [Connect two objects using the Data Transfer modifier](https://www.youtube.com/watch?v=Eu9abP0LIb8) - by Christopher 3D
 
 [Deform an object to follow the surface of another, using Shrink Wrap, but avoid flattening using a Lattice](https://www.instagram.com/reel/C9H1PEhMbUD)
