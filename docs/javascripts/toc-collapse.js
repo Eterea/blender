@@ -57,9 +57,12 @@
   }
 
   function addCollapseAllButton(toc, hasCollapsible) {
+    var title = toc.querySelector(":scope > .md-nav__title");
     var existing = toc.querySelector(":scope > .md-nav__collapse-all");
+
     if (!hasCollapsible) {
       if (existing) existing.remove();
+      if (title) title.style.top = "";
       return;
     }
     if (existing) return;
@@ -77,6 +80,17 @@
     });
 
     toc.insertBefore(button, toc.firstChild);
+
+    // Both the button and "On this page" are meant to stay pinned while
+    // the rest of the TOC scrolls underneath. Material already makes the
+    // title sticky at top:0; since our button now sits above it, the
+    // title needs to be pushed down by exactly the button's own height
+    // so the two stack without overlapping. Measuring it (rather than
+    // hard-coding a pixel value) keeps this correct even if the button's
+    // font size or padding changes later.
+    if (title) {
+      title.style.top = button.getBoundingClientRect().height + "px";
+    }
   }
 
   function expandAncestors(el) {

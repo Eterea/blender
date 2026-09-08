@@ -172,12 +172,24 @@
    quietly above the TOC instead of competing with it. */
 .md-nav--secondary .md-nav__collapse-all {
   display: block;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   width: 100%;
   text-align: left;
   margin: 0;
-  padding: 0.6rem 0.6rem 0.2rem;
+  /* Extra bottom padding matches the gap between "Blender Resources —
+     ETÉREA" and "Home" in the primary sidebar (0.625em ≈ 8.75px at the
+     TOC's own font-size), so "Collapse all" sits the same distance from
+     "On this page" as that reference pair. */
+  padding: 0.6rem 0.6rem 9px;
   border: 0;
-  background: transparent;
+  /* Solid background: this button is sticky and sits directly above the
+     equally-sticky "On this page" title, so it needs to fully mask the
+     TOC entries scrolling underneath — otherwise they show through, and
+     the title's own fade shadow (which normally blends into the page
+     background right below it) bleeds visibly into the button instead. */
+  background: var(--md-default-bg-color);
   color: var(--md-link-color);
   font-size: 0.7rem;
   cursor: pointer;
