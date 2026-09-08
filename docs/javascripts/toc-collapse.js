@@ -18,11 +18,14 @@
     if (!toc) return;
 
     var items = toc.querySelectorAll(".md-nav__item");
+    var collapsibleCount = 0;
+
     items.forEach(function (item) {
       var nestedNav = item.querySelector(":scope > .md-nav");
       var link = item.querySelector(":scope > .md-nav__link");
       if (!nestedNav || !link) return;
 
+      collapsibleCount += 1;
       item.classList.add("md-nav__item--collapsible", "md-nav__item--collapsed");
 
       // The link normally carries its own top spacing (margin-top) to
@@ -49,6 +52,31 @@
 
       item.insertBefore(toggle, link);
     });
+
+    addCollapseAllButton(toc, collapsibleCount > 0);
+  }
+
+  function addCollapseAllButton(toc, hasCollapsible) {
+    var existing = toc.querySelector(":scope > .md-nav__collapse-all");
+    if (!hasCollapsible) {
+      if (existing) existing.remove();
+      return;
+    }
+    if (existing) return;
+
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "md-nav__collapse-all";
+    button.textContent = "Collapse all";
+    button.addEventListener("click", function () {
+      toc.querySelectorAll(".md-nav__item--collapsible").forEach(function (item) {
+        item.classList.add("md-nav__item--collapsed");
+        var toggle = item.querySelector(":scope > .md-nav__toc-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    toc.insertBefore(button, toc.firstChild);
   }
 
   function expandAncestors(el) {

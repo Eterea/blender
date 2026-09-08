@@ -165,3 +165,25 @@
 .md-nav--secondary .md-nav__item--collapsible:not(.md-nav__item--collapsed) > .md-nav__toc-toggle::before {
   transform: rotate(90deg);
 }
+
+/* "Collapse all" — reset button injected above the "On this page" title,
+   only on pages that actually have collapsible entries. Styled as plain
+   text in the site's link color rather than a boxed button, to sit
+   quietly above the TOC instead of competing with it. */
+.md-nav--secondary .md-nav__collapse-all {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  padding: 0.6rem 0.6rem 0.2rem;
+  border: 0;
+  background: transparent;
+  color: var(--md-link-color);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.md-nav--secondary .md-nav__collapse-all:hover,
+.md-nav--secondary .md-nav__collapse-all:focus {
+  color: var(--md-link-hover-color);
+}
