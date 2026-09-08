@@ -97,14 +97,26 @@
    entries; docs/javascripts/toc-collapse.js adds the toggle button and
    this styles it as a rotating chevron, plus hides collapsed branches. */
 
-.md-nav--secondary .md-nav__item--collapsible {
+/* Material indents each nested level with an extra .6rem of padding on
+   .md-nav__list, which — combined with entries that skip the toggle
+   column when they have no children — left H2/H3 text starting at a
+   different x on almost every row. Cancel that per-level indent and
+   give every entry (collapsible or not, at any depth) the same
+   two-column layout, so all text lines up on one shared edge and only
+   the toggle column (present only where there is something to open)
+   moves. */
+.md-nav--secondary .md-nav .md-nav__list {
+  padding-left: 0;
+}
+
+.md-nav--secondary .md-nav__item {
   display: grid;
   grid-template-columns: 1rem 1fr;
   column-gap: 0.2rem;
   align-items: start;
 }
 
-.md-nav--secondary .md-nav__item--collapsible > .md-nav__link {
+.md-nav--secondary .md-nav__item > .md-nav__link {
   grid-column: 2;
   grid-row: 1;
   min-width: 0;
