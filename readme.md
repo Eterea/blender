@@ -3,9 +3,7 @@
 My notes on Blender
 ---
 
-# My notes on Blender##
-
-[Go to Blender Resources on my site](https://etereaestudios.com/resources/blender-resources/)
+[Go to Blender Resources on my main site](https://etereaestudios.com/resources/blender-resources/)
 
 ## Introduction
 
