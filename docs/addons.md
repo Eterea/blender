@@ -129,57 +129,10 @@ This is pre-installed in 5.x
 
 [Curve Face Color](https://kushiro.gumroad.com/l/xwxst) - Tool for assigning color based on the face curvature, seam or marked sharp - Specially convenient to use in combination with QuadRemesher, as explained on this [tutorial](https://www.youtube.com/watch?v=Ut9A1WiGFgw) - 🔴
 
-[Kushiro Tools Kit](https://kushiro.gumroad.com/l/ikzrmy)[ - Free Collection](https://kushiro.gumroad.com/l/visualaxis) - A specific collection with a great part of his free tools. **Details**:
+[Kushiro Tools Kit](https://kushiro.gumroad.com/l/ikzrmy)[ - Free Collection](https://kushiro.gumroad.com/l/visualaxis) - 🟠 - A specific collection with a great part of his free tools. **Details**:
 
-- [Attach Align](https://kushiro.gumroad.com/l/iutJRq)
-
-- [Connect Face](https://kushiro.gumroad.com/l/connect_face)
-
-- [Cut Corner](https://kushiro.gumroad.com/l/varlxb)
-
-- [Even Loop](https://kushiro.gumroad.com/l/even-loop)
-
-- [Even Triangulation](https://kushiro.gumroad.com/l/jpjox)
-
-- [Face Regulator](https://kushiro.gumroad.com/l/wfwfx)
-
-- [Flatten Face](https://kushiro.gumroad.com/l/flatten_face)
-
-- [Mirror Copy](https://kushiro.gumroad.com/l/mirror-copy)
-
-- [Non-AAQP quad tool](https://kushiro.gumroad.com/l/naaqp)
-
-- [Ngon-Loopcut](https://kushiro.gumroad.com/l/ngon-loopcut)
-
-- [Outset Boundary](https://kushiro.gumroad.com/l/outset_boundary)
-
-- [Quad Adder](https://kushiro.gumroad.com/l/quad_adder?layout=profile)
-
-- [Quad Swords](https://kushiro.gumroad.com/l/VNhcN)
-
-- [Quick Bridge](https://kushiro.gumroad.com/l/qignp)
-
-- [Quick Fillet](https://kushiro.gumroad.com/l/quickfillet)
-
-- [Resample Edges](https://kushiro.gumroad.com/l/resample_edges)
-
-- [Rotate Extrude](https://kushiro.gumroad.com/l/rotate-extrude?layout=profile)
-
-- [Safe Inset](https://kushiro.gumroad.com/l/iruis)
-
-- [Shatter Cut](https://kushiro.gumroad.com/l/jprjug)
-
-- [Select Sim](https://kushiro.gumroad.com/l/smjsbe)
-
-- [Surface Inflate](https://kushiro.gumroad.com/l/inmas)
-
-- [Soft Bevel](https://kushiro.gumroad.com/l/soft_bevel)
-
-- [Trim Mesh](https://kushiro.gumroad.com/l/trim_mesh)
-
-- [Unbend Mesh](https://kushiro.gumroad.com/l/unbend_mesh?layout=profile)
-
-- [Visual Axis](https://kushiro.gumroad.com/l/visualaxis)
+| - [Attach Align](https://kushiro.gumroad.com/l/iutJRq)<br><br>- [Connect Face](https://kushiro.gumroad.com/l/connect_face)<br><br>- [Cut Corner](https://kushiro.gumroad.com/l/varlxb)<br><br>- [Even Loop](https://kushiro.gumroad.com/l/even-loop)<br><br>- [Even Triangulation](https://kushiro.gumroad.com/l/jpjox)<br><br>- [Face Regulator](https://kushiro.gumroad.com/l/wfwfx)<br><br>- [Flatten Face](https://kushiro.gumroad.com/l/flatten_face)<br><br>- [Multi Faces Inset Outset](https://kushiro.gumroad.com/l/multi-faces-inset-outset?layout=profile)<br><br>- [Mirror Copy](https://kushiro.gumroad.com/l/mirror-copy)<br><br>- [Non-AAQP quad tool](https://kushiro.gumroad.com/l/naaqp)<br><br>- [Ngon-Loopcut](https://kushiro.gumroad.com/l/ngon-loopcut)<br><br>- [Outset Boundary](https://kushiro.gumroad.com/l/outset_boundary)<br><br>- [Quad Adder](https://kushiro.gumroad.com/l/quad_adder?layout=profile)<br><br> | - [Quad Swords](https://kushiro.gumroad.com/l/VNhcN)<br><br>- [Quick Bridge](https://kushiro.gumroad.com/l/qignp)<br><br>- [Quick Fillet](https://kushiro.gumroad.com/l/quickfillet)<br><br>- [Resample Edges](https://kushiro.gumroad.com/l/resample_edges)<br><br>- [Rotate Extrude](https://kushiro.gumroad.com/l/rotate-extrude?layout=profile)<br><br>- [Safe Inset](https://kushiro.gumroad.com/l/iruis)<br><br>- [Shatter Cut](https://kushiro.gumroad.com/l/jprjug)<br><br>- [Select Sim](https://kushiro.gumroad.com/l/smjsbe)<br><br>- [Surface Inflate](https://kushiro.gumroad.com/l/inmas)<br><br>- [Soft Bevel](https://kushiro.gumroad.com/l/soft_bevel)<br><br>- [Trim Mesh](https://kushiro.gumroad.com/l/trim_mesh)<br><br>- [Unbend Mesh](https://kushiro.gumroad.com/l/unbend_mesh?layout=profile)<br><br>- [Visual Axis](https://kushiro.gumroad.com/l/visualaxis) |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 #### Blender Bob - Free
 
