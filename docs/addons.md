@@ -5,6 +5,8 @@ Compiled and shared by [Cristóbal Vila](https://etereaestudios.com/resources/bl
 >This is a vast compilation with **add-ons, custom nodes and other resources**. Here I track what I have installed on my computers (a Mac for work and a WindowsPC for rendering) - I also save a link to other interesting stuff “to consider”, just in case that I need it in the future.
 
 > The emojis 🔴 or 🟠 means, pending to *INSTALL* or *UPDATE* on my Windows machine. I usually work on a daily basis on a Mac, using Win just for rendering.
+ 
+> The emoji 🟢 is a call *TO TEST* this add-on as soon as possible.
 
 > *TO DO:* Install Blender **5.2** on my Windows Computer and update all add-ons and keymaps
  
@@ -343,6 +345,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 [Annotate Plus - additional annotations tools](https://blendermarket.com/products/annotate-plus) - By Stefano Bianchini - *USD 2.63*
 
 [Shaders Plus - Caustics, Thin Film, Dispersion for Cycles & Eevee (v4)](https://superhivemarket.com/products/shadersplus) - Smouse - Shaders Plus v4 + Modules Bundle = *USD 35* - [Shaders Plus Docs](https://docs-shadersplus.crd.co/#docsmenu) - Allows you to achieve Real Time Caustics, Dispersion, and physically accurate Thin Film Interference Effects!
+
 [SIMPLE N-PANEL](https://chippwalters.gumroad.com/l/simple-n-panel) - *USD 10* - A new version for the free (and un-installed) [SIMPLE TABS](https://chippwalters.gumroad.com/l/simpletabs)
 [Quad Remesher](https://exoside.com/quadremesher/quadremesher-upgrade/) - By Exoside - *USD 30* > UPDATED “Indie Modo” > “Indie for all softwares”
 ### Custom Nodes
@@ -688,9 +691,9 @@ Custom Notes and Frame Tools - [Time Range Notes](https://www.youtube.com/watch?
 
 [PolyQuilt Retopology Tool [Fork]](https://extensions.blender.org/add-ons/polyquilt-fork/) - **Seems pretty good!** - To help speed up the process of manual hand retopology, similar to tools like Retopology Flow and Quad Draw
 
-[POPOTI Align Helper](https://extensions.blender.org/add-ons/popoti-align-helper/) - More friendly alignment based on observation perspective
-
 [Procedural Tiles](https://extensions.blender.org/add-ons/proceduraltiles/) - a growing library of shading nodes that emulate tiles, with interfaces easy and intuitive to use just like the Voronoi or brick texture
+
+[Quick N-panel](https://extensions.blender.org/add-ons/quick-n-panel/) - provides a faster way to access and organize N-panel tabs - 🟢 🟢 - *Maybe a good candidate to substitute* [Simple N Panel](https://chippwalters.gumroad.com/l/simple-n-panel)
 
 [Real Time Paths](https://extensions.blender.org/add-ons/real-time-paths/) - AKA “Motion Path Pro” - to update motion paths in **real time**, It works with any kind of object - *New version 3.1.0 only for Blender 5.x*
 
@@ -845,6 +848,8 @@ Especially interesting by Johny Gizmo:
 [Physics Dropper](https://superhivemarket.com/products/physics-dropper) - *USD 4* but also *FREE* -place all selected objects with the help of physics with just a few clicks. Basically, it's drop-it on steroids - *Downloaded, but not installed*
 
 [Pie Menu Editor](https://roaoao.gumroad.com/l/pie_menu_editor) *USD 12* / *FREE* through this fork: [Pluglug/pie-menu-editor-fork: A maintenance-focused fork of the Pie Menu Editor by roaoao.](https://github.com/Pluglug/pie-menu-editor-fork)
+
+[Plugin Hub](https://calebdeleon.gumroad.com/l/pluginhub) - Moves the tabs you choose into a single **Plugins** tab, where each add-on becomes a collapsible section - 🟢 🟢 🟢 - *Maybe a good candidate to substitute* [Simple N Panel](https://chippwalters.gumroad.com/l/simple-n-panel)
 
 [Polyhedral-splines](https://github.com/UF-CISE-Surflab/blender-polyhedral-splines?tab=readme-ov-file) - WIP - Converts quad-dominant meshes into B-spline patches - [Introduction](https://uf-cise-surflab.github.io/blender-polyhedral-splines-web/)
 
