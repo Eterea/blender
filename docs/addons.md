@@ -342,7 +342,7 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [Round Inset](https://kushiro.gumroad.com/l/hoamb?layout=profile) - *USD 8* - For Inset face with 100% original round corners.
 
-#### Various - Paid
+#### Various creators - Paid
 
 [Annotate Plus - additional annotations tools](https://blendermarket.com/products/annotate-plus) - By Stefano Bianchini - *USD 2.63*
 
@@ -479,41 +479,46 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 ### My Add-ons & Nodes
 
-> **Finally! All these add-ons are already unified on a single kit, but:**
+>Finally! All these add-ons are already unified on a single “Extension” kit, but **this is a work in progress** - My plan is to share this with the community once it has a better appearance
 
-> *This is a work in progress. TO-DO: clean, unify criteria, think about better placement, add better comments & headers…*
+PHASE 1 & 2 DONE: clean, unify criteria, assing better placement, add better comments and all in English, update and unify header style for all tools…
 
-**etr\_batch\_operate\_attributes** - To rename or delete an attribute on all selected objects
+*PHASE 3 TO-DO: check and modernize code, fine tune features.*
 
-**etr\_change\_color\_space** - To change color space on all selected image textures from sRGB to Non-Color and vice versa
 
-**etr\_change\_selected\_sds\_levels** - To change both SDS Levels in viewport and render for all Selected objects
+   - asset_import_buttons.py
 
-**etr\_change\_selected\_sds\_uv\_smooth** - To choose “Keep Boundaries” or “Keep Corners” for all SDS Modifers on all selected objects
+   - batch_operate_attributes.py
 
-**etr\_copy\_viewport\_color** - To copy the Viewport Display Color from all selected objects to the one in active object  - *Caution: NOT the Material Viewport Display*
+   - change_color_space.py
 
-**etr\_create\_weight\_ramp** - (**Weight Ramp by Order**) Press button, select a bunch of vertices in order and press ESC. This will create a gradient weight, from 0.0 to 1.1
+   - change_selected_sds_levels.py
 
-**etr\_custom\_gn\_color** - Automatically apply a custom color to all selected frames or nodes in Geometry Nodes - *TO DO: extend to Shader*
+   - change_selected_sds_uv_smooth.py
 
-**etr\_distribute** - *TO COMPLETELY REMOVE* - A better version from original [“Distribute” addon by Blender Bob](https://extensions.blender.org/add-ons/distribute/). This one also includes an option to use bounding box, instead of origins - 🔴
+   - copy_viewport_color.py
 
-**etr\_join\_equalizing\_bevels** - To equalize Bevel Amounts and Bevel Weights once we join various objects
+   - create_weight_ramp.py
 
-**etr\_label\_image\_nodes** - To auto rename selected header node names, catching the texture image file name (after using Node Wrangler to import multichannel materials) - *TO DO: change logic and create a new tool to simply remove Custom Labels fran any selected nodes, also in GN, not only in Shader Nodes (and filename will appear, automatically)*
+   - custom_gn_color.py
 
-**etr\_remove\_subdivision\_modifiers** - To remove SDS modifiers form all selected objects
+   - join_equalizing_bevels.py
 
-**etr\_reset\_active\_modifier** - To reset values to default on active modifier for active object
+   - label_image_nodes.py
 
-**etr\_round\_values** - Rounds near-zero position/rotation channels to 0.0 and near-unit and scale channels to +/-1.0
+   - remove_subdivision_modifiers.py
 
-**etr\_set\_curve\_radius\_to\_1** - To set curve radius for all selected control points to exactly 1.0 (or any other value) - Different from the “Mean Radius” available at N Panel > Item > Transform
+   - reset_active_modifier.py
 
-**etr\_toggle\_lock\_transform\_channels** - To lock/unlock all or individual transform channels for all selected objects
+   - round_values.py
 
-**etr\_transforms\_deltas** - Transforms to Deltas and Reset Deltas buttons for all transforms or by groups (Loc, Rot, Scl)
+   - set_curve_radius_to_1.py
+
+   - toggle_lock_transform_channels.py
+
+   - transforms_deltas.py
+
+---
 
 > **Interesting resource:** [lunadigital/blender-addon-template: An empty template for Blender add-ons](https://github.com/lunadigital/blender-addon-template) - A boilerplate template to help you organize your Blender add-on code. You can even install and enable the template as-is, even though it doesn't do anything
 
