@@ -346,10 +346,12 @@ NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Exte
 
 [Annotate Plus - additional annotations tools](https://blendermarket.com/products/annotate-plus) - By Stefano Bianchini - *USD 2.63*
 
+[Quad Remesher](https://exoside.com/quadremesher/quadremesher-upgrade/) - By Exoside - *USD 30* > UPDATED “Indie Modo” > “Indie for all softwares”
+
 [Shaders Plus - Caustics, Thin Film, Dispersion for Cycles & Eevee (v4)](https://superhivemarket.com/products/shadersplus) - Smouse - Shaders Plus v4 + Modules Bundle = *USD 35* - [Shaders Plus Docs](https://docs-shadersplus.crd.co/#docsmenu) - Allows you to achieve Real Time Caustics, Dispersion, and physically accurate Thin Film Interference Effects!
 
-[SIMPLE N-PANEL](https://chippwalters.gumroad.com/l/simple-n-panel) - *USD 10* - A new version for the free (and un-installed) [SIMPLE TABS](https://chippwalters.gumroad.com/l/simpletabs)
-[Quad Remesher](https://exoside.com/quadremesher/quadremesher-upgrade/) - By Exoside - *USD 30* > UPDATED “Indie Modo” > “Indie for all softwares”
+[SIMPLE N-PANEL](https://chippwalters.gumroad.com/l/simple-n-panel) - *USD 10* - A new version for the free (and un-installed) [SIMPLE TABS](https://chippwalters.gumroad.com/l/simpletabs) - 🟠
+
 ### Custom Nodes
 #### Paid Custom Nodes
 
