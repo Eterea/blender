@@ -26,6 +26,8 @@ This is pre-installed in 5.x
 
 [3D Cursor Plus](https://extensions.blender.org/add-ons/cursor-plus/) - Axes, undo and few other tools for your 3D Cursor - *Installed but disabled because it conflicts with 3D Cursor Briefcase. Issue notified to author* - 🔴
 
+[B Guides](https://extensions.blender.org/add-ons/b-guides/) - B Guides provides a comprehensive suite of overlays to help you achieve perfect composition - 🔴
+
 [Bool Tool](https://extensions.blender.org/add-ons/bool-tool/) - Quick boolean operations and tools for mesh modeling - [DOCS](https://github.com/nickberckley/bool_tool/wiki) - 🟠
 
 [Cameraide](https://extensions.blender.org/approval-queue/cameraide-settings/) - Saves render settings per camera, including: Resolution and frame ranges, Output paths and file names, Format settings - 🟠
