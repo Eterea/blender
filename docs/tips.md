@@ -2638,6 +2638,10 @@ If we perceive some strange artifact in Normal Maps, it can be because it’s Di
 
 Use a Separate Color > Invert Green > Combine Color Again
 
+#### Tip for better Tinted Lights
+
+If you simply use the color wheel to tint a light, the resulting color will always look a little thin and fake. But if you Hue Shift a Blackbody input (using the temperature to control saturation) the result will look more like real movie light with colored gel on it - [Source](https://x.com/bigmagnetjim/status/2103891568386339277/photo/1) - I'm not really sure about the accuracy if this → *To investigate.*
+
 ### How to override all materials
 
 - Be sure to select **Cycles** engine
