@@ -248,13 +248,11 @@ Not by Bob, but he recommended this: [fSpy](https://fspy.io/) + [fSpy-Blender: O
 
 [KeKit](https://ke-code.xyz/scripts/kekit.html) - *USD 20* - By Kjell Emanuelsson - [keKit WIKI](https://ke-code.xyz/scripts/wiki.html) - 🟠
 
-To update ([steps](https://ke-code.xyz/scripts/wiki.html)):
+To update ([steps](https://ke-code.xyz/scripts/wiki.html)) - To avoid potential issues when updating keKit, follow these steps *exactly*:  
 
-1. Export keKit [Settings](https://ke-code.xyz/scripts/wiki.html#addon_prefs) going to Preferences / Quit Blender / Delete the **kekit** add-on folder manually (Find [HERE](https://docs.blender.org/manual/en/latest/advanced/blender_directory_layout.html))
-
-2. Just open Blender and install as any other add-on
-
-NOTE: new version 3.5.1 available for Blender 5.0 and up, only! (changed to Extension) **To update, new instructions since 3.5.1 version:** [keKit WIKI](https://ke-code.xyz/scripts/wiki.html)
+1. Quit Blender
+2. **Delete** the kekit directory in your **Extensions** dir manually. (Find your path [HERE](https://docs.blender.org/manual/en/latest/advanced/blender_directory_layout.html))
+3. **Do** extract the new zip-file manually. Completely replace the deleted dir. (Do **not** just overwrite!)
 
 #### Lens Sim
 
