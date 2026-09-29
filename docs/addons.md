@@ -475,14 +475,13 @@ To update ([steps](https://ke-code.xyz/scripts/wiki.html)) - To avoid potential 
 - G_Normals_01
 - G_Nodgroups_Library_01
 
-### My Add-ons & Nodes
+### My Add-ons - 🟠
 
 >Finally! All these add-ons are already unified on a single “Extension” kit, but **this is a work in progress** - My plan is to share this with the community once it has a better appearance
 
 PHASE 1 & 2 DONE: clean, unify criteria, assing better placement, add better comments and all in English, update and unify header style for all tools…
 
 *PHASE 3 TO-DO: check and modernize code, fine tune features.*
-
 
    - asset_import_buttons.py
 
