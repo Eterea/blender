@@ -519,11 +519,11 @@ It seems that the **Quick Snap Tool** add-on does not work in combination with S
 
 4. Duplicate island with Shift-D and move the copy while snapping.
 
-### How to setup blender 3.0 in millimeters (mm) for precision modeling
+### How to setup Blender in millimeters (mm) for precision modeling
 
-[Blender 3.0, Working in Millimeters for modeling small items - YouTube](https://www.youtube.com/watch?v=kep-Fl_XcrI)
+[Blender, Working in Millimeters for modeling small items - YouTube](https://www.youtube.com/watch?v=kep-Fl_XcrI)
 
-[How To Setup Blender 3.0 In Millimetres (mm) Precision Modeling - YouTube](https://www.youtube.com/watch?v=R-Vq2O-hvfo)
+[How To Setup Blender In Millimetres (mm) Precision Modeling - YouTube](https://www.youtube.com/watch?v=R-Vq2O-hvfo)
 
 1. Scene / Units / Length / **Millimeters**
 
@@ -533,9 +533,9 @@ It seems that the **Quick Snap Tool** add-on does not work in combination with S
 
 4. N Panel / View / Clip Start / **0.1 mm (#)**
 
-5. N Panel / View / Clip End / **10000 mm (#)**
+5. N Panel / View / Clip End / **1000 mm (#)**
 
-6. Camera Data / Lens / Clip End / **10000 mm (#)**
+6. Camera Data / Lens / Clip End / **1000 mm (#)**
 
 (#) You can play with these amounts depending on scene specifics and maximum/minimum sizes
 
