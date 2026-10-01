@@ -195,31 +195,35 @@ And also, *great free resources* in his site:
 
 This is really a **great master** on Geometry Nodes!
 
-[Array Objects on Curves](https://www.youtube.com/watch?v=xhmxZCiFtLs)
+[Nodegroup](https://www.nodegroup.xyz/) - Where he sells 4 incredible, depth and powerful courses. And his [Blog](https://www.nodegroup.xyz/blog).
 
-[Control anything with Geometry Nodes!](https://www.youtube.com/watch?v=h4BTgkdHd30) - You can use vertex parenting to control an empty and then use drivers from the empty's location to drive literally anything in Blender
+- [Procedural Modelling Masterclasses for Blender 4](https://www.nodegroup.xyz/procedural-columns-masterclass-bundle) - *MINE!* - Erindale recommends this order: 1. Medina → 2. Chhat → 3. Pancho → 4. Solar Trees
 
-[erindale.xyz | creating quality Blender content and tutorials | Patreon](https://www.patreon.com/erindale) - Downloaded all free scenes
+	1. [Medina Airport Columns](https://www.nodegroup.xyz/products/medina-airport-columns-modelling-masterclass) - Done
 
-[Loft Curves Properly](https://www.youtube.com/watch?v=TTgtrqO1llw&t=695s)
+	2. [Chhatrapati Airport Columns](https://www.nodegroup.xyz/products/chhatrapati-airport-columns-modelling-masterclass) - *WIP*
 
-[Mesh Wrapping](https://www.youtube.com/watch?v=Nj5a4blpcAk)
+	3. [Pancho Arena Canopy](https://www.nodegroup.xyz/products/pancho-arena-canopy-modelling-masterclass) - *TO DO*
 
-[Meta Balls with Geometry Nodes - The Joy of Proceduralism](https://www.youtube.com/watch?v=CLH8SZypElw) - Process of building our own custom metaballs inside Geometry Nodes
+	4. [Solar Trees Marketplace](https://www.nodegroup.xyz/products/solar-trees-marketplace-modelling-masterclass) - *TO DO*
 
-[Packing Collection Objects](https://www.youtube.com/watch?v=XFbD3rqE1eM)
+Also lots of tutorials in [his YouTube channel](https://www.youtube.com/@Erindale), like:
 
-[Procedural Modelling Masterclasses for Blender 4](https://www.nodegroup.xyz/procedural-columns-masterclass-bundle) - *MINE!* - Erindale recommends Medina > Chhat > Pancho > Solar Trees
+- [Select What You Want in Geometry Nodes - Blender Tutorial - YouTube](https://www.youtube.com/watch?v=p4rwhifXNCw) - *VERY GOOD* - Downloaded
 
-1. [Medina Airport Columns](https://www.nodegroup.xyz/products/medina-airport-columns-modelling-masterclass) - Done
+- [Control anything with Geometry Nodes!](https://www.youtube.com/watch?v=h4BTgkdHd30) - You can use vertex parenting to control an empty and then use drivers from the empty's location to drive literally anything in Blender - Now, in Blender 5.x this is extremely easy thanks to the new **Geometry Attribute Constraint.**
 
-2. [Chhatrapati Airport Columns](https://www.nodegroup.xyz/products/chhatrapati-airport-columns-modelling-masterclass) - *WIP*
+- [Array Objects on Curves](https://www.youtube.com/watch?v=xhmxZCiFtLs)
 
-3. [Pancho Arena Canopy](https://www.nodegroup.xyz/products/pancho-arena-canopy-modelling-masterclass) - *TO DO*
+- [Loft Curves Properly](https://www.youtube.com/watch?v=TTgtrqO1llw&t=695s)
 
-4. [Solar Trees Marketplace](https://www.nodegroup.xyz/products/solar-trees-marketplace-modelling-masterclass) - *TO DO*
+- [Mesh Wrapping](https://www.youtube.com/watch?v=Nj5a4blpcAk)
 
-[Select What You Want in Geometry Nodes - Blender Tutorial - YouTube](https://www.youtube.com/watch?v=p4rwhifXNCw) - *VERY GOOD* - Downloaded
+- [Meta Balls with Geometry Nodes - The Joy of Proceduralism](https://www.youtube.com/watch?v=CLH8SZypElw) - Process of building our own custom metaballs inside Geometry Nodes
+
+- [Packing Collection Objects](https://www.youtube.com/watch?v=XFbD3rqE1eM)
+
+There is also his [Patreon](https://www.patreon.com/erindale) - Where you can download a lot of free scenes
 
 ### Harry Blends
 
